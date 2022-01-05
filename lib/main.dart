@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'about_me.dart';
 import 'banner.dart';
 
 void main() {
@@ -20,7 +21,10 @@ class MyApp extends StatelessWidget {
           ),
         ),
         body: ListView(
-          children: const [MyBanner()],
+          children: const [
+            MyBanner(),
+            MyAboutMe(),
+          ],
         ),
       ),
     );
