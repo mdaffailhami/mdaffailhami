@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'home_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'screens/home/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,44 +11,41 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData darkTheme = ThemeData(
-      brightness: Brightness.dark,
-    );
-
-    const TextTheme textTheme = TextTheme(
-      headline1: TextStyle(
-        fontSize: 40,
-        fontWeight: FontWeight.w400,
-        shadows: [
-          Shadow(
-            blurRadius: 1,
-            offset: Offset(1, 1),
-          ),
-        ],
-      ),
-      headline3: TextStyle(
-        fontSize: 20,
-        fontWeight: FontWeight.w400,
-        shadows: [
-          Shadow(
-            blurRadius: 1,
-          ),
-        ],
-      ),
-    );
-
     return MaterialApp(
       themeMode: ThemeMode.dark,
-      darkTheme: darkTheme.copyWith(
-        colorScheme: darkTheme.colorScheme.copyWith(
-          primary: const Color(0xFF212F3D),
-          primaryVariant: const Color(0xFF1C2833),
-          secondary: const Color(0xFF283593),
-          secondaryVariant: const Color(0xFF1A237E),
+      darkTheme: ThemeData(
+        textTheme:GoogleFonts.latoTextTheme(ThemeData.dark().textTheme),
+        colorScheme: const ColorScheme(
+          primary: Color(0xff2069e0),
+          primaryVariant: Color(0xff082c6c),
+          secondary: Color(0xfff4d47c),
+          secondaryVariant: Color(0xffcba33e),
+          surface: Color(0xff1f1f1f),
+          background: Color(0xff121212),
+          error: Colors.red,
+          onPrimary: Colors.white,
+          onSecondary: Colors.white,
+          onSurface: Colors.white,
+          onBackground: Colors.white,
+          onError: Colors.white,
+          brightness: Brightness.dark,
         ),
-        textTheme: textTheme,
       ),
+      title: 'Daffa Ilhami',
       home: const MyHomeScreen(),
     );
   }
 }
+
+// background: #141a32
+// primary: #3d65fb
+// primaryVariant: 
+// secondary: #d4bf8
+// secondaryVariant:
+// Surface: #1e2746
+// error: #B00020
+// onPrimary: #ffffff
+// onSecondary: #ffffff
+// onBackground: #ffffff
+// onError: #ffffff
+// onSurface: #ffffff
