@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'about_me.dart';
-import 'banner.dart';
+import 'home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,23 +11,44 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(brightness: Brightness.dark),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const CircleAvatar(
-            backgroundImage: AssetImage('assets/profile.jpg'),
+    final ThemeData darkTheme = ThemeData(
+      brightness: Brightness.dark,
+    );
+
+    const TextTheme textTheme = TextTheme(
+      headline1: TextStyle(
+        fontSize: 40,
+        fontWeight: FontWeight.w400,
+        shadows: [
+          Shadow(
+            blurRadius: 1,
+            offset: Offset(1, 1),
           ),
-        ),
-        body: ListView(
-          children: const [
-            MyBanner(),
-            MyAboutMe(),
-          ],
-        ),
+        ],
       ),
+      headline3: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w400,
+        shadows: [
+          Shadow(
+            blurRadius: 1,
+          ),
+        ],
+      ),
+    );
+
+    return MaterialApp(
+      themeMode: ThemeMode.dark,
+      darkTheme: darkTheme.copyWith(
+        colorScheme: darkTheme.colorScheme.copyWith(
+          primary: const Color(0xFF212F3D),
+          primaryVariant: const Color(0xFF1C2833),
+          secondary: const Color(0xFF283593),
+          secondaryVariant: const Color(0xFF1A237E),
+        ),
+        textTheme: textTheme,
+      ),
+      home: const MyHomeScreen(),
     );
   }
 }
-
-

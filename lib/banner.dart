@@ -29,13 +29,20 @@ class MyBanner extends StatelessWidget {
                   radius: 60,
                   backgroundImage: AssetImage('assets/profile.jpg'),
                 ),
+                SizedBox(height: 5),
                 Text(
                   'Daffa Ilhami',
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 30),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 30,
+                    shadows: [Shadow(blurRadius: 10)],
+                  ),
                 ),
                 Text(
                   'Programmer | Developer',
-                  style: TextStyle(fontWeight: FontWeight.w100),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w200,
+                  ),
                 ),
               ],
             ),
