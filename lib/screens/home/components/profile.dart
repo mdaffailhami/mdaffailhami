@@ -32,7 +32,7 @@ class MyProfile extends StatelessWidget {
                   text: ' | ',
                   style: TextStyle(
                       color: Theme.of(context).colorScheme.secondaryVariant)),
-              const TextSpan(text: 'Developer <'),
+              const TextSpan(text: 'Developer </'),
               TextSpan(
                   text: 'code',
                   style: TextStyle(

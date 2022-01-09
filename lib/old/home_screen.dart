@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mdaffailhami/projects_section.dart';
+import 'projects_section.dart';
 
 import 'about_me.dart';
 import 'banner.dart';
