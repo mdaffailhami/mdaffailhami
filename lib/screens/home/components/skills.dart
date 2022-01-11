@@ -30,16 +30,6 @@ class MySkillsSection extends StatelessWidget {
                   'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png',
                 ),
               ),
-              // MySkillBadge(
-              //   NetworkImage(
-              //     'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Google-flutter-logo.svg/2560px-Google-flutter-logo.svg.png',
-              //   ),
-              // ),
-              // MySkillBadge(
-              //   NetworkImage(
-              //     'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Dart_programming_language_logo.svg/1024px-Dart_programming_language_logo.svg.png',
-              //   ),
-              // ),
               MySkillItem(
                 title: 'React',
                 image: NetworkImage(
@@ -52,12 +42,12 @@ class MySkillsSection extends StatelessWidget {
                   'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png',
                 ),
               ),
-              MySkillItem(
-                title: 'JavaScript',
-                image: NetworkImage(
-                  'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png',
-                ),
-              ),
+              // MySkillItem(
+              //   title: 'JavaScript',
+              //   image: NetworkImage(
+              //     'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png',
+              //   ),
+              // ),
             ],
           )
         ],

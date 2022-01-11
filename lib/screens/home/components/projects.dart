@@ -11,10 +11,10 @@ class MyProjects extends StatelessWidget {
         Text('My Projects', style: Theme.of(context).textTheme.headline4),
         Divider(),
         Wrap(
+          alignment: WrapAlignment.center,
           spacing: 14,
           runSpacing: 10,
           children: [
-            MyProjectCard(),
             MyProjectCard(),
             MyProjectCard(),
             MyProjectCard(),
