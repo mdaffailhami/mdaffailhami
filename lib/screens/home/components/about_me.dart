@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MyAboutMe extends StatelessWidget {
   const MyAboutMe({
-    Key? key,
+    Key? key
   }) : super(key: key);
 
   @override

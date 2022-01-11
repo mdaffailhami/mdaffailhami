@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:simple_shadow/simple_shadow.dart';
+import 'package:mdaffailhami/widgets/skill_item.dart';
 
-class MyMySkillsSection extends StatelessWidget {
-  const MyMySkillsSection({Key? key}) : super(key: key);
+class MySkillsSection extends StatelessWidget {
+  const MySkillsSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class MyMySkillsSection extends StatelessWidget {
         children: [
           Text(
             'My Skills',
-            style: Theme.of(context).textTheme.headline1,
+            style: Theme.of(context).textTheme.headline4,
             textAlign: TextAlign.center,
           ),
           const Divider(),
@@ -24,7 +24,7 @@ class MyMySkillsSection extends StatelessWidget {
             spacing: 30,
             runSpacing: 20,
             children: const [
-              MySkillBadge(
+              MySkillItem(
                 title: 'JavaScript',
                 image: NetworkImage(
                   'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png',
@@ -40,62 +40,25 @@ class MyMySkillsSection extends StatelessWidget {
               //     'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Dart_programming_language_logo.svg/1024px-Dart_programming_language_logo.svg.png',
               //   ),
               // ),
-              MySkillBadge(
+              MySkillItem(
                 title: 'React',
                 image: NetworkImage(
                   'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png',
                 ),
               ),
-              MySkillBadge(
+              MySkillItem(
                 title: 'React',
                 image: NetworkImage(
                   'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png',
                 ),
               ),
-              MySkillBadge(
+              MySkillItem(
                 title: 'JavaScript',
                 image: NetworkImage(
                   'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png',
                 ),
               ),
             ],
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class MySkillBadge extends StatelessWidget {
-  const MySkillBadge({
-    Key? key,
-    required this.title,
-    required this.image,
-  }) : super(key: key);
-
-  final String title;
-  final ImageProvider image;
-
-  @override
-  Widget build(BuildContext context) {
-    return SimpleShadow(
-      sigma: 5,
-      opacity: 1,
-      child: Column(
-        children: [
-          Image(
-            image: image,
-            width: 140,
-            height: 40,
-            fit: BoxFit.contain,
-          ),
-          SizedBox(
-            width: 160,
-            child: Text(
-              title,
-              style: Theme.of(context).textTheme.headline3,
-              textAlign: TextAlign.center,
-            ),
           )
         ],
       ),

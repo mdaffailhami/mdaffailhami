@@ -1,46 +1,61 @@
 import 'package:flutter/material.dart';
+import 'package:mdaffailhami/widgets/responsive_builder.dart';
 
-import '../home_screen.dart';
+import 'banner.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: kToolbarHeight,
-      child: ValueListenableBuilder(
-          valueListenable: MyHomeScreen.scrollBarIsAtTheTop,
-          builder: (_, bool value, __) {
-            return AppBar(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  const Text('MDI'),
-                  SizedBox(
-                    height: kToolbarHeight,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            primary: Colors.white,
-                          ),
-                          child: const Text('About Me'),
-                        ),
-                        TextButton(
-                            onPressed: () {}, child: const Text('My Skills')),
-                      ],
-                    ),
-                  )
-                ],
+    return SliverAppBar(
+      automaticallyImplyLeading: false,
+      pinned: true,
+      expandedHeight: 350,
+      flexibleSpace: FlexibleSpaceBar(
+        background: MyBanner(),
+      ),
+      title: MyResponsiveBuilder((_, isSmall, isMedium, isLarge) {
+        if (isSmall) {
+          return Stack(
+            alignment: AlignmentDirectional.centerStart,
+            children: [
+              IconButton(
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                icon: Icon(Icons.menu),
               ),
-              elevation: value ? 0 : Theme.of(context).appBarTheme.elevation,
-              backgroundColor: value ? Colors.transparent : null,
-            );
-          }),
+              Center(child: Text('MDI')),
+            ],
+          );
+        } else {
+          return Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text('MDI'),
+              SizedBox(
+                height: kToolbarHeight,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(primary: Colors.white),
+                      child: Text('About Me'),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(primary: Colors.white),
+                      child: Text('My Skills'),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          );
+        }
+      }),
     );
   }
 }

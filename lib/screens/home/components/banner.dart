@@ -7,20 +7,13 @@ class MyBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 300,
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          Image.asset(
-            'assets/banner.jpeg',
-            fit: BoxFit.cover,
-          ),
-          const SizedBox(child: ColoredBox(color: Colors.black54)),
-          const MyProfile()
-        ],
-      ),
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        Image.asset('assets/banner.jpeg', fit: BoxFit.cover),
+        SizedBox(child: ColoredBox(color: Colors.black54)),
+        MyProfile(),
+      ],
     );
   }
 }
