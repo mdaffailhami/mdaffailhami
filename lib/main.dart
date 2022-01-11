@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.dark,
       darkTheme: ThemeData(
+        dividerTheme: DividerThemeData(space: 26),
         textTheme:
             GoogleFonts.latoTextTheme(ThemeData.dark().textTheme).copyWith(
           headline4: TextStyle(color: Colors.white),
@@ -40,16 +41,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// background: #141a32
-// primary: #3d65fb
-// primaryVariant: 
-// secondary: #d4bf8
-// secondaryVariant:
-// Surface: #1e2746
-// error: #B00020
-// onPrimary: #ffffff
-// onSecondary: #ffffff
-// onBackground: #ffffff
-// onError: #ffffff
-// onSurface: #ffffff

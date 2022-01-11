@@ -35,7 +35,8 @@ class MyQnACard extends StatelessWidget {
                           ),
                     ),
                   ),
-                  VerticalDivider(color: Colors.black),
+                  VerticalDivider(
+                      color: Theme.of(context).colorScheme.secondaryVariant),
                   Flexible(
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 3),
@@ -64,7 +65,8 @@ class MyQnACard extends StatelessWidget {
                           ),
                     ),
                   ),
-                  VerticalDivider(color: Colors.black),
+                  VerticalDivider(
+                      color: Theme.of(context).colorScheme.secondaryVariant),
                   Flexible(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 3),

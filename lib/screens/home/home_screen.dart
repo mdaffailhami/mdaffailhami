@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mdaffailhami/screens/home/components/contact_me.dart';
 
 import 'components/app_bar.dart';
 import 'components/faq.dart';
@@ -26,7 +27,10 @@ class MyHomeScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     MyAboutMe(),
-                    MySkillsSection(),
+                    Padding(
+                      padding: const EdgeInsets.all(30),
+                      child: MySkillsSection(),
+                    ),
                     Container(
                       decoration: BoxDecoration(
                         color: Theme.of(context).colorScheme.background,
@@ -37,17 +41,21 @@ class MyHomeScreen extends StatelessWidget {
                       ),
                       child: Padding(
                         padding: EdgeInsets.symmetric(
-                            vertical: 20,
+                            vertical: 30,
                             horizontal:
                                 MediaQuery.of(context).size.width * 0.1),
                         child: Wrap(
-                          runSpacing: 20,
+                          runSpacing: 30,
                           children: [
                             MyProjects(),
                             MyFAQ(),
                           ],
                         ),
                       ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(30),
+                      child: MyContactMeForm(),
                     ),
                   ],
                 ),

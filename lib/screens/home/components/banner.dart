@@ -12,7 +12,10 @@ class MyBanner extends StatelessWidget {
       children: [
         Image.asset('assets/banner.jpeg', fit: BoxFit.cover),
         SizedBox(child: ColoredBox(color: Colors.black54)),
-        MyProfile(),
+        Padding(
+          padding: EdgeInsets.only(top: 26),
+          child: MyProfile(),
+        ),
       ],
     );
   }
