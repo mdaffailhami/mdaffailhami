@@ -15,7 +15,7 @@ class MyBackground extends StatelessWidget {
             'assets/background.jpg',
             fit: BoxFit.cover,
           ),
-          const SizedBox(child: ColoredBox(color: Colors.black45)),
+          const SizedBox(child: ColoredBox(color: Colors.black54)),
         ],
       ),
     );
