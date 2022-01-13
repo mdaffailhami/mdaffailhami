@@ -6,49 +6,49 @@ class MyProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 160,
-      height: 200,
+      width: 220,
+      height: 300,
       child: Card(
+        elevation: 2,
+        shadowColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
-        clipBehavior: Clip.hardEdge,
+        clipBehavior: Clip.antiAlias,
         color: Theme.of(context).colorScheme.surface,
         child: Column(
           children: [
             Expanded(
-              flex: 5,
+              flex: 13,
               child: Image.asset(
                 'assets/profile.jpg',
-                fit: BoxFit.cover,
                 width: double.infinity,
+                fit: BoxFit.cover,
               ),
             ),
             Expanded(
-              flex: 3,
+              flex: 7,
               child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                ),
+                padding: EdgeInsets.all(10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Title Uwu',
-                      style: Theme.of(context).textTheme.headline6,
+                      'Title lurr',
+                      style: Theme.of(context).textTheme.headline5,
                     ),
                     Flexible(
                       child: Text(
                         'Lorem ipsum dolor sit amet consectetur adipiscing elit. Donec arcu, vel sem nec,asdnalsbfsakjakjbaksjfkasfkasjfbkasjbfkasjbfkasjfvaksfvashfvjafvaksjfkasb',
-                        style: Theme.of(context).textTheme.caption,
-                        maxLines: 2,
                         overflow: TextOverflow.ellipsis,
+                        maxLines: 3,
+                        style: Theme.of(context).textTheme.caption,
                       ),
                     ),
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
