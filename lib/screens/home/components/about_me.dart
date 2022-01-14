@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mdaffailhami/widgets/socmed_icon_button.dart';
 
 class MyAboutMe extends StatelessWidget {
   const MyAboutMe({Key? key}) : super(key: key);
@@ -14,7 +15,10 @@ class MyAboutMe extends StatelessWidget {
       child: Material(
         color: Theme.of(context).colorScheme.surface,
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20),
+          padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.width * 0.06,
+            vertical: 20,
+          ),
           child: Center(
             child: SizedBox(
               width: 400,
@@ -29,14 +33,14 @@ class MyAboutMe extends StatelessWidget {
                     alignment: WrapAlignment.center,
                     spacing: 50,
                     runSpacing: 15,
-                    children: [
-                      IconButton(
+                    children: const [
+                      MySocmedIconButton(
                         icon: FaIcon(FontAwesomeIcons.instagram),
-                        onPressed: () {},
+                        url: 'https://www.instagram.com/m.daffailhami/',
                       ),
-                      IconButton(
+                      MySocmedIconButton(
                         icon: FaIcon(FontAwesomeIcons.github),
-                        onPressed: () {},
+                        url: 'https://github.com/mdaffailhami',
                       ),
                     ],
                   )
