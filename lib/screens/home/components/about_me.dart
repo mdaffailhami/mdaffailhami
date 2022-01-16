@@ -5,6 +5,22 @@ import 'package:mdaffailhami/widgets/socmed_icon_button.dart';
 class MyAboutMe extends StatelessWidget {
   const MyAboutMe({Key? key}) : super(key: key);
 
+  static final GlobalKey componentKey = GlobalKey();
+
+  @override
+  Key? get key => componentKey;
+
+  static const List<MySocmedIconButton> socmedIconButtons = [
+    MySocmedIconButton(
+      icon: FaIcon(FontAwesomeIcons.instagram),
+      url: 'https://www.instagram.com/m.daffailhami/',
+    ),
+    MySocmedIconButton(
+      icon: FaIcon(FontAwesomeIcons.github),
+      url: 'https://github.com/mdaffailhami',
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -33,16 +49,7 @@ class MyAboutMe extends StatelessWidget {
                     alignment: WrapAlignment.center,
                     spacing: 50,
                     runSpacing: 15,
-                    children: const [
-                      MySocmedIconButton(
-                        icon: FaIcon(FontAwesomeIcons.instagram),
-                        url: 'https://www.instagram.com/m.daffailhami/',
-                      ),
-                      MySocmedIconButton(
-                        icon: FaIcon(FontAwesomeIcons.github),
-                        url: 'https://github.com/mdaffailhami',
-                      ),
-                    ],
+                    children: socmedIconButtons,
                   )
                 ],
               ),

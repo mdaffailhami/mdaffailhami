@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mdaffailhami/screens/home/home_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MySocmedIconButton extends StatelessWidget {
@@ -30,7 +31,8 @@ class MySocmedIconButton extends StatelessWidget {
                 label: 'Dismiss',
                 textColor: Theme.of(context).colorScheme.secondary,
                 onPressed: () {
-                  ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                  MyHomeScreen.scaffoldKey.currentState?.hideCurrentSnackBar();
+                  // ScaffoldMessenger.of(context).hideCurrentSnackBar();
                 },
               ),
             ),

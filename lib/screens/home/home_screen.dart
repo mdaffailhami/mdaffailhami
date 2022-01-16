@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mdaffailhami/screens/home/components/contact_me.dart';
 
 import 'components/app_bar.dart';
+import 'components/drawer.dart';
 import 'components/faq.dart';
 import 'components/footer.dart';
 import 'components/projects.dart';
@@ -12,14 +13,18 @@ import 'components/background.dart';
 class MyHomeScreen extends StatelessWidget {
   const MyHomeScreen({Key? key}) : super(key: key);
 
+  static final GlobalKey<ScaffoldMessengerState> scaffoldKey =
+      GlobalKey<ScaffoldMessengerState>();
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         MyBackground(),
         Scaffold(
+          key: scaffoldKey,
           backgroundColor: Colors.transparent,
-          drawer: Drawer(),
+          drawer: MyDrawer(),
           body: CustomScrollView(
             physics: AlwaysScrollableScrollPhysics(),
             slivers: [
@@ -28,7 +33,7 @@ class MyHomeScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     MyAboutMe(),
-                    MySkillsSection(),
+                    MySkills(),
                     Container(
                       decoration: BoxDecoration(
                         color: Theme.of(context).colorScheme.background,

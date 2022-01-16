@@ -4,6 +4,11 @@ import 'package:mdaffailhami/widgets/qna_card.dart';
 class MyFAQ extends StatelessWidget {
   const MyFAQ({Key? key}) : super(key: key);
 
+  static final GlobalKey componentKey = GlobalKey();
+
+  @override
+  Key? get key => componentKey;
+
   @override
   Widget build(BuildContext context) {
     return Column(

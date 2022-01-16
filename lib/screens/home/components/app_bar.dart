@@ -1,10 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:mdaffailhami/screens/home/components/about_me.dart';
+import 'package:mdaffailhami/screens/home/components/contact_me.dart';
+import 'package:mdaffailhami/screens/home/components/faq.dart';
+import 'package:mdaffailhami/screens/home/components/projects.dart';
+import 'package:mdaffailhami/screens/home/components/skills.dart';
+import 'package:mdaffailhami/widgets/navigation_button.dart';
 import 'package:mdaffailhami/widgets/responsive_builder.dart';
 
 import 'banner.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({Key? key}) : super(key: key);
+
+  // static final List<Widget> navigationButtons = [
+  //   MyNavigationButton(
+  //     text: 'About Me',
+  //     componentKey: MyAboutMe.componentKey,
+  //   ),
+  //   MyNavigationButton(
+  //     text: 'My Skills',
+  //     componentKey: MySkills.componentKey,
+  //   ),
+  //   MyNavigationButton(
+  //     text: 'My Projects',
+  //     componentKey: MyProjects.componentKey,
+  //   ),
+  //   MyNavigationButton(
+  //     text: 'FAQ',
+  //     componentKey: MyFAQ.componentKey,
+  //   ),
+  //   MyNavigationButton(
+  //     text: 'Contact Me',
+  //     componentKey: MyContactMeForm.componentKey,
+  //   ),
+  // ];
 
   @override
   Widget build(BuildContext context) {
@@ -26,28 +55,60 @@ class MyAppBar extends StatelessWidget {
                 },
                 icon: Icon(Icons.menu),
               ),
-              Center(child: Text('MDI')),
+              Center(
+                child: MyNavigationButton(
+                  componentKey: MyBanner.componentKey,
+                  child: Text(
+                    'MDI',
+                    style: Theme.of(context).textTheme.headline5,
+                  ),
+                ),
+              ),
             ],
           );
         } else {
           return Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text('MDI'),
+              MyNavigationButton(
+                componentKey: MyBanner.componentKey,
+                child: Text(
+                  'MDI',
+                  style: Theme.of(context).textTheme.headline5,
+                ),
+              ),
               SizedBox(
                 height: kToolbarHeight,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(primary: Colors.white),
+                    MyNavigationButton(
+                      componentKey: MyAboutMe.componentKey,
                       child: Text('About Me'),
                     ),
-                    TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(primary: Colors.white),
+                    MyNavigationButton(
+                      componentKey: MySkills.componentKey,
                       child: Text('My Skills'),
+                    ),
+                    MyNavigationButton(
+                      componentKey: MyProjects.componentKey,
+                      child: Text('My Projects'),
+                    ),
+                    MyNavigationButton(
+                      componentKey: MyFAQ.componentKey,
+                      child: Text('FAQ'),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.primary,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: MyNavigationButton(
+                          componentKey: MyContactMeForm.componentKey,
+                          child: Text('Contact Me'),
+                        ),
+                      ),
                     ),
                   ],
                 ),

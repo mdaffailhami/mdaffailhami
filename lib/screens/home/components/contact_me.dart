@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 class MyContactMeForm extends StatelessWidget {
   const MyContactMeForm({Key? key}) : super(key: key);
 
+  static final GlobalKey componentKey = GlobalKey();
+
+  @override
+  Key? get key => componentKey;
+
   @override
   Widget build(BuildContext context) {
     return Padding(

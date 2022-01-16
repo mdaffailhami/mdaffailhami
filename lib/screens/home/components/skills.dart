@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mdaffailhami/widgets/skill_item.dart';
 
-class MySkillsSection extends StatelessWidget {
-  const MySkillsSection({Key? key}) : super(key: key);
+class MySkills extends StatelessWidget {
+  const MySkills({Key? key}) : super(key: key);
+
+  static final GlobalKey componentKey = GlobalKey();
+
+  @override
+  Key? get key => componentKey;
 
   @override
   Widget build(BuildContext context) {
