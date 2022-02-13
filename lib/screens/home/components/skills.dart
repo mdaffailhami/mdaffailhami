@@ -24,37 +24,48 @@ class MySkills extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const Divider(),
-          Wrap(
-            alignment: WrapAlignment.center,
-            spacing: 20,
-            runSpacing: 20,
-            children: const [
-              MySkillItem(
-                title: 'JavaScript',
-                image: NetworkImage(
-                  'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png',
+          Container(
+            constraints: const BoxConstraints(maxWidth: 800),
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 20,
+              runSpacing: 30,
+              children: const [
+                MySkillItem(
+                  title: 'Dart',
+                  image: AssetImage('assets/dart-logo.png'),
                 ),
-              ),
-              MySkillItem(
-                title: 'React',
-                image: NetworkImage(
-                  'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png',
+                MySkillItem(
+                  title: 'Flutter',
+                  image: AssetImage('assets/flutter-logo.png'),
                 ),
-              ),
-              MySkillItem(
-                title: 'React',
-                image: NetworkImage(
-                  'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png',
+                MySkillItem(
+                  title: 'Node.js',
+                  image: AssetImage('assets/node.js-logo.png'),
                 ),
-              ),
-              // MySkillItem(
-              //   title: 'JavaScript',
-              //   image: NetworkImage(
-              //     'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png',
-              //   ),
-              // ),
-            ],
-          )
+                MySkillItem(
+                  title: 'JavaScript',
+                  image: AssetImage('assets/javascript-logo.png'),
+                ),
+                MySkillItem(
+                  title: 'Python',
+                  image: AssetImage('assets/python-logo.png'),
+                ),
+                MySkillItem(
+                  title: 'React',
+                  image: AssetImage('assets/react-logo.png'),
+                ),
+                MySkillItem(
+                  title: 'Roblox Studio',
+                  image: AssetImage('assets/roblox-studio-logo.png'),
+                ),
+                MySkillItem(
+                  title: 'Bootstrap',
+                  image: AssetImage('assets/bootstrap-logo.png'),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

@@ -40,8 +40,28 @@ class MyAboutMe extends StatelessWidget {
               width: 400,
               child: Column(
                 children: [
-                  const Text(
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec arcu, vel sem nec, dictum facilisis elit. Phasellus quis semper mi, ut laoreet odio. Phasellus id sem dolor. Integer quis mi vitae orci pharetra viverra. Sed nibh dolor, suscipit imperdiet mauris vitae, venenatis lacinia quam.',
+                  RichText(
+                    text: TextSpan(
+                      style: Theme.of(context)
+                          .textTheme
+                          .subtitle2
+                          ?.copyWith(fontSize: 15),
+                      children: [
+                        TextSpan(
+                          text: "Hello! ",
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
+                        ),
+                        TextSpan(
+                          text: "I'm Daffa Ilhami.\n",
+                        ),
+                        TextSpan(
+                          text:
+                              "I'm a Programmer from Barabai, Indonesia.\nI started to learn Programming since 12 September 2020, and then yeah now it's become my hobby.",
+                        ),
+                      ],
+                    ),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 20),
