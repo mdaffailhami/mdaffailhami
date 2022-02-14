@@ -14,27 +14,41 @@ class MyFAQ extends StatelessWidget {
     return Column(
       children: [
         Text('FAQ', style: Theme.of(context).textTheme.headline4),
-        Divider(),
+        const Divider(),
         Wrap(
           alignment: WrapAlignment.center,
           spacing: 20,
           runSpacing: 10,
-          children: [
+          children: const [
             MyQnACard(
               question: 'Sejak kapan mulai belajar Programming?',
-              answer: '12 September 2020',
+              answer: '12 September 2020, pas kelas 11 & umur 16 tahun',
             ),
             MyQnACard(
               question: 'Anime favoritnya apa aja?',
-              answer: 'One Piece, Mushoku Tensei, & Attack on Titan',
+              answer: 'One Piece, Dr. STONE, Mushoku Tensei, & Attack on Titan',
             ),
             MyQnACard(
               question:
                   'Saran dong channel YouTube buat belajar Programming yang mudah dipahami?',
               answer: 'Web Programming UNPAS sama Kelas Terbuka',
-            )
+            ),
+            MyQnACard(
+              question: 'Teknologi apa yang dipake untuk membangun web ini?',
+              answer: 'Flutter 👍',
+            ),
+            MyQnACard(
+              question:
+                  'Bisa ngehack ga? Klo bisa tolong hack-in dong ig lama ku, soalnya lupa passwordnya muehehe',
+              answer: 'Gak..',
+            ),
+            MyQnACard(
+              question:
+                  'Klo ga bisa ngehack truss tuh kode-kode yang diketik buat apaan coba?',
+              answer: 'huh? Programmer sama Hacker itu beda zz 😑',
+            ),
           ],
-        )
+        ),
       ],
     );
   }
