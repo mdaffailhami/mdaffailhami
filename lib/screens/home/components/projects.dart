@@ -14,15 +14,26 @@ class MyProjects extends StatelessWidget {
     return Column(
       children: [
         Text('My Projects', style: Theme.of(context).textTheme.headline4),
-        Divider(),
+        const Divider(),
         Wrap(
           alignment: WrapAlignment.center,
           spacing: 14,
-          runSpacing: 10,
-          children: [
-            MyProjectCard(),
-            MyProjectCard(),
-            MyProjectCard(),
+          runSpacing: 14,
+          children: const [
+            MyProjectCard(
+              image: NetworkImage(
+                'https://raw.githubusercontent.com/mdaffailhami/glovikulator/master/assets/icons/app_icon.png',
+              ),
+              title: 'Glovikulator',
+              caption: 'Aplikasi PWA Calculator',
+            ),
+            MyProjectCard(
+              image: NetworkImage(
+                'https://raw.githubusercontent.com/mdaffailhami/typing-practice/master/pages/favicon.png',
+              ),
+              title: 'Typing Practice',
+              caption: 'Aplikasi web untuk latihan mengetik',
+            ),
           ],
         ),
       ],

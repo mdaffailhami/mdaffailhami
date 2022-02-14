@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 
 class MyProjectCard extends StatelessWidget {
-  const MyProjectCard({Key? key}) : super(key: key);
+  const MyProjectCard({
+    Key? key,
+    required this.image,
+    required this.title,
+    required this.caption,
+  }) : super(key: key);
+
+  final ImageProvider<Object> image;
+  final String title;
+  final String caption;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 220,
+      width: 280,
       height: 300,
       child: Card(
-        elevation: 2,
+        elevation: 3,
         shadowColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
@@ -17,13 +26,17 @@ class MyProjectCard extends StatelessWidget {
         clipBehavior: Clip.antiAlias,
         color: Theme.of(context).colorScheme.surface,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
               flex: 13,
-              child: Image.asset(
-                'assets/profile.jpg',
-                width: double.infinity,
-                fit: BoxFit.cover,
+              child: ColoredBox(
+                color: Theme.of(context).colorScheme.background,
+                child: Image(
+                  image: image,
+                  width: double.infinity,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
             Expanded(
@@ -34,12 +47,13 @@ class MyProjectCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Title lurr',
+                      title,
                       style: Theme.of(context).textTheme.headline5,
                     ),
+                    SizedBox(height: 4),
                     Flexible(
                       child: Text(
-                        'Lorem ipsum dolor sit amet consectetur adipiscing elit. Donec arcu, vel sem nec,asdnalsbfsakjakjbaksjfkasfkasjfbkasjbfkasjbfkasjfvaksfvashfvjafvaksjfkasb',
+                        caption,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 3,
                         style: Theme.of(context).textTheme.caption,
