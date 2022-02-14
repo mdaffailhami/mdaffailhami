@@ -6,16 +6,19 @@ class MySocmedIconButton extends StatelessWidget {
   const MySocmedIconButton({
     Key? key,
     required this.icon,
+    required this.tooltip,
     required this.url,
   }) : super(key: key);
 
   final Widget icon;
+  final String tooltip;
   final String url;
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
       icon: icon,
+      tooltip: tooltip,
       onPressed: () async {
         if (await canLaunch(url)) {
           launch(url);

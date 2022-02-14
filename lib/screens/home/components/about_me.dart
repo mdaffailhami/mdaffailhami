@@ -13,10 +13,12 @@ class MyAboutMe extends StatelessWidget {
   static const List<MySocmedIconButton> socmedIconButtons = [
     MySocmedIconButton(
       icon: FaIcon(FontAwesomeIcons.instagram),
+      tooltip: 'Instagram',
       url: 'https://www.instagram.com/m.daffailhami/',
     ),
     MySocmedIconButton(
       icon: FaIcon(FontAwesomeIcons.github),
+      tooltip: 'GitHub',
       url: 'https://github.com/mdaffailhami',
     ),
   ];
