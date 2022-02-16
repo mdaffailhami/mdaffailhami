@@ -22,7 +22,7 @@ class MyFAQ extends StatelessWidget {
           children: const [
             MyQnACard(
               question: 'Sejak kapan mulai belajar Programming?',
-              answer: '12 September 2020, pas kelas 11 & umur 16 tahun',
+              answer: '12 September 2020, kelas 11, & umur 16 tahun',
             ),
             MyQnACard(
               question: 'Anime favoritnya apa aja?',
