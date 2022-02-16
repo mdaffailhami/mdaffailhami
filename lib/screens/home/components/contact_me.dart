@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class MyContactMeForm extends StatefulWidget {
   const MyContactMeForm({Key? key}) : super(key: key);
@@ -17,6 +18,54 @@ class _MyContactMeFormState extends State<MyContactMeForm> {
   String _name = '';
   String _email = '';
   String _message = '';
+
+  bool _isSending = false;
+
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason>
+      sendMessageSuccessSnackBar() {
+    return ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        duration: const Duration(seconds: 10),
+        content: const Text(
+          'Message sent!',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Colors.green,
+        action: SnackBarAction(
+          label: 'Dismiss',
+          textColor: Theme.of(context).colorScheme.secondary,
+          onPressed: () {
+            ScaffoldMessenger.of(context).hideCurrentSnackBar();
+          },
+        ),
+      ),
+    );
+  }
+
+  ScaffoldFeatureController<SnackBar, SnackBarClosedReason>
+      sendMessageFailedSnackBar() {
+    return ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        duration: const Duration(seconds: 10),
+        content: Text(
+          'Failed to send message!',
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.onError,
+          ),
+        ),
+        backgroundColor: Theme.of(context).colorScheme.error,
+        action: SnackBarAction(
+          label: 'Dismiss',
+          textColor: Theme.of(context).colorScheme.secondary,
+          onPressed: () {
+            ScaffoldMessenger.of(context).hideCurrentSnackBar();
+          },
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,6 +125,12 @@ class _MyContactMeFormState extends State<MyContactMeForm> {
                       _message = value;
                     },
                   ),
+                  Visibility(
+                    visible: _isSending,
+                    child: LinearProgressIndicator(
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
+                  ),
                   SizedBox(
                     width: double.infinity,
                     height: 32,
@@ -94,53 +149,29 @@ class _MyContactMeFormState extends State<MyContactMeForm> {
                           'message': _message,
                         };
 
-                        try {
-                          await http.post(url, body: data);
+                        setState(() {
+                          _isSending = true;
+                        });
 
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              duration: const Duration(seconds: 10),
-                              content: const Text(
-                                'Message sent!',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
-                              backgroundColor: Colors.green,
-                              action: SnackBarAction(
-                                label: 'Dismiss',
-                                textColor:
-                                    Theme.of(context).colorScheme.secondary,
-                                onPressed: () {
-                                  ScaffoldMessenger.of(context)
-                                      .hideCurrentSnackBar();
-                                },
-                              ),
-                            ),
-                          );
+                        try {
+                          http.Response send = await http.post(url, body: data);
+                          Map responseBody = jsonDecode(send.body);
+
+                          setState(() {
+                            _isSending = false;
+                          });
+
+                          if (responseBody['status']) {
+                            sendMessageSuccessSnackBar();
+                          } else {
+                            sendMessageFailedSnackBar();
+                          }
                         } catch (e) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              duration: const Duration(seconds: 10),
-                              content: Text(
-                                'Failed to send message!',
-                                style: TextStyle(
-                                  color: Theme.of(context).colorScheme.onError,
-                                ),
-                              ),
-                              backgroundColor:
-                                  Theme.of(context).colorScheme.error,
-                              action: SnackBarAction(
-                                label: 'Dismiss',
-                                textColor:
-                                    Theme.of(context).colorScheme.secondary,
-                                onPressed: () {
-                                  ScaffoldMessenger.of(context)
-                                      .hideCurrentSnackBar();
-                                },
-                              ),
-                            ),
-                          );
+                          setState(() {
+                            _isSending = false;
+                          });
+
+                          sendMessageFailedSnackBar();
                         }
                       },
                       child: const Text('SEND'),
