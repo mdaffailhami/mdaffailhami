@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:simple_shadow/simple_shadow.dart';
 
@@ -26,7 +25,7 @@ class MySkillItem extends StatelessWidget {
             fit: BoxFit.contain,
           ),
           SizedBox(
-            width: 160,
+            width: 140,
             child: Text(
               title,
               style: Theme.of(context).textTheme.headline6,
