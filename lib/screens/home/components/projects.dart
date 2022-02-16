@@ -26,6 +26,7 @@ class MyProjects extends StatelessWidget {
               ),
               title: 'Glovikulator',
               caption: 'Aplikasi PWA Calculator',
+              url: 'https://glovikulator.netlify.app',
             ),
             MyProjectCard(
               image: NetworkImage(
@@ -33,6 +34,7 @@ class MyProjects extends StatelessWidget {
               ),
               title: 'Typing Practice',
               caption: 'Aplikasi web untuk latihan mengetik',
+              url: 'https://typing-practice.netlify.app',
             ),
           ],
         ),
