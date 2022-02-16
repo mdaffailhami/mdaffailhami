@@ -100,12 +100,23 @@ class MyAppBar extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primary,
-                            borderRadius: BorderRadius.circular(10)),
-                        child: MyNavigationButton(
-                          componentKey: MyContactMeForm.componentKey,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Scrollable.ensureVisible(
+                              MyContactMeForm.componentKey.currentContext ??
+                                  context,
+                              duration: const Duration(milliseconds: 800),
+                            );
+
+                            if (Scaffold.of(context).isDrawerOpen) {
+                              Navigator.of(context).pop();
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Theme.of(context).colorScheme.primary,
+                          ),
                           child: Text('Contact Me'),
                         ),
                       ),

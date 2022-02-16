@@ -33,7 +33,7 @@ class MyDrawer extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 40,
+                    height: 50,
                     child: MyNavigationButton(
                       componentKey: MyAboutMe.componentKey,
                       child: Align(
@@ -43,7 +43,7 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 50,
                     child: MyNavigationButton(
                       componentKey: MySkills.componentKey,
                       child: Align(
@@ -53,7 +53,7 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 50,
                     child: MyNavigationButton(
                       componentKey: MyProjects.componentKey,
                       child: Align(
@@ -63,7 +63,7 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 50,
                     child: MyNavigationButton(
                       componentKey: MyFAQ.componentKey,
                       child: Align(
@@ -76,17 +76,24 @@ class MyDrawer extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Container(
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primary,
-                            borderRadius: BorderRadius.circular(10),
+                        ElevatedButton(
+                          onPressed: () {
+                            Scrollable.ensureVisible(
+                              MyContactMeForm.componentKey.currentContext ??
+                                  context,
+                              duration: const Duration(milliseconds: 800),
+                            );
+
+                            if (Scaffold.of(context).isDrawerOpen) {
+                              Navigator.of(context).pop();
+                            }
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: Theme.of(context).colorScheme.primary,
                           ),
-                          child: MyNavigationButton(
-                            componentKey: MyContactMeForm.componentKey,
-                            child: Text('Contact Me'),
-                          ),
+                          child: Text('Contact Me'),
                         ),
                         SizedBox(height: 10),
                         Wrap(
