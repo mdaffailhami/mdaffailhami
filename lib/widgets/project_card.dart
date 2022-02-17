@@ -72,7 +72,7 @@ class MyProjectCard extends StatelessWidget {
               Expanded(
                 flex: 7,
                 child: Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -80,7 +80,7 @@ class MyProjectCard extends StatelessWidget {
                         title,
                         style: Theme.of(context).textTheme.headline5,
                       ),
-                      SizedBox(height: 4),
+                      const SizedBox(height: 4),
                       Flexible(
                         child: Text(
                           caption,

@@ -17,11 +17,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
       darkTheme: ThemeData(
-        dividerTheme: DividerThemeData(space: 26),
+        dividerTheme: const DividerThemeData(space: 26),
         textTheme:
             GoogleFonts.latoTextTheme(ThemeData.dark().textTheme).copyWith(
-          headline4: TextStyle(color: Colors.white),
-          caption: TextStyle(fontSize: 13),
+          headline4: const TextStyle(color: Colors.white),
+          caption: const TextStyle(fontSize: 13),
         ),
         colorScheme: const ColorScheme(
           primary: Color(0xff2069e0),

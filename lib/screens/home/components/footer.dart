@@ -19,13 +19,13 @@ class MyFooter extends StatelessWidget {
                 style:
                     Theme.of(context).textTheme.caption?.copyWith(fontSize: 14),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               SelectableText(
                 '| Released on February 8, 2021 |',
                 style:
                     Theme.of(context).textTheme.caption?.copyWith(fontSize: 14),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               SelectableText(
                 '--Built by Muhammad Daffa Ilhami--',
                 style:

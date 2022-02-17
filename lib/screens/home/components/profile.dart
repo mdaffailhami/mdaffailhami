@@ -26,17 +26,17 @@ class MyProfile extends StatelessWidget {
               TextSpan(
                   text: 'code',
                   style: TextStyle(
-                      color: Theme.of(context).colorScheme.secondaryVariant)),
+                      color: Theme.of(context).colorScheme.secondaryContainer)),
               const TextSpan(text: '> Programmer'),
               TextSpan(
                   text: ' | ',
                   style: TextStyle(
-                      color: Theme.of(context).colorScheme.secondaryVariant)),
+                      color: Theme.of(context).colorScheme.secondaryContainer)),
               const TextSpan(text: 'Developer </'),
               TextSpan(
                   text: 'code',
                   style: TextStyle(
-                      color: Theme.of(context).colorScheme.secondaryVariant)),
+                      color: Theme.of(context).colorScheme.secondaryContainer)),
               const TextSpan(text: '>'),
             ],
           ),

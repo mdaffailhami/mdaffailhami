@@ -44,8 +44,8 @@ class MyHomeScreen extends StatelessWidget {
                         Container(
                           decoration: BoxDecoration(
                             color: Theme.of(context).colorScheme.background,
-                            borderRadius: const BorderRadius.all(
-                                const Radius.circular(10)),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(10)),
                           ),
                           child: Padding(
                             padding: EdgeInsets.symmetric(

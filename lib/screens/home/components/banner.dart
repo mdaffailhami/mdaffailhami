@@ -16,8 +16,8 @@ class MyBanner extends StatelessWidget {
       fit: StackFit.expand,
       children: [
         Image.asset('assets/banner.jpeg', fit: BoxFit.cover),
-        SizedBox(child: ColoredBox(color: Colors.black54)),
-        Padding(
+        const SizedBox(child: ColoredBox(color: Colors.black54)),
+        const Padding(
           padding: EdgeInsets.only(top: 26),
           child: MyProfile(),
         ),

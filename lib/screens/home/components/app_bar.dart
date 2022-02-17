@@ -41,7 +41,7 @@ class MyAppBar extends StatelessWidget {
       automaticallyImplyLeading: false,
       pinned: true,
       expandedHeight: 350,
-      flexibleSpace: FlexibleSpaceBar(
+      flexibleSpace: const FlexibleSpaceBar(
         background: MyBanner(),
       ),
       title: MyResponsiveBuilder((_, isSmall, isMedium, isLarge) {
@@ -53,7 +53,7 @@ class MyAppBar extends StatelessWidget {
                 onPressed: () {
                   Scaffold.of(context).openDrawer();
                 },
-                icon: Icon(Icons.menu),
+                icon: const Icon(Icons.menu),
               ),
               Center(
                 child: MyNavigationButton(
@@ -84,19 +84,19 @@ class MyAppBar extends StatelessWidget {
                   children: [
                     MyNavigationButton(
                       componentKey: MyAboutMe.componentKey,
-                      child: Text('About Me'),
+                      child: const Text('About Me'),
                     ),
                     MyNavigationButton(
                       componentKey: MySkills.componentKey,
-                      child: Text('My Skills'),
+                      child: const Text('My Skills'),
                     ),
                     MyNavigationButton(
                       componentKey: MyProjects.componentKey,
-                      child: Text('My Projects'),
+                      child: const Text('My Projects'),
                     ),
                     MyNavigationButton(
                       componentKey: MyFAQ.componentKey,
-                      child: Text('FAQ'),
+                      child: const Text('FAQ'),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
@@ -117,7 +117,7 @@ class MyAppBar extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             primary: Theme.of(context).colorScheme.primary,
                           ),
-                          child: Text('Contact Me'),
+                          child: const Text('Contact Me'),
                         ),
                       ),
                     ),

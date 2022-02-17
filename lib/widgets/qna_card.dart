@@ -13,8 +13,8 @@ class MyQnACard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(maxWidth: 400),
-      decoration: BoxDecoration(
+      constraints: const BoxConstraints(maxWidth: 400),
+      decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
@@ -36,7 +36,7 @@ class MyQnACard extends StatelessWidget {
                     ),
                   ),
                   VerticalDivider(
-                      color: Theme.of(context).colorScheme.secondaryVariant),
+                      color: Theme.of(context).colorScheme.secondaryContainer),
                   Flexible(
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 3),
@@ -66,7 +66,7 @@ class MyQnACard extends StatelessWidget {
                     ),
                   ),
                   VerticalDivider(
-                      color: Theme.of(context).colorScheme.secondaryVariant),
+                      color: Theme.of(context).colorScheme.secondaryContainer),
                   Flexible(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 3),

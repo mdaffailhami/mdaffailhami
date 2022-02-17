@@ -16,18 +16,18 @@ class MyDrawer extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.surface,
       child: Column(
         children: [
-          SizedBox(height: 20),
-          CircleAvatar(
+          const SizedBox(height: 20),
+          const CircleAvatar(
             backgroundImage: AssetImage('assets/profile.jpg'),
             radius: 50,
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           Text(
             'Daffa Ilhami',
             style:
                 Theme.of(context).textTheme.headline5?.copyWith(fontSize: 26),
           ),
-          Divider(),
+          const Divider(),
           Expanded(
             child: GlowingOverscrollIndicator(
               axisDirection: AxisDirection.down,
@@ -39,7 +39,7 @@ class MyDrawer extends StatelessWidget {
                       height: 55,
                       child: MyNavigationButton(
                         componentKey: MyAboutMe.componentKey,
-                        child: Align(
+                        child: const Align(
                           alignment: Alignment.centerLeft,
                           child: Text('About Me'),
                         ),
@@ -49,7 +49,7 @@ class MyDrawer extends StatelessWidget {
                       height: 55,
                       child: MyNavigationButton(
                         componentKey: MySkills.componentKey,
-                        child: Align(
+                        child: const Align(
                           alignment: Alignment.centerLeft,
                           child: Text('My Skills'),
                         ),
@@ -59,7 +59,7 @@ class MyDrawer extends StatelessWidget {
                       height: 55,
                       child: MyNavigationButton(
                         componentKey: MyProjects.componentKey,
-                        child: Align(
+                        child: const Align(
                           alignment: Alignment.centerLeft,
                           child: Text('My Projects'),
                         ),
@@ -69,13 +69,13 @@ class MyDrawer extends StatelessWidget {
                       height: 55,
                       child: MyNavigationButton(
                         componentKey: MyFAQ.componentKey,
-                        child: Align(
+                        child: const Align(
                           alignment: Alignment.centerLeft,
                           child: Text('FAQ'),
                         ),
                       ),
                     ),
-                    Divider(),
+                    const Divider(),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 12),
                       child: Column(
@@ -96,9 +96,9 @@ class MyDrawer extends StatelessWidget {
                             style: ElevatedButton.styleFrom(
                               primary: Theme.of(context).colorScheme.primary,
                             ),
-                            child: Text('Contact Me'),
+                            child: const Text('Contact Me'),
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Wrap(
                             alignment: WrapAlignment.center,
                             spacing: 30,

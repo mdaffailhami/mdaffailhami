@@ -55,10 +55,10 @@ class MyAboutMe extends StatelessWidget {
                             color: Theme.of(context).colorScheme.secondary,
                           ),
                         ),
-                        TextSpan(
+                        const TextSpan(
                           text: "I'm Daffa Ilhami.\n",
                         ),
-                        TextSpan(
+                        const TextSpan(
                           text:
                               "I'm a Programmer from Barabai, Indonesia.\nI started to learn Programming since 12 September 2020, and then yeah now it's become my hobby.",
                         ),
