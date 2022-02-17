@@ -33,9 +33,55 @@
 
   <title>mdaffailhami</title>
   <link rel="manifest" href="manifest.json">
+
+  <style>
+    html,
+    body,
+    #app {
+      height: 100%;
+      background-color: #1d2022;
+    }
+
+    @-webkit-keyframes spinner-grow {
+      0% {
+        transform: scale(0);
+      }
+
+      50% {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @keyframes spinner-grow {
+      0% {
+        transform: scale(0);
+      }
+
+      50% {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .spinner-grow {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      vertical-align: text-bottom;
+      background-color: currentColor;
+      border-radius: 50%;
+      opacity: 0;
+      -webkit-animation: 0.75s linear infinite spinner-grow;
+      animation: 0.75s linear infinite spinner-grow;
+    }
+  </style>
 </head>
 
 <body>
+  <div style="height: 100vh; display: flex; justify-content: center; align-items: center">
+    <div class="spinner-grow" role="status" style="color: #ffffff; width: 80px; height: 30px"></div>
+  </div>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
