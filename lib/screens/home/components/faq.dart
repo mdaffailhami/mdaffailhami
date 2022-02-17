@@ -18,7 +18,7 @@ class MyFAQ extends StatelessWidget {
         Wrap(
           alignment: WrapAlignment.center,
           spacing: 20,
-          runSpacing: 10,
+          runSpacing: 12,
           children: const [
             MyQnACard(
               question: 'Sejak kapan mulai belajar Programming?',
