@@ -33,7 +33,7 @@ class MyDrawer extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 50,
+                    height: 55,
                     child: MyNavigationButton(
                       componentKey: MyAboutMe.componentKey,
                       child: Align(
@@ -43,7 +43,7 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 50,
+                    height: 55,
                     child: MyNavigationButton(
                       componentKey: MySkills.componentKey,
                       child: Align(
@@ -53,7 +53,7 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 50,
+                    height: 55,
                     child: MyNavigationButton(
                       componentKey: MyProjects.componentKey,
                       child: Align(
@@ -63,7 +63,7 @@ class MyDrawer extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 50,
+                    height: 55,
                     child: MyNavigationButton(
                       componentKey: MyFAQ.componentKey,
                       child: Align(
