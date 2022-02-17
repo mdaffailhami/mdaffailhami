@@ -29,83 +29,87 @@ class MyDrawer extends StatelessWidget {
           ),
           Divider(),
           Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 55,
-                    child: MyNavigationButton(
-                      componentKey: MyAboutMe.componentKey,
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text('About Me'),
+            child: GlowingOverscrollIndicator(
+              axisDirection: AxisDirection.down,
+              color: Theme.of(context).colorScheme.primaryContainer,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 55,
+                      child: MyNavigationButton(
+                        componentKey: MyAboutMe.componentKey,
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text('About Me'),
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 55,
-                    child: MyNavigationButton(
-                      componentKey: MySkills.componentKey,
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text('My Skills'),
+                    SizedBox(
+                      height: 55,
+                      child: MyNavigationButton(
+                        componentKey: MySkills.componentKey,
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text('My Skills'),
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 55,
-                    child: MyNavigationButton(
-                      componentKey: MyProjects.componentKey,
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text('My Projects'),
+                    SizedBox(
+                      height: 55,
+                      child: MyNavigationButton(
+                        componentKey: MyProjects.componentKey,
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text('My Projects'),
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 55,
-                    child: MyNavigationButton(
-                      componentKey: MyFAQ.componentKey,
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text('FAQ'),
+                    SizedBox(
+                      height: 55,
+                      child: MyNavigationButton(
+                        componentKey: MyFAQ.componentKey,
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text('FAQ'),
+                        ),
                       ),
                     ),
-                  ),
-                  Divider(),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            Scrollable.ensureVisible(
-                              MyContactMeForm.componentKey.currentContext ??
-                                  context,
-                              duration: const Duration(milliseconds: 800),
-                            );
+                    Divider(),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 12),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              Scrollable.ensureVisible(
+                                MyContactMeForm.componentKey.currentContext ??
+                                    context,
+                                duration: const Duration(milliseconds: 800),
+                              );
 
-                            if (Scaffold.of(context).isDrawerOpen) {
-                              Navigator.of(context).pop();
-                            }
-                          },
-                          style: ElevatedButton.styleFrom(
-                            primary: Theme.of(context).colorScheme.primary,
+                              if (Scaffold.of(context).isDrawerOpen) {
+                                Navigator.of(context).pop();
+                              }
+                            },
+                            style: ElevatedButton.styleFrom(
+                              primary: Theme.of(context).colorScheme.primary,
+                            ),
+                            child: Text('Contact Me'),
                           ),
-                          child: Text('Contact Me'),
-                        ),
-                        SizedBox(height: 10),
-                        Wrap(
-                          alignment: WrapAlignment.center,
-                          spacing: 30,
-                          runSpacing: 10,
-                          children: MyAboutMe.socmedIconButtons,
-                        ),
-                      ],
-                    ),
-                  )
-                ],
+                          SizedBox(height: 10),
+                          Wrap(
+                            alignment: WrapAlignment.center,
+                            spacing: 30,
+                            runSpacing: 10,
+                            children: MyAboutMe.socmedIconButtons,
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           ),

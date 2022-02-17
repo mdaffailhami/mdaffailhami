@@ -29,41 +29,45 @@ class MyHomeScreen extends StatelessWidget {
             key: scaffoldKey,
             backgroundColor: Colors.transparent,
             drawer: const MyDrawer(),
-            body: CustomScrollView(
-              physics: const AlwaysScrollableScrollPhysics(),
-              slivers: [
-                const MyAppBar(),
-                SliverToBoxAdapter(
-                  child: Column(
-                    children: [
-                      const MyAboutMe(),
-                      const MySkills(),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).colorScheme.background,
-                          borderRadius:
-                              const BorderRadius.all(const Radius.circular(10)),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 30,
-                              horizontal:
-                                  MediaQuery.of(context).size.width * 0.06),
-                          child: Wrap(
-                            runSpacing: 30,
-                            children: const [
-                              MyProjects(),
-                              MyFAQ(),
-                            ],
+            body: GlowingOverscrollIndicator(
+              axisDirection: AxisDirection.down,
+              color: Theme.of(context).colorScheme.primaryContainer,
+              child: CustomScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                slivers: [
+                  const MyAppBar(),
+                  SliverToBoxAdapter(
+                    child: Column(
+                      children: [
+                        const MyAboutMe(),
+                        const MySkills(),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).colorScheme.background,
+                            borderRadius: const BorderRadius.all(
+                                const Radius.circular(10)),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 30,
+                                horizontal:
+                                    MediaQuery.of(context).size.width * 0.06),
+                            child: Wrap(
+                              runSpacing: 30,
+                              children: const [
+                                MyProjects(),
+                                MyFAQ(),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                      const MyContactMeForm(),
-                      const MyFooter(),
-                    ],
+                        const MyContactMeForm(),
+                        const MyFooter(),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         )
