@@ -20,45 +20,51 @@ class MyHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        MyBackground(),
-        Scaffold(
-          key: scaffoldKey,
-          backgroundColor: Colors.transparent,
-          drawer: MyDrawer(),
-          body: CustomScrollView(
-            physics: AlwaysScrollableScrollPhysics(),
-            slivers: [
-              MyAppBar(),
-              SliverToBoxAdapter(
-                child: Column(
-                  children: [
-                    MyAboutMe(),
-                    MySkills(),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.background,
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 30,
-                            horizontal:
-                                MediaQuery.of(context).size.width * 0.06),
-                        child: Wrap(
-                          runSpacing: 30,
-                          children: [
-                            MyProjects(),
-                            MyFAQ(),
-                          ],
+        const MyBackground(),
+        GestureDetector(
+          onTap: () {
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          child: Scaffold(
+            key: scaffoldKey,
+            backgroundColor: Colors.transparent,
+            drawer: const MyDrawer(),
+            body: CustomScrollView(
+              physics: const AlwaysScrollableScrollPhysics(),
+              slivers: [
+                const MyAppBar(),
+                SliverToBoxAdapter(
+                  child: Column(
+                    children: [
+                      const MyAboutMe(),
+                      const MySkills(),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.background,
+                          borderRadius:
+                              const BorderRadius.all(const Radius.circular(10)),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 30,
+                              horizontal:
+                                  MediaQuery.of(context).size.width * 0.06),
+                          child: Wrap(
+                            runSpacing: 30,
+                            children: const [
+                              MyProjects(),
+                              MyFAQ(),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    MyContactMeForm(),
-                    MyFooter(),
-                  ],
+                      const MyContactMeForm(),
+                      const MyFooter(),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         )
       ],
