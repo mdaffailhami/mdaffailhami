@@ -25,27 +25,54 @@ class MyFAQ extends StatelessWidget {
               answer: '12 September 2020, kelas 11, & umur 16 tahun',
             ),
             MyQnACard(
+              question:
+                  'Saran dong channel YouTube buat belajar Programming yang gampang dipahami?',
+              answer: 'Web Programming UNPAS dan Kelas Terbuka',
+            ),
+            MyQnACard(
+              question: 'Teknologi apa yang dipake untuk membangun web ini?',
+              answer: 'Dart & Flutter 👍',
+            ),
+            MyQnACard(
+              question: 'Introvert or extrovert?',
+              answer: 'Introvert 👌',
+            ),
+            MyQnACard(
+              question: 'Hobinya ngapain?',
+              answer:
+                  'Scrolling² Quora, YouTube-an, and of course Programming 👨‍💻',
+            ),
+            MyQnACard(
               question: 'Anime favoritnya apa aja?',
               answer: 'One Piece, Dr. STONE, Mushoku Tensei, & Attack on Titan',
             ),
             MyQnACard(
-              question:
-                  'Saran dong channel YouTube buat belajar Programming yang mudah dipahami?',
-              answer: 'Web Programming UNPAS sama Kelas Terbuka',
+              question: 'Kapan One Piece tamat?',
+              answer: 'Mana saia tau, saia kan bukan Oda 🤨',
             ),
             MyQnACard(
-              question: 'Teknologi apa yang dipake untuk membangun web ini?',
-              answer: 'Flutter 👍',
+              question: 'Shanks or Mihawk?',
+              answer: 'Mihawk 🗡',
             ),
             MyQnACard(
               question:
-                  'Bisa ngehack ga? Klo bisa tolong hack-in dong ig lama ku, soalnya lupa passwordnya muehehe',
+                  'Bisa ngehack ga? Klo bisa tolong hack-in dong ig temenku, kita prank bareng muehehehh',
               answer: 'Gak..',
             ),
             MyQnACard(
               question:
                   'Klo ga bisa ngehack truss tuh kode-kode yang diketik buat apaan coba?',
               answer: 'huh? Programmer sama Hacker itu beda zz 😑',
+            ),
+            MyQnACard(
+              question:
+                  'Oh iya kamu kan anak IT, klo gitu bisa benerin kulkas ga?',
+              answer: 'huh 😑',
+            ),
+            MyQnACard(
+              question:
+                  'Lah huh apesih? Kan nak IT itu emang harus bisa gitu 🤔',
+              answer: 'Oh begituu 😌',
             ),
           ],
         ),
