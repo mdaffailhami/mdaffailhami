@@ -15,7 +15,7 @@ class MyFooter extends StatelessWidget {
           child: Column(
             children: [
               SelectableText(
-                '| Last update on March 6, 2022 |',
+                '| Last update on March 10, 2022 |',
                 style:
                     Theme.of(context).textTheme.caption?.copyWith(fontSize: 14),
               ),
