@@ -27,7 +27,13 @@ class MyFooter extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               SelectableText(
-                '--Built by Muhammad Daffa Ilhami--',
+                '~Built by Muhammad Daffa Ilhami~',
+                style:
+                    Theme.of(context).textTheme.caption?.copyWith(fontSize: 14),
+              ),
+              const SizedBox(height: 10),
+              SelectableText(
+                '--Version 2.0.2--',
                 style:
                     Theme.of(context).textTheme.caption?.copyWith(fontSize: 14),
               ),
