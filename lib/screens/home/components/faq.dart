@@ -34,25 +34,8 @@ class MyFAQ extends StatelessWidget {
               answer: 'Dart & Flutter 👍',
             ),
             MyQnACard(
-              question: 'Introvert or extrovert?',
-              answer: 'Introvert 👌',
-            ),
-            MyQnACard(
-              question: 'Hobinya ngapain?',
-              answer:
-                  'Scrolling² Quora, YouTube-an, and of course Programming 👨‍💻',
-            ),
-            MyQnACard(
-              question: 'Anime favoritnya apa aja?',
-              answer: 'One Piece, Dr. STONE, Mushoku Tensei, & Attack on Titan',
-            ),
-            MyQnACard(
               question: 'Kapan One Piece tamat?',
               answer: 'Mana saia tau, saia kan bukan Oda 🤨',
-            ),
-            MyQnACard(
-              question: 'Shanks or Mihawk?',
-              answer: 'Mihawk 🗡',
             ),
             MyQnACard(
               question:
@@ -72,7 +55,7 @@ class MyFAQ extends StatelessWidget {
             MyQnACard(
               question:
                   'Lah huh apesih? Kan nak IT itu emang harus bisa gitu 🤔',
-              answer: 'Oh begituu 😌',
+              answer: 'oOo 😌',
             ),
           ],
         ),
