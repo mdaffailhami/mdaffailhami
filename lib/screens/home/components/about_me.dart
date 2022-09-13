@@ -65,7 +65,7 @@ class MyAboutMe extends StatelessWidget {
                         ),
                         const TextSpan(
                           text:
-                              "I'm a Programmer from Barabai, Indonesia.\nI started to learn Programming since 12 September 2020, and then yeah now it's become my hobby.",
+                              "I'm a Programmer from Barabai, Indonesia.\nI started to learn Programming since 12 September 2020, and then yeah now that's become my hobby.",
                         ),
                       ],
                     ),

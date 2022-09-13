@@ -36,6 +36,12 @@ class MyProjects extends StatelessWidget {
               caption: 'Aplikasi web untuk latihan mengetik',
               url: 'https://typing-practice.netlify.app',
             ),
+            MyProjectCard(
+              image: AssetImage('mdi-blog-logo.jpg'),
+              title: 'MDI Blog',
+              caption: 'Blog yang isinya random ga jelas :v',
+              url: 'https://blog-mdaffailhami.web.app',
+            ),
           ],
         ),
       ],

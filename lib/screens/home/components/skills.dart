@@ -40,16 +40,24 @@ class MySkills extends StatelessWidget {
                   image: AssetImage('assets/flutter-logo.png'),
                 ),
                 MySkillItem(
-                  title: 'Node.js',
-                  image: AssetImage('assets/node.js-logo.png'),
+                  title: 'Python',
+                  image: AssetImage('assets/python-logo.png'),
+                ),
+                MySkillItem(
+                  title: 'Flask',
+                  image: AssetImage('assets/flask-logo.png'),
                 ),
                 MySkillItem(
                   title: 'JavaScript',
                   image: AssetImage('assets/javascript-logo.png'),
                 ),
                 MySkillItem(
-                  title: 'Python',
-                  image: AssetImage('assets/python-logo.png'),
+                  title: 'Node.js',
+                  image: AssetImage('assets/node.js-logo.png'),
+                ),
+                MySkillItem(
+                  title: 'Express',
+                  image: AssetImage('assets/express-logo.png'),
                 ),
                 MySkillItem(
                   title: 'React',
