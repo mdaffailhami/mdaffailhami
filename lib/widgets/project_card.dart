@@ -78,7 +78,7 @@ class MyProjectCard extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: Theme.of(context).textTheme.headline5,
+                        style: Theme.of(context).textTheme.headlineSmall,
                       ),
                       const SizedBox(height: 4),
                       Flexible(
@@ -86,7 +86,7 @@ class MyProjectCard extends StatelessWidget {
                           caption,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 3,
-                          style: Theme.of(context).textTheme.caption,
+                          style: Theme.of(context).textTheme.bodySmall,
                         ),
                       ),
                     ],

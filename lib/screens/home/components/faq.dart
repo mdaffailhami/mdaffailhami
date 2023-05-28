@@ -13,7 +13,7 @@ class MyFAQ extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('FAQ', style: Theme.of(context).textTheme.headline4),
+        Text('FAQ', style: Theme.of(context).textTheme.headlineMedium),
         const Divider(),
         Wrap(
           alignment: WrapAlignment.center,
@@ -36,6 +36,16 @@ class MyFAQ extends StatelessWidget {
             MyQnACard(
               question: 'Kapan One Piece tamat?',
               answer: 'Mana saia tau, saia kan bukan Oda 🤨',
+            ),
+            MyQnACard(
+              question: 'Ada main game apa ga gitu?',
+              answer:
+                  'Minecraft Bedrock Edition, biasanya klo ngga survival ya PvP di server The Hive atau Zeqa ⚔️',
+            ),
+            MyQnACard(
+              question: 'Wih menkrep, mau mabar ga?',
+              answer:
+                  'Gaskan kita mabar Sky Wars atau Treasure Wars di server The Hive 👌',
             ),
             MyQnACard(
               question:

@@ -80,7 +80,7 @@ class _MyContactMeFormState extends State<MyContactMeForm> {
         children: [
           Text(
             'Contact Me',
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
           const Divider(),
           Container(
@@ -136,7 +136,7 @@ class _MyContactMeFormState extends State<MyContactMeForm> {
                     height: 32,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Theme.of(context).colorScheme.primary,
+                        backgroundColor: Theme.of(context).colorScheme.primary,
                       ),
                       onPressed: () async {
                         final Uri url = Uri.parse(

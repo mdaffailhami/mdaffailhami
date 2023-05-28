@@ -9,8 +9,12 @@ class MyProfile extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const CircleAvatar(
-          backgroundImage: AssetImage('assets/profile.jpg'),
-          radius: 65,
+          radius: 67,
+          backgroundColor: Colors.white,
+          child: CircleAvatar(
+            backgroundImage: AssetImage('assets/profile.jpg'),
+            radius: 65,
+          ),
         ),
         const SizedBox(height: 4),
         const Text(
@@ -20,7 +24,8 @@ class MyProfile extends StatelessWidget {
         const SizedBox(height: 2),
         RichText(
           text: TextSpan(
-            style: Theme.of(context).textTheme.caption?.copyWith(fontSize: 14),
+            style:
+                Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 14),
             children: [
               const TextSpan(text: '<'),
               TextSpan(

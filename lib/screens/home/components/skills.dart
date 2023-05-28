@@ -20,7 +20,7 @@ class MySkills extends StatelessWidget {
         children: [
           Text(
             'My Skills',
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.headlineMedium,
             textAlign: TextAlign.center,
           ),
           const Divider(),

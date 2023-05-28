@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
         dividerTheme: const DividerThemeData(space: 26),
         textTheme:
             GoogleFonts.latoTextTheme(ThemeData.dark().textTheme).copyWith(
-          headline4: const TextStyle(color: Colors.white),
-          caption: const TextStyle(fontSize: 13),
+          headlineMedium: const TextStyle(color: Colors.white),
+          bodySmall: const TextStyle(fontSize: 13),
         ),
         colorScheme: const ColorScheme(
           primary: Color(0xff2069e0),

@@ -29,10 +29,11 @@ class MyQnACard extends StatelessWidget {
                     width: 20,
                     child: Text(
                       'Q',
-                      style: Theme.of(context).textTheme.headline5?.copyWith(
-                            color: Colors.blue[700],
-                            fontWeight: FontWeight.bold,
-                          ),
+                      style:
+                          Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                color: Colors.blue[700],
+                                fontWeight: FontWeight.bold,
+                              ),
                     ),
                   ),
                   VerticalDivider(
@@ -44,7 +45,7 @@ class MyQnACard extends StatelessWidget {
                         question,
                         style: Theme.of(context)
                             .textTheme
-                            .subtitle1
+                            .titleMedium
                             ?.copyWith(color: Colors.black),
                       ),
                     ),
@@ -59,10 +60,11 @@ class MyQnACard extends StatelessWidget {
                     width: 20,
                     child: Text(
                       'A',
-                      style: Theme.of(context).textTheme.headline5?.copyWith(
-                            color: Colors.red,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      style:
+                          Theme.of(context).textTheme.headlineSmall?.copyWith(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                              ),
                     ),
                   ),
                   VerticalDivider(
@@ -74,7 +76,7 @@ class MyQnACard extends StatelessWidget {
                         answer,
                         style: Theme.of(context)
                             .textTheme
-                            .subtitle1
+                            .titleMedium
                             ?.copyWith(color: Colors.black),
                       ),
                     ),

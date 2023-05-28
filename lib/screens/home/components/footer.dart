@@ -15,27 +15,35 @@ class MyFooter extends StatelessWidget {
           child: Column(
             children: [
               SelectableText(
-                '| Last update on September 13, 2022 |',
-                style:
-                    Theme.of(context).textTheme.caption?.copyWith(fontSize: 14),
+                '| Last update on May 29, 2023 |',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall
+                    ?.copyWith(fontSize: 14),
               ),
               const SizedBox(height: 5),
               SelectableText(
                 '| Released on February 8, 2021 |',
-                style:
-                    Theme.of(context).textTheme.caption?.copyWith(fontSize: 14),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall
+                    ?.copyWith(fontSize: 14),
               ),
               const SizedBox(height: 10),
               SelectableText(
                 '~Built by Muhammad Daffa Ilhami~',
-                style:
-                    Theme.of(context).textTheme.caption?.copyWith(fontSize: 14),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall
+                    ?.copyWith(fontSize: 14),
               ),
               const SizedBox(height: 10),
               SelectableText(
-                '--Version 2.0.4--',
-                style:
-                    Theme.of(context).textTheme.caption?.copyWith(fontSize: 14),
+                '--Version 2.0.5--',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall
+                    ?.copyWith(fontSize: 14),
               ),
             ],
           ),

@@ -24,8 +24,10 @@ class MyDrawer extends StatelessWidget {
           const SizedBox(height: 5),
           Text(
             'Daffa Ilhami',
-            style:
-                Theme.of(context).textTheme.headline5?.copyWith(fontSize: 26),
+            style: Theme.of(context)
+                .textTheme
+                .headlineSmall
+                ?.copyWith(fontSize: 26),
           ),
           const Divider(),
           Expanded(
@@ -94,7 +96,8 @@ class MyDrawer extends StatelessWidget {
                               }
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: Theme.of(context).colorScheme.primary,
+                              backgroundColor:
+                                  Theme.of(context).colorScheme.primary,
                             ),
                             child: const Text('Contact Me'),
                           ),

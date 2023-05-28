@@ -60,7 +60,7 @@ class MyAppBar extends StatelessWidget {
                   componentKey: MyBanner.componentKey,
                   child: Text(
                     'MDI',
-                    style: Theme.of(context).textTheme.headline5,
+                    style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 ),
               ),
@@ -74,7 +74,7 @@ class MyAppBar extends StatelessWidget {
                 componentKey: MyBanner.componentKey,
                 child: Text(
                   'MDI',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
               ),
               SizedBox(
@@ -115,7 +115,8 @@ class MyAppBar extends StatelessWidget {
                             }
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Theme.of(context).colorScheme.primary,
+                            backgroundColor:
+                                Theme.of(context).colorScheme.primary,
                           ),
                           child: const Text('Contact Me'),
                         ),

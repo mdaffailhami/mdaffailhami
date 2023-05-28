@@ -24,7 +24,7 @@ class MyNavigationButton extends StatelessWidget {
           Navigator.of(context).pop();
         }
       },
-      style: TextButton.styleFrom(primary: Colors.white),
+      style: TextButton.styleFrom(foregroundColor: Colors.white),
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: child,

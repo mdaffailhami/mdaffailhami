@@ -51,7 +51,7 @@ class MyAboutMe extends StatelessWidget {
                     text: TextSpan(
                       style: Theme.of(context)
                           .textTheme
-                          .subtitle2
+                          .titleSmall
                           ?.copyWith(fontSize: 15),
                       children: [
                         TextSpan(
@@ -61,11 +61,8 @@ class MyAboutMe extends StatelessWidget {
                           ),
                         ),
                         const TextSpan(
-                          text: "I'm Daffa Ilhami.\n",
-                        ),
-                        const TextSpan(
                           text:
-                              "I'm a Programmer from Barabai, Indonesia.\nI started to learn Programming since 12 September 2020, and then yeah now that's become my hobby.",
+                              "I'm Daffa Ilhami.\nI'm a programmer from Barabai, Indonesia.\nI started to learn programming on September 12, 2020, and now that's become my hobby.",
                         ),
                       ],
                     ),
