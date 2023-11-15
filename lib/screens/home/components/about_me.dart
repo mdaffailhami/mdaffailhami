@@ -62,7 +62,7 @@ class MyAboutMe extends StatelessWidget {
                         ),
                         const TextSpan(
                           text:
-                              "I'm Daffa Ilhami.\nI'm a programmer from Barabai, Indonesia.\nI started to learn programming on September 12, 2020, and now that's become my hobby.",
+                              "I'm Daffa Ilhami.\nI'm a programmer from Barabai, Indonesia.",
                         ),
                       ],
                     ),

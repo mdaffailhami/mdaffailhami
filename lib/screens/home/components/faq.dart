@@ -15,46 +15,48 @@ class MyFAQ extends StatelessWidget {
       children: [
         Text('FAQ', style: Theme.of(context).textTheme.headlineMedium),
         const Divider(),
-        Wrap(
+        const Wrap(
           alignment: WrapAlignment.center,
           spacing: 20,
           runSpacing: 12,
-          children: const [
+          children: [
             MyQnACard(
-              question: 'Sejak kapan mulai belajar Programming?',
-              answer: '12 September 2020, kelas 11, & umur 16 tahun',
+              question: 'Sejak kapan mulai belajar pemrograman?',
+              answer: '12 September 2020, kelas 11 MA, & umur 16 tahun',
             ),
             MyQnACard(
               question:
-                  'Saran dong channel YouTube buat belajar Programming yang gampang dipahami?',
+                  'Sarannya dong channel YouTube buat belajar pemrograman yang mudah dipahami?',
               answer: 'Web Programming UNPAS dan Kelas Terbuka',
             ),
             MyQnACard(
-              question: 'Teknologi apa yang dipake untuk membangun web ini?',
+              question: 'Teknologi apa yang dipakai untuk membangun web ini?',
               answer: 'Dart & Flutter 👍',
             ),
             MyQnACard(
-              question: 'Kapan One Piece tamat?',
-              answer: 'Mana saia tau, saia kan bukan Oda 🤨',
-            ),
-            MyQnACard(
-              question: 'Ada main game apa ga gitu?',
+              question: 'Hobinya apa aja?',
               answer:
-                  'Minecraft Bedrock Edition, biasanya klo ngga survival ya PvP di server The Hive atau Zeqa ⚔️',
-            ),
-            MyQnACard(
-              question: 'Wih menkrep, mau mabar ga?',
-              answer:
-                  'Gaskan kita mabar Sky Wars atau Treasure Wars di server The Hive 👌',
+                  'Thinking & questioning, speedcubing, learning a new thing by myself, and listening to Qur\'an recitation',
             ),
             MyQnACard(
               question:
-                  'Bisa ngehack ga? Klo bisa tolong hack-in dong ig temenku, kita prank bareng muehehehh',
+                  'Hah, suka memikirkan & mempertanyakan? Pasti tipe kepribadiannya INTP?',
+              answer:
+                  'Absolutely, I\'m an INTP. So, tiada hari tanpa memikirkan & mempertanyakan tentang segala hal di dunia ini 👌',
+            ),
+            MyQnACard(
+              question: 'Favorit manga atau anime?',
+              answer:
+                  'Oshi no Ko, One Piece, The Agel Next Door Spoils Me Rotten, & Dr. STONE',
+            ),
+            MyQnACard(
+              question:
+                  'Bisa ngehack ga? Klo bisa, tolong hack dong IG ku yang dulu, soalnya passwordnya lupa wkwkw',
               answer: 'Gak..',
             ),
             MyQnACard(
               question:
-                  'Klo ga bisa ngehack truss tuh kode-kode yang diketik buat apaan coba?',
+                  'Klo ga bisa ngehack, truss tuh kode-kode yang diketik buat apaan coba?',
               answer: 'huh? Programmer sama Hacker itu beda zz 😑',
             ),
             MyQnACard(
@@ -64,7 +66,7 @@ class MyFAQ extends StatelessWidget {
             ),
             MyQnACard(
               question:
-                  'Lah huh apesih? Kan nak IT itu emang harus bisa gitu 🤔',
+                  'Lah huh apesih? Kan anak IT itu emang harus bisa gitu 🤔',
               answer: 'oOo 😌',
             ),
           ],

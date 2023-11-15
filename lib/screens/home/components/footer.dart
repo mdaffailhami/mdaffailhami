@@ -15,7 +15,7 @@ class MyFooter extends StatelessWidget {
           child: Column(
             children: [
               SelectableText(
-                '| Last update on May 29, 2023 |',
+                '| Last update on November 16, 2023 |',
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall
@@ -39,7 +39,7 @@ class MyFooter extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               SelectableText(
-                '--Version 2.0.5--',
+                '--Version 2.0.6--',
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall
