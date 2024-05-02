@@ -52,9 +52,9 @@ class MyHomeScreen extends StatelessWidget {
                                 vertical: 30,
                                 horizontal:
                                     MediaQuery.of(context).size.width * 0.06),
-                            child: Wrap(
+                            child: const Wrap(
                               runSpacing: 30,
-                              children: const [
+                              children: [
                                 MyProjects(),
                                 MyFAQ(),
                               ],

@@ -31,8 +31,8 @@ class MyProjectCard extends StatelessWidget {
         color: Theme.of(context).colorScheme.surface,
         child: InkWell(
           onTap: () async {
-            if (await canLaunch(url)) {
-              launch(url);
+            if (await canLaunchUrl(Uri.parse(url))) {
+              launchUrl(Uri.parse(url));
             } else {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(

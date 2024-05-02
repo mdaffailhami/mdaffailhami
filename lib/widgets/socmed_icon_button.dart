@@ -20,8 +20,8 @@ class MySocmedIconButton extends StatelessWidget {
       icon: icon,
       tooltip: tooltip,
       onPressed: () async {
-        if (await canLaunch(url)) {
-          launch(url);
+        if (await canLaunchUrl(Uri.parse(url))) {
+          launchUrl(Uri.parse(url));
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(

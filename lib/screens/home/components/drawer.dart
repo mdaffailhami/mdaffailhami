@@ -102,7 +102,7 @@ class MyDrawer extends StatelessWidget {
                             child: const Text('Contact Me'),
                           ),
                           const SizedBox(height: 10),
-                          Wrap(
+                          const Wrap(
                             alignment: WrapAlignment.center,
                             spacing: 30,
                             runSpacing: 10,

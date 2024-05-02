@@ -15,11 +15,11 @@ class MyProjects extends StatelessWidget {
       children: [
         Text('My Projects', style: Theme.of(context).textTheme.headlineMedium),
         const Divider(),
-        Wrap(
+        const Wrap(
           alignment: WrapAlignment.center,
           spacing: 14,
           runSpacing: 14,
-          children: const [
+          children: [
             MyProjectCard(
               image: NetworkImage(
                 'https://raw.githubusercontent.com/mdaffailhami/glovikulator/master/assets/icons/app_icon.png',

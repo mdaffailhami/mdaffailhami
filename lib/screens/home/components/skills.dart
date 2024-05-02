@@ -26,11 +26,11 @@ class MySkills extends StatelessWidget {
           const Divider(),
           Container(
             constraints: const BoxConstraints(maxWidth: 800),
-            child: Wrap(
+            child: const Wrap(
               alignment: WrapAlignment.center,
               spacing: 20,
               runSpacing: 30,
-              children: const [
+              children: [
                 MySkillItem(
                   title: 'Dart',
                   image: AssetImage('assets/dart-logo.png'),

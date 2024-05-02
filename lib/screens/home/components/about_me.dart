@@ -69,7 +69,7 @@ class MyAboutMe extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 20),
-                  Wrap(
+                  const Wrap(
                     alignment: WrapAlignment.center,
                     spacing: 50,
                     runSpacing: 15,
