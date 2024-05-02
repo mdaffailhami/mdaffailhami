@@ -99,7 +99,10 @@ class MyDrawer extends StatelessWidget {
                               backgroundColor:
                                   Theme.of(context).colorScheme.primary,
                             ),
-                            child: const Text('Contact Me'),
+                            child: const Text(
+                              'Contact Me',
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ),
                           const SizedBox(height: 10),
                           const Wrap(

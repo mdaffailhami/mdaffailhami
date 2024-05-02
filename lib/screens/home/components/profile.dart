@@ -37,7 +37,7 @@ class MyProfile extends StatelessWidget {
                   text: ' | ',
                   style: TextStyle(
                       color: Theme.of(context).colorScheme.secondaryContainer)),
-              const TextSpan(text: 'Developer </'),
+              const TextSpan(text: 'Speedcuber </'),
               TextSpan(
                   text: 'code',
                   style: TextStyle(

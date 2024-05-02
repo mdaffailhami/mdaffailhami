@@ -47,7 +47,7 @@ class MyFAQ extends StatelessWidget {
             MyQnACard(
               question: 'Favorit manga atau anime?',
               answer:
-                  'Oshi no Ko, One Piece, The Agel Next Door Spoils Me Rotten, & Dr. STONE',
+                  'Frieren: Beyond Journey\'s End, Solo Leveling, Oshi no Ko, One Piece, The Agel Next Door Spoils Me Rotten, & Dr. STONE',
             ),
             MyQnACard(
               question:

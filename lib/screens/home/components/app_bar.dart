@@ -118,7 +118,10 @@ class MyAppBar extends StatelessWidget {
                             backgroundColor:
                                 Theme.of(context).colorScheme.primary,
                           ),
-                          child: const Text('Contact Me'),
+                          child: const Text(
+                            'Contact Me',
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ),
                     ),

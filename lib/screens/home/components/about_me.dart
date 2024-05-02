@@ -62,7 +62,7 @@ class MyAboutMe extends StatelessWidget {
                         ),
                         const TextSpan(
                           text:
-                              "I'm Daffa Ilhami.\nI'm a programmer from Barabai, Indonesia.",
+                              "I'm Daffa Ilhami.\nI'm from South Kalimantan, Indonesia.\nAs an INTP, of course I like thinking & pondering everytime.\nI'm a deep thinker, speedcuber, programmer, & muslim who follow the way of Salaf.",
                         ),
                       ],
                     ),
