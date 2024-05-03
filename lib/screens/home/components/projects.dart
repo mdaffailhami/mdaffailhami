@@ -25,7 +25,7 @@ class MyProjects extends StatelessWidget {
                 'https://raw.githubusercontent.com/mdaffailhami/glovikulator/master/assets/icons/app_icon.png',
               ),
               title: 'Glovikulator',
-              caption: 'Aplikasi PWA Calculator',
+              caption: 'PWA Calculator app',
               url: 'https://glovikulator.netlify.app',
             ),
             MyProjectCard(
@@ -33,7 +33,7 @@ class MyProjects extends StatelessWidget {
                 'https://raw.githubusercontent.com/mdaffailhami/mdi-todo/main/assets/mdi-todo-logo-white-bg.png',
               ),
               title: 'MDI Todo',
-              caption: 'Aplikasi Todo List untuk Android',
+              caption: 'Todo List mobile app',
               url: 'https://github.com/mdaffailhami/mdi-todo',
             ),
             MyProjectCard(
@@ -41,7 +41,7 @@ class MyProjects extends StatelessWidget {
                 'https://raw.githubusercontent.com/mdaffailhami/typing-practice/master/favicon.png',
               ),
               title: 'Typing Practice',
-              caption: 'Aplikasi web untuk latihan mengetik',
+              caption: 'Web app to practice your typing skill',
               url: 'https://typing-practice.netlify.app',
             ),
             MyProjectCard(
@@ -49,13 +49,21 @@ class MyProjects extends StatelessWidget {
                 'https://raw.githubusercontent.com/mdaffailhami/marketku/main/assets/marketku-logo-white-bg.png',
               ),
               title: 'MarketKu',
-              caption: 'Aplikasi Toko Online untuk Android',
+              caption: 'Online marketplace mobile app',
               url: 'https://github.com/mdaffailhami/marketku',
+            ),
+            MyProjectCard(
+              image: NetworkImage(
+                'https://raw.githubusercontent.com/mdaffailhami/nasi_igut_han/main/assets/profile.png',
+              ),
+              title: 'Nasi Igut Han',
+              caption: 'Web information system of a rice ball business',
+              url: 'https://github.com/mdaffailhami/nasi_igut_han',
             ),
             MyProjectCard(
               image: AssetImage('assets/mdi-blog-logo.jpg'),
               title: 'MDI Blog',
-              caption: 'Blog yang isinya random ga jelas :v',
+              caption: 'A random blog that I made when I was bored lol',
               url: 'https://blog-mdaffailhami.web.app',
             ),
           ],

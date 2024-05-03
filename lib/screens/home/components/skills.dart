@@ -56,7 +56,7 @@ class MySkills extends StatelessWidget {
                   image: AssetImage('assets/node.js-logo.png'),
                 ),
                 MySkillItem(
-                  title: 'Express',
+                  title: 'Express.js',
                   image: AssetImage('assets/express-logo.png'),
                 ),
                 MySkillItem(
@@ -70,6 +70,22 @@ class MySkills extends StatelessWidget {
                 MySkillItem(
                   title: 'Bootstrap',
                   image: AssetImage('assets/bootstrap-logo.png'),
+                ),
+                MySkillItem(
+                  title: 'GitHub',
+                  image: AssetImage('assets/github-logo.png'),
+                ),
+                MySkillItem(
+                  title: 'Figma',
+                  image: AssetImage('assets/figma-logo.png'),
+                ),
+                MySkillItem(
+                  title: 'MongoDB',
+                  image: AssetImage('assets/mongodb-logo.png'),
+                ),
+                MySkillItem(
+                  title: 'Firebase',
+                  image: AssetImage('assets/firebase-logo.png'),
                 ),
               ],
             ),

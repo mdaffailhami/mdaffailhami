@@ -12,6 +12,11 @@ class MyAboutMe extends StatelessWidget {
 
   static const List<MySocmedIconButton> socmedIconButtons = [
     MySocmedIconButton(
+      icon: FaIcon(FontAwesomeIcons.linkedin),
+      tooltip: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/mdaffailhami/',
+    ),
+    MySocmedIconButton(
       icon: FaIcon(FontAwesomeIcons.github),
       tooltip: 'GitHub',
       url: 'https://github.com/mdaffailhami',
@@ -20,11 +25,6 @@ class MyAboutMe extends StatelessWidget {
       icon: FaIcon(FontAwesomeIcons.instagram),
       tooltip: 'Instagram',
       url: 'https://www.instagram.com/m.daffailhami/',
-    ),
-    MySocmedIconButton(
-      icon: FaIcon(FontAwesomeIcons.quora),
-      tooltip: 'Quora',
-      url: 'https://id.quora.com/profile/Daffa-Ilhami',
     ),
   ];
 
@@ -62,7 +62,7 @@ class MyAboutMe extends StatelessWidget {
                         ),
                         const TextSpan(
                           text:
-                              "I'm Daffa Ilhami.\nI'm from South Kalimantan, Indonesia.\nAs an INTP, of course I like thinking & pondering everytime.\nI'm a deep thinker, speedcuber, programmer, & muslim who follow the way of Salaf.",
+                              "I'm Daffa Ilhami.\nI'm from South Kalimantan, Indonesia.\nAs an INTP, of course I like thinking & pondering all the time.\nI'm a deep thinker, programmer, speedcuber, and also a Muslim who follows the way of Salaf.",
                         ),
                       ],
                     ),

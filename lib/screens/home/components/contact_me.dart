@@ -174,7 +174,10 @@ class _MyContactMeFormState extends State<MyContactMeForm> {
                           sendMessageFailedSnackBar();
                         }
                       },
-                      child: const Text('SEND'),
+                      child: const Text(
+                        'SEND',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   )
                 ],
