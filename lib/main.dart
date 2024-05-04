@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
           bodySmall: const TextStyle(fontSize: 13),
         ),
         colorScheme: const ColorScheme(
-          primary: Color(0xff2069e0),
+          primary: Color.fromARGB(255, 13, 90, 214),
           primaryContainer: Color(0xff082c6c),
           secondary: Color(0xfff4d47c),
           secondaryContainer: Color(0xffcba33e),

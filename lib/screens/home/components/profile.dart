@@ -9,11 +9,11 @@ class MyProfile extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const CircleAvatar(
-          radius: 67,
+          radius: 74,
           backgroundColor: Colors.white,
           child: CircleAvatar(
             backgroundImage: AssetImage('assets/profile.png'),
-            radius: 65,
+            radius: 72,
           ),
         ),
         const SizedBox(height: 4),

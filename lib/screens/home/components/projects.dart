@@ -13,7 +13,7 @@ class MyProjects extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('My Projects', style: Theme.of(context).textTheme.headlineMedium),
+        Text('My Projects', style: Theme.of(context).textTheme.headlineLarge),
         const Divider(),
         const Wrap(
           alignment: WrapAlignment.center,

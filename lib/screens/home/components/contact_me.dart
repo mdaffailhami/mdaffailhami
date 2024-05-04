@@ -80,7 +80,7 @@ class _MyContactMeFormState extends State<MyContactMeForm> {
         children: [
           Text(
             'Contact Me',
-            style: Theme.of(context).textTheme.headlineMedium,
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
           const Divider(),
           Container(
@@ -139,11 +139,15 @@ class _MyContactMeFormState extends State<MyContactMeForm> {
                         backgroundColor: Theme.of(context).colorScheme.primary,
                       ),
                       onPressed: () async {
+                        const accessKey =
+                            'c95eefba-3246-43b9-8f02-87afe5cb48c9';
+
                         final Uri url = Uri.parse(
-                          'https://mdaffailhami.herokuapp.com/api/contact-me',
+                          'https://api.web3forms.com/submit',
                         );
 
                         final Map data = {
+                          'access_key': accessKey,
                           'name': _name,
                           'email': _email,
                           'message': _message,
@@ -154,14 +158,18 @@ class _MyContactMeFormState extends State<MyContactMeForm> {
                         });
 
                         try {
-                          http.Response send = await http.post(url, body: data);
+                          http.Response send = await http.post(
+                            url,
+                            headers: {'content-type': 'application/json'},
+                            body: jsonEncode(data),
+                          );
                           Map responseBody = jsonDecode(send.body);
 
                           setState(() {
                             _isSending = false;
                           });
 
-                          if (responseBody['status']) {
+                          if (responseBody['success']) {
                             sendMessageSuccessSnackBar();
                           } else {
                             sendMessageFailedSnackBar();

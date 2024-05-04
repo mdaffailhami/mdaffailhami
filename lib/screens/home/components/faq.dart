@@ -13,7 +13,7 @@ class MyFAQ extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('FAQ', style: Theme.of(context).textTheme.headlineMedium),
+        Text('FAQ', style: Theme.of(context).textTheme.headlineLarge),
         const Divider(),
         const Wrap(
           alignment: WrapAlignment.center,
