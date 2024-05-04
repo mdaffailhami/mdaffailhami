@@ -39,7 +39,7 @@ class MyFooter extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               SelectableText(
-                '--Version 2.0.6--',
+                '--Version 2.1.0--',
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall
