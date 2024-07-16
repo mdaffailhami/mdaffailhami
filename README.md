@@ -1,8 +1,8 @@
 ![](https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif)
 
  **```INTP | Deep Thinker | Programmer | Speedcuber```**
-<br><br>
-Hello, I'm **Daffa Ilhami** 👋
+
+## Hello, I'm **Daffa Ilhami** 👋
 
 I'm a passionate **programmer** from South Kalimantan, Indonesia.
 
