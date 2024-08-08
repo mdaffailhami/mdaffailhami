@@ -31,7 +31,7 @@ class MyHomeScreen extends StatelessWidget {
             drawer: const MyDrawer(),
             body: GlowingOverscrollIndicator(
               axisDirection: AxisDirection.down,
-              color: Theme.of(context).colorScheme.primaryContainer,
+              color: Theme.of(context).colorScheme.outline,
               child: CustomScrollView(
                 physics: const AlwaysScrollableScrollPhysics(),
                 slivers: [
