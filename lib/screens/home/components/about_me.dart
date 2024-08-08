@@ -30,10 +30,6 @@ class MyAboutMe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final highlightTextStyle = TextStyle(
-      color: Theme.of(context).colorScheme.secondary,
-    );
-
     return ClipRRect(
       borderRadius: const BorderRadius.only(
         bottomLeft: Radius.circular(10),
@@ -61,52 +57,13 @@ class MyAboutMe extends StatelessWidget {
                         const TextSpan(text: "Hello, I'm "),
                         TextSpan(
                           text: "Daffa Ilhami",
-                          style: highlightTextStyle,
-                        ),
-                        const TextSpan(text: ",\na "),
-                        TextSpan(
-                          text: "passionate programmer",
-                          style: highlightTextStyle,
-                        ),
-                        const TextSpan(text: " from "),
-                        TextSpan(
-                          text: "Indonesia",
-                          style: highlightTextStyle,
-                        ),
-                        const TextSpan(text: ".\nAs an "),
-                        TextSpan(
-                          text: "INTP",
-                          style: highlightTextStyle,
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
                         ),
                         const TextSpan(
-                          text: " of course I like ",
-                        ),
-                        TextSpan(
-                          text: "thinking",
-                          style: highlightTextStyle,
-                        ),
-                        const TextSpan(text: " and "),
-                        TextSpan(
-                          text: "pondering",
-                          style: highlightTextStyle,
-                        ),
-                        const TextSpan(text: " all the time.\n"),
-                        const TextSpan(text: "I'm a "),
-                        TextSpan(
-                          text: "deep thinker",
-                          style: highlightTextStyle,
-                        ),
-                        const TextSpan(text: ", a "),
-                        TextSpan(
-                          text: "programmer",
-                          style: highlightTextStyle,
-                        ),
-                        const TextSpan(text: ", and a "),
-                        TextSpan(
-                          text: "speedcuber",
-                          style: highlightTextStyle,
-                        ),
-                        const TextSpan(text: "."),
+                            text:
+                                ",\na passionate programmer from Indonesia.\nAs an INTP, of course I like thinking and pondering all the time.\nI'm a deep thinker, a programmer, and a speedcuber."),
                       ],
                     ),
                     textAlign: TextAlign.center,
