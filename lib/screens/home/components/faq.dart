@@ -31,13 +31,13 @@ class MyFAQ extends StatelessWidget {
             ),
             MyQnACard(
               question:
-                  "Is it true that you're currently speedrunning Data Science?",
+                  "Is it true that you're currently speedrunning data science?",
               answer:
                   "Yes, it is. I just started the journey on July 9, 2024, and the reason is simply because right now I'm interested in it.",
             ),
             MyQnACard(
               question:
-                  "How's the progress? Your Data Science speedrun journey.",
+                  "How's the progress? Your data science speedrun journey.",
               answer:
                   "Well, it's pretty good. I've learned some math, statistics, NumPy, Pandas, Plotly, data cleaning, PostgreSQL, etc.",
             ),
