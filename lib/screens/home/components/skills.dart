@@ -33,63 +33,63 @@ class MySkills extends StatelessWidget {
               children: [
                 MySkillItem(
                   title: 'Python',
-                  image: AssetImage('assets/python-logo.png'),
+                  image: AssetImage('assets/skill_logos/python-logo.png'),
                 ),
                 MySkillItem(
                   title: 'NumPy',
-                  image: AssetImage('assets/numpy-logo.png'),
+                  image: AssetImage('assets/skill_logos/numpy-logo.png'),
                 ),
                 MySkillItem(
                   title: 'Pandas',
-                  image: AssetImage('assets/pandas-logo.png'),
+                  image: AssetImage('assets/skill_logos/pandas-logo.png'),
                 ),
                 MySkillItem(
                   title: 'Plotly',
-                  image: AssetImage('assets/plotly-logo.png'),
+                  image: AssetImage('assets/skill_logos/plotly-logo.png'),
                 ),
                 MySkillItem(
                   title: 'FastAPI',
-                  image: AssetImage('assets/fastapi-logo.png'),
+                  image: AssetImage('assets/skill_logos/fastapi-logo.png'),
                 ),
                 MySkillItem(
                   title: 'Dart',
-                  image: AssetImage('assets/dart-logo.png'),
+                  image: AssetImage('assets/skill_logos/dart-logo.png'),
                 ),
                 MySkillItem(
                   title: 'Flutter',
-                  image: AssetImage('assets/flutter-logo.png'),
+                  image: AssetImage('assets/skill_logos/flutter-logo.png'),
                 ),
                 MySkillItem(
                   title: 'Linux',
-                  image: AssetImage('assets/linux-logo.png'),
+                  image: AssetImage('assets/skill_logos/linux-logo.png'),
                 ),
                 MySkillItem(
                   title: 'Node.js',
-                  image: AssetImage('assets/nodejs-logo.png'),
+                  image: AssetImage('assets/skill_logos/nodejs-logo.png'),
                 ),
                 MySkillItem(
                   title: 'React',
-                  image: AssetImage('assets/react-logo.png'),
+                  image: AssetImage('assets/skill_logos/react-logo.png'),
                 ),
                 MySkillItem(
                   title: 'GitHub',
-                  image: AssetImage('assets/github-logo.png'),
+                  image: AssetImage('assets/skill_logos/github-logo.png'),
                 ),
                 MySkillItem(
                   title: 'Figma',
-                  image: AssetImage('assets/figma-logo.png'),
+                  image: AssetImage('assets/skill_logos/figma-logo.png'),
                 ),
                 MySkillItem(
                   title: 'PostgreSQL',
-                  image: AssetImage('assets/postgresql-logo.png'),
+                  image: AssetImage('assets/skill_logos/postgresql-logo.png'),
                 ),
                 MySkillItem(
                   title: 'MongoDB',
-                  image: AssetImage('assets/mongodb-logo.png'),
+                  image: AssetImage('assets/skill_logos/mongodb-logo.png'),
                 ),
                 MySkillItem(
                   title: 'Firebase',
-                  image: AssetImage('assets/firebase-logo.png'),
+                  image: AssetImage('assets/skill_logos/firebase-logo.png'),
                 ),
               ],
             ),
