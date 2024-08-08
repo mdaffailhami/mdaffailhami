@@ -21,51 +21,97 @@ class MyProjects extends StatelessWidget {
           runSpacing: 14,
           children: [
             MyProjectCard(
-              image: NetworkImage(
-                'https://raw.githubusercontent.com/mdaffailhami/glovikulator/master/assets/icons/app_icon.png',
+              image: AssetImage(
+                'assets/project_logos/data-science-speedrun-journey-logo.png',
               ),
-              title: 'Glovikulator',
-              caption: 'PWA Calculator app',
-              url: 'https://glovikulator.netlify.app',
+              title: 'Data Science Speedrun',
+              caption:
+                  "A repository contains notebooks and projects related to my data science speedrun journey.",
+              url:
+                  'https://github.com/mdaffailhami/data_science_speedrun_journey',
             ),
             MyProjectCard(
-              image: NetworkImage(
-                'https://raw.githubusercontent.com/mdaffailhami/mdi-todo/main/assets/mdi-todo-logo-white-bg.png',
+              image: AssetImage(
+                'assets/project_logos/customer-data-analysis-logo.png',
               ),
-              title: 'MDI Todo',
-              caption: 'Todo List mobile app',
-              url: 'https://github.com/mdaffailhami/mdi-todo',
+              title: 'Customer Analysis',
+              caption:
+                  "Data cleaning and data analysis on customer data to gain insights into customer profiles and contact preferences.",
+              url: 'https://github.com/mdaffailhami/customer-data-analysis/',
             ),
             MyProjectCard(
-              image: NetworkImage(
-                'https://raw.githubusercontent.com/mdaffailhami/typing-practice/master/favicon.png',
+              image: AssetImage(
+                'assets/project_logos/king-county-homesales-analysis-logo.png',
               ),
-              title: 'Typing Practice',
-              caption: 'Web app to practice your typing skill',
-              url: 'https://typing-practice.netlify.app',
+              title: 'Homesales Analysis',
+              caption:
+                  "Data analysis on home sales data in King County, United States, featuring geospatial mapping to visualize trends and factors influencing housing prices.",
+              url:
+                  'https://github.com/mdaffailhami/king_county_home_sales_analysis',
             ),
             MyProjectCard(
-              image: NetworkImage(
-                'https://raw.githubusercontent.com/mdaffailhami/marketku/main/assets/marketku-logo-white-bg.png',
+              image: AssetImage(
+                'assets/project_logos/gasku-logo.png',
+              ),
+              title: 'GasKu',
+              caption:
+                  'GasKu is an innovative application designed to streamline and secure the distribution of 3 kg subsidized LPG gas in Indonesia.',
+              url: 'https://github.com/mdaffailhami/gasku',
+            ),
+            MyProjectCard(
+              image: AssetImage(
+                'assets/project_logos/marketku-logo.png',
               ),
               title: 'MarketKu',
-              caption: 'Online marketplace mobile app',
+              caption:
+                  'MarketKu is a products and services e-commerce application designed to provide convenient shopping experience.',
               url: 'https://github.com/mdaffailhami/marketku',
             ),
             MyProjectCard(
-              image: NetworkImage(
-                'https://raw.githubusercontent.com/mdaffailhami/nasi_igut_han/main/assets/profile.png',
+              image: AssetImage(
+                'assets/project_logos/mdi-todo-logo.png',
+              ),
+              title: 'MDI Todo',
+              caption:
+                  "MDI Todo is a to-do list application designed to help you stay organized and on top of your tasks.",
+              url: 'https://github.com/mdaffailhami/mdi-todo',
+            ),
+            MyProjectCard(
+              image: AssetImage(
+                'assets/project_logos/nasi-igut-han-logo.jpg',
               ),
               title: 'Nasi Igut Han',
-              caption: 'Web information system of a rice ball business',
+              caption:
+                  'Nasi Igut Han is web application designed as an information system for the Nasi Igut Han rice ball business.',
               url: 'https://github.com/mdaffailhami/nasi_igut_han',
             ),
             MyProjectCard(
-              image: AssetImage('assets/mdi-blog-logo.jpg'),
-              title: 'MDI Blog',
-              caption: 'A random blog that I made when I was bored lol',
-              url: 'https://blog-mdaffailhami.web.app',
+              image: AssetImage(
+                'assets/project_logos/glovikulator-logo.jpg',
+              ),
+              title: 'Glovikulator',
+              caption:
+                  'Glovikulator is a user-friendly calculator app. This is also my first app that I built and released using Flutter.',
+              url: 'https://github.com/mdaffailhami/glovikulator',
             ),
+            MyProjectCard(
+              image: AssetImage(
+                'assets/project_logos/typing-practice-logo.png',
+              ),
+              title: 'Typing Practice',
+              caption:
+                  'Typing Practice is a web application designed to help users improve their typing skills through interactive exercises.',
+              url: 'https://github.com/mdaffailhami/typing-practice',
+            ),
+            // MyProjectCard(
+            //   image: AssetImage(
+            //     'assets/project_logos/mdi-blog-logo.png',
+            //   ),
+            //   title: 'MDI Blog',
+            //   caption:
+            //       'MDI Blog is a web application that I created when I was studying CRUD. It does work, although the contents are so random.',
+            //   url: 'https://blog-mdaffailhami.web.app',
+            // ),
           ],
         ),
       ],

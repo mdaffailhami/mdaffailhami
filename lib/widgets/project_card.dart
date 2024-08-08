@@ -22,7 +22,7 @@ class MyProjectCard extends StatelessWidget {
       width: 280,
       height: 300,
       child: Card(
-        elevation: 3,
+        elevation: 1.5,
         shadowColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
@@ -59,9 +59,9 @@ class MyProjectCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Expanded(
-                flex: 13,
+                flex: 58,
                 child: ColoredBox(
-                  color: Theme.of(context).colorScheme.background,
+                  color: Colors.white,
                   child: Image(
                     image: image,
                     width: double.infinity,
@@ -70,7 +70,7 @@ class MyProjectCard extends StatelessWidget {
                 ),
               ),
               Expanded(
-                flex: 7,
+                flex: 42,
                 child: Padding(
                   padding: const EdgeInsets.all(10),
                   child: Column(
@@ -78,14 +78,17 @@ class MyProjectCard extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: Theme.of(context).textTheme.headlineSmall,
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineSmall!
+                            .copyWith(height: 0),
                       ),
                       const SizedBox(height: 4),
                       Flexible(
                         child: Text(
-                          caption,
+                          '    ' + caption,
                           overflow: TextOverflow.ellipsis,
-                          maxLines: 3,
+                          maxLines: 4,
                           style: Theme.of(context).textTheme.bodySmall,
                         ),
                       ),
