@@ -64,8 +64,8 @@ class MySkills extends StatelessWidget {
                   image: AssetImage('assets/linux-logo.png'),
                 ),
                 MySkillItem(
-                  title: 'JavaScript',
-                  image: AssetImage('assets/javascript-logo.png'),
+                  title: 'Node.js',
+                  image: AssetImage('assets/nodejs-logo.png'),
                 ),
                 MySkillItem(
                   title: 'React',
