@@ -19,6 +19,7 @@ class MySocmedIconButton extends StatelessWidget {
     return IconButton(
       icon: icon,
       tooltip: tooltip,
+      iconSize: 27,
       onPressed: () async {
         if (await canLaunchUrl(Uri.parse(url))) {
           launchUrl(Uri.parse(url));
