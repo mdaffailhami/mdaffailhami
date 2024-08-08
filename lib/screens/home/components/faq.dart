@@ -21,31 +21,35 @@ class MyFAQ extends StatelessWidget {
           runSpacing: 12,
           children: [
             MyQnACard(
-              question: 'When did you start learning programming?',
-              answer:
-                  'I started learning programming when I was 16 y/o (September 12, 2020)',
-            ),
-            MyQnACard(
               question: 'How do you learn programming?',
-              answer: "I learn it by myself, since I'm a self-learning master.",
+              answer:
+                  "I learn it by myself, since I'm a self-learning master :)",
             ),
             MyQnACard(
-              question: "How fast can you solve a Rubik's Cube?",
-              answer: "Currently, I'm averaging below 15 seconds",
+              question: 'When did you start learning programming?',
+              answer: 'I started learning programming on September 12, 2020.',
             ),
             MyQnACard(
-              question: 'Are you an INTP by any chance?',
-              answer: 'Yes, I am',
+              question:
+                  "Is it true that you're currently speedrunning Data Science?",
+              answer:
+                  "Yes, it is. I just started the journey on July 9, 2024, and the reason is simply because right now I'm interested in it.",
+            ),
+            MyQnACard(
+              question:
+                  "How's the progress? Your Data Science speedrun journey.",
+              answer:
+                  "Well, it's pretty good. I've learned some math, statistics, NumPy, Pandas, Plotly, data cleaning, PostgreSQL, etc.",
             ),
             MyQnACard(
               question: 'What are your hobbies?',
               answer:
-                  "Thinking, pondering, cubing, programming, learning a new thing by myself, and listening to Qur'an recitation",
+                  "Thinking, pondering, self-learning, programming, cubing, and listening to Qur'an recitations.",
             ),
             MyQnACard(
-              question: 'Favorit mangas or animes?',
+              question: "How fast can you solve a Rubik's Cube?",
               answer:
-                  "Frieren: Beyond Journey's End, Solo Leveling, Oshi no Ko, One Piece, Dr. STONE, & The Agel Next Door Spoils Me Rotten",
+                  "My main cube is the X-Man Tornado V3 Pioneer UV, and currently I'm averaging below 15 seconds.",
             ),
           ],
         ),
