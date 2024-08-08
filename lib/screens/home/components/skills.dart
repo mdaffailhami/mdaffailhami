@@ -32,6 +32,26 @@ class MySkills extends StatelessWidget {
               runSpacing: 30,
               children: [
                 MySkillItem(
+                  title: 'Python',
+                  image: AssetImage('assets/python-logo.png'),
+                ),
+                MySkillItem(
+                  title: 'NumPy',
+                  image: AssetImage('assets/numpy-logo.png'),
+                ),
+                MySkillItem(
+                  title: 'Pandas',
+                  image: AssetImage('assets/pandas-logo.png'),
+                ),
+                MySkillItem(
+                  title: 'Plotly',
+                  image: AssetImage('assets/plotly-logo.png'),
+                ),
+                MySkillItem(
+                  title: 'FastAPI',
+                  image: AssetImage('assets/fastapi-logo.png'),
+                ),
+                MySkillItem(
                   title: 'Dart',
                   image: AssetImage('assets/dart-logo.png'),
                 ),
@@ -40,36 +60,16 @@ class MySkills extends StatelessWidget {
                   image: AssetImage('assets/flutter-logo.png'),
                 ),
                 MySkillItem(
-                  title: 'Python',
-                  image: AssetImage('assets/python-logo.png'),
-                ),
-                MySkillItem(
-                  title: 'Flask',
-                  image: AssetImage('assets/flask-logo.png'),
+                  title: 'Linux',
+                  image: AssetImage('assets/linux-logo.png'),
                 ),
                 MySkillItem(
                   title: 'JavaScript',
                   image: AssetImage('assets/javascript-logo.png'),
                 ),
                 MySkillItem(
-                  title: 'Node.js',
-                  image: AssetImage('assets/node.js-logo.png'),
-                ),
-                MySkillItem(
-                  title: 'Express.js',
-                  image: AssetImage('assets/express-logo.png'),
-                ),
-                MySkillItem(
                   title: 'React',
                   image: AssetImage('assets/react-logo.png'),
-                ),
-                MySkillItem(
-                  title: 'Roblox Studio',
-                  image: AssetImage('assets/roblox-studio-logo.png'),
-                ),
-                MySkillItem(
-                  title: 'Bootstrap',
-                  image: AssetImage('assets/bootstrap-logo.png'),
                 ),
                 MySkillItem(
                   title: 'GitHub',
@@ -78,6 +78,10 @@ class MySkills extends StatelessWidget {
                 MySkillItem(
                   title: 'Figma',
                   image: AssetImage('assets/figma-logo.png'),
+                ),
+                MySkillItem(
+                  title: 'PostgreSQL',
+                  image: AssetImage('assets/postgresql-logo.png'),
                 ),
                 MySkillItem(
                   title: 'MongoDB',
