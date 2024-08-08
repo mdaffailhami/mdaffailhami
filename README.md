@@ -4,13 +4,15 @@
 
 ## Hello, I'm **Daffa Ilhami** 👋
 
-I'm a passionate **programmer** from South Kalimantan, Indonesia.
+I'm a **passionate programmer** from South Kalimantan, **Indonesia**.
 
-As an **INTP**, of course I like thinking & pondering all the time.
+As an **INTP**, of course I like thinking and pondering all the time.
 
-I'm a **deep thinker**, **programmer**, **speedcuber**, and a **muslim** who follows the way of **salaf**.
+I'm a **deep thinker**, a **programmer**, and a **speedcuber**.
 
-Currently, I'm on my journey of speedrunning **data science**
+Currently, I'm on my journey of speedrunning **data science**.
+
+<br>
 
 <a href="https://mdaffailhami.github.io">
   <picture>
@@ -26,6 +28,13 @@ Currently, I'm on my journey of speedrunning **data science**
   </picture>
 </a> &nbsp;&nbsp;&nbsp;&nbsp;
 
+<a href="https://kaggle.com/mdaffailhami">
+  <picture>
+   <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/bc881a53-8417-4f96-beab-5d90e89b1c77">
+   <img alt="Kaggle" src="https://github.com/user-attachments/assets/7cd3594f-a963-43b3-9ef4-2a0bc8b1312d">
+  </picture>
+</a> &nbsp;&nbsp;&nbsp;&nbsp;
+
 <a href="https://instagram.com/m.daffailhami">
   <picture>
    <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/dba875f6-a9e3-4ec1-8352-cd7fbf6a2dba">
@@ -34,5 +43,3 @@ Currently, I'm on my journey of speedrunning **data science**
 </a>
 
 ![](https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif)
-
-<a href="https://flaticon.com/authors/freepik" title="icons">```Icons by Freepik - Flaticon```</a>
