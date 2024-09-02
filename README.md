@@ -1,16 +1,14 @@
 ![](https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif)
 
- **```INTP | Deep Thinker | Programmer | Speedcuber```**
+**```Programmer | Speedcuber | Software Engineer | Data Scientist (Soon)```**
 
-## Hello, I'm **Daffa Ilhami** 👋
+## Hi, I'm Daffa Ilhami 👋
 
-I'm a **passionate programmer** from South Kalimantan, **Indonesia**.
+I’m a passionate **programmer**, **speedcuber**, and **software engineer** from **Indonesia**. I thrive on **thinking** and **pondering** new ideas, always seeking to **challenge** myself and **grow**.
 
-As an **INTP**, of course I like thinking and pondering all the time.
+Currently, I’m **embarking** on an exciting journey to become a **data scientist**, leveraging my **self-taught** skills and **experience** to dive deep into the field of **data science** 📖🔭.
 
-I'm a **deep thinker**, a **programmer**, and a **speedcuber**.
-
-Currently, I'm on my journey of speedrunning **data science**.
+**My journey** is driven by **self-learning**, **deep curiosity**, and a **commitment** to continuous **personal growth**. I’ve taught myself a variety of **skills**, and each day presents a new opportunity to **explore**, **innovate**, and **push the boundaries** of what I know. I am always **eager** to tackle new **challenges** and explore new **technologies**.
 
 <br>
 
