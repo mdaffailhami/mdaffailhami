@@ -12,18 +12,23 @@ class MyAboutMe extends StatelessWidget {
 
   static const List<MySocmedIconButton> socmedIconButtons = [
     MySocmedIconButton(
-      icon: FaIcon(FontAwesomeIcons.github),
-      tooltip: 'GitHub',
-      url: 'https://github.com/mdaffailhami',
-    ),
-    MySocmedIconButton(
       icon: FaIcon(FontAwesomeIcons.linkedin),
       tooltip: 'LinkedIn',
       url: 'https://linkedin.com/in/mdaffailhami',
     ),
     MySocmedIconButton(
+      icon: FaIcon(FontAwesomeIcons.github),
+      tooltip: 'GitHub',
+      url: 'https://github.com/mdaffailhami',
+    ),
+    MySocmedIconButton(
       icon: FaIcon(FontAwesomeIcons.kaggle),
       tooltip: 'Kaggle',
+      url: 'https://kaggle.com/mdaffailhami',
+    ),
+    MySocmedIconButton(
+      icon: FaIcon(FontAwesomeIcons.instagram),
+      tooltip: 'Instagram',
       url: 'https://kaggle.com/mdaffailhami',
     ),
   ];
@@ -44,7 +49,7 @@ class MyAboutMe extends StatelessWidget {
           ),
           child: Center(
             child: SizedBox(
-              width: 420,
+              width: 600,
               child: Column(
                 children: [
                   RichText(
@@ -54,16 +59,26 @@ class MyAboutMe extends StatelessWidget {
                           .titleSmall
                           ?.copyWith(fontSize: 15),
                       children: [
-                        const TextSpan(text: "Hello, I'm "),
+                        const TextSpan(
+                          text: "Hi, I’m ",
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.bold),
+                        ),
                         TextSpan(
-                          text: "Daffa Ilhami",
+                          text: "Daffa Ilhami 👋\n",
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.secondary,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                         const TextSpan(
                             text:
-                                ",\na passionate programmer from Indonesia.\nAs an INTP, of course I like thinking and pondering all the time.\nI'm a deep thinker, a programmer, and a speedcuber."),
+                                """I’m a passionate programmer, speedcuber, and software engineer from Indonesia. I thrive on thinking and pondering new ideas, always seeking to challenge myself and grow.
+
+Currently, I’m embarking on an exciting journey to become a data scientist, leveraging my self-taught skills and experience to dive deep into the field of data science 📖🔭.
+
+My journey is driven by self-learning, deep curiosity, and a commitment to continuous personal growth. I’ve taught myself a variety of skills, and each day presents a new opportunity to explore, innovate, and push the boundaries of what I know. I am always eager to tackle new challenges and explore new technologies."""),
                       ],
                     ),
                     textAlign: TextAlign.center,
