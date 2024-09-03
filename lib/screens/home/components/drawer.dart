@@ -10,6 +10,13 @@ import 'skills.dart';
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
 
+  TextSpan getDivider(BuildContext context) {
+    return TextSpan(
+      text: ' | ',
+      style: TextStyle(color: Theme.of(context).colorScheme.secondaryContainer),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -18,16 +25,32 @@ class MyDrawer extends StatelessWidget {
         children: [
           const SizedBox(height: 20),
           const CircleAvatar(
-            backgroundImage: AssetImage('assets/profile.png'),
-            radius: 50,
+            radius: 62,
+            backgroundColor: Colors.white,
+            child: CircleAvatar(
+              backgroundImage: AssetImage('assets/profile.png'),
+              radius: 60,
+            ),
           ),
-          const SizedBox(height: 5),
+          const SizedBox(height: 4),
           Text(
             'Daffa Ilhami',
-            style: Theme.of(context)
-                .textTheme
-                .headlineSmall
-                ?.copyWith(fontSize: 26),
+            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  fontSize: 27,
+                  fontWeight: FontWeight.bold,
+                ),
+          ),
+          RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+              style:
+                  Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 14),
+              children: [
+                const TextSpan(text: 'Programmer'),
+                getDivider(context),
+                const TextSpan(text: 'Speedcuber'),
+              ],
+            ),
           ),
           const Divider(),
           Expanded(
