@@ -181,7 +181,7 @@ class MyFooter extends StatelessWidget {
                 child: const Divider(),
               ),
               SelectableText(
-                '| Last updated on August 8, 2024 |',
+                '| Last updated on September 3, 2024 |',
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
