@@ -32,25 +32,6 @@ class MyProjects extends StatelessWidget {
             ),
             MyProjectCard(
               image: AssetImage(
-                'assets/project_logos/customer-data-analysis-logo.png',
-              ),
-              title: 'Customer Analysis',
-              caption:
-                  "Data cleaning and data analysis on customer data to gain insights into customer profiles and contact preferences.",
-              url: 'https://github.com/mdaffailhami/customer-data-analysis/',
-            ),
-            MyProjectCard(
-              image: AssetImage(
-                'assets/project_logos/king-county-homesales-analysis-logo.png',
-              ),
-              title: 'Homesales Analysis',
-              caption:
-                  "Data analysis on home sales data in King County, United States, featuring geospatial mapping to visualize trends and factors influencing housing prices.",
-              url:
-                  'https://github.com/mdaffailhami/king_county_home_sales_analysis',
-            ),
-            MyProjectCard(
-              image: AssetImage(
                 'assets/project_logos/gasku-logo.png',
               ),
               title: 'GasKu',
@@ -102,6 +83,25 @@ class MyProjects extends StatelessWidget {
               caption:
                   'Typing Practice is a web application designed to help users improve their typing skills through interactive exercises.',
               url: 'https://github.com/mdaffailhami/typing-practice',
+            ),
+            MyProjectCard(
+              image: AssetImage(
+                'assets/project_logos/customer-data-analysis-logo.png',
+              ),
+              title: 'Customer Analysis',
+              caption:
+                  "Data cleaning and data analysis on customer data to gain insights into customer profiles and contact preferences.",
+              url: 'https://github.com/mdaffailhami/customer-data-analysis/',
+            ),
+            MyProjectCard(
+              image: AssetImage(
+                'assets/project_logos/king-county-homesales-analysis-logo.png',
+              ),
+              title: 'Homesales Analysis',
+              caption:
+                  "Data analysis on home sales data in King County, United States, featuring geospatial mapping to visualize trends and factors influencing housing prices.",
+              url:
+                  'https://github.com/mdaffailhami/king_county_home_sales_analysis',
             ),
             // MyProjectCard(
             //   image: AssetImage(
