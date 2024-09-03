@@ -29,7 +29,7 @@ class MyAboutMe extends StatelessWidget {
     MySocmedIconButton(
       icon: FaIcon(FontAwesomeIcons.instagram),
       tooltip: 'Instagram',
-      url: 'https://kaggle.com/mdaffailhami',
+      url: 'https://instagram.com/m.daffailhami',
     ),
   ];
 
