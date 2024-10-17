@@ -28,7 +28,7 @@ class MyProjectCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
         clipBehavior: Clip.antiAlias,
-        color: Theme.of(context).colorScheme.surface,
+        color: Theme.of(context).colorScheme.surfaceBright,
         child: InkWell(
           onTap: () async {
             if (await canLaunchUrl(Uri.parse(url))) {

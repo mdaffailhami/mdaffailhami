@@ -80,7 +80,7 @@ class MyFooter extends StatelessWidget {
       width: double.infinity,
       // height: 200,
       child: ColoredBox(
-        color: Theme.of(context).colorScheme.background,
+        color: Theme.of(context).colorScheme.surface,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20),
           child: Column(

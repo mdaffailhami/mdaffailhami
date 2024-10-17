@@ -43,7 +43,7 @@ class MyHomeScreen extends StatelessWidget {
                         const MySkills(),
                         Container(
                           decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.background,
+                            color: Theme.of(context).colorScheme.surface,
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(10)),
                           ),

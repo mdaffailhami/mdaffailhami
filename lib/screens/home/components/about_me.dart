@@ -41,7 +41,7 @@ class MyAboutMe extends StatelessWidget {
         bottomRight: Radius.circular(10),
       ),
       child: Material(
-        color: Theme.of(context).colorScheme.surface,
+        color: Theme.of(context).colorScheme.surfaceBright,
         child: Padding(
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.06,
