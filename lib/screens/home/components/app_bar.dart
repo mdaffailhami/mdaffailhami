@@ -38,6 +38,7 @@ class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      backgroundColor: Theme.of(context).colorScheme.surfaceBright,
       surfaceTintColor: Colors.transparent,
       automaticallyImplyLeading: false,
       pinned: true,
