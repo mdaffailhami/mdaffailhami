@@ -41,7 +41,7 @@ class MyFAQ extends StatelessWidget {
                 question:
                     "How's the progress? Your data science speedrun journey.",
                 answer:
-                    "Well, it's pretty good. I've learned some math, statistics, NumPy, Pandas, Plotly, data cleaning, PostgreSQL, etc.",
+                    "Well, it's pretty good. I've learned some math, statistics, data analysis, data visualization, data cleaning, Python, SQL, etc.",
               ),
               MyQnACard(
                 question: 'What are your hobbies?',
