@@ -5,7 +5,7 @@ import 'package:mdaffailhami/widgets/navigation_button.dart';
 import 'contact_me.dart';
 import 'faq.dart';
 import 'projects.dart';
-import 'skills.dart';
+import 'technologies.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -73,7 +73,7 @@ class MyDrawer extends StatelessWidget {
                     SizedBox(
                       height: 55,
                       child: MyNavigationButton(
-                        componentKey: MySkills.componentKey,
+                        componentKey: MyTechnologies.componentKey,
                         child: const Align(
                           alignment: Alignment.centerLeft,
                           child: Text('My Skills'),

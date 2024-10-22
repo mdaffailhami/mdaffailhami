@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:simple_shadow/simple_shadow.dart';
 
-class MySkillItem extends StatelessWidget {
-  const MySkillItem({
+class MyTechnologyItem extends StatelessWidget {
+  const MyTechnologyItem({
     Key? key,
     required this.title,
     required this.image,

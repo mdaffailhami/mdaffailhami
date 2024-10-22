@@ -6,7 +6,7 @@ import 'components/drawer.dart';
 import 'components/faq.dart';
 import 'components/footer.dart';
 import 'components/projects.dart';
-import 'components/skills.dart';
+import 'components/technologies.dart';
 import 'components/about_me.dart';
 import 'components/background.dart';
 
@@ -40,7 +40,7 @@ class MyHomeScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         const MyAboutMe(),
-                        const MySkills(),
+                        const MyTechnologies(),
                         Container(
                           decoration: BoxDecoration(
                             color: Theme.of(context).colorScheme.surface,

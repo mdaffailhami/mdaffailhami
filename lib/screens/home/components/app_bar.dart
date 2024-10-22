@@ -3,7 +3,7 @@ import 'package:mdaffailhami/screens/home/components/about_me.dart';
 import 'package:mdaffailhami/screens/home/components/contact_me.dart';
 import 'package:mdaffailhami/screens/home/components/faq.dart';
 import 'package:mdaffailhami/screens/home/components/projects.dart';
-import 'package:mdaffailhami/screens/home/components/skills.dart';
+import 'package:mdaffailhami/screens/home/components/technologies.dart';
 import 'package:mdaffailhami/widgets/navigation_button.dart';
 import 'package:mdaffailhami/widgets/responsive_builder.dart';
 
@@ -89,7 +89,7 @@ class MyAppBar extends StatelessWidget {
                       child: const Text('About Me'),
                     ),
                     MyNavigationButton(
-                      componentKey: MySkills.componentKey,
+                      componentKey: MyTechnologies.componentKey,
                       child: const Text('My Skills'),
                     ),
                     MyNavigationButton(

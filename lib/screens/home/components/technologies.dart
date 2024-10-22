@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mdaffailhami/widgets/skill_item.dart';
+import 'package:mdaffailhami/widgets/technology_item.dart';
 
-class MySkills extends StatelessWidget {
-  const MySkills({Key? key}) : super(key: key);
+class MyTechnologies extends StatelessWidget {
+  const MyTechnologies({Key? key}) : super(key: key);
 
   static final GlobalKey componentKey = GlobalKey();
 
@@ -19,7 +19,7 @@ class MySkills extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'My Skills',
+            'Technologies I use',
             style: Theme.of(context).textTheme.headlineLarge,
             textAlign: TextAlign.center,
           ),
@@ -31,63 +31,63 @@ class MySkills extends StatelessWidget {
               spacing: 20,
               runSpacing: 30,
               children: [
-                MySkillItem(
+                MyTechnologyItem(
                   title: 'Python',
                   image: AssetImage('assets/skill_logos/python-logo.png'),
                 ),
-                MySkillItem(
+                MyTechnologyItem(
                   title: 'NumPy',
                   image: AssetImage('assets/skill_logos/numpy-logo.png'),
                 ),
-                MySkillItem(
-                  title: 'Pandas',
-                  image: AssetImage('assets/skill_logos/pandas-logo.png'),
+                MyTechnologyItem(
+                  title: 'Polars',
+                  image: AssetImage('assets/skill_logos/polars-logo.png'),
                 ),
-                MySkillItem(
-                  title: 'Plotly',
-                  image: AssetImage('assets/skill_logos/plotly-logo.png'),
+                MyTechnologyItem(
+                  title: 'Vega-Altair',
+                  image: AssetImage('assets/skill_logos/vega-altair-logo.png'),
                 ),
-                MySkillItem(
+                MyTechnologyItem(
                   title: 'FastAPI',
                   image: AssetImage('assets/skill_logos/fastapi-logo.png'),
                 ),
-                MySkillItem(
+                MyTechnologyItem(
                   title: 'Dart',
                   image: AssetImage('assets/skill_logos/dart-logo.png'),
                 ),
-                MySkillItem(
+                MyTechnologyItem(
                   title: 'Flutter',
                   image: AssetImage('assets/skill_logos/flutter-logo.png'),
                 ),
-                MySkillItem(
+                MyTechnologyItem(
                   title: 'Linux',
                   image: AssetImage('assets/skill_logos/linux-logo.png'),
                 ),
-                MySkillItem(
+                MyTechnologyItem(
                   title: 'Node.js',
                   image: AssetImage('assets/skill_logos/nodejs-logo.png'),
                 ),
-                MySkillItem(
+                MyTechnologyItem(
                   title: 'React',
                   image: AssetImage('assets/skill_logos/react-logo.png'),
                 ),
-                MySkillItem(
+                MyTechnologyItem(
                   title: 'GitHub',
                   image: AssetImage('assets/skill_logos/github-logo.png'),
                 ),
-                MySkillItem(
+                MyTechnologyItem(
                   title: 'Figma',
                   image: AssetImage('assets/skill_logos/figma-logo.png'),
                 ),
-                MySkillItem(
+                MyTechnologyItem(
                   title: 'PostgreSQL',
                   image: AssetImage('assets/skill_logos/postgresql-logo.png'),
                 ),
-                MySkillItem(
+                MyTechnologyItem(
                   title: 'MongoDB',
                   image: AssetImage('assets/skill_logos/mongodb-logo.png'),
                 ),
-                MySkillItem(
+                MyTechnologyItem(
                   title: 'Firebase',
                   image: AssetImage('assets/skill_logos/firebase-logo.png'),
                 ),

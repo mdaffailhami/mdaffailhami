@@ -88,12 +88,13 @@ class MyProjects extends StatelessWidget {
               ),
               MyProjectCard(
                 image: AssetImage(
-                  'assets/project_logos/customer-data-analysis-logo.png',
+                  'assets/project_logos/roller-coaster-data-analysis-logo.png',
                 ),
-                title: 'Customer Analysis',
+                title: 'Roller Coaster Analysis',
                 caption:
-                    "Data cleaning and data analysis on customer data to gain insights into customer profiles and contact preferences.",
-                url: 'https://github.com/mdaffailhami/customer-data-analysis/',
+                    "Data cleaning, data analysis, and geospatial mapping on roller coaster data to gain insights into it.",
+                url:
+                    'https://github.com/mdaffailhami/roller-coaster-data-analysis',
               ),
               MyProjectCard(
                 image: AssetImage(
