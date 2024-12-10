@@ -25,32 +25,24 @@ class MyTechnologies extends StatelessWidget {
           ),
           const Divider(),
           Container(
-            constraints: const BoxConstraints(maxWidth: 800),
+            constraints: const BoxConstraints(maxWidth: 700),
             child: const Wrap(
               alignment: WrapAlignment.center,
               spacing: 20,
               runSpacing: 30,
               children: [
-                MyTechnologyItem(
-                  title: 'Python',
-                  image: AssetImage('assets/skill_logos/python-logo.png'),
-                ),
-                MyTechnologyItem(
-                  title: 'NumPy',
-                  image: AssetImage('assets/skill_logos/numpy-logo.png'),
-                ),
-                MyTechnologyItem(
-                  title: 'Polars',
-                  image: AssetImage('assets/skill_logos/polars-logo.png'),
-                ),
-                MyTechnologyItem(
-                  title: 'Vega-Altair',
-                  image: AssetImage('assets/skill_logos/vega-altair-logo.png'),
-                ),
-                MyTechnologyItem(
-                  title: 'FastAPI',
-                  image: AssetImage('assets/skill_logos/fastapi-logo.png'),
-                ),
+                // MyTechnologyItem(
+                //   title: 'NumPy',
+                //   image: AssetImage('assets/skill_logos/numpy-logo.png'),
+                // ),
+                // MyTechnologyItem(
+                //   title: 'Polars',
+                //   image: AssetImage('assets/skill_logos/polars-logo.png'),
+                // ),
+                // MyTechnologyItem(
+                //   title: 'Vega-Altair',
+                //   image: AssetImage('assets/skill_logos/vega-altair-logo.png'),
+                // ),
                 MyTechnologyItem(
                   title: 'Dart',
                   image: AssetImage('assets/skill_logos/dart-logo.png'),
@@ -58,6 +50,14 @@ class MyTechnologies extends StatelessWidget {
                 MyTechnologyItem(
                   title: 'Flutter',
                   image: AssetImage('assets/skill_logos/flutter-logo.png'),
+                ),
+                MyTechnologyItem(
+                  title: 'Python',
+                  image: AssetImage('assets/skill_logos/python-logo.png'),
+                ),
+                MyTechnologyItem(
+                  title: 'FastAPI',
+                  image: AssetImage('assets/skill_logos/fastapi-logo.png'),
                 ),
                 MyTechnologyItem(
                   title: 'Linux',

@@ -24,16 +24,6 @@ class MyProjects extends StatelessWidget {
             children: [
               MyProjectCard(
                 image: AssetImage(
-                  'assets/project_logos/data-science-speedrun-journey-logo.png',
-                ),
-                title: 'Data Science Speedrun',
-                caption:
-                    "A repository contains notebooks and projects related to my data science speedrun journey.",
-                url:
-                    'https://github.com/mdaffailhami/data_science_speedrun_journey',
-              ),
-              MyProjectCard(
-                image: AssetImage(
                   'assets/project_logos/gasku-logo.png',
                 ),
                 title: 'GasKu',
@@ -85,6 +75,16 @@ class MyProjects extends StatelessWidget {
                 caption:
                     'Typing Practice is a web application designed to help users improve their typing skills through interactive exercises.',
                 url: 'https://github.com/mdaffailhami/typing-practice',
+              ),
+              MyProjectCard(
+                image: AssetImage(
+                  'assets/project_logos/data-science-speedrun-journey-logo.png',
+                ),
+                title: 'Data Science Speedrun',
+                caption:
+                    "A repository contains notebooks and projects related to my data science speedrun journey.",
+                url:
+                    'https://github.com/mdaffailhami/data_science_speedrun_journey',
               ),
               MyProjectCard(
                 image: AssetImage(

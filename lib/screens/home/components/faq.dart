@@ -31,17 +31,27 @@ class MyFAQ extends StatelessWidget {
                 question: 'When did you start learning programming?',
                 answer: 'I started learning programming on September 12, 2020.',
               ),
+              // MyQnACard(
+              //   question:
+              //       "Is it true that you're currently speedrunning data science?",
+              //   answer:
+              //       "Yes, it is. I just started the journey on July 9, 2024, and the reason is simply because right now I'm interested in it.",
+              // ),
+              // MyQnACard(
+              //   question:
+              //       "How's the progress? Your data science speedrun journey.",
+              //   answer:
+              //       "Well, it's pretty good. I've learned some math, statistics, data analysis, data visualization, data cleaning, Python, SQL, etc.",
+              // ),
               MyQnACard(
-                question:
-                    "Is it true that you're currently speedrunning data science?",
+                question: 'What is your main focus in programming?',
                 answer:
-                    "Yes, it is. I just started the journey on July 9, 2024, and the reason is simply because right now I'm interested in it.",
+                    "My main focus right now is on mastering Software Development, particularly in Dart, Flutter, and Python, to build efficient and scalable applications.",
               ),
               MyQnACard(
-                question:
-                    "How's the progress? Your data science speedrun journey.",
+                question: "How's your progress in Software Development?",
                 answer:
-                    "Well, it's pretty good. I've learned some math, statistics, data analysis, data visualization, data cleaning, Python, SQL, etc.",
+                    "I've made great progress in honing my skills and am now focusing on building practical, real-world applications that solve meaningful problems.",
               ),
               MyQnACard(
                 question: 'What are your hobbies?',

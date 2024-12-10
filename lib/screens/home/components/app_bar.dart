@@ -90,11 +90,11 @@ class MyAppBar extends StatelessWidget {
                     ),
                     MyNavigationButton(
                       componentKey: MyTechnologies.componentKey,
-                      child: const Text('My Skills'),
+                      child: const Text('Technologies'),
                     ),
                     MyNavigationButton(
                       componentKey: MyProjects.componentKey,
-                      child: const Text('My Projects'),
+                      child: const Text('Projects'),
                     ),
                     MyNavigationButton(
                       componentKey: MyFAQ.componentKey,

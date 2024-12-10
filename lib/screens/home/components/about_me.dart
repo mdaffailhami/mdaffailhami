@@ -49,7 +49,7 @@ class MyAboutMe extends StatelessWidget {
           ),
           child: Center(
             child: SizedBox(
-              width: 600,
+              width: 660,
               child: Column(
                 children: [
                   RichText(
@@ -76,7 +76,9 @@ class MyAboutMe extends StatelessWidget {
                             text:
                                 """I’m a passionate programmer, speedcuber, and software engineer from Indonesia. I thrive on thinking and pondering new ideas, always seeking to challenge myself and grow.
 
-Currently, I’m embarking on an exciting journey to become a data scientist, leveraging my self-taught skills and experience to dive deep into the field of data science 📖🔭.
+I bring over 3 years of experience in software engineering using Flutter. I specialize in building cross-platform applications with Dart, adhering to Clean Architecture principles, and integrating RESTful APIs to create seamless user experiences.
+
+I also have skills in Front-end & Back-end development (Fullstack) in general and broadly, because this is the field I studied initially. I have tried HTML, CSS, JS, Bootstrap, Python, FastAPI, React, React Native, Express, Firebase, MongoDB, MySQL, PostgreSQL, PHP, Java, etc.
 
 My journey is driven by self-learning, deep curiosity, and a commitment to continuous personal growth. I’ve taught myself a variety of skills, and each day presents a new opportunity to explore, innovate, and push the boundaries of what I know. I am always eager to tackle new challenges and explore new technologies."""),
                       ],
