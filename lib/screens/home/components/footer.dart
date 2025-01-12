@@ -167,7 +167,7 @@ class MyFooter extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               SelectableText(
-                '© 2021–2024 Daffa Ilhami.\nAll rights reserved.',
+                '© 2021–2025 Daffa Ilhami.\nAll rights reserved.',
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme

@@ -29,7 +29,7 @@ class MyProjects extends StatelessWidget {
                 title: 'CIMSA ULM',
                 caption:
                     'The official web for the CIMSA organization at Lambung Mangkurat University, serving as an organization profile and information-sharing blog.',
-                url: 'https://github.com/mdaffailhami/gasku',
+                url: 'https://github.com/mdaffailhami/cimsa-ulm',
               ),
               MyProjectCard(
                 image: AssetImage(
