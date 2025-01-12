@@ -44,14 +44,15 @@ class MyFAQ extends StatelessWidget {
               //       "Well, it's pretty good. I've learned some math, statistics, data analysis, data visualization, data cleaning, Python, SQL, etc.",
               // ),
               MyQnACard(
-                question: 'What is your main focus in programming?',
+                question: 'What is your current main focus in programming?',
                 answer:
-                    "My main focus right now is on mastering Software Development, particularly in Dart, Flutter, and Python, to build efficient and scalable applications.",
+                    "My main focus right now is on mastering Software Development, particularly in React, Flutter, and Python, to build efficient, scalable, and maintainable applications.",
               ),
               MyQnACard(
-                question: "How's your progress in Software Development?",
+                question:
+                    "How's your progress in Software Development journey?",
                 answer:
-                    "I've made great progress in honing my skills and am now focusing on building practical, real-world applications that solve meaningful problems.",
+                    "I've been making great progress in honing my skills and am now focusing on building practical, real-world applications that solve meaningful problems.",
               ),
               MyQnACard(
                 question: 'What are your hobbies?',

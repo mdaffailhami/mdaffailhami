@@ -76,7 +76,7 @@ class MyDrawer extends StatelessWidget {
                         componentKey: MyTechnologies.componentKey,
                         child: const Align(
                           alignment: Alignment.centerLeft,
-                          child: Text('My Skills'),
+                          child: Text('Technologies'),
                         ),
                       ),
                     ),
@@ -86,7 +86,7 @@ class MyDrawer extends StatelessWidget {
                         componentKey: MyProjects.componentKey,
                         child: const Align(
                           alignment: Alignment.centerLeft,
-                          child: Text('My Projects'),
+                          child: Text('Projects'),
                         ),
                       ),
                     ),

@@ -24,6 +24,15 @@ class MyProjects extends StatelessWidget {
             children: [
               MyProjectCard(
                 image: AssetImage(
+                  'assets/project_logos/cimsa-ulm-logo-temp.jpeg',
+                ),
+                title: 'CIMSA ULM',
+                caption:
+                    'The official web for the CIMSA organization at Lambung Mangkurat University, serving as an organization profile and information-sharing blog.',
+                url: 'https://github.com/mdaffailhami/gasku',
+              ),
+              MyProjectCard(
+                image: AssetImage(
                   'assets/project_logos/gasku-logo.png',
                 ),
                 title: 'GasKu',
@@ -86,16 +95,16 @@ class MyProjects extends StatelessWidget {
                 url:
                     'https://github.com/mdaffailhami/data_science_speedrun_journey',
               ),
-              MyProjectCard(
-                image: AssetImage(
-                  'assets/project_logos/roller-coaster-data-analysis-logo.png',
-                ),
-                title: 'Roller Coaster Analysis',
-                caption:
-                    "Data cleaning, data analysis, and geospatial mapping on roller coaster data to gain insights into it.",
-                url:
-                    'https://github.com/mdaffailhami/roller-coaster-data-analysis',
-              ),
+              // MyProjectCard(
+              //   image: AssetImage(
+              //     'assets/project_logos/roller-coaster-data-analysis-logo.png',
+              //   ),
+              //   title: 'Roller Coaster Analysis',
+              //   caption:
+              //       "Data cleaning, data analysis, and geospatial mapping on roller coaster data to gain insights into it.",
+              //   url:
+              //       'https://github.com/mdaffailhami/roller-coaster-data-analysis',
+              // ),
               MyProjectCard(
                 image: AssetImage(
                   'assets/project_logos/king-county-homesales-analysis-logo.png',

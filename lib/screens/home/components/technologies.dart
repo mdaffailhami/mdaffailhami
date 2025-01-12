@@ -44,8 +44,12 @@ class MyTechnologies extends StatelessWidget {
                 //   image: AssetImage('assets/skill_logos/vega-altair-logo.png'),
                 // ),
                 MyTechnologyItem(
-                  title: 'Dart',
-                  image: AssetImage('assets/skill_logos/dart-logo.png'),
+                  title: 'React',
+                  image: AssetImage('assets/skill_logos/react-logo.png'),
+                ),
+                MyTechnologyItem(
+                  title: 'Tailwind',
+                  image: AssetImage('assets/skill_logos/tailwind-logo.png'),
                 ),
                 MyTechnologyItem(
                   title: 'Flutter',
@@ -66,10 +70,6 @@ class MyTechnologies extends StatelessWidget {
                 MyTechnologyItem(
                   title: 'Node.js',
                   image: AssetImage('assets/skill_logos/nodejs-logo.png'),
-                ),
-                MyTechnologyItem(
-                  title: 'React',
-                  image: AssetImage('assets/skill_logos/react-logo.png'),
                 ),
                 MyTechnologyItem(
                   title: 'GitHub',
