@@ -1,0 +1,24 @@
+{
+  "name": "@mdaffailhami/portfolio",
+  "version": "3.0.0",
+  "nodeModulesDir": "auto",
+  "unstable": ["unsafe-proto"],
+  "tasks": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "imports": {
+    "react": "npm:react@^19.0.0",
+    "react-dom": "npm:react-dom@^19.0.0",
+    "next": "npm:next@15.2.0",
+    "typescript": "npm:typescript@^5",
+    "@types/node": "npm:@types/node@^20",
+    "@types/react": "npm:@types/react@^19",
+    "@types/react-dom": "npm:@types/react-dom@^19",
+    "eslint": "npm:eslint@^9",
+    "eslint-config-next": "npm:eslint-config-next@15.2.0",
+    "@eslint/eslintrc": "npm:@eslint/eslintrc@^3"
+  }
+}
