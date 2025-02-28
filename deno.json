@@ -1,6 +1,7 @@
 {
   "name": "@mdaffailhami/portfolio",
   "version": "3.0.0",
+  "exports": {},
   "nodeModulesDir": "auto",
   "unstable": ["unsafe-proto"],
   "tasks": {
@@ -13,6 +14,9 @@
     "react": "npm:react@^19.0.0",
     "react-dom": "npm:react-dom@^19.0.0",
     "next": "npm:next@15.2.0",
+    "tailwindcss": "npm:tailwindcss@^4.0.9",
+    "postcss": "npm:postcss@^8.5.3",
+    "@tailwindcss/postcss": "npm:@tailwindcss/postcss@^4.0.9",
     "typescript": "npm:typescript@^5",
     "@types/node": "npm:@types/node@^20",
     "@types/react": "npm:@types/react@^19",
