@@ -8,6 +8,7 @@
   --on-background-color: black;
   --surface-color: oklch(0.85 0 0);
   --on-surface-color: black;
+  --outline-color: rgba(0, 0, 0, 0.2);
 }
 
 :root[class~='dark'] {
@@ -16,6 +17,7 @@
   --on-background-color: white;
   --surface-color: oklch(0.15 0 0);
   --on-surface-color: white;
+  --outline-color: rgba(255, 255, 255, 0.2);
 }
 
 @theme inline {
@@ -24,6 +26,7 @@
   --color-on-background: var(--on-background-color);
   --color-surface: var(--surface-color);
   --color-on-surface: var(--on-surface-color);
+  --color-outline: var(--outline-color);
 }
 
 body {

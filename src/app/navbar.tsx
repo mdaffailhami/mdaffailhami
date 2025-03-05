@@ -71,7 +71,7 @@ export default function Navbar() {
     >
       <ul className='space-x-2'>
         {links.map((link, i) => (
-          <li key={i + 1} className='inline'>
+          <li key={i} className='inline'>
             <NavLink
               ref={link.path == pathname ? activeNavLinkRef : null}
               isActive={link.path === pathname}

@@ -1,7 +1,7 @@
 'use client';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-type Theme = 'light' | 'dark' | 'system';
+export type Theme = 'light' | 'dark' | 'system';
 
 type ThemeContextProps = {
   theme: Theme;
@@ -10,10 +10,12 @@ type ThemeContextProps = {
 
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem('theme') as Theme) || 'system',
-  );
+export default function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [theme, setTheme] = useState<Theme>('system');
+
+  useEffect(() => {
+    setTheme(localStorage.getItem('theme') as Theme)
+  }, []);
 
   useEffect(() => {
     const root = window.document.documentElement;

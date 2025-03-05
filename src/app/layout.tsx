@@ -1,9 +1,9 @@
 import Navbar from '@/app/navbar';
-import { ThemeProvider } from '@/app/theme-provider';
-import { ThemeSwitcher } from '@/app/theme-switcher';
+import ThemeProvider from '@/app/theme-provider';
 import '@/globals.css';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import ThemeSwitcher from '@/app/theme-switcher';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -26,14 +26,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider>
-      <html lang='en'>
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang='en' className='dark'>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <ThemeProvider>
           <Navbar />
           {children}
           <ThemeSwitcher />
-        </body>
-      </html>
-    </ThemeProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
