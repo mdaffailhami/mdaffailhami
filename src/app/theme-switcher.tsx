@@ -1,5 +1,5 @@
 'use client';
-import { IconButton } from '@/components/icon-button';
+import IconButton from '@/components/icon-button';
 import { Switcher } from '@/components/switcher';
 import { Theme, useTheme } from '@/app/theme-provider';
 import React from 'react';
