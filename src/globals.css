@@ -1,9 +1,31 @@
 @import 'tailwindcss';
 
-@theme {
-  --color-primary: oklch(0.546 0.245 262.881);
-  --color-background: black;
-  --color-on-background: white;
-  --color-surface: oklch(0.15 0 0);
-  --color-on-surface: white;
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --primary-color: oklch(0.546 0.245 262.881);
+  --background-color: white;
+  --on-background-color: black;
+  --surface-color: oklch(0.85 0 0);
+  --on-surface-color: black;
+}
+
+:root[class~='dark'] {
+  --primary-color: oklch(0.546 0.245 262.881);
+  --background-color: black;
+  --on-background-color: white;
+  --surface-color: oklch(0.15 0 0);
+  --on-surface-color: white;
+}
+
+@theme inline {
+  --color-primary: var(--primary-color);
+  --color-background: var(--background-color);
+  --color-on-background: var(--on-background-color);
+  --color-surface: var(--surface-color);
+  --color-on-surface: var(--on-surface-color);
+}
+
+body {
+  background-color: var(--background-color);
 }

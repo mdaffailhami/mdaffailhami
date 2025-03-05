@@ -19,8 +19,8 @@ const links: Link[] = [
   },
 
   {
-    name: 'Portfolios',
-    path: '/portfolios',
+    name: 'Portfolio',
+    path: '/portfolio',
   },
   {
     name: 'Blog',
@@ -45,7 +45,6 @@ export default function Navbar() {
   const activeIndicatorNavLinkRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useLayoutEffect(() => {
-    console.log('MASUKK');
     activeIndicatorNavLinkRef.current!.style.width =
       activeNavLinkRef.current!.offsetWidth + 'px';
     activeIndicatorNavLinkRef.current!.style.height =
