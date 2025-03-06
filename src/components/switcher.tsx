@@ -1,10 +1,11 @@
-import IconButton from '@/components/icon-button';
 import React from 'react';
 
-export function Switcher(props: {
-  activeIndex: number;
-  options: React.ReactNode[];
-}) {
+export default function Switcher(
+  props: {
+    activeIndex: number;
+    options: React.ReactNode[];
+  } & React.ComponentPropsWithRef<'div'>,
+) {
   const [update, forceUpdate] = React.useState(0); // Dummy state to trigger re-renders
   const activeRef = React.useRef<HTMLLIElement>(null);
   const activeIndicatorRef = React.useRef<HTMLDivElement>(null);
@@ -31,7 +32,11 @@ export function Switcher(props: {
   });
 
   return (
-    <div className='outline-outline fixed top-5 left-5 rounded-full outline-2'>
+    <div
+      className={
+        'outline-outline fixed rounded-full outline-2 ' + props.className
+      }
+    >
       <ul className='flex flex-row'>
         {props.options.map((option, i) => (
           <li key={i} ref={i === props.activeIndex ? activeRef : null}>

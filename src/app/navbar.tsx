@@ -54,7 +54,9 @@ export default function Navbar() {
       window.getComputedStyle(navbarRef.current!).paddingLeft,
     );
 
-    activeIndicatorNavLinkRef.current!.style.transform = `translateX(${activeNavLinkRef.current!.offsetLeft - navbarPaddingLeft}px)`;
+    activeIndicatorNavLinkRef.current!.style.transform = `translateX(${
+      activeNavLinkRef.current!.offsetLeft - navbarPaddingLeft
+    }px)`;
   }, [update, pathname]);
 
   React.useEffect(() => {
@@ -96,7 +98,9 @@ function NavLink(
       ref={props.ref}
       href={props.link.path}
       onClick={props.onClick}
-      className={`hover:bg-primary/15 rounded-full px-3 py-1.5 font-medium ${props.isActive ? 'text-on-surface' : 'text-on-surface/85'}`}
+      className={`hover:bg-primary/15 rounded-full px-3 py-1.5 font-medium ${
+        props.isActive ? 'text-on-surface' : 'text-on-surface/85'
+      }`}
     >
       {props.link.name}
     </Link>

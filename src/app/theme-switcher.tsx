@@ -1,6 +1,6 @@
 'use client';
 import IconButton from '@/components/icon-button';
-import { Switcher } from '@/components/switcher';
+import Switcher from '@/components/switcher';
 import { Theme, useTheme } from '@/app/theme-provider';
 import React from 'react';
 import {
@@ -41,6 +41,7 @@ export default function ThemeSwitcher() {
 
   return (
     <Switcher
+      className='top-4 left-6'
       activeIndex={themeButtons.findIndex((x) => x.name === theme)}
       options={themeButtons.map((button, i) => (
         <IconButton
