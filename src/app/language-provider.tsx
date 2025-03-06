@@ -32,8 +32,6 @@ export default function LanguageProvider({
           : 'english',
       );
     }
-
-    localStorage.setItem('language', language);
   }, []);
 
   useEffect(() => {

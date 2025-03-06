@@ -1,6 +1,6 @@
 import Navbar from '@/app/navbar';
 import ThemeProvider from '@/app/theme-provider';
-import '@/globals.css';
+import '@/app/globals.css';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import ThemeSwitcher from '@/app/theme-switcher';
@@ -10,6 +10,8 @@ import LanguageSwitcher from '@/app/language-switcher';
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
+  display: 'swap',
+  adjustFontFallback: false,
 });
 
 const geistMono = Geist_Mono({

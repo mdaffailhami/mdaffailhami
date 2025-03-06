@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 
 export default function Switcher(
@@ -6,7 +7,7 @@ export default function Switcher(
     options: React.ReactNode[];
   } & React.ComponentPropsWithRef<'div'>,
 ) {
-  const [update, forceUpdate] = React.useState(0); // Dummy state to trigger re-renders
+  const [, forceUpdate] = React.useState(0); // Dummy state to trigger re-renders
   const activeRef = React.useRef<HTMLLIElement>(null);
   const activeIndicatorRef = React.useRef<HTMLDivElement>(null);
 
