@@ -23,7 +23,7 @@ const links: Link[] = [
   },
   {
     name: 'Experiences',
-    path: '/blog',
+    path: '/experiences',
   },
   {
     name: 'FAQ',

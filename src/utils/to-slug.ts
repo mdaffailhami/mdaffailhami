@@ -1,4 +1,4 @@
-export function toSlug(text: string) {
+export default function toSlug(text: string) {
   return text
     .toLowerCase() // Convert to lowercase
     .trim() // Remove leading/trailing spaces

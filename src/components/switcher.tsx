@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { cn } from '@/utils';
 
 export default function Switcher(
   props: {
@@ -34,9 +35,10 @@ export default function Switcher(
 
   return (
     <div
-      className={
-        'outline-outline fixed rounded-full outline-2 ' + props.className
-      }
+      className={cn(
+        'outline-outline fixed rounded-full outline-2',
+        props.className,
+      )}
     >
       <ul className='flex flex-row'>
         {props.options.map((option, i) => (

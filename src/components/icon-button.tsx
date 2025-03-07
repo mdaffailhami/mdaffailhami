@@ -1,6 +1,6 @@
-import { toSlug } from '@/utils/to-slug';
 import React from 'react';
 import { PlacesType, Tooltip } from 'react-tooltip';
+import { cn, toSlug } from '@/utils';
 
 export default function IconButton(
   props: {
@@ -17,10 +17,10 @@ export default function IconButton(
         ref={props.ref}
         id={id}
         onClick={props.onClick}
-        className={
-          'hover:bg-on-background/8 active:bg-on-background/15 size-min cursor-pointer rounded-full p-2 ' +
-          props.className
-        }
+        className={cn(
+          'hover:bg-on-background/8 active:bg-on-background/15 size-min cursor-pointer rounded-full p-2',
+          props.className,
+        )}
       >
         {props.children}
       </button>
