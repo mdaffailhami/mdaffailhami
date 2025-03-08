@@ -10,11 +10,15 @@ type ThemeContextProps = {
 
 const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 
-export default function ThemeProvider({ children }: { children: React.ReactNode }) {
+export default function ThemeProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [theme, setTheme] = useState<Theme>('system');
 
   useEffect(() => {
-    setTheme(localStorage.getItem('theme') as Theme)
+    setTheme(localStorage.getItem('theme') as Theme);
   }, []);
 
   useEffect(() => {

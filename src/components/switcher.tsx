@@ -19,7 +19,7 @@ export default function Switcher(
     return () => observer.disconnect();
   }, []);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     activeIndicatorRef.current!.style.width =
       activeRef.current!.offsetWidth + 'px';
     activeIndicatorRef.current!.style.height =
@@ -28,13 +28,13 @@ export default function Switcher(
     activeIndicatorRef.current!.style.transform = `translateX(${activeRef.current!.offsetLeft}px)`;
 
     setTimeout(() => {
-      activeIndicatorRef.current!.classList.add('transition', 'duration-200');
       activeIndicatorRef.current!.classList.remove('hidden');
     }, 0);
   });
 
   return (
     <div
+      ref={props.ref}
       className={cn(
         'outline-outline fixed rounded-full outline-2',
         props.className,
@@ -49,7 +49,7 @@ export default function Switcher(
       </ul>
       <div
         ref={activeIndicatorRef}
-        className='outline-outline absolute top-0 -z-999 hidden rounded-full outline-3'
+        className='outline-outline absolute top-0 -z-999 hidden rounded-full outline-3 transition duration-200'
       />
     </div>
   );

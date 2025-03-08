@@ -4,8 +4,11 @@ import IconButton from '@/components/icon-button';
 import Switcher from '@/components/switcher';
 import { PlacesType } from 'react-tooltip';
 import { Language, useLanguage } from '@/app/language-provider';
+import { useIsMenuOpen } from '@/app/is-menu-open';
+import { cn } from '@/utils';
 
 export default function LanguageSwitcher() {
+  const { isMenuOpen } = useIsMenuOpen();
   const { language, setLanguage } = useLanguage();
 
   const languageButtons: {
@@ -30,7 +33,10 @@ export default function LanguageSwitcher() {
 
   return (
     <Switcher
-      className='top-4 right-6 hidden lg:block'
+      className={cn(
+        '-top-full right-6 opacity-0 lg:top-4 lg:opacity-100',
+        isMenuOpen && 'top-4 opacity-100',
+      )}
       activeIndex={languageButtons.findIndex((x) => x.name === language)}
       options={languageButtons.map((button, i) => (
         <IconButton

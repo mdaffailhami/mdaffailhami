@@ -1,4 +1,5 @@
 'use client';
+import { useIsMenuOpen } from '@/app/is-menu-open';
 import { cn } from '@/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -46,35 +47,38 @@ export default function Navbar() {
 }
 
 function MobileNavbar() {
-  const [isActive, setIsActive] = React.useState(false);
+  const { isMenuOpen, setIsMenuOpen } = useIsMenuOpen();
 
   return (
-    <HamburgerMenu isActive={isActive} onClick={() => setIsActive(!isActive)} />
+    <HamburgerMenu
+      isOpen={isMenuOpen}
+      onClick={() => setIsMenuOpen(!isMenuOpen)}
+    />
   );
 }
 
 function HamburgerMenu({
-  isActive,
+  isOpen,
   onClick,
 }: {
-  isActive: boolean;
+  isOpen: boolean;
   onClick: () => void;
 }) {
   return (
     <button
       onClick={onClick}
       className={cn(
-        'hover:bg-outline fixed top-2.5 left-1/2 flex -translate-x-1/2 cursor-pointer flex-col gap-y-[8px] rounded-full border-2 p-[14px] lg:hidden',
+        'hover:bg-on-background-hover fixed top-2.5 left-1/2 flex -translate-x-1/2 cursor-pointer flex-col gap-y-[8px] rounded-full border-2 p-[14px] lg:hidden',
         {
-          'border-outline': !isActive,
-          'border-on-surface': isActive,
+          'border-outline': !isOpen,
+          'border-primary': isOpen,
         },
       )}
     >
       <span
         className={cn(
           'border-on-surface w-[32px] rounded-full border',
-          isActive && 'opacity-0',
+          isOpen && 'opacity-0',
         )}
       />
       {(() => {
@@ -86,9 +90,9 @@ function HamburgerMenu({
                 className={cn(
                   'border-on-surface absolute -top-[1px] left-0 w-[32px] rounded-full border transition',
                   {
-                    'border-2': isActive,
-                    'rotate-45': isActive && i === 0,
-                    '-rotate-45': isActive && i === 1,
+                    'border-2': isOpen,
+                    'rotate-45': isOpen && i === 0,
+                    '-rotate-45': isOpen && i === 1,
                   },
                 )}
               />
@@ -99,7 +103,7 @@ function HamburgerMenu({
       <span
         className={cn(
           'border-on-surface w-[32px] rounded-full border',
-          isActive && 'opacity-0',
+          isOpen && 'opacity-0',
         )}
       />
     </button>

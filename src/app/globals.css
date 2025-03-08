@@ -6,6 +6,7 @@
   --primary-color: oklch(0.546 0.245 262.881);
   --background-color: white;
   --on-background-color: black;
+  --on-background-hover-color: rgba(0, 0, 0, 0.08);
   --surface-color: oklch(0.85 0 0);
   --on-surface-color: black;
   --outline-color: rgba(0, 0, 0, 0.2);
@@ -15,6 +16,7 @@
   --primary-color: oklch(0.546 0.245 262.881);
   --background-color: rgb(25, 29, 36);
   --on-background-color: white;
+  --on-background-hover-color: rgba(255, 255, 255, 0.08);
   --surface-color: oklch(0.15 0 0);
   --on-surface-color: white;
   --outline-color: rgba(255, 255, 255, 0.2);
@@ -24,6 +26,7 @@
   --color-primary: var(--primary-color);
   --color-background: var(--background-color);
   --color-on-background: var(--on-background-color);
+  --color-on-background-hover: var(--on-background-hover-color);
   --color-surface: var(--surface-color);
   --color-on-surface: var(--on-surface-color);
   --color-outline: var(--outline-color);

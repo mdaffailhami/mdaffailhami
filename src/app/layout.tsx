@@ -6,6 +6,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import ThemeSwitcher from '@/app/theme-switcher';
 import LanguageProvider from '@/app/language-provider';
 import LanguageSwitcher from '@/app/language-switcher';
+import IsMenuOpenProvider from '@/app/is-menu-open';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -34,10 +35,12 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider>
           <LanguageProvider>
-            <Navbar />
-            {children}
-            <ThemeSwitcher />
-            <LanguageSwitcher />
+            <IsMenuOpenProvider>
+              <Navbar />
+              {children}
+              <ThemeSwitcher />
+              <LanguageSwitcher />
+            </IsMenuOpenProvider>
           </LanguageProvider>
         </ThemeProvider>
       </body>

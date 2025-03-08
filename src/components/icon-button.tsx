@@ -18,7 +18,7 @@ export default function IconButton(
         id={id}
         onClick={props.onClick}
         className={cn(
-          'hover:bg-on-background/8 active:bg-on-background/15 size-min cursor-pointer rounded-full p-2',
+          'hover:bg-on-background-hover active:bg-on-background/15 size-min cursor-pointer rounded-full p-2',
           props.className,
         )}
       >
