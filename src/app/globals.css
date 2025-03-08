@@ -13,7 +13,7 @@
 
 :root[class~='dark'] {
   --primary-color: oklch(0.546 0.245 262.881);
-  --background-color: black;
+  --background-color: rgb(25, 29, 36);
   --on-background-color: white;
   --surface-color: oklch(0.15 0 0);
   --on-surface-color: white;

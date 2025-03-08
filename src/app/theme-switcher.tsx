@@ -41,7 +41,7 @@ export default function ThemeSwitcher() {
 
   return (
     <Switcher
-      className='top-4 left-6'
+      className='top-4 left-6 hidden lg:block'
       activeIndex={themeButtons.findIndex((x) => x.name === theme)}
       options={themeButtons.map((button, i) => (
         <IconButton

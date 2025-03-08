@@ -30,7 +30,7 @@ export default function LanguageSwitcher() {
 
   return (
     <Switcher
-      className='top-4 right-6'
+      className='top-4 right-6 hidden lg:block'
       activeIndex={languageButtons.findIndex((x) => x.name === language)}
       options={languageButtons.map((button, i) => (
         <IconButton
