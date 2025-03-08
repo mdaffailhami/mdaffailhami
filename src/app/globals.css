@@ -4,7 +4,7 @@
 
 :root {
   --primary-color: oklch(0.546 0.245 262.881);
-  --background-color: white;
+  --background-color: rgb(249, 250, 251);
   --on-background-color: black;
   --on-background-hover-color: rgba(0, 0, 0, 0.08);
   --surface-color: oklch(0.85 0 0);

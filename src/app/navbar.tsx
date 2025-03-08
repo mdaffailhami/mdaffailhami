@@ -131,6 +131,10 @@ function DesktopNavbar() {
     activeIndicatorNavLinkRef.current!.style.transform = `translateX(${
       activeNavLinkRef.current!.offsetLeft - navbarPaddingLeft
     }px)`;
+
+    setTimeout(() => {
+      activeIndicatorNavLinkRef.current!.classList.remove('hidden');
+    }, 0);
   }, [update, pathname]);
 
   React.useEffect(() => {
@@ -143,7 +147,7 @@ function DesktopNavbar() {
   return (
     <nav
       ref={navbarRef}
-      className='bg-surface border-on-background fixed top-2.5 left-1/2 hidden -translate-x-1/2 rounded-full border px-2.5 py-3.5 lg:block'
+      className='border-on-background fixed top-2.5 left-1/2 hidden -translate-x-1/2 rounded-full border px-2.5 py-3.5 lg:block'
     >
       <ul className='space-x-2'>
         {links.map((link, i) => (
@@ -158,7 +162,7 @@ function DesktopNavbar() {
       </ul>
       <div
         ref={activeIndicatorNavLinkRef}
-        className={`outline-primary absolute top-2.5 rounded-full outline-2 transition duration-200 ease-linear`}
+        className='outline-primary absolute top-2.5 -z-999 hidden rounded-full outline-2 transition duration-200 ease-linear'
       />
     </nav>
   );
@@ -172,7 +176,7 @@ function NavLink(
       ref={props.ref}
       href={props.link.path}
       onClick={props.onClick}
-      className={`hover:bg-primary/15 rounded-full px-3 py-1.5 font-medium ${
+      className={`hover:bg-primary/10 dark:hover:bg-primary/15 rounded-full px-3 py-1.5 font-medium ${
         props.isActive ? 'text-on-surface' : 'text-on-surface/85'
       }`}
     >
