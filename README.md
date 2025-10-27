@@ -1,13 +1,12 @@
 ![](https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif)
 
-**Hi, I'm Daffa Ilhami 👋**
+### **Hi, I'm Daffa Ilhami 👋**
 
 I’m a *tech enthusiast* from Indonesia. I thrive on *thinking* and *pondering new ideas*, always seeking to **challenge myself** and **grow**.
 
-With over **4 years of experience** in *software engineering*, particularly in **full-stack development**, I’ve worked with a wide range of technologies — including **Svelte**, **Tailwind**, **React**, **React Native**, **Flutter**, **FastAPI**, **Express**, **Supabase**, **Firebase**, **MongoDB**, **MySQL**, **PostgreSQL**, and more. I enjoy experimenting with different stacks since I have a strong passion for *learning* and *understanding how things work*.
+With over **5 years of experience** in *software engineering*, particularly in **full-stack development**, I’ve worked with a wide range of technologies — including **Svelte**, **Tailwind**, **React**, **React Native**, **Flutter**, **FastAPI**, **Express**, **Supabase**, **Firebase**, **MongoDB**, **MySQL**, **PostgreSQL**, and more. I enjoy experimenting with different stacks since I have a strong passion for *learning* and *understanding how things work*.
 
-My journey is driven by **self-learning**, *curiosity*, and a **commitment to continuous growth**. I’ve taught myself various skills over the years, and every day brings a new opportunity to *explore*, *create*, and **push the limits** of what I know. I’m always excited to take on **new challenges** and *dive into emerging technologies*.
-ortunity to **explore**, **innovate**, and **push the boundaries** of what I know. I am always **eager** to tackle new **challenges** and explore new **technologies**.
+My journey is driven by _**self-learning**, **curiosity**, and a **commitment** to continuous growth_. I’ve taught myself various skills over the years, and every day brings a new opportunity to _**explore**, **create**, and **push the limits** of what I know_. I’m always **excited** to take on new **challenges** and dive into emerging **technologies**
 
 <br>
 
