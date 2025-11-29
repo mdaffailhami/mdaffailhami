@@ -1,23 +1,23 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 
 // Navigation items configuration
 const navItems = [
-  { label: "Home", href: "#home" }, // First section - hash will be removed when active
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", hash: "#home" }, // Hash will be removed when active
+  { label: "About", hash: "#about" },
+  { label: "Projects", hash: "#projects" },
+  { label: "Experience", hash: "#experience" },
+  { label: "Contact", hash: "#contact" },
 ];
 
 export function Navbar() {
   // State to track the active section ID
-  const [activeId, setActiveId] = useState("");
+  const [activeHash, setactiveHash] = useState("");
   // State to control the position and width of the active indicator
-  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
+  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 76 });
   // Ref for the nav container to query buttons
   const navRef = useRef<HTMLDivElement>(null);
   // Ref to prevent observer updates while clicking a nav button
@@ -33,7 +33,8 @@ export function Navbar() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const newId = entry.target.id;
-            setActiveId(newId);
+            setactiveHash(`#${newId}`);
+
             // Update URL hash without triggering a scroll or reload
             if (newId === "home") {
               window.history.replaceState(null, "", " ");
@@ -54,9 +55,10 @@ export function Navbar() {
     // Small timeout to ensure DOM elements are ready before observing
     const timeoutId = setTimeout(() => {
       navItems.forEach((item) => {
-        // Extract ID from href (e.g., "#section-2" -> "section-2")
-        const id = item.href.substring(1);
+        // Extract ID from hash (e.g., "#home" -> "home")
+        const id = item.hash.substring(1);
         const element = document.getElementById(id);
+
         if (element) {
           observer.observe(element);
         } else {
@@ -71,12 +73,12 @@ export function Navbar() {
     };
   }, []);
 
-  // Effect to update the indicator position when activeId changes
+  // Effect to update the indicator position when activeHash changes
   useEffect(() => {
     if (navRef.current) {
       // Find the button corresponding to the active section
-      // Match the data-href attribute with the active section ID
-      const selector = `button[data-href="#${activeId}"]`;
+      // Match the data-hash attribute with the active section ID
+      const selector = `button[data-hash="${activeHash}"]`;
 
       const activeButton =
         navRef.current.querySelector<HTMLButtonElement>(selector);
@@ -88,25 +90,24 @@ export function Navbar() {
         });
       }
     }
-  }, [activeId]);
+  }, [activeHash]);
 
   // Handler for nav button clicks
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (hash: string) => {
     isClickingRef.current = true;
 
     // Determine the ID to set as active
-    const id = href.substring(1);
-    setActiveId(id);
+    setactiveHash(hash);
 
     // Update URL hash using replaceState to avoid cluttering browser history
-    if (id === "section-1") {
+    if (hash === "#home") {
       window.history.replaceState(null, "", " ");
     } else {
-      window.history.replaceState(null, "", href);
+      window.history.replaceState(null, "", hash);
     }
 
     // Manually scroll to the section
-    const element = document.getElementById(id);
+    const element = document.querySelector(hash);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -133,17 +134,17 @@ export function Navbar() {
             <Button
               key={item.label}
               variant={"ghost"}
-              data-href={item.href}
-              onClick={() => handleNavClick(item.href)}
+              data-hash={item.hash}
+              onClick={() => handleNavClick(item.hash)}
               className={cn(
-                "font-semibold text-md transition-colors z-10 hover:text-primary hover:rounded-full",
+                "font-semibold text-md transition-colors z-10 hover:text-primary rounded-full",
                 // Highlight if active
-                activeId === item.href.substring(1)
-                  ? "text-primary hover:bg-transparent hover:cursor-default"
+                activeHash === item.hash
+                  ? "text-primary hover:bg-transparent! hover:cursor-default"
                   : "",
               )}
             >
-              {/* {item.href === "#home" ? <HomeIcon /> : item.label} */}
+              {/* {item.hash === "#home" ? <HomeIcon /> : item.label} */}
               {item.label}
             </Button>
           ))}
