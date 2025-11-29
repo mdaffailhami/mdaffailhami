@@ -121,7 +121,7 @@ export function Navbar() {
   return (
     <nav
       ref={navRef}
-      className="bg-card backdrop-blur-md w-min absolute top-3 left-1/2 -translate-x-1/2 rounded-full px-6 py-3 shadow-lg border border-border"
+      className="bg-card backdrop-blur-md w-min absolute top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-2.5 shadow-lg border border-border"
     >
       <div className="relative flex gap-6 items-center">
         {/* Animated active indicator */}
