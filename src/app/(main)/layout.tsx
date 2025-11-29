@@ -1,6 +1,7 @@
 import { ParticlesBackground } from "@/components/particles";
 import { ThemeSwitcher } from "@/components/theme-switcher";
-import { Navbar } from "../../components/navbar";
+import { DesktopNavbar } from "../../components/desktop-navbar";
+import { MobileNavbar } from "@/components/mobile-navbar";
 
 export default function MainLayout({
   children,
@@ -10,13 +11,12 @@ export default function MainLayout({
   return (
     <>
       <header>
-        <Navbar />
+        <DesktopNavbar />
         <ThemeSwitcher />
+        <MobileNavbar />
       </header>
       {children}
       <ParticlesBackground id="particles" />
-      {/* <ParticlesBackground id="particles-2" /> */}
-      <footer></footer>
     </>
   );
 }

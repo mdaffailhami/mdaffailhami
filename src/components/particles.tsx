@@ -2,6 +2,7 @@
 
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
+import { Fullscreen } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 // import type { Container } from "@tsparticles/engine";
 
@@ -23,6 +24,10 @@ export function ParticlesBackground({ id }: { id: string }) {
 
   const options = useMemo(
     () => ({
+      fullScreen: {
+        enable: true,
+        zIndex: -1,
+      },
       fpsLimit: 120,
       interactivity: {
         events: {
@@ -92,13 +97,11 @@ export function ParticlesBackground({ id }: { id: string }) {
   }
 
   return (
-    <div className="fixed inset-0 -z-50 pointer-events-none">
-      <Particles
-        id={id}
-        // particlesLoaded={particlesLoaded}
-        options={options}
-        className="w-full h-full"
-      />
-    </div>
+    <Particles
+      id={id}
+      // particlesLoaded={particlesLoaded}
+      options={options}
+      className="w-full h-full"
+    />
   );
 }

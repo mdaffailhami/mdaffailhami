@@ -3,17 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import { navs } from "@/lib/constants";
 
-// Navigation items configuration
-const navItems = [
-  { label: "Home", hash: "#home" }, // Hash will be removed when active
-  { label: "About", hash: "#about" },
-  { label: "Projects", hash: "#projects" },
-  { label: "Experience", hash: "#experience" },
-  { label: "Contact", hash: "#contact" },
-];
-
-export function Navbar() {
+export function DesktopNavbar() {
   // State to track the active section ID
   const [activeHash, setactiveHash] = useState("");
   // State to control the position and width of the active indicator
@@ -70,9 +62,9 @@ export function Navbar() {
 
     // Small timeout to ensure DOM elements are ready before observing
     const timeoutId = setTimeout(() => {
-      navItems.forEach((item) => {
+      navs.forEach((nav) => {
         // Extract ID from hash (e.g., "#home" -> "home")
-        const id = item.hash.substring(1);
+        const id = nav.hash.substring(1);
         const element = document.getElementById(id);
 
         if (element) {
@@ -137,7 +129,7 @@ export function Navbar() {
   return (
     <nav
       ref={navRef}
-      className="max-md:hidden bg-card backdrop-blur-md w-min absolute top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-2.5 shadow-md shadow-foreground/5 border border-border"
+      className="max-md:hidden bg-background backdrop-blur-md w-min absolute top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-2.5 shadow-md shadow-foreground/5 border border-border"
     >
       <div className="relative flex gap-6 items-center">
         {/* Animated active indicator */}
@@ -145,23 +137,23 @@ export function Navbar() {
           className="absolute inset-0 bg-primary/20 outline-2 outline-primary rounded-full transition-all duration-300 ease-in-out"
           style={{ left: indicatorStyle.left, width: indicatorStyle.width }}
         />
-        {navItems.map((item) => (
+        {navs.map((nav) => (
           <Button
-            key={item.label}
+            key={nav.label}
             variant={"ghost"}
-            data-hash={item.hash}
-            onClick={() => handleNavClick(item.hash)}
+            data-hash={nav.hash}
+            onClick={() => handleNavClick(nav.hash)}
             className={cn(
               "font-medium text-md transition-colors z-10 hover:text-primary rounded-full",
               {
                 // Highlight if active
                 "text-primary hover:bg-transparent! hover:cursor-default":
-                  activeHash === item.hash,
+                  activeHash === nav.hash,
               },
             )}
           >
-            {/* {item.hash === "#home" ? <HomeIcon /> : item.label} */}
-            {item.label}
+            {/* {nav.hash === "#home" ? <HomeIcon /> : nav.label} */}
+            {nav.label}
           </Button>
         ))}
       </div>
