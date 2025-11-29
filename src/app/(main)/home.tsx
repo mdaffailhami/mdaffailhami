@@ -11,9 +11,16 @@ export default function HomeSlide() {
         <Image
           src="/mdaffailhami-1.png"
           alt="Daffa Ilhami (1)"
-          width={424}
-          height={588}
-          className="rounded-b-full w-[75%] md:w-md"
+          width={779}
+          height={1080}
+          className="rounded-b-full w-[75%] md:w-md max-md:hidden"
+        />
+        <Image
+          src="/mdaffailhami-2.png"
+          alt="Daffa Ilhami (2)"
+          width={676}
+          height={1064}
+          className="rounded-b-full w-[75%] md:w-md md:hidden"
         />
       </section>
       <section className="flex flex-col w-full md:flex-3">

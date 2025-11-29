@@ -137,7 +137,7 @@ export function Navbar() {
   return (
     <nav
       ref={navRef}
-      className="max-md:hidden bg-card backdrop-blur-md w-min absolute top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-2.5 shadow-lg border border-border"
+      className="max-md:hidden bg-card backdrop-blur-md w-min absolute top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-2.5 shadow-md shadow-foreground/5 border border-border"
     >
       <div className="relative flex gap-6 items-center">
         {/* Animated active indicator */}
@@ -152,7 +152,7 @@ export function Navbar() {
             data-hash={item.hash}
             onClick={() => handleNavClick(item.hash)}
             className={cn(
-              "font-semibold text-md transition-colors z-10 hover:text-primary rounded-full",
+              "font-medium text-md transition-colors z-10 hover:text-primary rounded-full",
               {
                 // Highlight if active
                 "text-primary hover:bg-transparent! hover:cursor-default":
