@@ -119,36 +119,35 @@ export function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full p-4 z-50 flex justify-center">
-      <div
-        ref={navRef}
-        className="bg-card backdrop-blur-md rounded-full px-6 py-3 shadow-lg border border-border"
-      >
-        <div className="relative flex gap-6 items-center">
-          {/* Animated active indicator */}
-          <div
-            className="absolute inset-0 bg-primary/20 outline-2 outline-primary rounded-full transition-all duration-300 ease-in-out"
-            style={{ left: indicatorStyle.left, width: indicatorStyle.width }}
-          />
-          {navItems.map((item) => (
-            <Button
-              key={item.label}
-              variant={"ghost"}
-              data-hash={item.hash}
-              onClick={() => handleNavClick(item.hash)}
-              className={cn(
-                "font-semibold text-md transition-colors z-10 hover:text-primary rounded-full",
+    <nav
+      ref={navRef}
+      className="bg-card backdrop-blur-md w-min absolute top-3 left-1/2 -translate-x-1/2 rounded-full px-6 py-3 shadow-lg border border-border"
+    >
+      <div className="relative flex gap-6 items-center">
+        {/* Animated active indicator */}
+        <div
+          className="absolute inset-0 bg-primary/20 outline-2 outline-primary rounded-full transition-all duration-300 ease-in-out"
+          style={{ left: indicatorStyle.left, width: indicatorStyle.width }}
+        />
+        {navItems.map((item) => (
+          <Button
+            key={item.label}
+            variant={"ghost"}
+            data-hash={item.hash}
+            onClick={() => handleNavClick(item.hash)}
+            className={cn(
+              "font-semibold text-md transition-colors z-10 hover:text-primary rounded-full",
+              {
                 // Highlight if active
-                activeHash === item.hash
-                  ? "text-primary hover:bg-transparent! hover:cursor-default"
-                  : "",
-              )}
-            >
-              {/* {item.hash === "#home" ? <HomeIcon /> : item.label} */}
-              {item.label}
-            </Button>
-          ))}
-        </div>
+                "text-primary hover:bg-transparent! hover:cursor-default":
+                  activeHash === item.hash,
+              },
+            )}
+          >
+            {/* {item.hash === "#home" ? <HomeIcon /> : item.label} */}
+            {item.label}
+          </Button>
+        ))}
       </div>
     </nav>
   );

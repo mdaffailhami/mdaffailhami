@@ -1,3 +1,4 @@
+import { ThemeSwitcher } from "@/components/theme-switcher";
 import { Navbar } from "../../components/navbar";
 
 export default function MainLayout({
@@ -9,6 +10,7 @@ export default function MainLayout({
     <>
       <header>
         <Navbar />
+        <ThemeSwitcher />
       </header>
       {children}
       <footer></footer>

@@ -24,9 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="no-scrollbar">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background transition-colors duration-200`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased transition-colors duration-200`}
       >
         <RootProviders>{children}</RootProviders>
       </body>
