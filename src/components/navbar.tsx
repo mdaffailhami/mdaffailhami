@@ -18,10 +18,25 @@ export function Navbar() {
   const [activeHash, setactiveHash] = useState("");
   // State to control the position and width of the active indicator
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 76 });
+  // State to track if we're on mobile
+  const [isMobile, setIsMobile] = useState(false);
   // Ref for the nav container to query buttons
   const navRef = useRef<HTMLDivElement>(null);
   // Ref to prevent observer updates while clicking a nav button
   const isClickingRef = useRef(false);
+
+  // Effect to track window resize and update isMobile
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Set initial value
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Effect to set up IntersectionObserver for scroll spying
   useEffect(() => {
@@ -46,8 +61,9 @@ export function Navbar() {
       },
       {
         // rootMargin defines the "active" area.
-        // "-50% 0px -50% 0px" means the intersection is checked at the center of the viewport.
-        rootMargin: "-50% 0px -50% 0px",
+        // For vertical scrolling: "-50% 0px -50% 0px" checks at center of viewport
+        // For horizontal scrolling: "0px -50% 0px -50%" checks at center of viewport
+        rootMargin: isMobile ? "0px -50% 0px -50%" : "-50% 0px -50% 0px",
         threshold: 0,
       },
     );
@@ -71,7 +87,7 @@ export function Navbar() {
       observer.disconnect();
       clearTimeout(timeoutId);
     };
-  }, []);
+  }, [isMobile]); // Re-run when isMobile changes
 
   // Effect to update the indicator position when activeHash changes
   useEffect(() => {
@@ -121,7 +137,7 @@ export function Navbar() {
   return (
     <nav
       ref={navRef}
-      className="bg-card backdrop-blur-md w-min absolute top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-2.5 shadow-lg border border-border"
+      className="max-md:hidden bg-card backdrop-blur-md w-min absolute top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-2.5 shadow-lg border border-border"
     >
       <div className="relative flex gap-6 items-center">
         {/* Animated active indicator */}
