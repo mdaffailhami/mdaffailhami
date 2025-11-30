@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
 import { Laptop2Icon, MoonIcon, SunIcon } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
@@ -69,17 +71,29 @@ function ThemeButton({
   onClick(): void;
   icon: React.ReactNode;
 }) {
+  const isMobile = useIsMobile();
+
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      data-theme={theme}
-      onClick={onClick}
-      className={cn("rounded-full size-12", {
-        "text-primary": isActive,
-      })}
+    <Tooltip
+      open={isMobile ? false : undefined} // Mobile devices should not show tooltip
+      delayDuration={100}
     >
-      {icon}
-    </Button>
+      <TooltipTrigger asChild>
+        <Button
+          variant="ghost"
+          size="icon"
+          data-theme={theme}
+          onClick={onClick}
+          className={cn("rounded-full size-12", {
+            "text-primary": isActive,
+          })}
+        >
+          {icon}
+        </Button>
+      </TooltipTrigger>
+      <TooltipContent>
+        <span>{theme.charAt(0).toUpperCase() + theme.slice(1)}</span>
+      </TooltipContent>
+    </Tooltip>
   );
 }
