@@ -84,7 +84,7 @@ function ThemeButton({
           size="icon"
           data-theme={theme}
           onClick={onClick}
-          className={cn("rounded-full size-12", {
+          className={cn("rounded-full size-12 hover:text-primary", {
             "text-primary": isActive,
           })}
         >

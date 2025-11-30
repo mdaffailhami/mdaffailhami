@@ -1,7 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import { Slide } from "@/components/slide";
+import { ToolBadge } from "@/components/tool-badge";
+import { tools } from "@/lib/constants";
+import { useTheme } from "next-themes";
 
 export default function AboutSlide() {
+  // Use resolvedTheme instead of theme to get the actual theme
+  const { resolvedTheme } = useTheme();
+
   return (
     <Slide id="about" className="flex flex-col md:flex-row items-center gap-8">
       <section className="w-full md:flex-2 flex justify-center">
@@ -20,14 +28,9 @@ export default function AboutSlide() {
           className="rounded-b-full w-[75%] md:w-md max-md:hidden"
         />
       </section>
-      <section className="flex flex-col w-full md:flex-3">
-        <h1 className="text-[4rem] font-medium leading-18">About Me</h1>
-        <p className="text-left text-base text-muted-foreground">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias minus
-          corporis eos fuga? Rem error reiciendis, eveniet temporibus vel
-          possimus dolores iusto, unde deleniti corporis qui ducimus dolorem
-          dignissimos numquam!.
-          <br /> <br />
+      <section className="flex flex-col w-full md:flex-3 gap-y-4">
+        <h1 className="text-6xl font-medium leading-14">About Me</h1>
+        <p className="text-lg text-muted-foreground text-justify">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet non
           tempora sequi consectetur praesentium pariatur quod vero facilis quia
           quidem, labore, atque necessitatibus mollitia qui, temporibus dolores
@@ -37,6 +40,28 @@ export default function AboutSlide() {
           perferendis cupiditate perspiciatis dolore amet ab aliquam minima
           dolorem esse totam.
         </p>
+        <div>
+          <p className="text-lg text-muted-foreground text-justify mb-2.5">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+            provident ducimus sint laboriosam ipsa nulla, nemo temporibus eum et
+            id fuga delectus quasi cum! Aut doloribus maxime nulla unde illo:
+          </p>
+          <ul className="flex flex-row gap-4 flex-wrap">
+            {tools.map((tool) => (
+              <li key={tool.label}>
+                <ToolBadge
+                  icon={tool.Icon}
+                  label={tool.label}
+                  color={
+                    resolvedTheme === "dark"
+                      ? tool.color.dark
+                      : tool.color.light
+                  }
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
     </Slide>
   );

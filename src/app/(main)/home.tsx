@@ -25,7 +25,7 @@ export default function HomeSlide() {
       </section>
       <section className="flex flex-col w-full md:flex-3">
         <h1 className="text-[4rem] font-medium leading-18">Daffa Ilhami</h1>
-        <p className="text-left text-base text-muted-foreground">
+        <p className="text-justify text-base text-muted-foreground">
           UWU Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
           minus corporis eos fuga? Rem error reiciendis, eveniet temporibus vel
           possimus dolores iusto, unde deleniti corporis qui ducimus dolorem
