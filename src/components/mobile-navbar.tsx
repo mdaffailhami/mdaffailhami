@@ -1,21 +1,25 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { cn } from "@/lib/utils";
-import { navs } from "@/lib/constants";
 import { Button } from "./ui/button";
+import { cn } from "@/lib/utils";
+import { useEffect, useRef, useState } from "react";
+import { useIsMobile } from "@/hooks/use-is-mobile";
+import { navs } from "@/lib/constants";
 
 export function MobileNavbar() {
   const [activeHash, setActiveHash] = useState("");
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
+  const isMobile = useIsMobile();
   const navRef = useRef<HTMLDivElement>(null);
   const isClickingRef = useRef(false);
 
-  // Effect to set up IntersectionObserver for scroll spying
+  // Effect to set up IntersectionObserver for scroll spying (Updating url hash)
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (isClickingRef.current) return;
+        // Skip updates if the user is currently clicking a nav button
+        // Skip updates if we're on desktop
+        if (isClickingRef.current || !isMobile) return;
 
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -51,7 +55,7 @@ export function MobileNavbar() {
       observer.disconnect();
       clearTimeout(timeoutId);
     };
-  }, []);
+  }, [isMobile]);
 
   // Effect to update the indicator position when activeHash changes
   useEffect(() => {

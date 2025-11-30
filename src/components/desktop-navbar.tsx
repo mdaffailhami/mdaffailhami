@@ -4,43 +4,27 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { navs } from "@/lib/constants";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 
 export function DesktopNavbar() {
-  // State to track the active section ID
-  const [activeHash, setactiveHash] = useState("");
-  // State to control the position and width of the active indicator
+  const [activeHash, setActiveHash] = useState("");
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 76 });
-  // State to track if we're on mobile
-  const [isMobile, setIsMobile] = useState(false);
-  // Ref for the nav container to query buttons
+  const isMobile = useIsMobile();
   const navRef = useRef<HTMLDivElement>(null);
-  // Ref to prevent observer updates while clicking a nav button
   const isClickingRef = useRef(false);
 
-  // Effect to track window resize and update isMobile
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    // Set initial value
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Effect to set up IntersectionObserver for scroll spying
+  // Effect to set up IntersectionObserver for scroll spying (Updating url hash)
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         // Skip updates if the user is currently clicking a nav button
-        if (isClickingRef.current) return;
+        // Skip updates if we're on mobile
+        if (isClickingRef.current || isMobile) return;
 
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const newId = entry.target.id;
-            setactiveHash(`#${newId}`);
+            setActiveHash(`#${newId}`);
 
             // Update URL hash without triggering a scroll or reload
             if (newId === "home") {
@@ -54,8 +38,7 @@ export function DesktopNavbar() {
       {
         // rootMargin defines the "active" area.
         // For vertical scrolling: "-50% 0px -50% 0px" checks at center of viewport
-        // For horizontal scrolling: "0px -50% 0px -50%" checks at center of viewport
-        rootMargin: isMobile ? "0px -50% 0px -50%" : "-50% 0px -50% 0px",
+        rootMargin: "-50% 0px -50% 0px",
         threshold: 0,
       },
     );
@@ -105,7 +88,7 @@ export function DesktopNavbar() {
     isClickingRef.current = true;
 
     // Determine the ID to set as active
-    setactiveHash(hash);
+    setActiveHash(hash);
 
     // Update URL hash using replaceState to avoid cluttering browser history
     if (hash === "#home") {
