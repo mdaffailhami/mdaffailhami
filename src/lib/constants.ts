@@ -16,6 +16,9 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiUbuntu,
+  SiLinkedin,
+  SiX,
+  SiInstagram,
 } from "react-icons/si";
 
 import { BiLogoPostgresql } from "react-icons/bi";
@@ -30,6 +33,53 @@ export const navs: {
   { label: "Projects", Icon: BriefcaseIcon, hash: "#projects" },
   { label: "Experience", Icon: AwardIcon, hash: "#experience" },
   { label: "Contact", Icon: MailIcon, hash: "#contact" },
+];
+
+export const socialMedia: {
+  label: string;
+  Icon: React.ComponentType<{ className?: string }>;
+  url: string;
+  color: {
+    light: string;
+    dark: string;
+  };
+}[] = [
+  {
+    label: "GitHub",
+    Icon: SiGithub,
+    url: "https://github.com/mdaffailhami",
+    color: {
+      light: "#181717",
+      dark: "#FFFFFF",
+    },
+  },
+  {
+    label: "LinkedIn",
+    Icon: SiLinkedin,
+    url: "https://linkedin.com/in/mdaffailhami",
+    color: {
+      light: "#0A66C2",
+      dark: "#0A66C2",
+    },
+  },
+  {
+    label: "X",
+    Icon: SiX,
+    url: "https://x.com/mdaffailhami",
+    color: {
+      light: "#000000",
+      dark: "#FFFFFF",
+    },
+  },
+  {
+    label: "Instagram",
+    Icon: SiInstagram,
+    url: "https://instagram.com/mdaffailhami",
+    color: {
+      light: "#E4405F",
+      dark: "#E4405F",
+    },
+  },
 ];
 
 export type Technology = {
@@ -356,56 +406,56 @@ export const projects: Project[] = [
       },
     ],
   },
-  {
-    title: "Sample Project 4",
-    shortDescription:
-      "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    longDescription:
-      "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
-    thumbnail: "/placeholder-project.jpg",
-    images: [
-      "/placeholder-project.jpg",
-      "/placeholder-project-2.jpg",
-      "/placeholder-project-3.jpg",
-    ],
-    technologies: [
-      {
-        label: "React",
-        Icon: SiReact,
-        color: { light: "#61DAFB", dark: "#61DAFB" },
-      },
-      {
-        label: "Next.js",
-        Icon: SiNextdotjs,
-        color: { light: "#000000", dark: "#FFFFFF" },
-      },
-      {
-        label: "Shadcn UI",
-        Icon: SiShadcnui,
-        color: { light: "#000000", dark: "#FFFFFF" },
-      },
-      {
-        label: "TypeScript",
-        Icon: SiTypescript,
-        color: { light: "#3178C6", dark: "#3178C6" },
-      },
-      {
-        label: "Tailwind CSS",
-        Icon: SiTailwindcss,
-        color: { light: "#06B6D4", dark: "#06B6D4" },
-      },
-    ],
-    buttons: [
-      {
-        type: "github",
-        label: "View on GitHub",
-        url: "https://github.com/username/project",
-      },
-      {
-        type: "project",
-        label: "Open Project",
-        url: "https://project-demo.com",
-      },
-    ],
-  },
+  // {
+  //   title: "Sample Project 4",
+  //   shortDescription:
+  //     "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+  //   longDescription:
+  //     "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
+  //   thumbnail: "/placeholder-project.jpg",
+  //   images: [
+  //     "/placeholder-project.jpg",
+  //     "/placeholder-project-2.jpg",
+  //     "/placeholder-project-3.jpg",
+  //   ],
+  //   technologies: [
+  //     {
+  //       label: "React",
+  //       Icon: SiReact,
+  //       color: { light: "#61DAFB", dark: "#61DAFB" },
+  //     },
+  //     {
+  //       label: "Next.js",
+  //       Icon: SiNextdotjs,
+  //       color: { light: "#000000", dark: "#FFFFFF" },
+  //     },
+  //     {
+  //       label: "Shadcn UI",
+  //       Icon: SiShadcnui,
+  //       color: { light: "#000000", dark: "#FFFFFF" },
+  //     },
+  //     {
+  //       label: "TypeScript",
+  //       Icon: SiTypescript,
+  //       color: { light: "#3178C6", dark: "#3178C6" },
+  //     },
+  //     {
+  //       label: "Tailwind CSS",
+  //       Icon: SiTailwindcss,
+  //       color: { light: "#06B6D4", dark: "#06B6D4" },
+  //     },
+  //   ],
+  //   buttons: [
+  //     {
+  //       type: "github",
+  //       label: "View on GitHub",
+  //       url: "https://github.com/username/project",
+  //     },
+  //     {
+  //       type: "project",
+  //       label: "Open Project",
+  //       url: "https://project-demo.com",
+  //     },
+  //   ],
+  // },
 ];

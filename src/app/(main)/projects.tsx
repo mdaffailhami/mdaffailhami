@@ -10,10 +10,10 @@ export default function ProjectsSlide() {
   return (
     <Slide
       id="projects"
-      className="flex flex-col gap-y-12 items-center justify-center"
+      className="flex flex-col gap-y-6 items-center justify-center"
     >
       <h1 className="text-[2.5rem] font-semibold text-center">My Projects</h1>
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full justify-items-center">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full justify-items-center">
         {projects.map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}

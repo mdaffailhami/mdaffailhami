@@ -24,14 +24,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <>
       <button
         type="button"
-        className="group relative max-w-100 cursor-pointer overflow-hidden rounded-lg border border-border bg-card shadow-md transition-all duration-300 hover:scale-101 hover:border-primary/50 hover:shadow-lg"
+        className="group relative max-w-110 cursor-pointer overflow-hidden rounded-lg border border-border bg-card shadow-md transition-all duration-300 hover:scale-101 hover:border-primary/50 hover:shadow-lg"
         onClick={() => setDialogOpen(true)}
       >
         {/* Gradient overlay on hover */}
-        <div className="absolute inset-0 z-10 bg-linear-to-t from-primary/10 dark:from-primary/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="absolute inset-0 z-10 bg-linear-to-tl from-primary/5 dark:from-primary/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
         {/* Thumbnail */}
-        <div className="relative h-65 w-full overflow-hidden">
+        <div className="relative h-80 w-full overflow-hidden">
           <Image
             src={project.thumbnail}
             alt={project.title}
