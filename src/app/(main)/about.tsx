@@ -2,13 +2,19 @@
 
 import Image from "next/image";
 import { Slide } from "@/components/slide";
-import { ToolBadge } from "@/components/tool-badge";
-import { tools } from "@/lib/constants";
+import { TechBadge } from "@/components/tech-badge";
+import { technologies } from "@/lib/constants";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function AboutSlide() {
   // Use resolvedTheme instead of theme to get the actual theme
   const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <Slide id="about" className="flex flex-col md:flex-row items-center gap-8">
@@ -47,15 +53,15 @@ export default function AboutSlide() {
             id fuga delectus quasi cum! Aut doloribus maxime nulla unde illo:
           </p>
           <ul className="flex flex-row gap-4 flex-wrap">
-            {tools.map((tool) => (
-              <li key={tool.label}>
-                <ToolBadge
-                  icon={tool.Icon}
-                  label={tool.label}
+            {technologies.map((tech) => (
+              <li key={tech.label}>
+                <TechBadge
+                  icon={tech.Icon}
+                  label={tech.label}
                   color={
-                    resolvedTheme === "dark"
-                      ? tool.color.dark
-                      : tool.color.light
+                    mounted && resolvedTheme === "dark"
+                      ? tech.color.dark
+                      : tech.color.light
                   }
                 />
               </li>

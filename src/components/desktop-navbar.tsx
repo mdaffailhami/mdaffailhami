@@ -112,7 +112,7 @@ export function DesktopNavbar() {
   return (
     <nav
       ref={navRef}
-      className="max-md:hidden bg-background backdrop-blur-md w-min absolute top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-2.5 shadow-md shadow-foreground/5 border border-border"
+      className="z-20 max-md:hidden bg-background backdrop-blur-md w-min absolute top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-2.5 shadow-md shadow-foreground/5 border border-border"
     >
       <div className="relative flex gap-6 items-center">
         {/* Animated active indicator */}

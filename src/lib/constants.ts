@@ -10,7 +10,6 @@ import {
   SiDocker,
   SiGithub,
   SiNextdotjs,
-  SiPostgresql,
   SiPrisma,
   SiReact,
   SiShadcnui,
@@ -18,6 +17,8 @@ import {
   SiTypescript,
   SiUbuntu,
 } from "react-icons/si";
+
+import { BiLogoPostgresql } from "react-icons/bi";
 
 export const navs: {
   label: string;
@@ -31,7 +32,16 @@ export const navs: {
   { label: "Contact", Icon: MailIcon, hash: "#contact" },
 ];
 
-export const tools = [
+export type Technology = {
+  label: string;
+  Icon: React.ComponentType<{ className?: string }>;
+  color: {
+    light: string;
+    dark: string;
+  };
+};
+
+export const technologies: Technology[] = [
   {
     label: "React",
     Icon: SiReact,
@@ -82,10 +92,10 @@ export const tools = [
   },
   {
     label: "PostgreSQL",
-    Icon: SiPostgresql,
+    Icon: BiLogoPostgresql,
     color: {
-      light: "#4169E1",
-      dark: "#4169E1",
+      light: "#0064a5",
+      dark: "#008bb9",
     },
   },
   {
@@ -111,5 +121,339 @@ export const tools = [
       light: "#E95420",
       dark: "#E95420",
     },
+  },
+];
+
+export type Project = {
+  title: string;
+  shortDescription: string;
+  longDescription: string;
+  thumbnail: string;
+  images: string[];
+  technologies: Technology[];
+  buttons: {
+    type: "github" | "project" | "custom";
+    label: string;
+    url: string;
+    icon?: React.ComponentType<{ className?: string }>;
+  }[];
+};
+
+export type Experience = {
+  company: string;
+  role: string;
+  period: string;
+  description: string;
+  image: string;
+  technologies: Technology[];
+};
+
+export const experiences: Experience[] = [
+  {
+    company: "Tech Innovations Inc.",
+    role: "Senior Full-Stack Developer",
+    period: "2023 - Present",
+    description:
+      "Leading development of scalable web applications using modern tech stack. Mentoring junior developers and architecting system designs.",
+    image: "/placeholder-company-1.jpg",
+    technologies: [
+      {
+        label: "React",
+        Icon: SiReact,
+        color: { light: "#61DAFB", dark: "#61DAFB" },
+      },
+      {
+        label: "Next.js",
+        Icon: SiNextdotjs,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "TypeScript",
+        Icon: SiTypescript,
+        color: { light: "#3178C6", dark: "#3178C6" },
+      },
+      {
+        label: "PostgreSQL",
+        Icon: BiLogoPostgresql,
+        color: { light: "#0064a5", dark: "#008bb9" },
+      },
+    ],
+  },
+  {
+    company: "Digital Solutions Co.",
+    role: "Full-Stack Developer",
+    period: "2021 - 2023",
+    description:
+      "Built and maintained multiple client projects using React, Node.js, and cloud infrastructure. Improved application performance by 40%.",
+    image: "/placeholder-company-2.jpg",
+    technologies: [
+      {
+        label: "React",
+        Icon: SiReact,
+        color: { light: "#61DAFB", dark: "#61DAFB" },
+      },
+      {
+        label: "TypeScript",
+        Icon: SiTypescript,
+        color: { light: "#3178C6", dark: "#3178C6" },
+      },
+      {
+        label: "Docker",
+        Icon: SiDocker,
+        color: { light: "#2496ED", dark: "#2496ED" },
+      },
+    ],
+  },
+  {
+    company: "Creative Agency",
+    role: "Frontend Developer",
+    period: "2020 - 2021",
+    description:
+      "Developed responsive web applications and landing pages. Collaborated with design team to implement pixel-perfect UI components.",
+    image: "/placeholder-company-3.jpg",
+    technologies: [
+      {
+        label: "React",
+        Icon: SiReact,
+        color: { light: "#61DAFB", dark: "#61DAFB" },
+      },
+      {
+        label: "Tailwind CSS",
+        Icon: SiTailwindcss,
+        color: { light: "#06B6D4", dark: "#06B6D4" },
+      },
+    ],
+  },
+  // {
+  //   company: "StartUp Labs",
+  //   role: "Junior Developer",
+  //   period: "2019 - 2020",
+  //   description:
+  //     "Assisted in building MVP products for various startups. Gained experience in agile development and rapid prototyping.",
+  //   image: "/placeholder-company-4.jpg",
+  //   technologies: [
+  //     {
+  //       label: "React",
+  //       Icon: SiReact,
+  //       color: { light: "#61DAFB", dark: "#61DAFB" },
+  //     },
+  //     {
+  //       label: "GitHub",
+  //       Icon: SiGithub,
+  //       color: { light: "#181717", dark: "#FFFFFF" },
+  //     },
+  //   ],
+  // },
+];
+
+export const projects: Project[] = [
+  // Sample project data - replace with actual projects
+  {
+    title: "Sample Project 1",
+    shortDescription:
+      "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    longDescription:
+      "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
+    thumbnail: "/placeholder-project.jpg",
+    images: [
+      "/placeholder-project.jpg",
+      "/placeholder-project-2.jpg",
+      "/placeholder-project-3.jpg",
+    ],
+    technologies: [
+      {
+        label: "React",
+        Icon: SiReact,
+        color: { light: "#61DAFB", dark: "#61DAFB" },
+      },
+      {
+        label: "Next.js",
+        Icon: SiNextdotjs,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "Shadcn UI",
+        Icon: SiShadcnui,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "TypeScript",
+        Icon: SiTypescript,
+        color: { light: "#3178C6", dark: "#3178C6" },
+      },
+      {
+        label: "Tailwind CSS",
+        Icon: SiTailwindcss,
+        color: { light: "#06B6D4", dark: "#06B6D4" },
+      },
+    ],
+    buttons: [
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
+      },
+      {
+        type: "project",
+        label: "Open Project",
+        url: "https://project-demo.com",
+      },
+    ],
+  },
+  {
+    title: "Sample Project 2",
+    shortDescription:
+      "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    longDescription:
+      "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
+    thumbnail: "/placeholder-project.jpg",
+    images: [
+      "/placeholder-project.jpg",
+      "/placeholder-project-2.jpg",
+      "/placeholder-project-3.jpg",
+    ],
+    technologies: [
+      {
+        label: "React",
+        Icon: SiReact,
+        color: { light: "#61DAFB", dark: "#61DAFB" },
+      },
+      {
+        label: "Next.js",
+        Icon: SiNextdotjs,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "Shadcn UI",
+        Icon: SiShadcnui,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "TypeScript",
+        Icon: SiTypescript,
+        color: { light: "#3178C6", dark: "#3178C6" },
+      },
+      {
+        label: "Tailwind CSS",
+        Icon: SiTailwindcss,
+        color: { light: "#06B6D4", dark: "#06B6D4" },
+      },
+    ],
+    buttons: [
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
+      },
+      {
+        type: "project",
+        label: "Open Project",
+        url: "https://project-demo.com",
+      },
+    ],
+  },
+  {
+    title: "Sample Project 3",
+    shortDescription:
+      "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    longDescription:
+      "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
+    thumbnail: "/placeholder-project.jpg",
+    images: [
+      "/placeholder-project.jpg",
+      "/placeholder-project-2.jpg",
+      "/placeholder-project-3.jpg",
+    ],
+    technologies: [
+      {
+        label: "React",
+        Icon: SiReact,
+        color: { light: "#61DAFB", dark: "#61DAFB" },
+      },
+      {
+        label: "Next.js",
+        Icon: SiNextdotjs,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "Shadcn UI",
+        Icon: SiShadcnui,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "TypeScript",
+        Icon: SiTypescript,
+        color: { light: "#3178C6", dark: "#3178C6" },
+      },
+      {
+        label: "Tailwind CSS",
+        Icon: SiTailwindcss,
+        color: { light: "#06B6D4", dark: "#06B6D4" },
+      },
+    ],
+    buttons: [
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
+      },
+      {
+        type: "project",
+        label: "Open Project",
+        url: "https://project-demo.com",
+      },
+    ],
+  },
+  {
+    title: "Sample Project 4",
+    shortDescription:
+      "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    longDescription:
+      "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
+    thumbnail: "/placeholder-project.jpg",
+    images: [
+      "/placeholder-project.jpg",
+      "/placeholder-project-2.jpg",
+      "/placeholder-project-3.jpg",
+    ],
+    technologies: [
+      {
+        label: "React",
+        Icon: SiReact,
+        color: { light: "#61DAFB", dark: "#61DAFB" },
+      },
+      {
+        label: "Next.js",
+        Icon: SiNextdotjs,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "Shadcn UI",
+        Icon: SiShadcnui,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "TypeScript",
+        Icon: SiTypescript,
+        color: { light: "#3178C6", dark: "#3178C6" },
+      },
+      {
+        label: "Tailwind CSS",
+        Icon: SiTailwindcss,
+        color: { light: "#06B6D4", dark: "#06B6D4" },
+      },
+    ],
+    buttons: [
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
+      },
+      {
+        type: "project",
+        label: "Open Project",
+        url: "https://project-demo.com",
+      },
+    ],
   },
 ];
