@@ -1,13 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { TechBadge } from "@/components/tech-badge";
 import type { Project } from "@/lib/constants";
 import { useTheme } from "next-themes";
@@ -29,11 +22,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <>
-      <Card
-        className="group bg-card max-w-100 pt-0 gap-y-4 cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-101 hover:border-primary"
+      <button
+        type="button"
+        className="group relative max-w-100 cursor-pointer overflow-hidden rounded-lg border border-border bg-card shadow-md transition-all duration-300 hover:scale-101 hover:border-primary/50 hover:shadow-lg"
         onClick={() => setDialogOpen(true)}
       >
-        <div className="relative w-full h-65 overflow-hidden">
+        {/* Gradient overlay on hover */}
+        <div className="absolute inset-0 z-10 bg-linear-to-t from-primary/10 dark:from-primary/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+        {/* Thumbnail */}
+        <div className="relative h-65 w-full overflow-hidden">
           <Image
             src={project.thumbnail}
             alt={project.title}
@@ -41,38 +39,45 @@ export function ProjectCard({ project }: ProjectCardProps) {
             className="object-cover transition-transform duration-300 group-hover:scale-101"
           />
         </div>
-        <CardHeader className="px-5">
-          <CardTitle className="group-hover:underline text-primary decoration-2 underline-offset-4 text-[1.4rem] line-clamp-1">
-            {project.title}
-          </CardTitle>
-          <CardDescription className="line-clamp-2 text-[0.95rem]">
-            {project.shortDescription}
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="max-h-7.5 overflow-y-hidden px-5">
-          <div className="flex flex-row flex-wrap gap-x-1 gap-y-5">
-            {project.technologies.slice(0, 4).map((tech) => (
-              <TechBadge
-                key={tech.label}
-                icon={tech.Icon}
-                label={tech.label}
-                color={
-                  mounted && resolvedTheme === "dark"
-                    ? tech.color.dark
-                    : tech.color.light
-                }
-                size="sm"
-                className="hover:outline-border cursor-pointer"
-              />
-            ))}
-            {project.technologies.length > 4 && (
-              <span className="text-sm text-muted-foreground self-center">
-                +{project.technologies.length - 4} more
-              </span>
-            )}
+
+        {/* Content */}
+        <div className="relative flex flex-col gap-y-4 p-5 text-left">
+          {/* Header */}
+          <div className="space-y-2">
+            <h3 className="line-clamp-1 text-2xl text-primary font-medium decoration-2 underline-offset-4 group-hover:underline">
+              {project.title}
+            </h3>
+            <p className="line-clamp-2 text-sm leading-relaxed text-muted-foreground">
+              {project.shortDescription}
+            </p>
           </div>
-        </CardContent>
-      </Card>
+
+          {/* Technologies */}
+          <div className="max-h-7.5 overflow-y-hidden">
+            <div className="flex flex-row flex-wrap gap-x-1 gap-y-5">
+              {project.technologies.slice(0, 4).map((tech) => (
+                <TechBadge
+                  key={tech.label}
+                  icon={tech.Icon}
+                  label={tech.label}
+                  color={
+                    mounted && resolvedTheme === "dark"
+                      ? tech.color.dark
+                      : tech.color.light
+                  }
+                  size="sm"
+                  className="cursor-pointer hover:outline-border"
+                />
+              ))}
+              {project.technologies.length > 4 && (
+                <span className="self-center text-sm text-muted-foreground">
+                  +{project.technologies.length - 4} more
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+      </button>
 
       <ProjectDialog
         project={project}
