@@ -38,7 +38,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
         {/* Thumbnail */}
         <div className="relative h-80 w-full overflow-hidden">
           <Image
-            src={project.thumbnail}
+            src={project.images[0]}
             alt={project.title}
             fill
             className="object-cover transition-transform duration-300 group-hover/card:scale-101"

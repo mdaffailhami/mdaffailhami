@@ -70,8 +70,7 @@ export function Carousel({
       <div className={cn("relative group", className)}>
         <div
           ref={carouselRef}
-          className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hidden"
         >
           {items.map((item, index) => (
             <div

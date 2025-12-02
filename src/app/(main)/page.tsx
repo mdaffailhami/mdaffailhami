@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <main
       id="main"
-      className="flex flex-row md:flex-col snap-x md:snap-y max-w-500 mx-auto snap-mandatory h-screen w-screen overflow-x-scroll overflow-y-hidden md:overflow-x-hidden md:overflow-y-scroll scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+      className="flex flex-row md:flex-col snap-x md:snap-y max-w-500 mx-auto snap-mandatory h-screen w-screen overflow-x-scroll overflow-y-hidden md:overflow-x-hidden md:overflow-y-scroll scroll-smooth scrollbar-hidden"
     >
       <HomeSlide />
       <AboutSlide />

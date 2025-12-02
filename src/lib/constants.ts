@@ -178,7 +178,6 @@ export type Project = {
   title: string;
   shortDescription: string;
   longDescription: string;
-  thumbnail: string;
   images: string[];
   technologies: Technology[];
   buttons: {
@@ -195,7 +194,7 @@ export type Experience = {
   role: string;
   period: string;
   description: string;
-  image: string;
+  images: string[];
 };
 
 export const experiences: Experience[] = [
@@ -206,7 +205,7 @@ export const experiences: Experience[] = [
     period: "2023 - Present",
     description:
       "Leading development of scalable web applications using modern tech stack. Mentoring junior developers and architecting system designs.",
-    image: "/placeholder-project.jpg",
+    images: ["/placeholder-project.jpg", "/placeholder-project-2.jpg"],
   },
   {
     company: "Digital Solutions Co.",
@@ -215,7 +214,7 @@ export const experiences: Experience[] = [
     period: "2021 - 2023",
     description:
       "Built and maintained multiple client projects using React, Node.js, and cloud infrastructure. Improved application performance by 40%.",
-    image: "/placeholder-project-2.jpg",
+    images: ["/placeholder-project-2.jpg", "/placeholder-project-3.jpg"],
   },
   {
     company: "Creative Agency",
@@ -224,7 +223,7 @@ export const experiences: Experience[] = [
     period: "2020 - 2021",
     description:
       "Developed responsive web applications and landing pages. Collaborated with design team to implement pixel-perfect UI components.",
-    image: "/placeholder-project-3.jpg",
+    images: ["/placeholder-project-3.jpg", "/placeholder-project.jpg"],
   },
   // {
   //   company: "StartUp Labs",
@@ -256,7 +255,6 @@ export const projects: Project[] = [
       "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     longDescription:
       "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
-    thumbnail: "/placeholder-project.jpg",
     images: [
       "/placeholder-project.jpg",
       "/placeholder-project-2.jpg",
@@ -308,7 +306,6 @@ export const projects: Project[] = [
       "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     longDescription:
       "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
-    thumbnail: "/placeholder-project-2.jpg",
     images: [
       "/placeholder-project.jpg",
       "/placeholder-project-2.jpg",
@@ -360,7 +357,6 @@ export const projects: Project[] = [
       "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     longDescription:
       "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
-    thumbnail: "/placeholder-project-3.jpg",
     images: [
       "/placeholder-project.jpg",
       "/placeholder-project-2.jpg",
@@ -412,7 +408,6 @@ export const projects: Project[] = [
       "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     longDescription:
       "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
-    thumbnail: "/placeholder-project.jpg",
     images: [
       "/placeholder-project.jpg",
       "/placeholder-project-2.jpg",
@@ -464,7 +459,6 @@ export const projects: Project[] = [
       "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     longDescription:
       "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
-    thumbnail: "/placeholder-project-2.jpg",
     images: [
       "/placeholder-project.jpg",
       "/placeholder-project-2.jpg",
@@ -516,7 +510,6 @@ export const projects: Project[] = [
       "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     longDescription:
       "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
-    thumbnail: "/placeholder-project-3.jpg",
     images: [
       "/placeholder-project.jpg",
       "/placeholder-project-2.jpg",
@@ -568,7 +561,6 @@ export const projects: Project[] = [
       "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     longDescription:
       "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
-    thumbnail: "/placeholder-project.jpg",
     images: [
       "/placeholder-project.jpg",
       "/placeholder-project-2.jpg",
@@ -620,7 +612,6 @@ export const projects: Project[] = [
       "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     longDescription:
       "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
-    thumbnail: "/placeholder-project-2.jpg",
     images: [
       "/placeholder-project.jpg",
       "/placeholder-project-2.jpg",
@@ -672,7 +663,6 @@ export const projects: Project[] = [
       "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     longDescription:
       "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
-    thumbnail: "/placeholder-project-3.jpg",
     images: [
       "/placeholder-project.jpg",
       "/placeholder-project-2.jpg",
@@ -724,7 +714,6 @@ export const projects: Project[] = [
       "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     longDescription:
       "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
-    thumbnail: "/placeholder-project-3.jpg",
     images: [
       "/placeholder-project.jpg",
       "/placeholder-project-2.jpg",

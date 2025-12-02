@@ -43,7 +43,7 @@ export default function ProjectsSlide() {
       <Carousel
         items={slides}
         showIndicator={true}
-        indicatorClassName="-mt-4 mb-4.5"
+        indicatorClassName="-mt-4 mb-5"
       />
 
       {/* {projects.length > 9 && ( */}
