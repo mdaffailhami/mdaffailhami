@@ -6,12 +6,14 @@ import type { Project } from "@/lib/constants";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import { ProjectDialog } from "@/components/project-dialog";
+import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
   project: Project;
+  className?: string;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, className }: ProjectCardProps) {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -24,11 +26,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
     <>
       <button
         type="button"
-        className="group relative max-w-110 cursor-pointer overflow-hidden rounded-lg border border-border bg-card shadow-md transition-all duration-300 hover:scale-101 hover:border-primary/50 hover:shadow-lg"
+        className={cn(
+          "group/card relative max-w-110 cursor-pointer overflow-hidden rounded-lg border border-border bg-card shadow-md shadow-foreground/5 transition-all duration-300 hover:scale-101 hover:border-primary/50 hover:shadow-lg",
+          className,
+        )}
         onClick={() => setDialogOpen(true)}
       >
         {/* Gradient overlay on hover */}
-        <div className="absolute inset-0 z-10 bg-linear-to-tl from-primary/5 dark:from-primary/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        <div className="absolute inset-0 z-10 bg-linear-to-tl from-primary/5 dark:from-primary/10 to-transparent opacity-0 transition-opacity duration-300 group-hover/card:opacity-100" />
 
         {/* Thumbnail */}
         <div className="relative h-80 w-full overflow-hidden">
@@ -36,7 +41,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             src={project.thumbnail}
             alt={project.title}
             fill
-            className="object-cover transition-transform duration-300 group-hover:scale-101"
+            className="object-cover transition-transform duration-300 group-hover/card:scale-101"
           />
         </div>
 
@@ -44,7 +49,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="relative flex flex-col gap-y-4 p-5 text-left">
           {/* Header */}
           <div className="space-y-2">
-            <h3 className="line-clamp-1 text-2xl text-primary font-medium decoration-2 underline-offset-4 group-hover:underline">
+            <h3 className="line-clamp-1 text-2xl text-primary font-medium decoration-2 underline-offset-4 group-hover/card:underline">
               {project.title}
             </h3>
             <p className="line-clamp-2 text-sm leading-relaxed text-muted-foreground">

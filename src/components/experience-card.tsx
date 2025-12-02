@@ -10,7 +10,7 @@ interface ExperienceCardProps {
 
 export default function ExperienceCard({ experience }: ExperienceCardProps) {
   return (
-    <div className="group relative overflow-hidden rounded-lg border border-border bg-card p-4 shadow-md transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-101">
+    <div className="group relative overflow-hidden rounded-lg border border-border bg-card p-4 shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-101">
       {/* Gradient overlay on hover */}
       <div className="absolute inset-0 bg-linear-to-br from-primary/10 dark:from-primary/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 

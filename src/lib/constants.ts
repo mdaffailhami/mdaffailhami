@@ -406,56 +406,368 @@ export const projects: Project[] = [
       },
     ],
   },
-  // {
-  //   title: "Sample Project 4",
-  //   shortDescription:
-  //     "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-  //   longDescription:
-  //     "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
-  //   thumbnail: "/placeholder-project.jpg",
-  //   images: [
-  //     "/placeholder-project.jpg",
-  //     "/placeholder-project-2.jpg",
-  //     "/placeholder-project-3.jpg",
-  //   ],
-  //   technologies: [
-  //     {
-  //       label: "React",
-  //       Icon: SiReact,
-  //       color: { light: "#61DAFB", dark: "#61DAFB" },
-  //     },
-  //     {
-  //       label: "Next.js",
-  //       Icon: SiNextdotjs,
-  //       color: { light: "#000000", dark: "#FFFFFF" },
-  //     },
-  //     {
-  //       label: "Shadcn UI",
-  //       Icon: SiShadcnui,
-  //       color: { light: "#000000", dark: "#FFFFFF" },
-  //     },
-  //     {
-  //       label: "TypeScript",
-  //       Icon: SiTypescript,
-  //       color: { light: "#3178C6", dark: "#3178C6" },
-  //     },
-  //     {
-  //       label: "Tailwind CSS",
-  //       Icon: SiTailwindcss,
-  //       color: { light: "#06B6D4", dark: "#06B6D4" },
-  //     },
-  //   ],
-  //   buttons: [
-  //     {
-  //       type: "github",
-  //       label: "View on GitHub",
-  //       url: "https://github.com/username/project",
-  //     },
-  //     {
-  //       type: "project",
-  //       label: "Open Project",
-  //       url: "https://project-demo.com",
-  //     },
-  //   ],
-  // },
+  {
+    title: "Sample Project 4",
+    shortDescription:
+      "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    longDescription:
+      "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
+    thumbnail: "/placeholder-project.jpg",
+    images: [
+      "/placeholder-project.jpg",
+      "/placeholder-project-2.jpg",
+      "/placeholder-project-3.jpg",
+    ],
+    technologies: [
+      {
+        label: "React",
+        Icon: SiReact,
+        color: { light: "#61DAFB", dark: "#61DAFB" },
+      },
+      {
+        label: "Next.js",
+        Icon: SiNextdotjs,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "Shadcn UI",
+        Icon: SiShadcnui,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "TypeScript",
+        Icon: SiTypescript,
+        color: { light: "#3178C6", dark: "#3178C6" },
+      },
+      {
+        label: "Tailwind CSS",
+        Icon: SiTailwindcss,
+        color: { light: "#06B6D4", dark: "#06B6D4" },
+      },
+    ],
+    buttons: [
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
+      },
+      {
+        type: "project",
+        label: "Open Project",
+        url: "https://project-demo.com",
+      },
+    ],
+  },
+  {
+    title: "Sample Project 5",
+    shortDescription:
+      "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    longDescription:
+      "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
+    thumbnail: "/placeholder-project-2.jpg",
+    images: [
+      "/placeholder-project.jpg",
+      "/placeholder-project-2.jpg",
+      "/placeholder-project-3.jpg",
+    ],
+    technologies: [
+      {
+        label: "React",
+        Icon: SiReact,
+        color: { light: "#61DAFB", dark: "#61DAFB" },
+      },
+      {
+        label: "Next.js",
+        Icon: SiNextdotjs,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "Shadcn UI",
+        Icon: SiShadcnui,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "TypeScript",
+        Icon: SiTypescript,
+        color: { light: "#3178C6", dark: "#3178C6" },
+      },
+      {
+        label: "Tailwind CSS",
+        Icon: SiTailwindcss,
+        color: { light: "#06B6D4", dark: "#06B6D4" },
+      },
+    ],
+    buttons: [
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
+      },
+      {
+        type: "project",
+        label: "Open Project",
+        url: "https://project-demo.com",
+      },
+    ],
+  },
+  {
+    title: "Sample Project 6",
+    shortDescription:
+      "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    longDescription:
+      "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
+    thumbnail: "/placeholder-project-3.jpg",
+    images: [
+      "/placeholder-project.jpg",
+      "/placeholder-project-2.jpg",
+      "/placeholder-project-3.jpg",
+    ],
+    technologies: [
+      {
+        label: "React",
+        Icon: SiReact,
+        color: { light: "#61DAFB", dark: "#61DAFB" },
+      },
+      {
+        label: "Next.js",
+        Icon: SiNextdotjs,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "Shadcn UI",
+        Icon: SiShadcnui,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "TypeScript",
+        Icon: SiTypescript,
+        color: { light: "#3178C6", dark: "#3178C6" },
+      },
+      {
+        label: "Tailwind CSS",
+        Icon: SiTailwindcss,
+        color: { light: "#06B6D4", dark: "#06B6D4" },
+      },
+    ],
+    buttons: [
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
+      },
+      {
+        type: "project",
+        label: "Open Project",
+        url: "https://project-demo.com",
+      },
+    ],
+  },
+  {
+    title: "Sample Project 7",
+    shortDescription:
+      "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    longDescription:
+      "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
+    thumbnail: "/placeholder-project.jpg",
+    images: [
+      "/placeholder-project.jpg",
+      "/placeholder-project-2.jpg",
+      "/placeholder-project-3.jpg",
+    ],
+    technologies: [
+      {
+        label: "React",
+        Icon: SiReact,
+        color: { light: "#61DAFB", dark: "#61DAFB" },
+      },
+      {
+        label: "Next.js",
+        Icon: SiNextdotjs,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "Shadcn UI",
+        Icon: SiShadcnui,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "TypeScript",
+        Icon: SiTypescript,
+        color: { light: "#3178C6", dark: "#3178C6" },
+      },
+      {
+        label: "Tailwind CSS",
+        Icon: SiTailwindcss,
+        color: { light: "#06B6D4", dark: "#06B6D4" },
+      },
+    ],
+    buttons: [
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
+      },
+      {
+        type: "project",
+        label: "Open Project",
+        url: "https://project-demo.com",
+      },
+    ],
+  },
+  {
+    title: "Sample Project 8",
+    shortDescription:
+      "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    longDescription:
+      "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
+    thumbnail: "/placeholder-project-2.jpg",
+    images: [
+      "/placeholder-project.jpg",
+      "/placeholder-project-2.jpg",
+      "/placeholder-project-3.jpg",
+    ],
+    technologies: [
+      {
+        label: "React",
+        Icon: SiReact,
+        color: { light: "#61DAFB", dark: "#61DAFB" },
+      },
+      {
+        label: "Next.js",
+        Icon: SiNextdotjs,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "Shadcn UI",
+        Icon: SiShadcnui,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "TypeScript",
+        Icon: SiTypescript,
+        color: { light: "#3178C6", dark: "#3178C6" },
+      },
+      {
+        label: "Tailwind CSS",
+        Icon: SiTailwindcss,
+        color: { light: "#06B6D4", dark: "#06B6D4" },
+      },
+    ],
+    buttons: [
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
+      },
+      {
+        type: "project",
+        label: "Open Project",
+        url: "https://project-demo.com",
+      },
+    ],
+  },
+  {
+    title: "Sample Project 9",
+    shortDescription:
+      "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    longDescription:
+      "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
+    thumbnail: "/placeholder-project-3.jpg",
+    images: [
+      "/placeholder-project.jpg",
+      "/placeholder-project-2.jpg",
+      "/placeholder-project-3.jpg",
+    ],
+    technologies: [
+      {
+        label: "React",
+        Icon: SiReact,
+        color: { light: "#61DAFB", dark: "#61DAFB" },
+      },
+      {
+        label: "Next.js",
+        Icon: SiNextdotjs,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "Shadcn UI",
+        Icon: SiShadcnui,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "TypeScript",
+        Icon: SiTypescript,
+        color: { light: "#3178C6", dark: "#3178C6" },
+      },
+      {
+        label: "Tailwind CSS",
+        Icon: SiTailwindcss,
+        color: { light: "#06B6D4", dark: "#06B6D4" },
+      },
+    ],
+    buttons: [
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
+      },
+      {
+        type: "project",
+        label: "Open Project",
+        url: "https://project-demo.com",
+      },
+    ],
+  },
+  {
+    title: "Sample Project 10",
+    shortDescription:
+      "A brief description of the project that appears on the card. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    longDescription:
+      "A more detailed description of the project that appears in the dialog. This can be much longer and provide more context about the project, its goals, challenges, and outcomes.",
+    thumbnail: "/placeholder-project-3.jpg",
+    images: [
+      "/placeholder-project.jpg",
+      "/placeholder-project-2.jpg",
+      "/placeholder-project-3.jpg",
+    ],
+    technologies: [
+      {
+        label: "React",
+        Icon: SiReact,
+        color: { light: "#61DAFB", dark: "#61DAFB" },
+      },
+      {
+        label: "Next.js",
+        Icon: SiNextdotjs,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "Shadcn UI",
+        Icon: SiShadcnui,
+        color: { light: "#000000", dark: "#FFFFFF" },
+      },
+      {
+        label: "TypeScript",
+        Icon: SiTypescript,
+        color: { light: "#3178C6", dark: "#3178C6" },
+      },
+      {
+        label: "Tailwind CSS",
+        Icon: SiTailwindcss,
+        color: { light: "#06B6D4", dark: "#06B6D4" },
+      },
+    ],
+    buttons: [
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
+      },
+      {
+        type: "project",
+        label: "Open Project",
+        url: "https://project-demo.com",
+      },
+    ],
+  },
 ];
