@@ -17,12 +17,12 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
       <button
         type="button"
         onClick={() => setDialogOpen(true)}
-        className="group relative overflow-hidden rounded-lg border border-border bg-card p-4 shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-101 cursor-pointer text-left w-full"
+        className="group h-36.5 flex items-start relative overflow-hidden rounded-lg border border-border bg-card p-4 shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-101 cursor-pointer text-left w-full"
       >
         {/* Gradient overlay on hover */}
         <div className="absolute inset-0 bg-linear-to-br from-primary/10 dark:from-primary/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-        <div className="relative flex gap-6">
+        <div className="relative flex gap-6 w-full">
           {/* Company Image */}
           <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-border bg-muted">
             <Image

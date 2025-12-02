@@ -1,36 +1,60 @@
 "use client";
 
+import { useState } from "react";
 import { Slide } from "@/components/slide";
 import ExperienceCard from "@/components/experience-card";
 import { experiences } from "@/lib/constants";
+import { Button } from "@/components/ui/button";
+import { ArrowDownIcon, ArrowUpIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export default function ExperienceSlide() {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const displayedExperiences = isExpanded
+    ? experiences
+    : experiences.slice(0, 3);
+
   return (
     <Slide
       id="experience"
       className="flex flex-col items-center justify-center gap-y-6"
     >
       <h1 className="text-[2.5rem] font-semibold">My Experience</h1>
-      <div className="max-w-4xl flex flex-row gap-x-7.75">
+      <div className="relative max-w-4xl flex flex-row w-full justify-center">
         {/* Line */}
-        <div className="w-0.5 h-full bg-primary/50"></div>
-        <div className="flex flex-col gap-y-6">
-          {experiences.map((experience) => (
+        <div className="w-0.5 bg-primary/50 shrink-0 absolute left-3 top-0 bottom-0"></div>
+        <div
+          className={cn(
+            "flex flex-col gap-y-6 transition-all duration-300 pl-8",
+            isExpanded ? "max-h-136 overflow-y-auto pr-4" : "",
+          )}
+          style={{ scrollbarWidth: "thin" }}
+        >
+          {displayedExperiences.map((experience) => (
             <div
               key={`${experience.company}-${experience.period}`}
               className="relative"
             >
               {/* Dot */}
-              <div className="absolute -left-10 top-1/2 size-4 rounded-full bg-primary/50 border-4 border-primary"></div>
+              <div className="absolute -left-6.75 top-1/2 size-4 rounded-full bg-primary/50 border-4 border-primary -translate-y-1/2"></div>
 
-              <ExperienceCard
-                key={`${experience.company}-${experience.period}`}
-                experience={experience}
-              />
+              <ExperienceCard experience={experience} />
             </div>
           ))}
         </div>
       </div>
+      <Button
+        variant={"link"}
+        className="text-center text-lg group hover:opacity-80"
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
+        {isExpanded ? "Show Less" : "Show More"}{" "}
+        {isExpanded ? (
+          <ArrowUpIcon className="size-5 ml-1" />
+        ) : (
+          <ArrowDownIcon className="size-5 ml-1" />
+        )}
+      </Button>
     </Slide>
   );
 }

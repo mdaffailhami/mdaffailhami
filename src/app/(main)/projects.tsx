@@ -10,26 +10,32 @@ import { Carousel } from "@/components/carousel";
 export default function ProjectsSlide() {
   // Limit to 9 projects and group them into slides of 3
   const displayedProjects = projects.slice(0, 9);
-  const projectsPerSlide = 3;
-  const totalSlides = Math.ceil(displayedProjects.length / projectsPerSlide);
+  const itemsPerSlide = 3;
+  const totalSlides = Math.ceil(displayedProjects.length / itemsPerSlide);
 
   // Create slides with 3 projects each
-  const slides = Array.from({ length: totalSlides }).map((_, i) => (
-    <div
-      key={`project-slide-${i + 1}`}
-      className="flex justify-center gap-6 px-4 py-7"
-    >
-      {displayedProjects
-        .slice(i * projectsPerSlide, (i + 1) * projectsPerSlide)
-        .map((project) => (
+  const slides = Array.from({ length: totalSlides }).map((_, i) => {
+    // Get the chunk of projects for the current slide
+    const chunk = displayedProjects.slice(
+      i * itemsPerSlide,
+      (i + 1) * itemsPerSlide,
+    );
+
+    return (
+      <div
+        key={`project-slide-${i + 1}`}
+        className="flex justify-center gap-6 px-4 py-7"
+      >
+        {chunk.map((project) => (
           <ProjectCard
             key={project.title}
             project={project}
-            className="w-full md:w-[calc(33.333%-1rem)]"
+            className="w-full md:w-[calc(33.333%)]"
           />
         ))}
-    </div>
-  ));
+      </div>
+    );
+  });
 
   return (
     <Slide
