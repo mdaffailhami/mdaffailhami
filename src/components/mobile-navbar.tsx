@@ -95,7 +95,7 @@ export function MobileNavbar() {
   };
 
   return (
-    <nav className="md:hidden fixed bottom-0 inset-x-0 bg-background border-t border-border px-2">
+    <nav className="md:hidden fixed bottom-0 inset-x-0 bg-background border-t border-border px-2 z-50">
       <div ref={navRef} className="relative flex flex-row items-center">
         {/* Animated active indicator - positioned at top */}
         <div

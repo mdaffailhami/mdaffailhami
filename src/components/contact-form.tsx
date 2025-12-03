@@ -60,7 +60,7 @@ export function ContactForm() {
           value={formData.name}
           onChange={handleChange}
           required
-          placeholder="Your name"
+          placeholder="Enter your name"
         />
       </Field>
 
@@ -74,7 +74,7 @@ export function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           required
-          placeholder="your.email@example.com"
+          placeholder="Enter your email"
         />
       </Field>
 
@@ -91,9 +91,9 @@ export function ContactForm() {
           className="resize-none h-24"
           placeholder="Your message..."
         />
-        <span className="italic font-medium text-right">
+        {/* <span className="italic font-medium text-right text-[0.95rem]">
           mdaffailhami@gmail.com
-        </span>
+        </span> */}
       </Field>
 
       {/* Submit Button */}

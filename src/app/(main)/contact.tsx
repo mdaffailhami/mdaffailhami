@@ -16,37 +16,40 @@ export default function ContactSlide() {
   }, []);
 
   return (
-    <Slide id="contact" className="flex md:items-center">
+    <Slide id="contact" className="flex items-start md:items-center">
       <div className="w-full max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-8 md:mb-10">
           <h2 className="text-4xl font-medium mb-2">Get In Touch</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
             Have a question or want to work together? Feel free to reach out
             through the form below or connect with me on social media.
           </p>
+          <hr className="my-5 border border-border" />
         </div>
 
         {/* Content Grid */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {/* Left Column - Social Media & Info */}
-          <div className="space-y-8">
+          <div className="flex flex-col gap-y-8">
             {/* Social Media Links */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold">Connect With Me</h3>
-              <div className="grid grid-cols-2 gap-4">
+              <h3 className="max-md:hidden text-2xl font-semibold text-center md:text-left">
+                Connect With Me
+              </h3>
+              <div className="flex flex-row justify-evenly md:gap-4 md:grid md:grid-cols-2">
                 {socials.map((social) => (
                   <Link
                     key={social.label}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative overflow-hidden rounded-lg border border-border bg-card p-4 shadow-md transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-103"
+                    className="group relative overflow-hidden rounded-lg border border-border bg-card p-3 md:p-4 shadow-md transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-103"
                   >
                     {/* Gradient overlay on hover */}
-                    <div className="absolute inset-0 bg-linear-to-br from-primary/10 dark:from-primary/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div className="opacity-100 md:opacity-0 group-hover:opacity-100 absolute inset-0 bg-linear-to-br from-primary/10 dark:from-primary/20 to-transparent transition-opacity duration-300" />
 
-                    <div className="relative flex items-center gap-3">
+                    <div className="relative flex items-center justify-center md:justify-start gap-3">
                       <div
                         className="shrink-0"
                         style={{
@@ -59,7 +62,7 @@ export default function ContactSlide() {
                       >
                         <social.Icon className="h-6 w-6 transition-transform duration-300 group-hover:scale-110" />
                       </div>
-                      <span className="font-medium text-foreground group-hover:text-primary transition-colors">
+                      <span className="hidden md:block font-medium text-foreground group-hover:text-primary transition-colors">
                         {social.label}
                       </span>
                     </div>
@@ -69,7 +72,7 @@ export default function ContactSlide() {
             </div>
 
             {/* Additional Info Card */}
-            <div className="group relative overflow-hidden rounded-lg border border-border bg-card p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+            <div className="max-md:hidden group relative overflow-hidden rounded-lg border border-border bg-card p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:border-primary/50">
               {/* Gradient overlay on hover */}
               <div className="absolute inset-0 bg-linear-to-br from-primary/5 dark:from-primary/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
@@ -87,10 +90,12 @@ export default function ContactSlide() {
           {/* Right Column - Contact Form */}
           <div className="group relative overflow-hidden rounded-lg border border-border bg-card p-6 md:p-8 shadow-md transition-all duration-300 hover:shadow-lg hover:border-primary/50">
             {/* Gradient overlay on hover */}
-            <div className="absolute inset-0 bg-linear-to-br from-primary/5 dark:from-primary/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="opacity-100 md:opacity-0 group-hover:opacity-100 absolute inset-0 bg-linear-to-br from-primary/5 dark:from-primary/10 to-transparent transition-opacity duration-300" />
 
             <div className="relative">
-              <h3 className="text-2xl font-semibold mb-6">Send Me a Message</h3>
+              <h3 className="text-2xl font-semibold mb-6 max-md:hidden">
+                Send Me a Message
+              </h3>
               <ContactForm />
             </div>
           </div>

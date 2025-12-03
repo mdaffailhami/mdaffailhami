@@ -35,26 +35,26 @@ export function ThemeSwitcher() {
       className="z-10 flex flex-row fixed max-md:top-1.5 md:bottom-5 right-1/2 translate-x-1/2 bg-background border border-border shadow-md shadow-foreground/5 rounded-full"
     >
       <div
-        className="absolute inset-0 w-12 bg-primary/20 rounded-full outline-2 outline-primary transition-all duration-300 ease-in-out"
+        className="absolute inset-0 w-10 md:w-12 bg-primary/20 rounded-full outline-2 outline-primary transition-all duration-300 ease-in-out"
         style={indicatorStyle}
       />
       <ThemeButton
         theme="light"
         isActive={mounted && theme === "light"}
         onClick={() => setTheme("light")}
-        icon={<SunIcon className="size-6" />}
+        icon={<SunIcon className="size-5 md:size-6" />}
       />
       <ThemeButton
         theme="system"
         isActive={mounted && theme === "system"}
         onClick={() => setTheme("system")}
-        icon={<Laptop2Icon className="size-6" />}
+        icon={<Laptop2Icon className="size-5 md:size-6" />}
       />
       <ThemeButton
         theme="dark"
         onClick={() => setTheme("dark")}
         isActive={mounted && theme === "dark"}
-        icon={<MoonIcon className="size-6" />}
+        icon={<MoonIcon className="size-5 md:size-6" />}
       />
     </div>
   );
@@ -84,7 +84,7 @@ function ThemeButton({
           size="icon"
           data-theme={theme}
           onClick={onClick}
-          className={cn("rounded-full size-12 hover:text-primary", {
+          className={cn("rounded-full size-10 md:size-12 hover:text-primary", {
             "text-primary": isActive,
           })}
         >
