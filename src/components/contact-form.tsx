@@ -66,7 +66,7 @@ export function ContactForm() {
 
       {/* Email Input */}
       <Field>
-        <FieldLabel htmlFor="email">Email Address</FieldLabel>
+        <FieldLabel htmlFor="email">Email</FieldLabel>
         <Input
           type="email"
           id="email"
@@ -74,7 +74,7 @@ export function ContactForm() {
           value={formData.email}
           onChange={handleChange}
           required
-          placeholder="Enter your email"
+          placeholder="Enter your email address"
         />
       </Field>
 
@@ -89,7 +89,7 @@ export function ContactForm() {
           required
           rows={5}
           className="resize-none h-24"
-          placeholder="Your message..."
+          placeholder="Your message here..."
         />
         {/* <span className="italic font-medium text-right text-[0.95rem]">
           mdaffailhami@gmail.com

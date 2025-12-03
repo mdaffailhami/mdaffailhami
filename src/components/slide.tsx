@@ -47,7 +47,7 @@ export function Slide({
       ref={slideRef}
       id={id}
       className={cn(
-        "snap-center snap-always min-h-full min-w-full overflow-y-auto md:overflow-y-hidden max-md:pt-16.5 max-md:pb-20 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32",
+        "snap-center snap-always min-h-full min-w-full overflow-y-auto md:overflow-y-hidden max-md:pt-16.5 max-md:pb-38 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32",
         className,
       )}
     >
