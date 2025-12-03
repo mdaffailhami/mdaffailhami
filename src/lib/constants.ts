@@ -17,8 +17,8 @@ import {
   SiTypescript,
   SiUbuntu,
   SiLinkedin,
-  SiX,
   SiInstagram,
+  SiTelegram,
 } from "react-icons/si";
 
 import { BiLogoPostgresql } from "react-icons/bi";
@@ -35,7 +35,7 @@ export const navs: {
   { label: "Contact", Icon: MailIcon, hash: "#contact" },
 ];
 
-export const socialMedia: {
+export const socials: {
   label: string;
   Icon: React.ComponentType<{ className?: string }>;
   url: string;
@@ -63,21 +63,21 @@ export const socialMedia: {
     },
   },
   {
-    label: "X",
-    Icon: SiX,
-    url: "https://x.com/mdaffailhami",
-    color: {
-      light: "#000000",
-      dark: "#FFFFFF",
-    },
-  },
-  {
     label: "Instagram",
     Icon: SiInstagram,
-    url: "https://instagram.com/mdaffailhami",
+    url: "https://instagram.com/m.daffailhami",
     color: {
       light: "#E4405F",
       dark: "#E4405F",
+    },
+  },
+  {
+    label: "Telegram",
+    Icon: SiTelegram,
+    url: "https://t.me/mdaffailhami",
+    color: {
+      light: "#0088cc",
+      dark: "#0088cc",
     },
   },
 ];

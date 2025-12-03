@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { SendIcon, LoaderIcon } from "lucide-react";
+import { SendIcon, LoaderCircleIcon } from "lucide-react";
+import { Field, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -32,8 +35,8 @@ export function ContactForm() {
     // Reset form after successful submission
     setFormData({ name: "", email: "", message: "" });
 
-    // Reset status after 3 seconds
-    setTimeout(() => setSubmitStatus("idle"), 3000);
+    // Reset status after 5 seconds
+    setTimeout(() => setSubmitStatus("idle"), 5000);
   };
 
   const handleChange = (
@@ -48,64 +51,50 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4 w-full">
       {/* Name Input */}
-      <div className="space-y-2">
-        <label
-          htmlFor="name"
-          className="text-sm font-medium text-foreground block"
-        >
-          Name
-        </label>
-        <input
+      <Field>
+        <FieldLabel htmlFor="name">Name</FieldLabel>
+        <Input
           type="text"
           id="name"
           name="name"
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-200"
           placeholder="Your name"
         />
-      </div>
+      </Field>
 
       {/* Email Input */}
-      <div className="space-y-2">
-        <label
-          htmlFor="email"
-          className="text-sm font-medium text-foreground block"
-        >
-          Email
-        </label>
-        <input
+      <Field>
+        <FieldLabel htmlFor="email">Email Address</FieldLabel>
+        <Input
           type="email"
           id="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-200"
           placeholder="your.email@example.com"
         />
-      </div>
+      </Field>
 
       {/* Message Textarea */}
-      <div className="space-y-2">
-        <label
-          htmlFor="message"
-          className="text-sm font-medium text-foreground block"
-        >
-          Message
-        </label>
-        <textarea
+      <Field>
+        <FieldLabel htmlFor="message">Message</FieldLabel>
+        <Textarea
           id="message"
           name="message"
           value={formData.message}
           onChange={handleChange}
           required
           rows={5}
-          className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-200 resize-none"
+          className="resize-none h-24"
           placeholder="Your message..."
         />
-      </div>
+        <span className="italic font-medium text-right">
+          mdaffailhami@gmail.com
+        </span>
+      </Field>
 
       {/* Submit Button */}
       <Button
@@ -116,7 +105,7 @@ export function ContactForm() {
       >
         {isSubmitting ? (
           <>
-            <LoaderIcon className="mr-2 h-4 w-4 animate-spin" />
+            <LoaderCircleIcon className="mr-2 h-4 w-4 animate-spin" />
             Sending...
           </>
         ) : submitStatus === "success" ? (
@@ -124,7 +113,7 @@ export function ContactForm() {
         ) : (
           <>
             Send Message
-            <SendIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <SendIcon className="size-4 transition-transform group-hover:translate-x-1" />
           </>
         )}
       </Button>

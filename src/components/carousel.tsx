@@ -89,20 +89,20 @@ export function Carousel({
               <Button
                 variant="secondary"
                 size="icon"
-                className="absolute left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity z-30"
+                className="absolute bg-primary/90 hover:bg-primary/75 left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity z-30"
                 onClick={handlePrevSlide}
               >
-                <ChevronLeft className="h-4 w-4" />
+                <ChevronLeft className="size-4 text-primary-foreground" />
               </Button>
             )}
             {currentSlide < totalSlides - 1 && (
               <Button
                 variant="secondary"
                 size="icon"
-                className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity z-30"
+                className="absolute bg-primary/90 hover:bg-primary/75 right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity z-30"
                 onClick={handleNextSlide}
               >
-                <ChevronRight className="h-4 w-4" />
+                <ChevronRight className="size-4 text-primary-foreground" />
               </Button>
             )}
           </>
