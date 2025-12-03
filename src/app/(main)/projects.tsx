@@ -9,7 +9,8 @@ import { Carousel } from "@/components/carousel";
 
 export default function ProjectsSlide() {
   // Limit to 9 projects and group them into slides of 3
-  const displayedProjects = projects.slice(0, 9);
+  const maxProjects = 9;
+  const displayedProjects = projects.slice(0, maxProjects);
   const itemsPerSlide = 3;
   const totalSlides = Math.ceil(displayedProjects.length / itemsPerSlide);
 
@@ -24,7 +25,7 @@ export default function ProjectsSlide() {
     return (
       <div
         key={`project-slide-${i + 1}`}
-        className="flex justify-center gap-6 px-4 py-7"
+        className="flex justify-center gap-6 px-3 py-7"
       >
         {chunk.map((project) => (
           <ProjectCard
@@ -49,17 +50,18 @@ export default function ProjectsSlide() {
       <Carousel
         items={slides}
         showIndicator={true}
+        className="max-w-7xl mx-auto"
         indicatorClassName="-mt-4 mb-5"
       />
 
-      {/* {projects.length > 9 && ( */}
-      <Button
-        variant={"link"}
-        className="text-center text-lg group hover:opacity-80"
-      >
-        View All Projects <ArrowRightIcon className="size-5" />
-      </Button>
-      {/* )} */}
+      {projects.length > maxProjects && (
+        <Button
+          variant={"link"}
+          className="text-center text-lg group hover:opacity-80"
+        >
+          View All Projects <ArrowRightIcon className="size-5" />
+        </Button>
+      )}
     </Slide>
   );
 }

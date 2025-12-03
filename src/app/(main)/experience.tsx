@@ -10,9 +10,10 @@ import { cn } from "@/lib/utils";
 
 export default function ExperienceSlide() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const maxUnexpandedExperiences = 3;
   const displayedExperiences = isExpanded
     ? experiences
-    : experiences.slice(0, 3);
+    : experiences.slice(0, maxUnexpandedExperiences);
 
   return (
     <Slide
@@ -43,18 +44,20 @@ export default function ExperienceSlide() {
           ))}
         </div>
       </div>
-      <Button
-        variant={"link"}
-        className="text-center text-lg group hover:opacity-80"
-        onClick={() => setIsExpanded(!isExpanded)}
-      >
-        {isExpanded ? "Show Less" : "Show More"}{" "}
-        {isExpanded ? (
-          <ArrowUpIcon className="size-5 ml-1" />
-        ) : (
-          <ArrowDownIcon className="size-5 ml-1" />
-        )}
-      </Button>
+      {experiences.length > maxUnexpandedExperiences && (
+        <Button
+          variant={"link"}
+          className="text-center text-lg group hover:opacity-80"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          {isExpanded ? "Show Less" : "Show More"}{" "}
+          {isExpanded ? (
+            <ArrowUpIcon className="size-5 ml-1" />
+          ) : (
+            <ArrowDownIcon className="size-5 ml-1" />
+          )}
+        </Button>
+      )}
     </Slide>
   );
 }
