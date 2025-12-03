@@ -19,6 +19,7 @@ import {
   SiLinkedin,
   SiInstagram,
   SiTelegram,
+  SiFigma,
 } from "react-icons/si";
 
 import { BiLogoPostgresql } from "react-icons/bi";
@@ -85,6 +86,7 @@ export const socials: {
 export type Technology = {
   label: string;
   Icon: React.ComponentType<{ className?: string }>;
+  url: string;
   color: {
     light: string;
     dark: string;
@@ -95,6 +97,7 @@ export const technologies: Technology[] = [
   {
     label: "React",
     Icon: SiReact,
+    url: "https://react.dev/",
     color: {
       light: "#61DAFB",
       dark: "#61DAFB",
@@ -103,6 +106,7 @@ export const technologies: Technology[] = [
   {
     label: "Next.js",
     Icon: SiNextdotjs,
+    url: "https://nextjs.org/",
     color: {
       light: "#000000",
       dark: "#FFFFFF",
@@ -111,6 +115,7 @@ export const technologies: Technology[] = [
   {
     label: "TypeScript",
     Icon: SiTypescript,
+    url: "https://www.typescriptlang.org/",
     color: {
       light: "#3178C6",
       dark: "#3178C6",
@@ -119,6 +124,7 @@ export const technologies: Technology[] = [
   {
     label: "Tailwind CSS",
     Icon: SiTailwindcss,
+    url: "https://tailwindcss.com/",
     color: {
       light: "#06B6D4",
       dark: "#06B6D4",
@@ -127,6 +133,7 @@ export const technologies: Technology[] = [
   {
     label: "Shadcn UI",
     Icon: SiShadcnui,
+    url: "https://ui.shadcn.com/",
     color: {
       light: "#000000",
       dark: "#FFFFFF",
@@ -135,6 +142,7 @@ export const technologies: Technology[] = [
   {
     label: "Prisma",
     Icon: SiPrisma,
+    url: "https://www.prisma.io/",
     color: {
       light: "#2D3748",
       dark: "#5A67D8",
@@ -143,14 +151,25 @@ export const technologies: Technology[] = [
   {
     label: "PostgreSQL",
     Icon: BiLogoPostgresql,
+    url: "https://www.postgresql.org/",
     color: {
       light: "#0064a5",
       dark: "#008bb9",
     },
   },
   {
+    label: "Figma",
+    Icon: SiFigma,
+    url: "https://www.figma.com/",
+    color: {
+      light: "#ff3737",
+      dark: "#ff3737",
+    },
+  },
+  {
     label: "GitHub",
     Icon: SiGithub,
+    url: "https://github.com/",
     color: {
       light: "#181717",
       dark: "#FFFFFF",
@@ -159,6 +178,7 @@ export const technologies: Technology[] = [
   {
     label: "Docker",
     Icon: SiDocker,
+    url: "https://www.docker.com/",
     color: {
       light: "#2496ED",
       dark: "#2496ED",
@@ -167,6 +187,7 @@ export const technologies: Technology[] = [
   {
     label: "Ubuntu",
     Icon: SiUbuntu,
+    url: "https://ubuntu.com/",
     color: {
       light: "#E95420",
       dark: "#E95420",
@@ -297,26 +318,31 @@ export const projects: Project[] = [
       {
         label: "React",
         Icon: SiReact,
+        url: "https://react.dev/",
         color: { light: "#61DAFB", dark: "#61DAFB" },
       },
       {
         label: "Next.js",
         Icon: SiNextdotjs,
+        url: "https://nextjs.org/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "Shadcn UI",
         Icon: SiShadcnui,
+        url: "https://ui.shadcn.com/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "TypeScript",
         Icon: SiTypescript,
+        url: "https://www.typescriptlang.org/",
         color: { light: "#3178C6", dark: "#3178C6" },
       },
       {
         label: "Tailwind CSS",
         Icon: SiTailwindcss,
+        url: "https://tailwindcss.com/",
         color: { light: "#06B6D4", dark: "#06B6D4" },
       },
     ],
@@ -348,26 +374,31 @@ export const projects: Project[] = [
       {
         label: "React",
         Icon: SiReact,
+        url: "https://react.dev/",
         color: { light: "#61DAFB", dark: "#61DAFB" },
       },
       {
         label: "Next.js",
         Icon: SiNextdotjs,
+        url: "https://nextjs.org/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "Shadcn UI",
         Icon: SiShadcnui,
+        url: "https://ui.shadcn.com/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "TypeScript",
         Icon: SiTypescript,
+        url: "https://www.typescriptlang.org/",
         color: { light: "#3178C6", dark: "#3178C6" },
       },
       {
         label: "Tailwind CSS",
         Icon: SiTailwindcss,
+        url: "https://tailwindcss.com/",
         color: { light: "#06B6D4", dark: "#06B6D4" },
       },
     ],
@@ -399,26 +430,31 @@ export const projects: Project[] = [
       {
         label: "React",
         Icon: SiReact,
+        url: "https://react.dev/",
         color: { light: "#61DAFB", dark: "#61DAFB" },
       },
       {
         label: "Next.js",
         Icon: SiNextdotjs,
+        url: "https://nextjs.org/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "Shadcn UI",
         Icon: SiShadcnui,
+        url: "https://ui.shadcn.com/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "TypeScript",
         Icon: SiTypescript,
+        url: "https://www.typescriptlang.org/",
         color: { light: "#3178C6", dark: "#3178C6" },
       },
       {
         label: "Tailwind CSS",
         Icon: SiTailwindcss,
+        url: "https://tailwindcss.com/",
         color: { light: "#06B6D4", dark: "#06B6D4" },
       },
     ],
@@ -450,26 +486,31 @@ export const projects: Project[] = [
       {
         label: "React",
         Icon: SiReact,
+        url: "https://react.dev/",
         color: { light: "#61DAFB", dark: "#61DAFB" },
       },
       {
         label: "Next.js",
         Icon: SiNextdotjs,
+        url: "https://nextjs.org/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "Shadcn UI",
         Icon: SiShadcnui,
+        url: "https://ui.shadcn.com/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "TypeScript",
         Icon: SiTypescript,
+        url: "https://www.typescriptlang.org/",
         color: { light: "#3178C6", dark: "#3178C6" },
       },
       {
         label: "Tailwind CSS",
         Icon: SiTailwindcss,
+        url: "https://tailwindcss.com/",
         color: { light: "#06B6D4", dark: "#06B6D4" },
       },
     ],
@@ -501,26 +542,31 @@ export const projects: Project[] = [
       {
         label: "React",
         Icon: SiReact,
+        url: "https://react.dev/",
         color: { light: "#61DAFB", dark: "#61DAFB" },
       },
       {
         label: "Next.js",
         Icon: SiNextdotjs,
+        url: "https://nextjs.org/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "Shadcn UI",
         Icon: SiShadcnui,
+        url: "https://ui.shadcn.com/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "TypeScript",
         Icon: SiTypescript,
+        url: "https://www.typescriptlang.org/",
         color: { light: "#3178C6", dark: "#3178C6" },
       },
       {
         label: "Tailwind CSS",
         Icon: SiTailwindcss,
+        url: "https://tailwindcss.com/",
         color: { light: "#06B6D4", dark: "#06B6D4" },
       },
     ],
@@ -552,26 +598,31 @@ export const projects: Project[] = [
       {
         label: "React",
         Icon: SiReact,
+        url: "https://react.dev/",
         color: { light: "#61DAFB", dark: "#61DAFB" },
       },
       {
         label: "Next.js",
         Icon: SiNextdotjs,
+        url: "https://nextjs.org/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "Shadcn UI",
         Icon: SiShadcnui,
+        url: "https://ui.shadcn.com/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "TypeScript",
         Icon: SiTypescript,
+        url: "https://www.typescriptlang.org/",
         color: { light: "#3178C6", dark: "#3178C6" },
       },
       {
         label: "Tailwind CSS",
         Icon: SiTailwindcss,
+        url: "https://tailwindcss.com/",
         color: { light: "#06B6D4", dark: "#06B6D4" },
       },
     ],
@@ -603,26 +654,31 @@ export const projects: Project[] = [
       {
         label: "React",
         Icon: SiReact,
+        url: "https://react.dev/",
         color: { light: "#61DAFB", dark: "#61DAFB" },
       },
       {
         label: "Next.js",
         Icon: SiNextdotjs,
+        url: "https://nextjs.org/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "Shadcn UI",
         Icon: SiShadcnui,
+        url: "https://ui.shadcn.com/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "TypeScript",
         Icon: SiTypescript,
+        url: "https://www.typescriptlang.org/",
         color: { light: "#3178C6", dark: "#3178C6" },
       },
       {
         label: "Tailwind CSS",
         Icon: SiTailwindcss,
+        url: "https://tailwindcss.com/",
         color: { light: "#06B6D4", dark: "#06B6D4" },
       },
     ],
@@ -654,26 +710,31 @@ export const projects: Project[] = [
       {
         label: "React",
         Icon: SiReact,
+        url: "https://react.dev/",
         color: { light: "#61DAFB", dark: "#61DAFB" },
       },
       {
         label: "Next.js",
         Icon: SiNextdotjs,
+        url: "https://nextjs.org/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "Shadcn UI",
         Icon: SiShadcnui,
+        url: "https://ui.shadcn.com/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "TypeScript",
         Icon: SiTypescript,
+        url: "https://www.typescriptlang.org/",
         color: { light: "#3178C6", dark: "#3178C6" },
       },
       {
         label: "Tailwind CSS",
         Icon: SiTailwindcss,
+        url: "https://tailwindcss.com/",
         color: { light: "#06B6D4", dark: "#06B6D4" },
       },
     ],
@@ -705,26 +766,31 @@ export const projects: Project[] = [
       {
         label: "React",
         Icon: SiReact,
+        url: "https://react.dev/",
         color: { light: "#61DAFB", dark: "#61DAFB" },
       },
       {
         label: "Next.js",
         Icon: SiNextdotjs,
+        url: "https://nextjs.org/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "Shadcn UI",
         Icon: SiShadcnui,
+        url: "https://ui.shadcn.com/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "TypeScript",
         Icon: SiTypescript,
+        url: "https://www.typescriptlang.org/",
         color: { light: "#3178C6", dark: "#3178C6" },
       },
       {
         label: "Tailwind CSS",
         Icon: SiTailwindcss,
+        url: "https://tailwindcss.com/",
         color: { light: "#06B6D4", dark: "#06B6D4" },
       },
     ],
@@ -756,26 +822,31 @@ export const projects: Project[] = [
       {
         label: "React",
         Icon: SiReact,
+        url: "https://react.dev/",
         color: { light: "#61DAFB", dark: "#61DAFB" },
       },
       {
         label: "Next.js",
         Icon: SiNextdotjs,
+        url: "https://nextjs.org/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "Shadcn UI",
         Icon: SiShadcnui,
+        url: "https://ui.shadcn.com/",
         color: { light: "#000000", dark: "#FFFFFF" },
       },
       {
         label: "TypeScript",
         Icon: SiTypescript,
+        url: "https://www.typescriptlang.org/",
         color: { light: "#3178C6", dark: "#3178C6" },
       },
       {
         label: "Tailwind CSS",
         Icon: SiTailwindcss,
+        url: "https://tailwindcss.com/",
         color: { light: "#06B6D4", dark: "#06B6D4" },
       },
     ],

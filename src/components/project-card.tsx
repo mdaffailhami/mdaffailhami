@@ -65,6 +65,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
                   key={tech.label}
                   icon={tech.Icon}
                   label={tech.label}
+                  href={tech.url}
                   color={
                     mounted && resolvedTheme === "dark"
                       ? tech.color.dark

@@ -1,9 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
+import Link from "next/link";
 
 const techBadgeVariants = cva(
-  "gap-x-2 font-normal border-2 border-border hover:border-primary active:border-primary transition-all duration-200 ease-in-out cursor-default",
+  "bg-card gap-x-2 font-normal border-2 border-border hover:border-primary active:border-primary transition-all duration-200 ease-in-out cursor-pointer hover:scale-105 hover:bg-linear-to-r from-primary/10 dark:from-primary/20 to-transparent",
   {
     variants: {
       size: {
@@ -31,6 +32,7 @@ type TechBadgeProps = VariantProps<typeof techBadgeVariants> & {
   }>;
   label: string;
   color: string;
+  href: string;
   className?: string;
 };
 
@@ -39,20 +41,23 @@ export function TechBadge({
   label,
   color,
   size,
+  href,
   className,
   ...props
 }: TechBadgeProps & React.HTMLAttributes<HTMLSpanElement>) {
   return (
-    <Badge
-      variant="secondary"
-      className={cn(techBadgeVariants({ size }), className)}
-      {...props}
-    >
-      <Icon
-        style={{ color: color }}
-        className={iconSizeVariants[size || "md"]}
-      />
-      <span>{label}</span>
-    </Badge>
+    <Link target="_blank" rel="noopener noreferrer" href={href}>
+      <Badge
+        variant="secondary"
+        className={cn(techBadgeVariants({ size }), className)}
+        {...props}
+      >
+        <Icon
+          style={{ color: color }}
+          className={iconSizeVariants[size || "md"]}
+        />
+        <span>{label}</span>
+      </Badge>
+    </Link>
   );
 }
