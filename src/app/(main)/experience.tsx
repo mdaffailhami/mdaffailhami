@@ -1,24 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Slide } from "@/components/slide";
 import ExperienceCard from "@/components/experience-card";
 import { experiences } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { ArrowDownIcon, ArrowUpIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useIsMobile } from "@/hooks/use-is-mobile";
 
 export default function ExperienceSlide() {
+  const isMobile = useIsMobile();
   const [isExpanded, setIsExpanded] = useState(false);
   const maxUnexpandedExperiences = 3;
   const displayedExperiences = isExpanded
     ? experiences
     : experiences.slice(0, maxUnexpandedExperiences);
 
+  useEffect(() => {
+    setIsExpanded(isMobile);
+  }, [isMobile]);
+
   return (
     <Slide
       id="experience"
-      className="flex flex-col items-center justify-center gap-y-6"
+      className="flex flex-col items-center justify-center gap-y-6 max-md:px-0"
     >
       <h1 className="text-[2.5rem] font-semibold">My Experience</h1>
       <div className="relative max-w-4xl flex flex-row w-full justify-center">
@@ -44,7 +50,7 @@ export default function ExperienceSlide() {
           ))}
         </div>
       </div>
-      {experiences.length > maxUnexpandedExperiences && (
+      {!isMobile && experiences.length > maxUnexpandedExperiences && (
         <Button
           variant={"link"}
           className="text-center text-lg group hover:opacity-80"

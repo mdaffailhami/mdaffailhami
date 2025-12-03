@@ -17,14 +17,14 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
       <button
         type="button"
         onClick={() => setDialogOpen(true)}
-        className="group h-36.5 flex items-start relative overflow-hidden rounded-lg border border-border bg-card p-4 shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-101 cursor-pointer text-left w-full"
+        className="group h-30.75 md:h-36.5 flex items-start relative overflow-hidden rounded-lg border border-border bg-card p-4 shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-101 cursor-pointer text-left w-full"
       >
         {/* Gradient overlay on hover */}
         <div className="absolute inset-0 bg-linear-to-br from-primary/10 dark:from-primary/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
         <div className="relative flex gap-6 w-full">
           {/* Company Image */}
-          <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-border bg-muted">
+          <div className="max-md:hidden relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-border bg-muted">
             <Image
               src={experience.images[0]}
               alt={experience.company}
@@ -38,20 +38,20 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
             {/* Header */}
             <div className="flex items-start justify-between gap-4">
               <div>
-                <h3 className="text-xl font-semibold text-foreground">
+                <h3 className="line-clamp-1 text-lg md:text-xl font-semibold text-foreground">
                   {experience.role}
                 </h3>
-                <span className="text-lg font-medium text-primary group-hover:underline group-hover:underline-offset-4">
+                <span className="line-clamp-1 text-lg md:text-xl font-medium text-primary group-hover:underline group-hover:underline-offset-4">
                   {experience.company}
                 </span>
               </div>
-              <span className="whitespace-nowrap text-sm text-muted-foreground">
+              <span className="whitespace-nowrap text-[0.825rem] md:text-sm text-muted-foreground">
                 {experience.period}
               </span>
             </div>
 
             {/* Description */}
-            <p className="text-sm leading-relaxed text-muted-foreground line-clamp-2">
+            <p className="text-sm leading-relaxed text-muted-foreground line-clamp-1 md:line-clamp-2">
               {experience.description}
             </p>
           </div>
