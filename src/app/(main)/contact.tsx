@@ -6,6 +6,20 @@ import { socials } from "@/lib/constants";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+
+function CopyrightSection({ className }: { className?: string }) {
+  return (
+    <span
+      className={cn(
+        "text-base text-primary/75 dark:text-primary text-center",
+        className,
+      )}
+    >
+      &copy; 2021 - 2026 Daffa Ilhami. All Rights Reserved.
+    </span>
+  );
+}
 
 export default function ContactSlide() {
   const { resolvedTheme } = useTheme();
@@ -88,6 +102,8 @@ export default function ContactSlide() {
                 </p>
               </div>
             </div>
+            {/* Desktop copyright */}
+            <CopyrightSection className="max-md:hidden" />
           </div>
 
           {/* Right Column - Contact Form */}
@@ -102,6 +118,8 @@ export default function ContactSlide() {
               <ContactForm />
             </div>
           </div>
+          {/* Mobile copyright */}
+          <CopyrightSection className="md:hidden -translate-y-2" />
         </div>
       </div>
     </Slide>
