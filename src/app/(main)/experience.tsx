@@ -24,7 +24,7 @@ export default function ExperienceSlide() {
   return (
     <Slide
       id="experience"
-      className="flex flex-col items-center justify-center gap-y-6 max-md:px-0"
+      className="flex flex-col items-center justify-start md:justify-center gap-y-6 max-md:pl-0 max-md:pr-2.5"
     >
       <h1 className="text-[2.5rem] font-semibold">My Experience</h1>
       <div className="relative max-w-4xl flex flex-row w-full justify-center">
@@ -33,7 +33,7 @@ export default function ExperienceSlide() {
         <div
           className={cn(
             "flex flex-col gap-y-6 transition-all duration-300 pl-8",
-            isExpanded ? "max-h-136 overflow-y-auto pr-4" : "",
+            isExpanded && !isMobile ? "max-h-136 overflow-y-auto pr-4" : "",
           )}
           style={{ scrollbarWidth: "thin" }}
         >
