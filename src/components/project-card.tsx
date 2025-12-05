@@ -5,7 +5,7 @@ import { TechBadge } from "@/components/tech-badge";
 import type { Project } from "@/lib/constants";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
-import { ProjectDialog } from "@/components/project-dialog";
+import { ProjectDetail } from "@/components/project-detail";
 import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
@@ -85,7 +85,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
         </div>
       </button>
 
-      <ProjectDialog
+      <ProjectDetail
         project={project}
         open={dialogOpen}
         onOpenChange={setDialogOpen}

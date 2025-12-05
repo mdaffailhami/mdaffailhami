@@ -3,7 +3,7 @@
 import Image from "next/image";
 import type { Experience } from "@/lib/constants";
 import { useState } from "react";
-import { ExperienceDialog } from "@/components/experience-dialog";
+import { ExperienceDetail } from "@/components/experience-detail";
 
 interface ExperienceCardProps {
   experience: Experience;
@@ -58,7 +58,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
         </div>
       </button>
 
-      <ExperienceDialog
+      <ExperienceDetail
         experience={experience}
         open={dialogOpen}
         onOpenChange={setDialogOpen}

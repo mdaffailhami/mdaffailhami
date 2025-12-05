@@ -348,14 +348,14 @@ export const projects: Project[] = [
     ],
     buttons: [
       {
-        type: "github",
-        label: "View on GitHub",
-        url: "https://github.com/username/project",
-      },
-      {
         type: "project",
         label: "Open Project",
         url: "https://project-demo.com",
+      },
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
       },
     ],
   },
@@ -404,14 +404,14 @@ export const projects: Project[] = [
     ],
     buttons: [
       {
-        type: "github",
-        label: "View on GitHub",
-        url: "https://github.com/username/project",
-      },
-      {
         type: "project",
         label: "Open Project",
         url: "https://project-demo.com",
+      },
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
       },
     ],
   },
@@ -460,14 +460,14 @@ export const projects: Project[] = [
     ],
     buttons: [
       {
-        type: "github",
-        label: "View on GitHub",
-        url: "https://github.com/username/project",
-      },
-      {
         type: "project",
         label: "Open Project",
         url: "https://project-demo.com",
+      },
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
       },
     ],
   },
@@ -516,14 +516,14 @@ export const projects: Project[] = [
     ],
     buttons: [
       {
-        type: "github",
-        label: "View on GitHub",
-        url: "https://github.com/username/project",
-      },
-      {
         type: "project",
         label: "Open Project",
         url: "https://project-demo.com",
+      },
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
       },
     ],
   },
@@ -572,14 +572,14 @@ export const projects: Project[] = [
     ],
     buttons: [
       {
-        type: "github",
-        label: "View on GitHub",
-        url: "https://github.com/username/project",
-      },
-      {
         type: "project",
         label: "Open Project",
         url: "https://project-demo.com",
+      },
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
       },
     ],
   },
@@ -628,14 +628,14 @@ export const projects: Project[] = [
     ],
     buttons: [
       {
-        type: "github",
-        label: "View on GitHub",
-        url: "https://github.com/username/project",
-      },
-      {
         type: "project",
         label: "Open Project",
         url: "https://project-demo.com",
+      },
+      {
+        type: "github",
+        label: "View on GitHub",
+        url: "https://github.com/username/project",
       },
     ],
   },
