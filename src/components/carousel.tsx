@@ -65,9 +65,9 @@ export function Carousel({
   };
 
   return (
-    <div className="w-full space-y-4">
+    <div className={cn("w-full space-y-4", className)}>
       {/* Carousel Container */}
-      <div className={cn("relative group", className)}>
+      <div className="relative group">
         <div
           ref={carouselRef}
           className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hidden"
@@ -75,7 +75,7 @@ export function Carousel({
           {items.map((item, index) => (
             <div
               key={`slide-${index + 1}`}
-              className={cn("min-w-full snap-center", slideClassName)}
+              className={"min-w-full snap-center"}
             >
               {item}
             </div>
@@ -89,7 +89,7 @@ export function Carousel({
               <Button
                 variant="secondary"
                 size="icon"
-                className="absolute bg-primary/90 hover:bg-primary/75 -left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity z-30"
+                className="absolute bg-primary/90 hover:bg-primary/75 left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity z-30"
                 onClick={handlePrevSlide}
               >
                 <ChevronLeft className="size-4 text-primary-foreground" />
@@ -99,7 +99,7 @@ export function Carousel({
               <Button
                 variant="secondary"
                 size="icon"
-                className="absolute bg-primary/90 hover:bg-primary/75 -right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity z-30"
+                className="absolute bg-primary/90 hover:bg-primary/75 right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity z-30"
                 onClick={handleNextSlide}
               >
                 <ChevronRight className="size-4 text-primary-foreground" />

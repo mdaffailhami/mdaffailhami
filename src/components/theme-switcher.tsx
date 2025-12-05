@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
 import { Laptop2Icon, MoonIcon, SunIcon } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
-import { useIsMobile } from "@/hooks/use-is-mobile";
+import { useStreamBreakpoint } from "@/hooks/use-stream-breakpoint";
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
@@ -71,7 +71,8 @@ function ThemeButton({
   onClick(): void;
   icon: React.ReactNode;
 }) {
-  const isMobile = useIsMobile();
+  const breakpoint = useStreamBreakpoint();
+  const isMobile = breakpoint < 3;
 
   return (
     <Tooltip

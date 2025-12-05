@@ -19,11 +19,12 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/components/ui/drawer";
-import { useIsMobile } from "@/hooks/use-is-mobile";
+import { useStreamBreakpoint } from "@/hooks/use-stream-breakpoint";
 import { Button } from "@/components/ui/button";
 import { TechBadge } from "@/components/tech-badge";
 import type { Project } from "@/lib/constants";
-import { Github, ExternalLink, Download } from "lucide-react";
+import { ExternalLink, Download } from "lucide-react";
+import { FiGithub } from "react-icons/fi";
 import { cn } from "@/lib/utils";
 import { Carousel } from "@/components/carousel";
 
@@ -38,7 +39,8 @@ export function ProjectDetail({
   open,
   onOpenChange,
 }: ProjectDetailProps) {
-  const isMobile = useIsMobile();
+  const breakpoint = useStreamBreakpoint();
+  const isMobile = breakpoint < 3;
 
   if (isMobile) {
     return (
@@ -90,7 +92,7 @@ function ProjectContent({ project }: { project: Project }) {
   const getButtonIcon = (type: string) => {
     switch (type) {
       case "github":
-        return Github;
+        return FiGithub;
       case "demo":
         return ExternalLink;
       case "download":
@@ -165,7 +167,7 @@ function ProjectContent({ project }: { project: Project }) {
                     rel="noopener noreferrer"
                     className="gap-2"
                   >
-                    <Icon className="h-4 w-4" />
+                    <Icon className="size-4" />
                     {button.label}
                   </a>
                 </Button>

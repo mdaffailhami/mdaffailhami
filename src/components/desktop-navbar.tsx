@@ -4,12 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { navs } from "@/lib/constants";
-import { useIsMobile } from "@/hooks/use-is-mobile";
+import { useStreamBreakpoint } from "@/hooks/use-stream-breakpoint";
 
 export function DesktopNavbar() {
   const [activeHash, setActiveHash] = useState("");
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 76 });
-  const isMobile = useIsMobile();
+  const breakpoint = useStreamBreakpoint();
+  const isMobile = breakpoint < 3;
   const navRef = useRef<HTMLDivElement>(null);
   const isClickingRef = useRef(false);
 

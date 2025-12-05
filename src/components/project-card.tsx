@@ -27,16 +27,16 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
       <button
         type="button"
         className={cn(
-          "group/card relative max-w-110 cursor-pointer overflow-hidden rounded-lg border border-border bg-card shadow-md shadow-foreground/5 transition-all duration-300 hover:scale-101 hover:border-primary/50 hover:shadow-lg",
+          "group/card relative w-full max-w-110 cursor-pointer overflow-hidden rounded-lg border border-border bg-card shadow-md shadow-foreground/5 transition-all duration-300 hover:scale-101 hover:border-primary/50 hover:shadow-lg",
           className,
         )}
         onClick={() => setDialogOpen(true)}
       >
         {/* Gradient overlay on hover */}
-        <div className="absolute inset-0 z-10 bg-linear-to-tl from-primary/5 dark:from-primary/10 to-transparent opacity-0 transition-opacity duration-300 group-hover/card:opacity-100" />
+        <div className="absolute inset-0 z-10 bg-linear-to-tl from-primary/5 dark:from-primary/10 to-transparent opacity-50 transition-opacity duration-300 group-hover/card:opacity-100" />
 
         {/* Thumbnail */}
-        <div className="relative h-80 w-full overflow-hidden">
+        <div className="relative h-70 md:h-75 w-full overflow-hidden">
           <Image
             src={project.images[0]}
             alt={project.title}

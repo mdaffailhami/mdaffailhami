@@ -7,10 +7,11 @@ import { experiences } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { ArrowDownIcon, ArrowUpIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useIsMobile } from "@/hooks/use-is-mobile";
+import { useStreamBreakpoint } from "@/hooks/use-stream-breakpoint";
 
 export default function ExperienceSlide() {
-  const isMobile = useIsMobile();
+  const breakpoint = useStreamBreakpoint();
+  const isMobile = breakpoint < 3;
   const [isExpanded, setIsExpanded] = useState(false);
   const maxUnexpandedExperiences = 3;
   const displayedExperiences = isExpanded
@@ -22,48 +23,47 @@ export default function ExperienceSlide() {
   }, [isMobile]);
 
   return (
-    <Slide
-      id="experience"
-      className="flex flex-col items-center justify-start md:justify-center gap-y-6 max-md:pl-0 max-md:pr-2.5"
-    >
-      <h1 className="text-[2.5rem] font-semibold">My Experience</h1>
-      <div className="relative max-w-4xl flex flex-row w-full justify-center">
-        {/* Line */}
-        <div className="w-0.5 bg-primary/50 shrink-0 absolute left-3 top-0 bottom-0"></div>
-        <div
-          className={cn(
-            "flex flex-col gap-y-6 transition-all duration-300 pl-8",
-            isExpanded && !isMobile ? "max-h-136 overflow-y-auto pr-4" : "",
-          )}
-          style={{ scrollbarWidth: "thin" }}
-        >
-          {displayedExperiences.map((experience) => (
-            <div
-              key={`${experience.company}-${experience.period}`}
-              className="relative"
-            >
-              {/* Dot */}
-              <div className="absolute -left-6.75 top-1/2 size-4 rounded-full bg-primary/50 border-4 border-primary -translate-y-1/2"></div>
+    <Slide id="experience">
+      <div className="w-full min-h-full mx-auto flex flex-col items-center md:justify-center gap-y-6 max-md:pl-0 max-md:pr-2.5 md:pl-2.5 md:pr-5">
+        <h1 className="text-[2.5rem] font-semibold">My Experience</h1>
+        <div className="relative max-w-4xl flex flex-row w-full justify-center">
+          {/* Line */}
+          <div className="w-0.5 bg-primary/50 shrink-0 absolute left-3 top-0 bottom-0"></div>
+          <div
+            className={cn(
+              "flex flex-col gap-y-6 transition-all duration-300 pl-8",
+              isExpanded && !isMobile ? "max-h-136 overflow-y-auto pr-4" : "",
+            )}
+            style={{ scrollbarWidth: "thin" }}
+          >
+            {displayedExperiences.map((experience) => (
+              <div
+                key={`${experience.company}-${experience.period}`}
+                className="relative"
+              >
+                {/* Dot */}
+                <div className="absolute -left-6.75 top-1/2 size-4 rounded-full bg-primary/50 border-4 border-primary -translate-y-1/2"></div>
 
-              <ExperienceCard experience={experience} />
-            </div>
-          ))}
+                <ExperienceCard experience={experience} />
+              </div>
+            ))}
+          </div>
         </div>
+        {!isMobile && experiences.length > maxUnexpandedExperiences && (
+          <Button
+            variant={"link"}
+            className="text-center text-lg group hover:opacity-80"
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            {isExpanded ? "Show Less" : "Show More"}{" "}
+            {isExpanded ? (
+              <ArrowUpIcon className="size-5 ml-1" />
+            ) : (
+              <ArrowDownIcon className="size-5 ml-1" />
+            )}
+          </Button>
+        )}
       </div>
-      {!isMobile && experiences.length > maxUnexpandedExperiences && (
-        <Button
-          variant={"link"}
-          className="text-center text-lg group hover:opacity-80"
-          onClick={() => setIsExpanded(!isExpanded)}
-        >
-          {isExpanded ? "Show Less" : "Show More"}{" "}
-          {isExpanded ? (
-            <ArrowUpIcon className="size-5 ml-1" />
-          ) : (
-            <ArrowDownIcon className="size-5 ml-1" />
-          )}
-        </Button>
-      )}
     </Slide>
   );
 }

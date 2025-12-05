@@ -5,7 +5,18 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function getDeviceType() {
-  if (typeof window === "undefined") return "desktop";
-  return window.innerWidth < 768 ? "mobile" : "desktop";
+export function getCurrentBreakpoint() {
+  if (typeof window === "undefined")
+    throw new Error(
+      "getCurrentBreakpoint() must be used in a client-side environment",
+    );
+
+  const width = window.innerWidth;
+
+  if (width >= 1536) return 6;
+  if (width >= 1280) return 5;
+  if (width >= 1024) return 4;
+  if (width >= 768) return 3;
+  if (width >= 640) return 2;
+  return 1;
 }

@@ -34,7 +34,7 @@ export default function ContactSlide() {
       id="contact"
       className="flex items-start md:items-center [@media(height>=51rem)]:items-center"
     >
-      <div className="w-full max-w-lg md:max-w-6xl mx-auto">
+      <div className="w-full px-3 md:px-5 max-w-lg md:max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8 md:mb-10">
           <h2 className="text-4xl font-medium mb-2">Get In Touch</h2>
