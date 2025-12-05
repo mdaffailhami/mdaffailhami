@@ -61,7 +61,7 @@ export default function ContactSlide() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative overflow-hidden rounded-lg border border-border bg-card p-3 md:p-4 shadow-md transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-103"
+                    className="group relative overflow-hidden rounded-lg border border-border bg-card p-3 md:p-4 shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-103"
                   >
                     {/* Gradient overlay on hover */}
                     <div className="opacity-100 md:opacity-50 group-hover:opacity-100 absolute inset-0 bg-linear-to-br from-primary/10 dark:from-primary/20 to-transparent transition-opacity duration-300" />
@@ -89,7 +89,7 @@ export default function ContactSlide() {
             </div>
 
             {/* Additional Info Card */}
-            <div className="max-md:hidden group relative overflow-hidden rounded-lg border border-border bg-card p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+            <div className="max-md:hidden group relative overflow-hidden rounded-lg border border-border bg-card p-6 shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50">
               {/* Gradient overlay on hover */}
               <div className="absolute inset-0 bg-linear-to-br from-primary/5 dark:from-primary/20 to-transparent opacity-50 transition-opacity duration-300 group-hover:opacity-100" />
 
@@ -107,7 +107,7 @@ export default function ContactSlide() {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="group relative overflow-hidden rounded-lg border border-border bg-card p-6 md:p-8 shadow-md transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+          <div className="group relative overflow-hidden rounded-lg border border-border bg-card p-6 md:p-8 shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50">
             {/* Gradient overlay on hover */}
             <div className="opacity-100 md:opacity-50 group-hover:opacity-100 absolute inset-0 bg-linear-to-br from-primary/5 dark:from-primary/10 to-transparent transition-opacity duration-300" />
 
