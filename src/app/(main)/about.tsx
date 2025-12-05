@@ -18,7 +18,7 @@ export default function AboutSlide() {
 
   return (
     <Slide id="about">
-      <div className="w-[92%] mx-auto flex flex-col md:flex-row-reverse items-center min-h-full gap-8">
+      <div className="w-[92%] mx-auto flex flex-col md:flex-row items-center min-h-full gap-8">
         <section className="w-full md:flex-2 flex justify-center">
           <Image
             src="/mdaffailhami-1.png"
