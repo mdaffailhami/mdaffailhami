@@ -7,8 +7,6 @@ import { GradientOverlay } from "@/components/gradient-overlay";
 
 export function SocialListSection() {
   const { resolvedTheme } = useTheme();
-  // const isClient = useIsClient();
-  console.log(resolvedTheme);
 
   return (
     <div className="flex flex-row flex-wrap justify-evenly md:gap-4 md:grid md:grid-cols-2">
@@ -18,7 +16,7 @@ export function SocialListSection() {
           href={social.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative overflow-hidden rounded-lg border border-border bg-card shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-103 block w-full h-full p-3 md:p-4"
+          className="group relative overflow-hidden rounded-lg border border-border bg-card shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-103 block h-full p-3 md:p-4"
         >
           <GradientOverlay />
           <div className="relative flex items-center justify-center md:justify-start gap-3">
