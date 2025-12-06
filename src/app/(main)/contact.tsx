@@ -38,7 +38,9 @@ export default function ContactSlide() {
       <div className="w-full px-3 md:px-5 max-w-lg md:max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8 md:mb-10">
-          <h2 className="text-4xl font-medium mb-2">Get In Touch</h2>
+          <h1 className="text-4xl font-semibold text-center mb-2">
+            Get In Touch
+          </h1>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
             Have a question or want to work together? Feel free to reach out
             through the form below or connect with me on social media.
