@@ -22,7 +22,9 @@ export default function HomeSlide() {
           />
         </section>
         <section className="flex flex-col w-full md:flex-3">
-          <h1 className="text-[4rem] font-medium leading-18">Daffa Ilhami</h1>
+          <h1 className="font-serif text-[4rem] font-medium leading-18">
+            Daffa Ilhami
+          </h1>
           <p className="text-justify text-lg text-muted-foreground">
             UWU Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
             minus corporis eos fuga? Rem error reiciendis, eveniet temporibus

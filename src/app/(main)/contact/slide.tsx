@@ -53,12 +53,12 @@ export default function ContactSlide() {
               <GradientOverlay />
               <div className="flex flex-col gap-4">
                 <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                  Let's Collaborate
+                  Let{"'"}s Collaborate
                 </h3>
                 <p className="text-lg text-muted-foreground text-left leading-relaxed">
-                  I'm always interested in hearing about new projects and
+                  I{"'"}m always interested in hearing about new projects and
                   opportunities. Whether you have a question or just want to say
-                  hi, I'll try my best to get back to you!
+                  hi, I{"'"}ll try my best to get back to you!
                 </p>
               </div>
             </div>

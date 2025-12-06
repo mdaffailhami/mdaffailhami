@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Arvo, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import RootProviders from "./providers";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const arvo = Arvo({
+  weight: ["400", "700"],
+  variable: "--font-arvo",
+  subsets: ["latin"],
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
 });
 
@@ -28,10 +34,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="no-scrollbar">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased transition-colors duration-200`}
-      >
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${arvo.variable} ${jetBrainsMono.variable}`}
+    >
+      <body className={`antialiased font-sans transition duration-300`}>
         <RootProviders>{children}</RootProviders>
       </body>
     </html>
