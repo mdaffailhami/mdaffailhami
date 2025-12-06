@@ -3,7 +3,7 @@
 import Image from "next/image";
 import type { Experience } from "@/lib/constants";
 import { useState } from "react";
-import { ExperienceDetail } from "@/components/experience-detail";
+import { ExperienceDetail } from "./experience-detail";
 import { GradientOverlay } from "@/components/gradient-overlay";
 
 interface ExperienceCardProps {

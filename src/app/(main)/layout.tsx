@@ -1,7 +1,7 @@
-import { ParticlesBackground } from "@/components/particles";
-import { ThemeSwitcher } from "@/components/theme-switcher";
-import { DesktopNavbar } from "../../components/desktop-navbar";
-import { MobileNavbar } from "@/components/mobile-navbar";
+import { ParticlesBackground } from "./particles-background";
+import { ThemeSwitcher } from "./theme-switcher";
+import { DesktopNavbar } from "./desktop-navbar";
+import { MobileNavbar } from "./mobile-navbar";
 
 export default function MainLayout({
   children,

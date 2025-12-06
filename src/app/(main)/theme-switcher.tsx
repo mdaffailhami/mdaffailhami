@@ -3,9 +3,13 @@
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { Laptop2Icon, MoonIcon, SunIcon } from "lucide-react";
-import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { useStreamBreakpoint } from "@/hooks/use-stream-breakpoint";
 
 export function ThemeSwitcher() {

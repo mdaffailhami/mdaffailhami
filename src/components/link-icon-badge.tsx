@@ -4,7 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import Link from "next/link";
 import { GradientOverlay } from "@/components/gradient-overlay";
 
-const techBadgeVariants = cva(
+const linkIconBadgeVariants = cva(
   "bg-card gap-x-2 font-normal border-2 border-border transition-all duration-200 ease-in-out",
   {
     variants: {
@@ -31,7 +31,7 @@ const iconSizeVariants = {
   // lg: "size-6!",
 };
 
-type TechBadgeProps = VariantProps<typeof techBadgeVariants> & {
+type LinkIconBadgeProps = VariantProps<typeof linkIconBadgeVariants> & {
   icon: React.ComponentType<{
     className?: string;
     style?: React.CSSProperties;
@@ -42,7 +42,7 @@ type TechBadgeProps = VariantProps<typeof techBadgeVariants> & {
   className?: string;
 };
 
-export function TechBadge({
+export function LinkIconBadge({
   icon: Icon,
   label,
   color,
@@ -50,12 +50,12 @@ export function TechBadge({
   href,
   className,
   ...props
-}: TechBadgeProps & React.HTMLAttributes<HTMLSpanElement>) {
+}: LinkIconBadgeProps & React.HTMLAttributes<HTMLSpanElement>) {
   const badge = (
     <Badge
-      variant="secondary"
+      variant="outline"
       className={cn(
-        techBadgeVariants({ size, interactive: !!href }),
+        linkIconBadgeVariants({ size, interactive: !!href }),
         className,
       )}
       {...props}

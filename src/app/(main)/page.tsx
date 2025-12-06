@@ -1,8 +1,8 @@
-import AboutSlide from "./about";
-import ContactSlide from "./contact";
-import ExperienceSlide from "./experience";
-import HomeSlide from "./home";
-import ProjectsSlide from "./projects";
+import AboutSlide from "./about/slide";
+import ContactSlide from "./contact/slide";
+import ExperienceSlide from "./experience/slide";
+import HomeSlide from "./home/slide";
+import ProjectsSlide from "./projects/slide";
 
 export default function HomePage() {
   return (

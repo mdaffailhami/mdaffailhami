@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/drawer";
 import { useStreamBreakpoint } from "@/hooks/use-stream-breakpoint";
 import { Button } from "@/components/ui/button";
-import { TechBadge } from "@/components/tech-badge";
+import { LinkIconBadge } from "@/components/link-icon-badge";
 import type { Project } from "@/lib/constants";
 import { ExternalLink, Download } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
@@ -128,7 +128,7 @@ function ProjectContent({ project }: { project: Project }) {
           <h3 className="text-sm font-semibold mb-2">Technologies Used</h3>
           <div className="flex flex-wrap gap-2">
             {project.technologies.map((tech) => (
-              <TechBadge
+              <LinkIconBadge
                 key={tech.label}
                 icon={tech.Icon}
                 label={tech.label}

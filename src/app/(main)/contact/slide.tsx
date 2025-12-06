@@ -1,13 +1,8 @@
-"use client";
-
 import { Slide } from "@/components/slide";
-import { ContactForm } from "@/components/contact-form";
-import { socials } from "@/lib/constants";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import Link from "next/link";
+import { ContactForm } from "./contact-form";
 import { cn } from "@/lib/utils";
 import { GradientOverlay } from "@/components/gradient-overlay";
+import { SocialListSection } from "./social-list-section";
 
 function CopyrightSection({ className }: { className?: string }) {
   return (
@@ -23,13 +18,6 @@ function CopyrightSection({ className }: { className?: string }) {
 }
 
 export default function ContactSlide() {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <Slide
       id="contact"
@@ -57,36 +45,7 @@ export default function ContactSlide() {
               <h3 className="max-md:hidden text-2xl font-semibold text-center md:text-left">
                 Connect With Me
               </h3>
-              <div className="flex flex-row flex-wrap justify-evenly md:gap-4 md:grid md:grid-cols-2">
-                {socials.map((social) => (
-                  <Link
-                    key={social.label}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative overflow-hidden rounded-lg border border-border bg-card shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-103 block w-full h-full p-3 md:p-4"
-                  >
-                    <GradientOverlay />
-                    <div className="relative flex items-center justify-center md:justify-start gap-3">
-                      <div
-                        className="shrink-0"
-                        style={{
-                          color:
-                            mounted && resolvedTheme === "dark"
-                              ? social.color.dark
-                              : social.color.light,
-                          filter: "drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1))",
-                        }}
-                      >
-                        <social.Icon className="h-6 w-6 transition-transform duration-300 group-hover:scale-110" />
-                      </div>
-                      <span className="hidden md:block font-medium text-foreground group-hover:text-primary transition-colors">
-                        {social.label}
-                      </span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+              <SocialListSection />
             </div>
 
             {/* Additional Info Card */}

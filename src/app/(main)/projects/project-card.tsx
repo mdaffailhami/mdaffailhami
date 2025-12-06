@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { TechBadge } from "@/components/tech-badge";
+import { LinkIconBadge } from "@/components/link-icon-badge";
 import type { Project } from "@/lib/constants";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
-import { ProjectDetail } from "@/components/project-detail";
+import { ProjectDetail } from "./project-detail";
 import { cn } from "@/lib/utils";
 import { GradientOverlay } from "@/components/gradient-overlay";
 
@@ -61,7 +61,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           <div className="max-h-7.5 overflow-y-hidden">
             <div className="flex flex-row flex-wrap gap-x-1 gap-y-5">
               {project.technologies.slice(0, 4).map((tech) => (
-                <TechBadge
+                <LinkIconBadge
                   key={tech.label}
                   icon={tech.Icon}
                   label={tech.label}

@@ -1,21 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import { Slide } from "@/components/slide";
-import { TechBadge } from "@/components/tech-badge";
-import { technologies } from "@/lib/constants";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { TechListSection } from "./tech-list-section";
 
 export default function AboutSlide() {
-  // Use resolvedTheme instead of theme to get the actual theme
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <Slide id="about">
       <div className="w-[92%] mx-auto flex flex-col md:flex-row items-center min-h-full gap-8">
@@ -54,22 +41,7 @@ export default function AboutSlide() {
               et id fuga delectus quasi cum! Aut doloribus maxime nulla unde
               illo:
             </p>
-            <ul className="flex flex-row gap-4 flex-wrap">
-              {technologies.map((tech) => (
-                <li key={tech.label}>
-                  <TechBadge
-                    icon={tech.Icon}
-                    label={tech.label}
-                    href={tech.url}
-                    color={
-                      mounted && resolvedTheme === "dark"
-                        ? tech.color.dark
-                        : tech.color.light
-                    }
-                  />
-                </li>
-              ))}
-            </ul>
+            <TechListSection />
           </div>
         </section>
       </div>

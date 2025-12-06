@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { Button } from "./ui/button";
+import { Button } from "../../components/ui/button";
 import { navs } from "@/lib/constants";
 import { useStreamBreakpoint } from "@/hooks/use-stream-breakpoint";
 
