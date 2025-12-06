@@ -22,7 +22,7 @@ const linkIconBadgeVariants = cva(
       size: "md",
       interactive: false,
     },
-  },
+  }
 );
 
 const iconSizeVariants = {
@@ -37,7 +37,7 @@ type LinkIconBadgeProps = VariantProps<typeof linkIconBadgeVariants> & {
     style?: React.CSSProperties;
   }>;
   label: string;
-  color: string;
+  iconColor: string;
   href?: string;
   className?: string;
 };
@@ -45,7 +45,7 @@ type LinkIconBadgeProps = VariantProps<typeof linkIconBadgeVariants> & {
 export function LinkIconBadge({
   icon: Icon,
   label,
-  color,
+  iconColor,
   size,
   href,
   className,
@@ -56,14 +56,17 @@ export function LinkIconBadge({
       variant="outline"
       className={cn(
         linkIconBadgeVariants({ size, interactive: !!href }),
-        className,
+        className
       )}
       {...props}
     >
-      <Icon
-        style={{ color: color }}
-        className={iconSizeVariants[size || "md"]}
-      />
+      <div
+        suppressHydrationWarning
+        className="shrink-0"
+        style={{ color: iconColor }}
+      >
+        <Icon className={iconSizeVariants[size || "md"]} />
+      </div>
       <span>{label}</span>
     </Badge>
   );

@@ -4,10 +4,10 @@ import Image from "next/image";
 import { LinkIconBadge } from "@/components/link-icon-badge";
 import type { Project } from "@/lib/constants";
 import { useTheme } from "next-themes";
-import { useState, useEffect } from "react";
 import { ProjectDetail } from "./project-detail";
 import { cn } from "@/lib/utils";
 import { GradientOverlay } from "@/components/gradient-overlay";
+import { useState } from "react";
 
 interface ProjectCardProps {
   project: Project;
@@ -16,12 +16,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, className }: ProjectCardProps) {
   const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   return (
     <>
@@ -29,7 +24,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
         type="button"
         className={cn(
           "group relative w-full max-w-110 cursor-pointer overflow-hidden rounded-lg border border-border bg-card shadow-md shadow-foreground/5 transition-all duration-300 hover:scale-101 hover:border-primary/50 hover:shadow-lg",
-          className,
+          className
         )}
         onClick={() => setDialogOpen(true)}
       >
@@ -65,13 +60,14 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
                   key={tech.label}
                   icon={tech.Icon}
                   label={tech.label}
-                  href={undefined}
-                  color={
-                    mounted && resolvedTheme === "dark"
+                  // href={tech.url} // Make it unclickable
+                  size="sm"
+                  iconColor={
+                    resolvedTheme === "dark"
                       ? tech.color.dark
                       : tech.color.light
                   }
-                  size="sm"
+                  suppressHydrationWarning
                 />
               ))}
               {project.technologies.length > 4 && (

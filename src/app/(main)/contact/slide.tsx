@@ -51,16 +51,16 @@ export default function ContactSlide() {
             {/* Additional Info Card */}
             <div className="max-md:hidden group relative overflow-hidden rounded-lg border border-border bg-card p-6 shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50">
               <GradientOverlay />
-              <div className="relative space-y-4">
-                <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                  Let's Collaborate
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  I'm always interested in hearing about new projects and
-                  opportunities. Whether you have a question or just want to say
-                  hi, I'll try my best to get back to you!
-                </p>
-              </div>
+              <div className="flex flex-col gap-4">
+              <p className="text-lg text-muted-foreground text-center md:text-left">
+                I{"'"}m always open to discussing new projects, creative ideas or
+                opportunities to be part of your visions.
+              </p>
+              <p className="text-lg text-muted-foreground text-center md:text-left">
+                Feel free to reach out to me via the form below or through my
+                social media channels. I{"'"}ll try my best to get back to you!
+              </p>
+            </div>
             </div>
             {/* Desktop copyright */}
             <CopyrightSection className="max-md:hidden" />

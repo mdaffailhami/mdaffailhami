@@ -1,6 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import {
@@ -83,11 +82,6 @@ export function ProjectDetail({
 
 function ProjectContent({ project }: { project: Project }) {
   const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const getButtonIcon = (type: string) => {
     switch (type) {
@@ -133,10 +127,8 @@ function ProjectContent({ project }: { project: Project }) {
                 icon={tech.Icon}
                 label={tech.label}
                 href={tech.url}
-                color={
-                  mounted && resolvedTheme === "dark"
-                    ? tech.color.dark
-                    : tech.color.light
+                iconColor={
+                  resolvedTheme === "dark" ? tech.color.dark : tech.color.light
                 }
                 size="sm"
               />

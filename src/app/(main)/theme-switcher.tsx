@@ -16,16 +16,12 @@ export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
   const containerRef = useRef<HTMLDivElement>(null);
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0 });
-  const [mounted, setMounted] = useState(false);
-
-  // Prevent hydration mismatch
-  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     if (!containerRef.current) return;
 
     const activeButton = containerRef.current.querySelector<HTMLButtonElement>(
-      `button[data-theme="${theme}"]`,
+      `button[data-theme="${theme}"]`
     );
 
     if (activeButton) {
@@ -44,20 +40,20 @@ export function ThemeSwitcher() {
       />
       <ThemeButton
         theme="light"
-        isActive={mounted && theme === "light"}
+        isActive={theme === "light"}
         onClick={() => setTheme("light")}
         icon={<SunIcon className="size-5 md:size-6" />}
       />
       <ThemeButton
         theme="system"
-        isActive={mounted && theme === "system"}
+        isActive={theme === "system"}
         onClick={() => setTheme("system")}
         icon={<Laptop2Icon className="size-5 md:size-6" />}
       />
       <ThemeButton
         theme="dark"
         onClick={() => setTheme("dark")}
-        isActive={mounted && theme === "dark"}
+        isActive={theme === "dark"}
         icon={<MoonIcon className="size-5 md:size-6" />}
       />
     </div>
@@ -85,6 +81,7 @@ function ThemeButton({
     >
       <TooltipTrigger asChild>
         <Button
+          suppressHydrationWarning
           variant="ghost"
           size="icon"
           data-theme={theme}

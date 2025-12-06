@@ -2,17 +2,13 @@
 
 import { socials } from "@/lib/constants";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { GradientOverlay } from "@/components/gradient-overlay";
 
 export function SocialListSection() {
   const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // const isClient = useIsClient();
+  console.log(resolvedTheme);
 
   return (
     <div className="flex flex-row flex-wrap justify-evenly md:gap-4 md:grid md:grid-cols-2">
@@ -27,10 +23,11 @@ export function SocialListSection() {
           <GradientOverlay />
           <div className="relative flex items-center justify-center md:justify-start gap-3">
             <div
+              suppressHydrationWarning
               className="shrink-0"
               style={{
                 color:
-                  mounted && resolvedTheme === "dark"
+                  resolvedTheme === "dark"
                     ? social.color.dark
                     : social.color.light,
               }}
