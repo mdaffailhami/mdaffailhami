@@ -115,7 +115,11 @@ function ExperienceContent({ experience }: { experience: Experience }) {
         </p>
 
         {/* Company Link */}
-        <Button variant="default" className="w-full gap-2 mt-1" asChild>
+        <Button
+          variant="default"
+          className="w-full gap-2 mt-1 bg-primary hover:bg-primary/80"
+          asChild
+        >
           <a
             href={experience.companyUrl}
             target="_blank"

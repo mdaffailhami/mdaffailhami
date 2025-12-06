@@ -2,9 +2,10 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import Link from "next/link";
+import { GradientOverlay } from "@/components/gradient-overlay";
 
 const techBadgeVariants = cva(
-  "bg-card gap-x-2 font-normal border-2 border-border hover:border-primary active:border-primary transition-all duration-200 ease-in-out cursor-pointer hover:scale-105 hover:bg-linear-to-r from-primary/10 dark:from-primary/20 to-transparent",
+  "bg-card gap-x-2 font-normal border-2 border-border transition-all duration-200 ease-in-out",
   {
     variants: {
       size: {
@@ -12,9 +13,14 @@ const techBadgeVariants = cva(
         md: "px-3 py-1 text-base",
         // lg: "px-4 py-1.5 text-lg",
       },
+      interactive: {
+        true: "hover:border-primary active:border-primary cursor-pointer",
+        false: "",
+      },
     },
     defaultVariants: {
       size: "md",
+      interactive: false,
     },
   },
 );
@@ -32,7 +38,7 @@ type TechBadgeProps = VariantProps<typeof techBadgeVariants> & {
   }>;
   label: string;
   color: string;
-  href: string;
+  href?: string;
   className?: string;
 };
 
@@ -45,19 +51,41 @@ export function TechBadge({
   className,
   ...props
 }: TechBadgeProps & React.HTMLAttributes<HTMLSpanElement>) {
-  return (
-    <Link target="_blank" rel="noopener noreferrer" href={href}>
-      <Badge
-        variant="secondary"
-        className={cn(techBadgeVariants({ size }), className)}
-        {...props}
+  const badge = (
+    <Badge
+      variant="secondary"
+      className={cn(
+        techBadgeVariants({ size, interactive: !!href }),
+        className,
+      )}
+      {...props}
+    >
+      <Icon
+        style={{ color: color }}
+        className={iconSizeVariants[size || "md"]}
+      />
+      <span>{label}</span>
+    </Badge>
+  );
+
+  if (href) {
+    return (
+      <Link
+        target="_blank"
+        rel="noopener noreferrer"
+        href={href}
+        className="group relative inline-flex rounded-full transition-transform duration-200 hover:scale-105"
       >
-        <Icon
-          style={{ color: color }}
-          className={iconSizeVariants[size || "md"]}
-        />
-        <span>{label}</span>
-      </Badge>
-    </Link>
+        <GradientOverlay className="rounded-full from-primary/20" />
+        {badge}
+      </Link>
+    );
+  }
+
+  return (
+    <div className="relative group">
+      <GradientOverlay className="rounded-full" />
+      {badge}
+    </div>
   );
 }

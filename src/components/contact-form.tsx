@@ -100,7 +100,7 @@ export function ContactForm() {
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full group relative overflow-hidden"
+        className="w-full group/button relative overflow-hidden"
         size="lg"
       >
         {isSubmitting ? (
@@ -113,7 +113,7 @@ export function ContactForm() {
         ) : (
           <>
             Send Message
-            <SendIcon className="size-4 transition-transform group-hover:translate-x-1" />
+            <SendIcon className="size-4 transition-transform group-hover/button:translate-x-1" />
           </>
         )}
       </Button>

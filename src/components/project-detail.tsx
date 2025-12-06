@@ -156,7 +156,7 @@ function ProjectContent({ project }: { project: Project }) {
                   className={cn({
                     "dark:bg-white bg-[#181717] text-background hover:bg-[#181717]/80 hover:dark:bg-white/80":
                       button.type === "github",
-                    "hover:border-primary! hover:text-primary bg-primary":
+                    "bg-primary hover:bg-primary/80 ":
                       button.type === "project",
                   })}
                   asChild

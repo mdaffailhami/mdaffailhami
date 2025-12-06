@@ -4,6 +4,7 @@ import Image from "next/image";
 import type { Experience } from "@/lib/constants";
 import { useState } from "react";
 import { ExperienceDetail } from "@/components/experience-detail";
+import { GradientOverlay } from "@/components/gradient-overlay";
 
 interface ExperienceCardProps {
   experience: Experience;
@@ -19,10 +20,9 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
         onClick={() => setDialogOpen(true)}
         className="group h-30.75 md:h-36.5 flex items-start relative overflow-hidden rounded-lg border border-border bg-card p-4 shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-101 cursor-pointer text-left w-full"
       >
-        {/* Gradient overlay on hover */}
-        <div className="absolute inset-0 bg-linear-to-br from-primary/10 dark:from-primary/20 to-transparent opacity-50 md:opacity-50 transition-opacity duration-300 group-hover:opacity-100" />
+        <GradientOverlay />
 
-        <div className="relative flex gap-6 w-full">
+        <div className="relative flex gap-6 w-full h-full">
           {/* Company Image */}
           <div className="max-md:hidden relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-border bg-muted">
             <Image

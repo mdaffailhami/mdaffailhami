@@ -42,7 +42,7 @@ export default function ExperienceSlide() {
                 className="relative"
               >
                 {/* Dot */}
-                <div className="absolute -left-6.75 top-1/2 size-4 rounded-full bg-primary/50 border-4 border-primary -translate-y-1/2"></div>
+                <div className="absolute -left-6.75 top-1/2 size-4 rounded-full bg-primary/75 border-4 border-primary -translate-y-1/2"></div>
 
                 <ExperienceCard experience={experience} />
               </div>

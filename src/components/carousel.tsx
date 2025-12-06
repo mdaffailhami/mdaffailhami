@@ -20,7 +20,6 @@ export function Carousel({
   showIndicator = true,
   showNavigation = true,
   className,
-  slideClassName,
   indicatorClassName,
 }: CarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -67,7 +66,7 @@ export function Carousel({
   return (
     <div className={cn("w-full space-y-4", className)}>
       {/* Carousel Container */}
-      <div className="relative group">
+      <div className="relative group/carousel">
         <div
           ref={carouselRef}
           className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hidden"
@@ -89,7 +88,7 @@ export function Carousel({
               <Button
                 variant="secondary"
                 size="icon"
-                className="absolute bg-primary/90 hover:bg-primary/75 left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity z-30"
+                className="absolute bg-primary/90 hover:bg-primary/75 left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-30"
                 onClick={handlePrevSlide}
               >
                 <ChevronLeft className="size-4 text-primary-foreground" />
@@ -99,7 +98,7 @@ export function Carousel({
               <Button
                 variant="secondary"
                 size="icon"
-                className="absolute bg-primary/90 hover:bg-primary/75 right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity z-30"
+                className="absolute bg-primary/90 hover:bg-primary/75 right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-30"
                 onClick={handleNextSlide}
               >
                 <ChevronRight className="size-4 text-primary-foreground" />

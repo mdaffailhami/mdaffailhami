@@ -7,6 +7,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { GradientOverlay } from "@/components/gradient-overlay";
 
 function CopyrightSection({ className }: { className?: string }) {
   return (
@@ -61,11 +62,9 @@ export default function ContactSlide() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative overflow-hidden rounded-lg border border-border bg-card p-3 md:p-4 shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-103"
+                    className="group relative overflow-hidden rounded-lg border border-border bg-card shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50 hover:scale-103 block w-full h-full p-3 md:p-4"
                   >
-                    {/* Gradient overlay on hover */}
-                    <div className="opacity-100 md:opacity-50 group-hover:opacity-100 absolute inset-0 bg-linear-to-br from-primary/10 dark:from-primary/20 to-transparent transition-opacity duration-300" />
-
+                    <GradientOverlay />
                     <div className="relative flex items-center justify-center md:justify-start gap-3">
                       <div
                         className="shrink-0"
@@ -90,11 +89,11 @@ export default function ContactSlide() {
 
             {/* Additional Info Card */}
             <div className="max-md:hidden group relative overflow-hidden rounded-lg border border-border bg-card p-6 shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50">
-              {/* Gradient overlay on hover */}
-              <div className="absolute inset-0 bg-linear-to-br from-primary/5 dark:from-primary/20 to-transparent opacity-50 transition-opacity duration-300 group-hover:opacity-100" />
-
+              <GradientOverlay />
               <div className="relative space-y-4">
-                <h3 className="text-xl font-semibold">Let's Collaborate</h3>
+                <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+                  Let's Collaborate
+                </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   I'm always interested in hearing about new projects and
                   opportunities. Whether you have a question or just want to say
@@ -108,11 +107,9 @@ export default function ContactSlide() {
 
           {/* Right Column - Contact Form */}
           <div className="group relative overflow-hidden rounded-lg border border-border bg-card p-6 md:p-8 shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50">
-            {/* Gradient overlay on hover */}
-            <div className="opacity-100 md:opacity-50 group-hover:opacity-100 absolute inset-0 bg-linear-to-br from-primary/5 dark:from-primary/10 to-transparent transition-opacity duration-300" />
-
+            <GradientOverlay />
             <div className="relative">
-              <h3 className="text-2xl font-semibold mb-6 max-md:hidden">
+              <h3 className="text-2xl font-semibold mb-6 max-md:hidden group-hover:text-primary transition-colors">
                 Send Me a Message
               </h3>
               <ContactForm />

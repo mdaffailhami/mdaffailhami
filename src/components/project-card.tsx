@@ -7,6 +7,7 @@ import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import { ProjectDetail } from "@/components/project-detail";
 import { cn } from "@/lib/utils";
+import { GradientOverlay } from "@/components/gradient-overlay";
 
 interface ProjectCardProps {
   project: Project;
@@ -27,13 +28,12 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
       <button
         type="button"
         className={cn(
-          "group/card relative w-full max-w-110 cursor-pointer overflow-hidden rounded-lg border border-border bg-card shadow-md shadow-foreground/5 transition-all duration-300 hover:scale-101 hover:border-primary/50 hover:shadow-lg",
+          "group relative w-full max-w-110 cursor-pointer overflow-hidden rounded-lg border border-border bg-card shadow-md shadow-foreground/5 transition-all duration-300 hover:scale-101 hover:border-primary/50 hover:shadow-lg",
           className,
         )}
         onClick={() => setDialogOpen(true)}
       >
-        {/* Gradient overlay on hover */}
-        <div className="absolute inset-0 z-10 bg-linear-to-tl from-primary/5 dark:from-primary/10 to-transparent opacity-50 transition-opacity duration-300 group-hover/card:opacity-100" />
+        <GradientOverlay className="bg-linear-to-tl" />
 
         {/* Thumbnail */}
         <div className="relative h-70 md:h-75 w-full overflow-hidden">
@@ -41,7 +41,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
             src={project.images[0]}
             alt={project.title}
             fill
-            className="object-cover transition-transform duration-300 group-hover/card:scale-101"
+            className="object-cover transition-transform duration-300 group-hover:scale-101"
           />
         </div>
 
@@ -49,7 +49,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
         <div className="relative flex flex-col gap-y-4 p-5 text-left">
           {/* Header */}
           <div className="space-y-2">
-            <h3 className="line-clamp-1 text-2xl text-primary font-medium decoration-2 underline-offset-4 group-hover/card:underline">
+            <h3 className="line-clamp-1 text-2xl text-primary font-medium decoration-2 underline-offset-4 group-hover:underline">
               {project.title}
             </h3>
             <p className="line-clamp-2 text-sm leading-relaxed text-muted-foreground">
@@ -65,14 +65,13 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
                   key={tech.label}
                   icon={tech.Icon}
                   label={tech.label}
-                  href={tech.url}
+                  href={undefined}
                   color={
                     mounted && resolvedTheme === "dark"
                       ? tech.color.dark
                       : tech.color.light
                   }
                   size="sm"
-                  className="cursor-pointer hover:outline-border"
                 />
               ))}
               {project.technologies.length > 4 && (

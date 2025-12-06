@@ -69,7 +69,7 @@ export default function ProjectsSlide() {
         {projects.length > maxProjects && (
           <Button
             variant={"link"}
-            className="text-center text-lg group hover:opacity-80"
+            className="text-center text-lg hover:opacity-80"
           >
             View All Projects <ArrowRightIcon className="size-5" />
           </Button>

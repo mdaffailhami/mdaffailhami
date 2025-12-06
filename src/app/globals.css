@@ -51,7 +51,7 @@
   --foreground: oklch(0.15 0.008 286); /* Very dark text */
 
   /* Card - slightly darker than background for layering */
-  --card: oklch(0.96 0.004 286); /* Light card, visible separation */
+  --card: #fefefe; /* Light card, visible separation */
   --card-foreground: oklch(0.15 0.008 286);
 
   /* Popover */
