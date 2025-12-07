@@ -3,6 +3,8 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@custom-variant hover (&:hover);
+
 @theme inline {
   --font-sans: var(--font-inter);
   --font-serif: var(--font-arvo);
