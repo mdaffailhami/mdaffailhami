@@ -12,7 +12,7 @@ function CopyrightSection({ className }: { className?: string }) {
         className
       )}
     >
-      &copy; 2021 - 2026 Daffa Ilhami. All Rights Reserved.
+      &copy; 2021 - 2026 | Muhammad Daffa Ilhami
     </span>
   );
 }

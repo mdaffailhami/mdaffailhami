@@ -11,8 +11,13 @@ export function ProjectListSection() {
   // Limit to 9 projects and group them into slides of 3
   const breakpoint = useStreamBreakpoint();
 
-  const maxProjects = breakpoint === 1 ? 5 : breakpoint < 5 ? 6 : 9;
-  const displayedProjects = projects.slice(0, maxProjects);
+  // Reserved for future use
+  // const maxProjects = breakpoint === 1 ? 5 : breakpoint < 5 ? 6 : 9;
+  // const displayedProjects = projects.slice(0, maxProjects);
+
+  // We'll simply just show all projects for now
+  const displayedProjects = projects;
+
   const itemsPerSlide = (() => {
     if (breakpoint >= 5) return 3;
     if (breakpoint >= 2) return 2;
@@ -42,7 +47,8 @@ export function ProjectListSection() {
   return (
     <>
       {breakpoint <= 2 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-5 sm:gap-3 w-full mb-5">
+        // If the breakpoint is sm or below, show the projects vertically scrollable
+        <div className="grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-5 sm:gap-3 w-full">
           {displayedProjects.map((project) => (
             <ProjectCard
               key={project.title}
@@ -52,6 +58,7 @@ export function ProjectListSection() {
           ))}
         </div>
       ) : (
+        // If not, show the projects horizontally snap scrollable
         <Carousel
           items={slides}
           className="max-w-216 lg:max-w-4xl xl:max-w-7xl"
@@ -59,14 +66,15 @@ export function ProjectListSection() {
         />
       )}
 
-      {projects.length > maxProjects && (
+      {/* Reserved for future use */}
+      {/* {projects.length > maxProjects && (
         <Button
           variant={"link"}
           className="text-center text-lg hover:opacity-80"
         >
           View All Projects <ArrowRightIcon className="size-5" />
         </Button>
-      )}
+      )} */}
     </>
   );
 }
