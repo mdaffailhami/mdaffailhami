@@ -115,16 +115,16 @@ function ProjectContent({ project }: { project: Project }) {
 
       {/* Project Description */}
       <div className="space-y-4 mt-4">
-        <p className="text-muted-foreground">{project.longDescription}</p>
+        <p className="text-muted-foreground">{project.description}</p>
 
         {/* Technologies Section */}
         <div>
           <h3 className="text-sm font-semibold mb-2">Technologies Used</h3>
           <div className="flex flex-wrap gap-2">
-            {project.technologies.map((tech) => (
+            {project.techs.map((tech) => (
               <LinkIconBadge
                 key={tech.label}
-                icon={tech.Icon}
+                icon={tech.icon}
                 label={tech.label}
                 href={tech.url}
                 iconColor={
@@ -137,30 +137,29 @@ function ProjectContent({ project }: { project: Project }) {
         </div>
 
         {/* Action Buttons */}
-        {project.buttons.length > 0 && (
+        {project.links.length > 0 && (
           <div className="flex flex-wrap gap-3 pt-2">
-            {project.buttons.map((button) => {
-              const Icon = button.icon || getButtonIcon(button.type);
+            {project.links.map((link) => {
+              const Icon = link.icon || getButtonIcon(link.type);
               return (
                 <Button
-                  key={button.url}
+                  key={link.url}
                   variant={"default"}
                   className={cn({
                     "dark:bg-white bg-[#181717] text-background hover:bg-[#181717]/80 hover:dark:bg-white/80":
-                      button.type === "github",
-                    "bg-primary hover:bg-primary/80 ":
-                      button.type === "project",
+                      link.type === "github",
+                    "bg-primary hover:bg-primary/80 ": link.type === "project",
                   })}
                   asChild
                 >
                   <a
-                    href={button.url}
+                    href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="gap-2"
                   >
                     <Icon className="size-4" />
-                    {button.label}
+                    {link.label}
                   </a>
                 </Button>
               );

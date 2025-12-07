@@ -12,11 +12,10 @@ export type Tech = {
 
 export type Project = {
   title: string;
-  shortDescription: string;
-  longDescription: string;
+  description: string;
   images: string[];
   techs: Tech[];
-  buttons: {
+  links: {
     type: "github" | "project" | "custom";
     label: string;
     url: string;

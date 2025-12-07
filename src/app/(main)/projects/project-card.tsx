@@ -48,7 +48,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
               {project.title}
             </h3>
             <p className="line-clamp-2 text-sm leading-relaxed text-muted-foreground">
-              {project.shortDescription}
+              {project.description}
             </p>
           </div>
 
