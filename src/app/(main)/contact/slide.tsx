@@ -8,7 +8,7 @@ function CopyrightSection({ className }: { className?: string }) {
   return (
     <span
       className={cn(
-        "text-base text-primary/75 dark:text-primary text-center",
+        "text-base text-primary/75 dark:text-primary text-center font-serif",
         className
       )}
     >
@@ -26,7 +26,7 @@ export default function ContactSlide() {
       <div className="w-full px-3 md:px-5 max-w-lg md:max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8 md:mb-10">
-          <h1 className="text-4xl font-semibold text-center mb-2">
+          <h1 className="text-4xl font-medium text-center mb-2">
             Get In Touch
           </h1>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">

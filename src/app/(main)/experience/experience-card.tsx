@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import type { Experience } from "@/lib/constants";
+import type { Experience } from "@/database/schema";
 import { useState } from "react";
 import { ExperienceDetail } from "./experience-detail";
 import { GradientOverlay } from "@/components/gradient-overlay";

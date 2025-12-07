@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/drawer";
 import { useStreamBreakpoint } from "@/hooks/use-stream-breakpoint";
 import { Button } from "@/components/ui/button";
-import type { Experience } from "@/lib/constants";
+import type { Experience } from "@/database/schema";
 import { ExternalLink } from "lucide-react";
 import { Carousel } from "@/components/carousel";
 

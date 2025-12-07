@@ -41,7 +41,7 @@ export function DesktopNavbar() {
         // For vertical scrolling: "-50% 0px -50% 0px" checks at center of viewport
         rootMargin: "-50% 0px -50% 0px",
         threshold: 0,
-      },
+      }
     );
 
     // Small timeout to ensure DOM elements are ready before observing
@@ -133,7 +133,7 @@ export function DesktopNavbar() {
                 // Highlight if active
                 "text-primary hover:bg-transparent! hover:cursor-default":
                   activeHash === nav.hash,
-              },
+              }
             )}
           >
             {/* {nav.hash === "#home" ? <HomeIcon /> : nav.label} */}

@@ -21,7 +21,7 @@ import {
 import { useStreamBreakpoint } from "@/hooks/use-stream-breakpoint";
 import { Button } from "@/components/ui/button";
 import { LinkIconBadge } from "@/components/link-icon-badge";
-import type { Project } from "@/lib/constants";
+import type { Project } from "@/database/schema";
 import { ExternalLink, Download } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
 import { cn } from "@/lib/utils";

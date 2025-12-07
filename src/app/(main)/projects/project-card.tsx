@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { LinkIconBadge } from "@/components/link-icon-badge";
-import type { Project } from "@/lib/constants";
+import type { Project } from "@/database/schema";
 import { useTheme } from "next-themes";
 import { ProjectDetail } from "./project-detail";
 import { cn } from "@/lib/utils";
@@ -55,10 +55,10 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           {/* Technologies */}
           <div className="max-h-7.5 overflow-y-hidden">
             <div className="flex flex-row flex-wrap gap-x-1 gap-y-5">
-              {project.technologies.slice(0, 4).map((tech) => (
+              {project.techs.slice(0, 4).map((tech) => (
                 <LinkIconBadge
                   key={tech.label}
-                  icon={tech.Icon}
+                  icon={tech.icon}
                   label={tech.label}
                   // href={tech.url} // Make it unclickable
                   size="sm"
@@ -70,11 +70,6 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
                   suppressHydrationWarning
                 />
               ))}
-              {project.technologies.length > 4 && (
-                <span className="self-center text-sm text-muted-foreground">
-                  +{project.technologies.length - 4} more
-                </span>
-              )}
             </div>
           </div>
         </div>

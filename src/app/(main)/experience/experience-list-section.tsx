@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ExperienceCard from "./experience-card";
-import { experiences } from "@/lib/constants";
+import { experiences } from "@/database/data/experiences";
 import { Button } from "@/components/ui/button";
 import { ArrowDownIcon, ArrowUpIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -29,7 +29,7 @@ export function ExperienceListSection() {
         <div
           className={cn(
             "flex flex-col gap-y-6 transition-all duration-300 pl-8",
-            isExpanded && !isMobile ? "max-h-136 overflow-y-auto pr-4" : "",
+            isExpanded && !isMobile ? "max-h-136 overflow-y-auto pr-4" : ""
           )}
           style={{ scrollbarWidth: "thin" }}
         >

@@ -1,7 +1,7 @@
 "use client";
 
 import { ProjectCard } from "./project-card";
-import { projects } from "@/lib/constants";
+import { projects } from "@/database/data/projects";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
 import { Carousel } from "@/components/carousel";
@@ -24,7 +24,7 @@ export function ProjectListSection() {
     // Get the chunk of projects for the current slide
     const chunk = displayedProjects.slice(
       i * itemsPerSlide,
-      (i + 1) * itemsPerSlide,
+      (i + 1) * itemsPerSlide
     );
 
     return (
