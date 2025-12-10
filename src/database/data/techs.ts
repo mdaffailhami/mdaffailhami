@@ -4,6 +4,7 @@ import {
   SiDocker,
   SiFigma,
   SiGithub,
+  SiGooglegemini,
   SiNextdotjs,
   SiPrisma,
   SiReact,
@@ -132,6 +133,15 @@ export const techs: Record<string, Tech> = {
     color: {
       light: "#34B27B",
       dark: "#34B27B",
+    },
+  },
+  gemini: {
+    label: "Gemini",
+    icon: SiGooglegemini,
+    url: "https://gemini.google/about/",
+    color: {
+      light: "#4285F4",
+      dark: "#4285F4",
     },
   },
 };

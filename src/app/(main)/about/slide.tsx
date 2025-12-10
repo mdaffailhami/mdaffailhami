@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Slide } from "@/components/slide";
 import { TechListSection } from "./tech-list-section";
+import Markdown from "react-markdown";
+import { config } from "@/database/data/config";
 
 export default function AboutSlide() {
   return (
@@ -23,28 +25,22 @@ export default function AboutSlide() {
           />
         </section>
         <section className="flex flex-col w-full md:flex-3 gap-y-4">
-          <h1 className="font-serif text-6xl font-medium leading-14">
+          <h1 className="font-serif text-[3.25rem] text-foreground font-medium leading-14">
             About Me
           </h1>
-          <p className="text-lg text-muted-foreground text-justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet non
-            tempora sequi consectetur praesentium pariatur quod vero facilis
-            quia quidem, labore, atque necessitatibus mollitia qui, temporibus
-            dolores ab optio distinctio? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Quam aliquid architecto expedita doloremque
-            consectetur pariatur quis repudiandae, officiis voluptatum,
-            perferendis cupiditate perspiciatis dolore amet ab aliquam minima
-            dolorem esse totam.
-          </p>
-          <div>
-            <p className="text-lg text-muted-foreground text-justify mb-2.5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-              provident ducimus sint laboriosam ipsa nulla, nemo temporibus eum
-              et id fuga delectus quasi cum! Aut doloribus maxime nulla unde
-              illo:
-            </p>
-            <TechListSection />
+          <hr />
+          <div className="space-y-2 text-base md:text-lg text-muted-foreground text-justify">
+            <Markdown
+              components={{
+                h2: ({ node, ...props }) => (
+                  <h2 className="text-xl md:text-2xl" {...props} />
+                ),
+              }}
+            >
+              {config.about}
+            </Markdown>
           </div>
+          <TechListSection />
         </section>
       </div>
     </Slide>

@@ -3,7 +3,7 @@ const about = `\
 
 I’m a **self-taught programmer** from **Indonesia** 🇮🇩 with over **5 years** of experience in the field.
 
-I started **programming** while I was still in **madrasah aliyah** 🏫 — so the trigger was **my own interest**, not college.
+I started **programming** while I was still in **madrasah aliyah** 🏫 — so the trigger was actually **my own interest**, not college.
 
 I’ve experimented with a **wide range of technologies** ⚙️ — including *React*, *Flutter*, *React Native*, *Svelte*, *Express*, *FastAPI*, *Firebase*, *MongoDB*, *PostgreSQL*, **and more**.
 

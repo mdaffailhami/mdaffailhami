@@ -103,6 +103,47 @@
 }
 
 @layer utilities {
+  /* Fluid Typography - Smooth scaling between viewport sizes */
+  .text-fluid-xs {
+    font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  }
+  .text-fluid-sm {
+    font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  }
+  .text-fluid-base {
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  }
+  .text-fluid-lg {
+    font-size: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  }
+  .text-fluid-xl {
+    font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  }
+  .text-fluid-2xl {
+    font-size: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+  }
+  .text-fluid-3xl {
+    font-size: clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem);
+  }
+  .text-fluid-4xl {
+    font-size: clamp(2.25rem, 1.9rem + 1.75vw, 3rem);
+  }
+  .text-fluid-5xl {
+    font-size: clamp(3rem, 2.5rem + 2.5vw, 3.75rem);
+  }
+  .text-fluid-6xl {
+    font-size: clamp(3.75rem, 3rem + 3.75vw, 4.5rem);
+  }
+  .text-fluid-7xl {
+    font-size: clamp(4.5rem, 3.5rem + 5vw, 6rem);
+  }
+  .text-fluid-8xl {
+    font-size: clamp(6rem, 4.5rem + 7.5vw, 8rem);
+  }
+  .text-fluid-9xl {
+    font-size: clamp(8rem, 6rem + 10vw, 10rem);
+  }
+
   /* A class to hide scrollbar */
   .scrollbar-hidden {
     scrollbar-width: none;
