@@ -18,7 +18,7 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/components/ui/drawer";
-import { useStreamBreakpoint } from "@/hooks/use-stream-breakpoint";
+import { useStreamBreakpoint } from "@/hooks";
 import { Button } from "@/components/ui/button";
 import { LinkIconBadge } from "@/components/link-icon-badge";
 import type { Project } from "@/database/schema";

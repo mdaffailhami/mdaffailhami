@@ -1,41 +1,30 @@
-import Image from "next/image";
 import { Slide } from "@/components/slide";
 import { TechListSection } from "./tech-list-section";
 import Markdown from "react-markdown";
 import { config } from "@/database/data/config";
+import { HeroPicture } from "@/components/hero-picture";
+import Daffa1 from "@/assets/mdaffailhami-1.png";
+import Daffa2 from "@/assets/mdaffailhami-2.png";
 
 export default function AboutSlide() {
   return (
     <Slide id="about">
-      <div className="w-[92%] mx-auto flex flex-col md:flex-row items-center min-h-full gap-8">
-        <section className="w-full md:flex-2 flex justify-center">
-          <Image
-            src="/mdaffailhami-1.png"
-            alt="Daffa Ilhami (1)"
-            width={779}
-            height={1080}
-            className="rounded-b-full w-[75%] md:w-md md:hidden"
-          />
-          <Image
-            src="/mdaffailhami-2.png"
-            alt="Daffa Ilhami (2)"
-            width={676}
-            height={1064}
-            className="rounded-b-full w-[75%] md:w-md max-md:hidden"
-          />
+      <div className="fl-px-2/40 md:fl-px-[-2rem/10rem] flex flex-col lg:flex-row items-center min-h-full fl-gap-4/6">
+        <section className="w-full lg:flex-3 flex justify-center lg:justify-start">
+          <HeroPicture mobile={Daffa1} desktop={Daffa2} />
         </section>
-        <section className="flex flex-col w-full md:flex-3 gap-y-4">
-          <h1 className="font-serif text-[3.25rem] text-foreground font-medium leading-14">
+        <section className="flex flex-col w-full lg:flex-4 fl-gap-y-1.5/6">
+          <h1 className="font-serif fl-text-[2.75rem/3.5rem] md:fl-text-[2.25rem/3.5rem] font-medium leading-12 lg:leading-10">
             About Me
           </h1>
           <hr />
-          <div className="space-y-2 text-base md:text-lg text-muted-foreground text-justify">
+          <div className="space-y-2 fl-text-base/lg lg:fl-text-[0.8rem/1.115rem] text-muted-foreground text-justify">
             <Markdown
-              components={{
-                h2: ({ node, ...props }) => (
-                  <h2 className="text-xl md:text-2xl" {...props} />
-                ),
-              }}
+            // components={{
+            //   h2: ({ node, ...props }) => (
+            //     <h2 className="text-xl lg:text-2xl" {...props} />
+            //   ),
+            // }}
             >
               {config.about}
             </Markdown>

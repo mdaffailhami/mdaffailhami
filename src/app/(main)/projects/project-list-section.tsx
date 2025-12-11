@@ -5,7 +5,7 @@ import { projects } from "@/database/data/projects";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
 import { Carousel } from "@/components/carousel";
-import { useStreamBreakpoint } from "@/hooks/use-stream-breakpoint";
+import { useStreamBreakpoint } from "@/hooks";
 
 export function ProjectListSection() {
   // Limit to 9 projects and group them into slides of 3
@@ -46,8 +46,8 @@ export function ProjectListSection() {
 
   return (
     <>
-      {breakpoint <= 2 ? (
-        // If the breakpoint is sm or below, show the projects vertically scrollable
+      {breakpoint <= 3 ? (
+        // If the breakpoint is md or below, show the projects vertically scrollable
         <div className="grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-5 sm:gap-3 w-full">
           {displayedProjects.map((project) => (
             <ProjectCard

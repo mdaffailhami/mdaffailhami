@@ -10,7 +10,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { useStreamBreakpoint } from "@/hooks/use-stream-breakpoint";
+import { useIsHydrated, useStreamBreakpoint } from "@/hooks";
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
@@ -32,29 +32,29 @@ export function ThemeSwitcher() {
   return (
     <div
       ref={containerRef}
-      className="z-50 flex flex-row fixed max-md:top-1.5 md:bottom-5 right-1/2 translate-x-1/2 bg-background border border-border shadow-md shadow-foreground/5 rounded-full"
+      className="z-50 flex flex-row fixed max-lg:top-1.5 lg:bottom-5 right-1/2 translate-x-1/2 bg-background border border-border shadow-md shadow-foreground/5 rounded-full"
     >
       <div
-        className="absolute inset-0 w-10 md:w-12 bg-primary/20 rounded-full outline-2 outline-primary transition-all duration-300 ease-in-out"
+        className="absolute inset-0 w-10 bg-primary/20 rounded-full outline-2 outline-primary transition-all duration-300 ease-in-out"
         style={indicatorStyle}
       />
       <ThemeButton
         theme="light"
         isActive={theme === "light"}
         onClick={() => setTheme("light")}
-        icon={<SunIcon className="size-5 md:size-6" />}
+        icon={<SunIcon className="size-5" />}
       />
       <ThemeButton
         theme="system"
         isActive={theme === "system"}
         onClick={() => setTheme("system")}
-        icon={<Laptop2Icon className="size-5 md:size-6" />}
+        icon={<Laptop2Icon className="size-5" />}
       />
       <ThemeButton
         theme="dark"
         onClick={() => setTheme("dark")}
         isActive={theme === "dark"}
-        icon={<MoonIcon className="size-5 md:size-6" />}
+        icon={<MoonIcon className="size-5" />}
       />
     </div>
   );
@@ -72,12 +72,12 @@ function ThemeButton({
   icon: React.ReactNode;
 }) {
   const breakpoint = useStreamBreakpoint();
-  const isMobile = breakpoint < 3;
+  const isMobile = breakpoint < 4;
 
   return (
     <Tooltip
       open={isMobile ? false : undefined} // Mobile devices should not show tooltip
-      delayDuration={100}
+      delayDuration={500}
     >
       <TooltipTrigger asChild>
         <Button
@@ -86,7 +86,7 @@ function ThemeButton({
           size="icon"
           data-theme={theme}
           onClick={onClick}
-          className={cn("rounded-full size-10 md:size-12 hover:text-primary", {
+          className={cn("rounded-full size-10 hover:text-primary", {
             "text-primary": isActive,
           })}
         >

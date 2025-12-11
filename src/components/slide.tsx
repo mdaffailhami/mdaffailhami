@@ -32,7 +32,7 @@ export function Slide({
       },
       {
         threshold: 0.5, // Trigger when less than 50% visible
-      },
+      }
     );
 
     observer.observe(slideElement);
@@ -47,8 +47,8 @@ export function Slide({
       ref={slideRef}
       id={id}
       className={cn(
-        "snap-center snap-always min-h-full min-w-full overflow-y-auto md:overflow-y-hidden max-md:pt-16 max-md:pb-23",
-        className,
+        "snap-center snap-always min-h-full min-w-full overflow-y-auto lg:overflow-y-hidden max-lg:pt-16 max-lg:pb-23",
+        className
       )}
     >
       {children}

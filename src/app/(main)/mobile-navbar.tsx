@@ -3,14 +3,15 @@
 import { Button } from "../../components/ui/button";
 import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
-import { useStreamBreakpoint } from "@/hooks/use-stream-breakpoint";
+import { useIsHydrated, useStreamBreakpoint } from "@/hooks";
 import { navs } from "@/lib/constants";
 
 export function MobileNavbar() {
   const [activeHash, setActiveHash] = useState("");
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
+  const isHydrated = useIsHydrated();
   const breakpoint = useStreamBreakpoint();
-  const isMobile = breakpoint < 3;
+  const isMobile = breakpoint < 4;
   const navRef = useRef<HTMLDivElement>(null);
   const isClickingRef = useRef(false);
 
@@ -38,7 +39,7 @@ export function MobileNavbar() {
       {
         rootMargin: "0px -50% 0px -50%", // Horizontal scrolling
         threshold: 0,
-      },
+      }
     );
 
     const timeoutId = setTimeout(() => {
@@ -95,8 +96,10 @@ export function MobileNavbar() {
     }, 1000);
   };
 
+  if (!isHydrated || !isMobile) return null;
+
   return (
-    <nav className="md:hidden fixed bottom-0 inset-x-0 bg-background border-t border-border px-2 z-50">
+    <nav className="fixed bottom-0 inset-x-0 bg-background border-t border-border px-2 z-50">
       <div ref={navRef} className="relative flex flex-row items-center">
         {/* Animated active indicator - positioned at top */}
         <div
@@ -119,7 +122,7 @@ export function MobileNavbar() {
                   "text-primary hover:bg-transparent dark:hover:bg-transparent hover:cursor-default":
                     isActive,
                   "text-muted-foreground": !isActive,
-                },
+                }
               )}
             >
               <nav.Icon className="size-5" />

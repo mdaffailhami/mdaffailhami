@@ -17,7 +17,7 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/components/ui/drawer";
-import { useStreamBreakpoint } from "@/hooks/use-stream-breakpoint";
+import { useStreamBreakpoint } from "@/hooks";
 import { Button } from "@/components/ui/button";
 import type { Experience } from "@/database/schema";
 import { ExternalLink } from "lucide-react";

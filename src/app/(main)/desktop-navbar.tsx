@@ -4,13 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "../../components/ui/button";
 import { navs } from "@/lib/constants";
-import { useStreamBreakpoint } from "@/hooks/use-stream-breakpoint";
+import { useIsHydrated, useStreamBreakpoint } from "@/hooks";
 
 export function DesktopNavbar() {
   const [activeHash, setActiveHash] = useState("");
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 76 });
+  const isHydrated = useIsHydrated();
   const breakpoint = useStreamBreakpoint();
-  const isMobile = breakpoint < 3;
+  const isMobile = breakpoint < 4;
   const navRef = useRef<HTMLDivElement>(null);
   const isClickingRef = useRef(false);
 
@@ -110,12 +111,14 @@ export function DesktopNavbar() {
     }, 1000);
   };
 
+  if (!isHydrated || isMobile) return null;
+
   return (
     <nav
       ref={navRef}
-      className="z-50 max-md:hidden bg-background backdrop-blur-md w-min absolute top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-2.5 shadow-md shadow-foreground/5 border border-border"
+      className="z-50 bg-background backdrop-blur-md w-min absolute top-3 left-1/2 -translate-x-1/2 rounded-full p-1.5 shadow-md shadow-foreground/5 border border-border"
     >
-      <div className="relative flex gap-6 items-center">
+      <div className="relative flex gap-4.5 items-center">
         {/* Animated active indicator */}
         <div
           className="absolute inset-0 bg-primary/20 outline-2 outline-primary rounded-full transition-all duration-300 ease-in-out"

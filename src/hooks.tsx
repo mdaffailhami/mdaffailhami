@@ -1,6 +1,16 @@
 import { useEffect, useState } from "react";
 import { getCurrentBreakpoint } from "@/lib/utils";
 
+export const useIsHydrated = () => {
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
+
+  return isHydrated;
+};
+
 /**
  * Hook to get the current breakpoint as a number.
  *
@@ -18,7 +28,7 @@ import { getCurrentBreakpoint } from "@/lib/utils";
  *
  * 6: 2xl (>= 1536px)
  */
-export function useStreamBreakpoint() {
+export const useStreamBreakpoint = () => {
   const [breakpoint, setBreakpoint] = useState<number>(0);
 
   useEffect(() => {
@@ -35,4 +45,4 @@ export function useStreamBreakpoint() {
   }, []);
 
   return breakpoint;
-}
+};

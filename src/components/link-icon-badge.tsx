@@ -9,12 +9,12 @@ const linkIconBadgeVariants = cva(
   {
     variants: {
       size: {
-        sm: "px-2.5 py-0.5 text-sm",
+        sm: "px-2.25 py-0.75 text-sm",
         md: "px-3 py-1 text-base",
         // lg: "px-4 py-1.5 text-lg",
       },
       interactive: {
-        true: "hover:border-primary active:border-primary cursor-pointer",
+        true: "hover:border-primary cursor-pointer",
         false: "",
       },
     },
@@ -26,7 +26,7 @@ const linkIconBadgeVariants = cva(
 );
 
 const iconSizeVariants = {
-  sm: "size-4!",
+  sm: "size-4.5!",
   md: "size-5!",
   // lg: "size-6!",
 };

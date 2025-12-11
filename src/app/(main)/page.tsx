@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <main
       id="main"
-      className="flex flex-row md:flex-col snap-x md:snap-y max-w-500 mx-auto snap-mandatory h-dvh w-screen overflow-x-scroll overflow-y-hidden md:overflow-x-hidden md:overflow-y-scroll scroll-smooth scrollbar-hidden"
+      className="flex flex-row lg:flex-col snap-x lg:snap-y max-w-500 mx-auto snap-mandatory h-dvh w-screen overflow-x-scroll overflow-y-hidden lg:overflow-x-hidden lg:overflow-y-scroll scroll-smooth scrollbar-hidden"
     >
       <HomeSlide />
       <AboutSlide />
