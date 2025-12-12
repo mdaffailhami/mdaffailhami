@@ -22,8 +22,10 @@ export function getCurrentBreakpoint() {
 }
 
 export const scrollTo = (hash: string) => {
-  const element = document.querySelector(hash);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-  }
+  try {
+    const element = document.querySelector(hash);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  } catch (error) {}
 };

@@ -37,7 +37,7 @@ export function ThemeSwitcher() {
   return (
     <div
       ref={containerRef}
-      className="z-50 flex flex-row fixed max-lg:top-1.5 lg:bottom-5 right-1/2 translate-x-1/2 bg-background border border-border shadow-md shadow-foreground/5 rounded-full"
+      className="z-50 flex flex-row fixed max-lg:top-1.5 lg:bottom-3 right-1/2 translate-x-1/2 bg-background border border-border shadow-md shadow-foreground/5 rounded-full"
     >
       <div
         className="absolute inset-0 w-10 bg-primary/20 rounded-full outline-2 outline-primary transition-all duration-300 ease-in-out"

@@ -11,6 +11,12 @@ export function MobileNavbar() {
   const breakpoint = useStreamBreakpoint();
   const navRef = useRef<HTMLDivElement>(null);
   const isClickingRef = useRef(false);
+  const [screenSize, setScreenSize] = useState(() => {
+    if (typeof window !== "undefined") {
+      return window.innerWidth;
+    }
+    return 0;
+  });
   const [indicatorStyle, setIndicatorStyle] = useState({
     left: 0,
     width: 0,
@@ -61,8 +67,8 @@ export function MobileNavbar() {
     };
   }, [breakpoint]);
 
-  // Effect to update the indicator position when activeHash changes
-  useEffect(() => {
+  // Function to update the indicator position
+  const updateIndicator = () => {
     if (navRef.current) {
       const selector = `button[data-hash="${activeHash}"]`;
       const activeButton =
@@ -76,7 +82,24 @@ export function MobileNavbar() {
         });
       }
     }
-  }, [activeHash]);
+  };
+
+  // Effect to add resize event listener
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenSize(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  // Effect to update the indicator position on activeHash changes and screen resize
+  useEffect(() => {
+    updateIndicator();
+  }, [activeHash, screenSize]);
 
   // Handler for nav button clicks
   const handleNavClick = (hash: string) => {
