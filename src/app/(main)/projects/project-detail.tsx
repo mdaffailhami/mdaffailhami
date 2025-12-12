@@ -39,7 +39,7 @@ export function ProjectDetail({
   onOpenChange,
 }: ProjectDetailProps) {
   const breakpoint = useStreamBreakpoint();
-  const isMobile = breakpoint < 3;
+  const isMobile = !breakpoint ? false : breakpoint < 3;
 
   if (isMobile) {
     return (

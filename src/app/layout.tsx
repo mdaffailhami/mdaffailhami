@@ -14,10 +14,10 @@ const arvo = Arvo({
   subsets: ["latin"],
 });
 
-const jetBrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-});
+// const jetBrainsMono = JetBrains_Mono({
+//   variable: "--font-jetbrains-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -37,7 +37,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${arvo.variable} ${jetBrainsMono.variable}`}
+      className={`${inter.variable} ${arvo.variable}`}
     >
       <body className={`antialiased font-sans transition duration-300`}>
         <RootProviders>{children}</RootProviders>
