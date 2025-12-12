@@ -1,0 +1,162 @@
+"use client";
+
+import { Button } from "../../components/ui/button";
+import { cn, scrollTo } from "@/lib/utils";
+import { useEffect, useRef, useState } from "react";
+import { useStreamBreakpoint } from "@/hooks";
+import { navs } from "@/lib/constants";
+
+export function MobileNavbar() {
+  const [activeHash, setActiveHash] = useState("");
+  const breakpoint = useStreamBreakpoint();
+  const navRef = useRef<HTMLDivElement>(null);
+  const isClickingRef = useRef(false);
+  const [screenWidth, setScreenWidth] = useState(() => {
+    if (typeof window !== "undefined") {
+      return window.innerWidth;
+    }
+    return 0;
+  });
+  const [indicatorStyle, setIndicatorStyle] = useState({
+    left: 0,
+    width: 0,
+    opacity: 0,
+  });
+
+  // Effect to set up IntersectionObserver for scroll spying (Updating url hash)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Skip updates if the user is currently clicking a nav button
+        // Skip updates if we're on desktop
+        if (isClickingRef.current || breakpoint! >= 4) return;
+
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const newId = entry.target.id;
+            setActiveHash(`#${newId}`);
+
+            if (newId === "home") {
+              window.history.replaceState(null, "", " ");
+            } else {
+              window.history.replaceState(null, "", `#${newId}`);
+            }
+          }
+        });
+      },
+      {
+        rootMargin: "0px -50% 0px -50%", // Horizontal scrolling
+        threshold: 0,
+      }
+    );
+
+    const timeoutId = setTimeout(() => {
+      navs.forEach((nav) => {
+        const id = nav.hash.substring(1);
+        const element = document.getElementById(id);
+
+        if (element) {
+          observer.observe(element);
+        }
+      });
+    }, 100);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timeoutId);
+    };
+  }, [breakpoint]);
+
+  // Function to update the indicator position
+  const updateIndicator = () => {
+    if (navRef.current) {
+      const selector = `button[data-hash="${activeHash}"]`;
+      const activeButton =
+        navRef.current.querySelector<HTMLButtonElement>(selector);
+
+      if (activeButton) {
+        setIndicatorStyle({
+          left: activeButton.offsetLeft,
+          width: activeButton.offsetWidth,
+          opacity: 1,
+        });
+      }
+    }
+  };
+
+  // Effect to add resize event listener
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  // Effect to update the indicator position on activeHash changes and screen resize
+  useEffect(() => {
+    // No need to update indicator on desktop
+    if (breakpoint! >= 4) return;
+    updateIndicator();
+  }, [activeHash, screenWidth]);
+
+  // Handler for nav button clicks
+  const handleNavClick = (hash: string) => {
+    isClickingRef.current = true;
+    setActiveHash(hash);
+
+    if (hash === "#home") {
+      window.history.replaceState(null, "", " ");
+    } else {
+      window.history.replaceState(null, "", hash);
+    }
+
+    // Scroll to the section
+    scrollTo(hash);
+
+    setTimeout(() => {
+      isClickingRef.current = false;
+    }, 1000);
+  };
+
+  return (
+    <nav className="lg:hidden fixed bottom-0 inset-x-0 bg-background border-t border-border px-2 z-50">
+      <div ref={navRef} className="relative flex flex-row items-center">
+        {/* Animated active indicator - positioned at top */}
+        <div
+          className="absolute inset-0 bg-primary/20 outline-2 outline-primary h-9 translate-y-1/2 rounded-full transition-all duration-300 ease-in-out"
+          style={indicatorStyle}
+        />
+
+        {navs.map((nav) => {
+          const isActive = activeHash === nav.hash;
+
+          return (
+            <Button
+              key={nav.label}
+              variant={"ghost"}
+              data-hash={nav.hash}
+              onClick={() => handleNavClick(nav.hash)}
+              className={cn(
+                "flex flex-row flex-1 items-center gap-x-1 hover:text-primary h-18",
+                {
+                  "text-primary hover:bg-transparent dark:hover:bg-transparent hover:cursor-default":
+                    isActive,
+                  "text-muted-foreground": !isActive,
+                }
+              )}
+            >
+              <nav.Icon className="size-5" />
+              {isActive && (
+                <span className="text-sm font-medium">{nav.label}</span>
+              )}
+            </Button>
+          );
+        })}
+      </div>
+    </nav>
+  );
+}
