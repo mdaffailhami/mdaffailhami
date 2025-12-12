@@ -61,7 +61,8 @@ export function ProjectListSection() {
       <Carousel
         items={slides}
         className="hidden md:block max-w-216 lg:max-w-4xl xl:max-w-7xl"
-        indicatorClassName="-mt-4 mb-5"
+        // If not hydrated yet, hide the indicators
+        indicatorClassName={`-mt-4 mb-5 ${!breakpoint && "hidden"}`}
       />
 
       {/* Reserved for future use */}

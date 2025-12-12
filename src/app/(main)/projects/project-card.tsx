@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { GradientOverlay } from "@/components/gradient-overlay";
 import { useState } from "react";
 import { useIsHydrated } from "@/hooks";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type ProjectCardProps = {
   project: Project;
@@ -19,6 +20,10 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
   const { resolvedTheme } = useTheme();
   const isHydrated = useIsHydrated();
   const [dialogOpen, setDialogOpen] = useState(false);
+
+  if (!isHydrated) {
+    return <ProjectCardSkeleton />;
+  }
 
   return (
     <>
@@ -86,3 +91,27 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
     </>
   );
 }
+
+const ProjectCardSkeleton = () => {
+  return (
+    <div className="w-full max-w-110 overflow-hidden rounded-lg border border-border bg-card shadow-md shadow-foreground/5">
+      {/* Thumbnail */}
+      <Skeleton className="h-70 md:h-75 w-full rounded-none" />
+
+      {/* Content */}
+      <div className="relative flex flex-col gap-y-4 p-5">
+        <div className="space-y-2">
+          <Skeleton className="h-6 w-1/2" />
+          <Skeleton className="h-5 w-2/3" />
+        </div>
+
+        {/* Technologies */}
+        <div className="flex flex-row gap-x-1 gap-y-5">
+          <Skeleton className="w-1/3 h-6 rounded-full" />
+          <Skeleton className="w-1/3 h-6 rounded-full" />
+          <Skeleton className="w-1/3 h-6 rounded-full" />
+        </div>
+      </div>
+    </div>
+  );
+};
