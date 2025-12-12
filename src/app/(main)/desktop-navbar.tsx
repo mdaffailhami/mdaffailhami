@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "../../components/ui/button";
 import { navs } from "@/lib/constants";
+import { scrollTo } from "@/lib/utils";
 import { useStreamBreakpoint } from "@/hooks";
 
 export function DesktopNavbar() {
@@ -16,6 +17,10 @@ export function DesktopNavbar() {
   const breakpoint = useStreamBreakpoint();
   const navRef = useRef<HTMLDivElement>(null);
   const isClickingRef = useRef(false);
+
+  useEffect(() => {
+    scrollTo(window.location.hash);
+  }, []);
 
   // Effect to set up IntersectionObserver for scroll spying (Updating url hash)
   useEffect(() => {
@@ -103,10 +108,7 @@ export function DesktopNavbar() {
     }
 
     // Manually scroll to the section
-    const element = document.querySelector(hash);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollTo(hash);
 
     // Reset clicking flag after animation to allow observer updates again
     setTimeout(() => {

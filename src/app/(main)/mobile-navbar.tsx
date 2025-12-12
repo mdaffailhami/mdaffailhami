@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "../../components/ui/button";
-import { cn } from "@/lib/utils";
+import { cn, scrollTo } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 import { useStreamBreakpoint } from "@/hooks";
 import { navs } from "@/lib/constants";
@@ -89,10 +89,8 @@ export function MobileNavbar() {
       window.history.replaceState(null, "", hash);
     }
 
-    const element = document.querySelector(hash);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    // Scroll to the section
+    scrollTo(hash);
 
     setTimeout(() => {
       isClickingRef.current = false;

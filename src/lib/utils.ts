@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export function getCurrentBreakpoint() {
   if (typeof window === "undefined")
     throw new Error(
-      "getCurrentBreakpoint() must be used in a client-side environment",
+      "getCurrentBreakpoint() must be used in a client-side environment"
     );
 
   const width = window.innerWidth;
@@ -20,3 +20,10 @@ export function getCurrentBreakpoint() {
   if (width >= 640) return 2;
   return 1;
 }
+
+export const scrollTo = (hash: string) => {
+  const element = document.querySelector(hash);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
