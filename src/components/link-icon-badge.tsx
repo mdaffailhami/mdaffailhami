@@ -60,11 +60,7 @@ export function LinkIconBadge({
       )}
       {...props}
     >
-      <div
-        suppressHydrationWarning
-        className="shrink-0"
-        style={{ color: iconColor }}
-      >
+      <div className="shrink-0" style={{ color: iconColor }}>
         <Icon className={iconSizeVariants[size || "md"]} />
       </div>
       <span>{label}</span>

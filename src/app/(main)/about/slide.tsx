@@ -13,12 +13,12 @@ export default function AboutSlide() {
         <section className="w-full lg:flex-3 flex justify-center lg:justify-start">
           <HeroPicture mobile={Daffa1} desktop={Daffa2} />
         </section>
-        <section className="flex flex-col w-full lg:flex-4 fl-gap-y-1.5/6">
+        <section className="flex flex-col w-full lg:flex-5 fl-gap-y-1.5/6">
           <h1 className="font-serif fl-text-[2.75rem/3.5rem] md:fl-text-[2.25rem/3.5rem] font-medium leading-12 lg:leading-10">
             About Me
           </h1>
           <hr />
-          <div className="space-y-2 fl-text-base/lg lg:fl-text-[0.8rem/1.115rem] text-muted-foreground text-justify">
+          <div className="space-y-2 text-base lg:fl-text-[0.8rem/1.1rem] text-muted-foreground text-justify">
             <Markdown
             // components={{
             //   h2: ({ node, ...props }) => (

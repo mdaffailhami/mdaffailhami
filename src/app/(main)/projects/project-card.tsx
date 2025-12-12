@@ -8,14 +8,16 @@ import { ProjectDetail } from "./project-detail";
 import { cn } from "@/lib/utils";
 import { GradientOverlay } from "@/components/gradient-overlay";
 import { useState } from "react";
+import { useIsHydrated } from "@/hooks";
 
-interface ProjectCardProps {
+type ProjectCardProps = {
   project: Project;
   className?: string;
-}
+};
 
 export function ProjectCard({ project, className }: ProjectCardProps) {
   const { resolvedTheme } = useTheme();
+  const isHydrated = useIsHydrated();
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
@@ -63,11 +65,12 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
                   // href={tech.url} // Make it unclickable
                   size="sm"
                   iconColor={
-                    resolvedTheme === "dark"
+                    !isHydrated
+                      ? "var(--color-foreground)"
+                      : resolvedTheme === "dark"
                       ? tech.color.dark
                       : tech.color.light
                   }
-                  suppressHydrationWarning
                 />
               ))}
             </div>

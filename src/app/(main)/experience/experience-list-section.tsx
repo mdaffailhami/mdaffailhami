@@ -10,7 +10,8 @@ import { useStreamBreakpoint } from "@/hooks";
 
 export function ExperienceListSection() {
   const breakpoint = useStreamBreakpoint();
-  const isMobile = breakpoint < 4;
+  // If not hydrated yet, assume it's not mobile
+  const isMobile = !breakpoint ? false : breakpoint < 4;
   const [isExpanded, setIsExpanded] = useState(false);
   const maxUnexpandedExperiences = 3;
   const displayedExperiences = isExpanded

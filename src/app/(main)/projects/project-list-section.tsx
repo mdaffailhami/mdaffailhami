@@ -19,6 +19,7 @@ export function ProjectListSection() {
   const displayedProjects = projects;
 
   const itemsPerSlide = (() => {
+    if (!breakpoint) return 2; // If not hydrated yet
     if (breakpoint >= 5) return 3;
     if (breakpoint >= 2) return 2;
     return 1;
@@ -46,25 +47,22 @@ export function ProjectListSection() {
 
   return (
     <>
-      {breakpoint <= 3 ? (
-        // If the breakpoint is md or below, show the projects vertically scrollable
-        <div className="grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-5 sm:gap-3 w-full">
-          {displayedProjects.map((project) => (
-            <ProjectCard
-              key={project.title}
-              project={project}
-              className="w-full"
-            />
-          ))}
-        </div>
-      ) : (
-        // If not, show the projects horizontally snap scrollable
-        <Carousel
-          items={slides}
-          className="max-w-216 lg:max-w-4xl xl:max-w-7xl"
-          indicatorClassName="-mt-4 mb-5"
-        />
-      )}
+      {/* If the breakpoint is md or below, show the projects vertically scrollable */}
+      <div className="md:hidden grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-5 sm:gap-3 w-full">
+        {displayedProjects.map((project) => (
+          <ProjectCard
+            key={project.title}
+            project={project}
+            className="w-full"
+          />
+        ))}
+      </div>
+      {/* If not, show the projects horizontally snap scrollable */}
+      <Carousel
+        items={slides}
+        className="hidden md:block max-w-216 lg:max-w-4xl xl:max-w-7xl"
+        indicatorClassName="-mt-4 mb-5"
+      />
 
       {/* Reserved for future use */}
       {/* {projects.length > maxProjects && (

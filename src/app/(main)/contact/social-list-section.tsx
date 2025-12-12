@@ -4,9 +4,11 @@ import { socials } from "@/database/data/socials";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { GradientOverlay } from "@/components/gradient-overlay";
+import { useIsHydrated } from "@/hooks";
 
 export function SocialListSection() {
   const { resolvedTheme } = useTheme();
+  const isHydrated = useIsHydrated();
 
   return (
     <div className="flex flex-row flex-wrap justify-evenly lg:gap-4 lg:grid lg:grid-cols-2">
@@ -21,13 +23,13 @@ export function SocialListSection() {
           <GradientOverlay />
           <div className="relative flex items-center justify-center lg:justify-start gap-3">
             <div
-              suppressHydrationWarning
               className="shrink-0"
               style={{
-                color:
-                  resolvedTheme === "dark"
-                    ? social.color.dark
-                    : social.color.light,
+                color: !isHydrated
+                  ? "var(--color-foreground)"
+                  : resolvedTheme === "dark"
+                  ? social.color.dark
+                  : social.color.light,
               }}
             >
               <social.Icon className="size-6 transition-transform duration-300 group-hover:scale-110" />

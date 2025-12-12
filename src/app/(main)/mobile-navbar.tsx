@@ -3,17 +3,19 @@
 import { Button } from "../../components/ui/button";
 import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
-import { useIsHydrated, useStreamBreakpoint } from "@/hooks";
+import { useStreamBreakpoint } from "@/hooks";
 import { navs } from "@/lib/constants";
 
 export function MobileNavbar() {
   const [activeHash, setActiveHash] = useState("");
-  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
-  const isHydrated = useIsHydrated();
   const breakpoint = useStreamBreakpoint();
-  const isMobile = breakpoint < 4;
   const navRef = useRef<HTMLDivElement>(null);
   const isClickingRef = useRef(false);
+  const [indicatorStyle, setIndicatorStyle] = useState({
+    left: 0,
+    width: 0,
+    opacity: 0,
+  });
 
   // Effect to set up IntersectionObserver for scroll spying (Updating url hash)
   useEffect(() => {
@@ -21,7 +23,7 @@ export function MobileNavbar() {
       (entries) => {
         // Skip updates if the user is currently clicking a nav button
         // Skip updates if we're on desktop
-        if (isClickingRef.current || !isMobile) return;
+        if (isClickingRef.current || breakpoint! >= 4) return;
 
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -57,7 +59,7 @@ export function MobileNavbar() {
       observer.disconnect();
       clearTimeout(timeoutId);
     };
-  }, [isMobile]);
+  }, [breakpoint]);
 
   // Effect to update the indicator position when activeHash changes
   useEffect(() => {
@@ -70,6 +72,7 @@ export function MobileNavbar() {
         setIndicatorStyle({
           left: activeButton.offsetLeft,
           width: activeButton.offsetWidth,
+          opacity: 1,
         });
       }
     }
@@ -96,15 +99,13 @@ export function MobileNavbar() {
     }, 1000);
   };
 
-  if (!isHydrated || !isMobile) return null;
-
   return (
-    <nav className="fixed bottom-0 inset-x-0 bg-background border-t border-border px-2 z-50">
+    <nav className="lg:hidden fixed bottom-0 inset-x-0 bg-background border-t border-border px-2 z-50">
       <div ref={navRef} className="relative flex flex-row items-center">
         {/* Animated active indicator - positioned at top */}
         <div
           className="absolute inset-0 bg-primary/20 outline-2 outline-primary h-9 translate-y-1/2 rounded-full transition-all duration-300 ease-in-out"
-          style={{ left: indicatorStyle.left, width: indicatorStyle.width }}
+          style={indicatorStyle}
         />
 
         {navs.map((nav) => {

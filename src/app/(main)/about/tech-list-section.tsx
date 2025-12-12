@@ -8,6 +8,7 @@ import { useStreamBreakpoint } from "@/hooks";
 export function TechListSection() {
   const { resolvedTheme } = useTheme();
   const breakpoint = useStreamBreakpoint();
+  const isHydrated = breakpoint !== undefined;
 
   return (
     <ul className="flex flex-row gap-4 flex-wrap">
@@ -17,9 +18,13 @@ export function TechListSection() {
             icon={tech.icon}
             label={tech.label}
             href={tech.url}
-            size={breakpoint <= 5 ? "sm" : "md"}
+            size={!breakpoint ? "sm" : breakpoint <= 5 ? "sm" : "md"}
             iconColor={
-              resolvedTheme === "dark" ? tech.color.dark : tech.color.light
+              !isHydrated
+                ? "var(--color-foreground)"
+                : resolvedTheme === "dark"
+                ? tech.color.dark
+                : tech.color.light
             }
           />
         </li>

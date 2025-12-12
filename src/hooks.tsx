@@ -29,7 +29,7 @@ export const useIsHydrated = () => {
  * 6: 2xl (>= 1536px)
  */
 export const useStreamBreakpoint = () => {
-  const [breakpoint, setBreakpoint] = useState<number>(0);
+  const [breakpoint, setBreakpoint] = useState<number | undefined>(undefined);
 
   useEffect(() => {
     const handleResize = () => {
@@ -41,6 +41,8 @@ export const useStreamBreakpoint = () => {
 
     // Add event listener for window resize
     window.addEventListener("resize", handleResize);
+
+    // Remove event listener on cleanup
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 

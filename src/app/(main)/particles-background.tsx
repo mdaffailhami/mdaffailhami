@@ -88,7 +88,7 @@ export function ParticlesBackground({ id }: { id: string }) {
       },
       detectRetina: true,
     }),
-    [],
+    []
   );
 
   if (!init) {

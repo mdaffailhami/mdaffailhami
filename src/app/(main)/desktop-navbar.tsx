@@ -4,14 +4,16 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "../../components/ui/button";
 import { navs } from "@/lib/constants";
-import { useIsHydrated, useStreamBreakpoint } from "@/hooks";
+import { useStreamBreakpoint } from "@/hooks";
 
 export function DesktopNavbar() {
   const [activeHash, setActiveHash] = useState("");
-  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 76 });
-  const isHydrated = useIsHydrated();
+  const [indicatorStyle, setIndicatorStyle] = useState({
+    left: 0,
+    width: 0,
+    opacity: 0,
+  });
   const breakpoint = useStreamBreakpoint();
-  const isMobile = breakpoint < 4;
   const navRef = useRef<HTMLDivElement>(null);
   const isClickingRef = useRef(false);
 
@@ -21,7 +23,7 @@ export function DesktopNavbar() {
       (entries) => {
         // Skip updates if the user is currently clicking a nav button
         // Skip updates if we're on mobile
-        if (isClickingRef.current || isMobile) return;
+        if (isClickingRef.current || breakpoint! < 4) return;
 
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -64,7 +66,7 @@ export function DesktopNavbar() {
       observer.disconnect();
       clearTimeout(timeoutId);
     };
-  }, [isMobile]); // Re-run when isMobile changes
+  }, [breakpoint]); // Re-run when breakpoint changes
 
   // Effect to update the indicator position when activeHash changes
   useEffect(() => {
@@ -80,6 +82,7 @@ export function DesktopNavbar() {
         setIndicatorStyle({
           left: activeButton.offsetLeft,
           width: activeButton.offsetWidth,
+          opacity: 1,
         });
       }
     }
@@ -111,18 +114,16 @@ export function DesktopNavbar() {
     }, 1000);
   };
 
-  if (!isHydrated || isMobile) return null;
-
   return (
     <nav
       ref={navRef}
-      className="z-50 bg-background backdrop-blur-md w-min absolute top-3 left-1/2 -translate-x-1/2 rounded-full p-1.5 shadow-md shadow-foreground/5 border border-border"
+      className="max-lg:hidden z-50 bg-background backdrop-blur-md w-min absolute top-3 left-1/2 -translate-x-1/2 rounded-full p-1.5 shadow-md shadow-foreground/5 border border-border"
     >
       <div className="relative flex gap-4.5 items-center">
         {/* Animated active indicator */}
         <div
           className="absolute inset-0 bg-primary/20 outline-2 outline-primary rounded-full transition-all duration-300 ease-in-out"
-          style={{ left: indicatorStyle.left, width: indicatorStyle.width }}
+          style={indicatorStyle}
         />
         {navs.map((nav) => (
           <Button
