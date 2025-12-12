@@ -11,7 +11,7 @@ export function MobileNavbar() {
   const breakpoint = useStreamBreakpoint();
   const navRef = useRef<HTMLDivElement>(null);
   const isClickingRef = useRef(false);
-  const [screenSize, setScreenSize] = useState(() => {
+  const [screenWidth, setScreenWidth] = useState(() => {
     if (typeof window !== "undefined") {
       return window.innerWidth;
     }
@@ -87,7 +87,7 @@ export function MobileNavbar() {
   // Effect to add resize event listener
   useEffect(() => {
     const handleResize = () => {
-      setScreenSize(window.innerWidth);
+      setScreenWidth(window.innerWidth);
     };
     window.addEventListener("resize", handleResize);
 
@@ -98,8 +98,10 @@ export function MobileNavbar() {
 
   // Effect to update the indicator position on activeHash changes and screen resize
   useEffect(() => {
+    // No need to update indicator on desktop
+    if (breakpoint! >= 4) return;
     updateIndicator();
-  }, [activeHash, screenSize]);
+  }, [activeHash, screenWidth]);
 
   // Handler for nav button clicks
   const handleNavClick = (hash: string) => {
