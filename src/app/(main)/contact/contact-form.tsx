@@ -1,134 +1,175 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { useForm, Controller } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { SendIcon, LoaderCircleIcon } from "lucide-react";
-import { Field, FieldLabel } from "@/components/ui/field";
+import { sendMessage } from "@/actions";
+import { contactFormSchema, ContactFormType } from "@/lib/schemas";
+
+import { Button } from "@/components/ui/button";
+import {
+  Field,
+  FieldLabel,
+  FieldError,
+  FieldGroup,
+} from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 export function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+  // 1. Setup React Hook Form
+  // useForm: The core hook that manages form state, validation, and submission.
+  // We pass the generic type <ContactFormType> so TS knows the shape of our data.
+  const form = useForm<ContactFormType>({
+    // zodResolver: Connects the Zod schema to React Hook Form validation.
+    // It runs the Zod validation logic whenever the form changes or submits.
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "success" | "error"
-  >("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus("idle");
+  const {
+    handleSubmit, // Wrapper function that handles validation before calling onSubmit
+    control, // Object to register components into React Hook Form (like "glue")
+    reset, // Function to reset form to default values
+    setError,
+    formState: { isSubmitting, errors, isSubmitSuccessful },
+  } = form;
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+  // 2. Define Submission Handler
+  // This function ONLY runs if Zod validation passes successfully.
+  const onSubmit = async (data: ContactFormType) => {
+    const defaultErrorMessage = "Failed to send message";
+    try {
+      // 3. Server Action Call
+      // We call the server function directly.
+      // This is "RPC" (Remote Procedure Call) style - no fetch API needed explicitly.
+      const result = await sendMessage(data);
 
-    // TODO: Implement actual form submission logic
-    console.log("Form submitted:", formData);
+      if (!result.success) {
+        setError("root", {
+          message: result.message || defaultErrorMessage,
+        });
+        return;
+      }
 
-    setIsSubmitting(false);
-    setSubmitStatus("success");
-
-    // Reset form after successful submission
-    setFormData({ name: "", email: "", message: "" });
-
-    // Reset status after 5 seconds
-    setTimeout(() => setSubmitStatus("idle"), 5000);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+      // Reset the success state after 5 seconds to hide the message
+      setTimeout(() => {
+        reset();
+      }, 5000);
+    } catch (error) {
+      let message = defaultErrorMessage;
+      if (error instanceof Error) message = error.message;
+      setError("root", { message });
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 w-full">
-      {/* Name Input */}
-      <Field>
-        <FieldLabel htmlFor="name">Name</FieldLabel>
-        <Input
-          type="text"
-          id="name"
+    // noValidate: Disables browser's default HTML validation bubbles
+    // so we can use our custom Zod validation UI instead.
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full" noValidate>
+      <FieldGroup className="gap-4">
+        {/* Name Input */}
+        {/* Controller Pattern:
+            Since Shadcn UI components (Input, Textarea) are custom React components,
+            we use <Controller> to "control" them. checking strict type safety and
+            passing the necessary props (value, onChange, onBlur) via `...field`.
+         */}
+        <Controller
           name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          placeholder="Enter your name"
+          control={control}
+          render={({ field, fieldState }) => (
+            <Field data-invalid={fieldState.invalid}>
+              <FieldLabel htmlFor={field.name}>Name</FieldLabel>
+              <Input
+                {...field}
+                id={field.name}
+                type="text"
+                placeholder="Enter your name"
+                aria-invalid={fieldState.invalid}
+              />
+              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+            </Field>
+          )}
         />
-      </Field>
 
-      {/* Email Input */}
-      <Field>
-        <FieldLabel htmlFor="email">Email</FieldLabel>
-        <Input
-          type="email"
-          id="email"
+        {/* Email Input */}
+        <Controller
           name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          placeholder="Enter your email address"
+          control={control}
+          render={({ field, fieldState }) => (
+            <Field data-invalid={fieldState.invalid}>
+              <FieldLabel htmlFor={field.name}>Email</FieldLabel>
+              <Input
+                {...field}
+                id={field.name}
+                type="email"
+                placeholder="Enter your email address"
+                aria-invalid={fieldState.invalid}
+              />
+              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+            </Field>
+          )}
         />
-      </Field>
 
-      {/* Message Textarea */}
-      <Field>
-        <FieldLabel htmlFor="message">Message</FieldLabel>
-        <Textarea
-          id="message"
+        {/* Message Textarea */}
+        <Controller
           name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          rows={5}
-          className="resize-none h-24"
-          placeholder="Your message here..."
+          control={control}
+          render={({ field, fieldState }) => (
+            <Field data-invalid={fieldState.invalid}>
+              <FieldLabel htmlFor={field.name}>Message</FieldLabel>
+              <Textarea
+                {...field}
+                id={field.name}
+                rows={5}
+                className="resize-none h-24"
+                placeholder="Your message here..."
+                aria-invalid={fieldState.invalid}
+              />
+              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+            </Field>
+          )}
         />
-        {/* <span className="italic font-medium text-right text-[0.95rem]">
-          mdaffailhami@gmail.com
-        </span> */}
-      </Field>
 
-      {/* Submit Button */}
-      <Button
-        type="submit"
-        disabled={isSubmitting}
-        className="w-full group/button relative overflow-hidden"
-        size="lg"
-      >
-        {isSubmitting ? (
-          <>
-            <LoaderCircleIcon className="mr-2 h-4 w-4 animate-spin" />
-            Sending...
-          </>
-        ) : submitStatus === "success" ? (
-          "Message Sent!"
-        ) : (
-          <>
-            Send Message
-            <SendIcon className="size-4 transition-transform group-hover/button:translate-x-1" />
-          </>
+        {/* Submit Button */}
+        <Button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full group/button relative overflow-hidden"
+          size="lg"
+        >
+          {isSubmitting ? (
+            <>
+              <LoaderCircleIcon className="mr-2 h-4 w-4 animate-spin" />
+              Sending...
+            </>
+          ) : isSubmitSuccessful ? (
+            "Message Sent!"
+          ) : (
+            <>
+              Send Message
+              <SendIcon className="size-4 transition-transform group-hover/button:translate-x-1" />
+            </>
+          )}
+        </Button>
+
+        {/* Status Messages */}
+        {isSubmitSuccessful && (
+          <p className="text-sm text-primary text-center">
+            Thank you! Your message has been sent successfully.
+          </p>
         )}
-      </Button>
-
-      {/* Status Messages */}
-      {submitStatus === "success" && (
-        <p className="text-sm text-green-600 dark:text-green-400 text-center">
-          Thank you! Your message has been sent successfully.
-        </p>
-      )}
-      {submitStatus === "error" && (
-        <p className="text-sm text-destructive text-center">
-          Something went wrong. Please try again.
-        </p>
-      )}
+        {errors.root && (
+          <p className="text-sm text-destructive text-center">
+            {errors.root.message}
+          </p>
+        )}
+      </FieldGroup>
     </form>
   );
 }
