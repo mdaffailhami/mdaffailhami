@@ -26,6 +26,7 @@ import { ExternalLink, Download } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
 import { cn } from "@/lib/utils";
 import { Carousel } from "@/components/carousel";
+import Link from "next/link";
 
 type ProjectDetailProps = {
   project: Project;
@@ -142,26 +143,21 @@ function ProjectContent({ project }: { project: Project }) {
             {project.links.map((link) => {
               const Icon = link.icon || getButtonIcon(link.type);
               return (
-                <Button
-                  key={link.url}
-                  variant={"default"}
-                  className={cn({
-                    "dark:bg-white bg-[#181717] text-background hover:bg-[#181717]/80 hover:dark:bg-white/80":
-                      link.type === "github",
-                    "bg-primary hover:bg-primary/80 ": link.type === "project",
-                  })}
-                  asChild
-                >
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="gap-2"
+                <Link href={link.url} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    key={link.url}
+                    variant={"default"}
+                    className={cn({
+                      "dark:bg-white bg-[#181717] text-background hover:bg-[#181717]/80 hover:dark:bg-white/80":
+                        link.type === "github",
+                      "bg-primary hover:bg-primary/80 ":
+                        link.type === "project",
+                    })}
                   >
                     <Icon className="size-4" />
                     {link.label}
-                  </a>
-                </Button>
+                  </Button>
+                </Link>
               );
             })}
           </div>

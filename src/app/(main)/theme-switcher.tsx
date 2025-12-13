@@ -95,8 +95,8 @@ function ThemeButton({
   );
 
   const ButtonWithTooltip = () => (
-    <Tooltip delayDuration={500}>
-      <TooltipTrigger asChild>{theButton}</TooltipTrigger>
+    <Tooltip>
+      <TooltipTrigger render={() => theButton} />
       <TooltipContent>
         <span>{theme.charAt(0).toUpperCase() + theme.slice(1)}</span>
       </TooltipContent>

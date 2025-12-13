@@ -9,8 +9,8 @@ const linkIconBadgeVariants = cva(
   {
     variants: {
       size: {
-        sm: "px-2.25 py-0.75 text-sm",
-        md: "px-3 py-1 text-base",
+        sm: "px-2.25 py-3.25 text-sm",
+        md: "px-3 py-4 text-base",
         // lg: "px-4 py-1.5 text-lg",
       },
       interactive: {
@@ -73,18 +73,18 @@ export function LinkIconBadge({
         target="_blank"
         rel="noopener noreferrer"
         href={href}
-        className="group relative inline-flex rounded-full transition-transform duration-200 hover:scale-105"
+        className="group relative inline-flex rounded-full overflow-hidden transition-transform duration-200 hover:scale-105"
       >
-        <GradientOverlay className="rounded-full from-primary/20" />
         {badge}
+        <GradientOverlay className="from-primary/15!" />
       </Link>
     );
   }
 
   return (
-    <div className="relative group">
-      <GradientOverlay className="rounded-full" />
+    <div className="relative group rounded-full overflow-hidden">
       {badge}
+      <GradientOverlay />
     </div>
   );
 }

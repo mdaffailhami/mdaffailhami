@@ -2,6 +2,7 @@ import { ParticlesBackground } from "./particles-background";
 import { ThemeSwitcher } from "./theme-switcher";
 import { DesktopNavbar } from "./desktop-navbar";
 import { MobileNavbar } from "./mobile-navbar";
+import { GradientOverlay } from "@/components/gradient-overlay";
 
 export default function MainLayout({
   children,
@@ -17,6 +18,7 @@ export default function MainLayout({
       </header>
       {children}
       <ParticlesBackground id="particles" />
+      <GradientOverlay className="opacity-100!" />
     </>
   );
 }

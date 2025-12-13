@@ -6,8 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { SendIcon, LoaderCircleIcon } from "lucide-react";
 import { sendMessage } from "@/actions";
 import { contactFormSchema, ContactFormType } from "@/lib/schemas";
-
-import { Button } from "@/components/ui/button";
 import {
   Field,
   FieldLabel,
@@ -16,6 +14,7 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 export function ContactForm() {
   // 1. Setup React Hook Form

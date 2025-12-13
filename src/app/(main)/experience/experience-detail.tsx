@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import type { Experience } from "@/database/schema";
 import { ExternalLink } from "lucide-react";
 import { Carousel } from "@/components/carousel";
+import Link from "next/link";
 
 interface ExperienceDetailProps {
   experience: Experience;
@@ -63,10 +64,7 @@ export function ExperienceDetail({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent
-        className="max-w-2xl overflow-y-auto"
-        onOpenAutoFocus={(e) => e.preventDefault()}
-      >
+      <DialogContent className="max-w-2xl overflow-y-auto" autoFocus={true}>
         <DialogHeader>
           <DialogTitle className="text-2xl">{experience.role}</DialogTitle>
           <DialogDescription className="sr-only">
@@ -115,20 +113,19 @@ function ExperienceContent({ experience }: { experience: Experience }) {
         </p>
 
         {/* Company Link */}
-        <Button
-          variant="default"
-          className="w-full gap-2 mt-1 bg-primary hover:bg-primary/80"
-          asChild
+        <Link
+          href={experience.companyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <a
-            href={experience.companyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Button
+            variant="default"
+            className="w-full gap-2 mt-1 bg-primary hover:bg-primary/80"
           >
-            <ExternalLink className="h-4 w-4" />
+            <ExternalLink className="size-4" />
             Visit Company Website
-          </a>
-        </Button>
+          </Button>
+        </Link>
       </div>
     </>
   );
