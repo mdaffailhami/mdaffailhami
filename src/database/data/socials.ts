@@ -1,4 +1,5 @@
-import { SiGithub, SiInstagram, SiLinkedin, SiTelegram } from "react-icons/si";
+import { SiGithub, SiInstagram, SiLinkedin } from "react-icons/si";
+import { MdOutlineEmail } from "react-icons/md";
 
 export const socials = [
   {
@@ -29,12 +30,21 @@ export const socials = [
     },
   },
   {
-    label: "Telegram",
-    Icon: SiTelegram,
-    url: "https://t.me/mdaffailhami",
+    label: "Email",
+    Icon: MdOutlineEmail,
+    url: "mailto:mdaffailhami@gmail.com",
     color: {
-      light: "#0088cc",
-      dark: "#0088cc",
+      light: "#EA4335",
+      dark: "#EA4335",
     },
   },
+  // {
+  //   label: "Telegram",
+  //   Icon: SiTelegram,
+  //   url: "https://t.me/mdaffailhami",
+  //   color: {
+  //     light: "#0088cc",
+  //     dark: "#0088cc",
+  //   },
+  // },
 ];
