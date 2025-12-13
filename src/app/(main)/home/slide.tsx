@@ -1,7 +1,7 @@
 import { Slide } from "@/components/slide";
 import { config } from "@/database/data/config";
 import { GetToKnowButton } from "./get-to-know-button";
-import { HeroPicture } from "@/components/hero-picture";
+import { HeroPicture } from "./../hero-picture";
 import Daffa1 from "@/assets/mdaffailhami-1.png";
 import Daffa2 from "@/assets/mdaffailhami-2.png";
 

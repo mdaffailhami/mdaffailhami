@@ -2,118 +2,45 @@
 
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { Button } from "../../components/ui/button";
+import { Button } from "@/components/ui/button";
 import { navs } from "@/lib/constants";
 import { scrollTo } from "@/lib/utils";
-import { useStreamBreakpoint } from "@/hooks";
+import { useActiveSlide } from "@/contexts/active-slide";
 
 export function DesktopNavbar() {
-  const [activeHash, setActiveHash] = useState("");
+  const { activeSlide, setActiveSlide } = useActiveSlide();
   const [indicatorStyle, setIndicatorStyle] = useState({
     left: 0,
     width: 0,
     opacity: 0,
   });
-  const breakpoint = useStreamBreakpoint();
   const navRef = useRef<HTMLDivElement>(null);
-  const isClickingRef = useRef(false);
 
+  // Effect to update the indicator position when activeSlide changes
   useEffect(() => {
-    scrollTo(window.location.hash);
-  }, []);
+    if (!navRef.current) return;
 
-  // Effect to set up IntersectionObserver for scroll spying (Updating url hash)
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Skip updates if the user is currently clicking a nav button
-        // Skip updates if we're on mobile
-        if (isClickingRef.current || breakpoint! < 4) return;
+    const activeHash = `#${activeSlide}`;
+    // Find the button corresponding to the active section
+    const selector = `button[data-hash="${activeHash}"]`;
 
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const newId = entry.target.id;
-            setActiveHash(`#${newId}`);
+    const activeButton =
+      navRef.current.querySelector<HTMLButtonElement>(selector);
 
-            // Update URL hash without triggering a scroll or reload
-            if (newId === "home") {
-              window.history.replaceState(null, "", " ");
-            } else {
-              window.history.replaceState(null, "", `#${newId}`);
-            }
-          }
-        });
-      },
-      {
-        // rootMargin defines the "active" area.
-        // For vertical scrolling: "-50% 0px -50% 0px" checks at center of viewport
-        rootMargin: "-50% 0px -50% 0px",
-        threshold: 0,
-      }
-    );
-
-    // Small timeout to ensure DOM elements are ready before observing
-    const timeoutId = setTimeout(() => {
-      navs.forEach((nav) => {
-        // Extract ID from hash (e.g., "#home" -> "home")
-        const id = nav.hash.substring(1);
-        const element = document.getElementById(id);
-
-        if (element) {
-          observer.observe(element);
-        } else {
-          console.warn(`Navbar: Element with id ${id} not found`);
-        }
+    if (activeButton) {
+      setIndicatorStyle({
+        left: activeButton.offsetLeft,
+        width: activeButton.offsetWidth,
+        opacity: 1,
       });
-    }, 100);
-
-    return () => {
-      observer.disconnect();
-      clearTimeout(timeoutId);
-    };
-  }, [breakpoint]); // Re-run when breakpoint changes
-
-  // Effect to update the indicator position when activeHash changes
-  useEffect(() => {
-    if (navRef.current) {
-      // Find the button corresponding to the active section
-      // Match the data-hash attribute with the active section ID
-      const selector = `button[data-hash="${activeHash}"]`;
-
-      const activeButton =
-        navRef.current.querySelector<HTMLButtonElement>(selector);
-
-      if (activeButton) {
-        setIndicatorStyle({
-          left: activeButton.offsetLeft,
-          width: activeButton.offsetWidth,
-          opacity: 1,
-        });
-      }
     }
-  }, [activeHash]);
+  }, [activeSlide]);
 
   // Handler for nav button clicks
   const handleNavClick = (hash: string) => {
-    isClickingRef.current = true;
-
-    // Determine the ID to set as active
-    setActiveHash(hash);
-
-    // Update URL hash using replaceState to avoid cluttering browser history
-    if (hash === "#home") {
-      window.history.replaceState(null, "", " ");
-    } else {
-      window.history.replaceState(null, "", hash);
-    }
-
-    // Manually scroll to the section
+    const id = hash.substring(1);
+    setActiveSlide(id);
     scrollTo(hash);
-
-    // Reset clicking flag after animation to allow observer updates again
-    setTimeout(() => {
-      isClickingRef.current = false;
-    }, 1000);
   };
 
   return (
@@ -138,7 +65,7 @@ export function DesktopNavbar() {
               {
                 // Highlight if active
                 "text-primary hover:bg-transparent! hover:cursor-default":
-                  activeHash === nav.hash,
+                  `#${activeSlide}` === nav.hash,
               }
             )}
           >

@@ -14,6 +14,19 @@ Here are some of the **technologies** that I use:
 📝 **Note:** *These are the technologies **I'm currently actively using**, not a full representation of my skills.*`;
 
 export const config = {
+  metadata: {
+    title: "Daffa Ilhami",
+    description: "Muhammad Daffa Ilhami's Personal Web",
+    icons: {
+      icon: [
+        { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    },
+    manifest: "/site.webmanifest",
+  },
+  name: "Daffa Ilhami",
   bio: "Tech Enthusiast | Self-Taught Programmer | Lifelong Learner",
   about: about,
 };

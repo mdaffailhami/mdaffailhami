@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Arvo, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import RootProviders from "./providers";
+import { config } from "@/database/data/config";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,18 +20,7 @@ const arvo = Arvo({
 //   subsets: ["latin"],
 // });
 
-export const metadata: Metadata = {
-  title: "Daffa Ilhami",
-  description: "Muhammad Daffa Ilhami's Personal Web",
-  icons: {
-    icon: [
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
-  },
-  manifest: "/site.webmanifest",
-};
+export const metadata: Metadata = config.metadata;
 
 // export const viewport: Viewport = {
 //   viewportFit: "cover",
