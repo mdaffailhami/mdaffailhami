@@ -18,7 +18,7 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/components/ui/drawer";
-import { useStreamBreakpoint } from "@/hooks";
+import { useBreakpoint } from "@/hooks";
 import { Button } from "@/components/ui/button";
 import { LinkIconBadge } from "@/components/link-icon-badge";
 import type { Project } from "@/database/schema";
@@ -38,7 +38,7 @@ export function ProjectDetail({
   open,
   onOpenChange,
 }: ProjectDetailProps) {
-  const breakpoint = useStreamBreakpoint();
+  const breakpoint = useBreakpoint();
   const isMobile = !breakpoint ? false : breakpoint < 3;
 
   if (isMobile) {

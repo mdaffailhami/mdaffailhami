@@ -6,10 +6,10 @@ import { experiences } from "@/database/data/experiences";
 import { Button } from "@/components/ui/button";
 import { ArrowDownIcon, ArrowUpIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useStreamBreakpoint } from "@/hooks";
+import { useBreakpoint } from "@/hooks";
 
 export function ExperienceListSection() {
-  const breakpoint = useStreamBreakpoint();
+  const breakpoint = useBreakpoint();
   // If not hydrated yet, assume it's not mobile
   const isMobile = !breakpoint ? false : breakpoint < 4;
   const [isExpanded, setIsExpanded] = useState(false);

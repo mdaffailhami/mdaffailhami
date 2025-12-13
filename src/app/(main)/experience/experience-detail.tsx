@@ -17,7 +17,7 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/components/ui/drawer";
-import { useStreamBreakpoint } from "@/hooks";
+import { useBreakpoint } from "@/hooks";
 import { Button } from "@/components/ui/button";
 import type { Experience } from "@/database/schema";
 import { ExternalLink } from "lucide-react";
@@ -34,7 +34,7 @@ export function ExperienceDetail({
   open,
   onOpenChange,
 }: ExperienceDetailProps) {
-  const breakpoint = useStreamBreakpoint();
+  const breakpoint = useBreakpoint();
   const isMobile = !breakpoint ? false : breakpoint < 3;
 
   if (isMobile) {

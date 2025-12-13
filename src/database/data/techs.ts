@@ -16,6 +16,7 @@ import {
   SiVercel,
 } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
+import { TbApi } from "react-icons/tb";
 
 export const techs: Record<string, Tech> = {
   react: {
@@ -139,6 +140,15 @@ export const techs: Record<string, Tech> = {
     label: "Gemini",
     icon: SiGooglegemini,
     url: "https://gemini.google/about/",
+    color: {
+      light: "#4285F4",
+      dark: "#4285F4",
+    },
+  },
+  restapi: {
+    label: "Rest API",
+    icon: TbApi,
+    url: "https://restapi.com/",
     color: {
       light: "#4285F4",
       dark: "#4285F4",

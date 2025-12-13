@@ -28,7 +28,7 @@ export const useIsHydrated = () => {
  *
  * 6: 2xl (>= 1536px)
  */
-export const useStreamBreakpoint = () => {
+export const useBreakpoint = () => {
   const [breakpoint, setBreakpoint] = useState<number | undefined>(undefined);
 
   useEffect(() => {

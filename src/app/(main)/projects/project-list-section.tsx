@@ -5,11 +5,11 @@ import { projects } from "@/database/data/projects";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
 import { Carousel } from "@/components/carousel";
-import { useStreamBreakpoint } from "@/hooks";
+import { useBreakpoint } from "@/hooks";
 
 export function ProjectListSection() {
   // Limit to 9 projects and group them into slides of 3
-  const breakpoint = useStreamBreakpoint();
+  const breakpoint = useBreakpoint();
 
   // Reserved for future use
   // const maxProjects = breakpoint === 1 ? 5 : breakpoint < 5 ? 6 : 9;

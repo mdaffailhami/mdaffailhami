@@ -8,7 +8,7 @@ import Daffa2 from "@/assets/mdaffailhami-2.png";
 export default function HomeSlide() {
   return (
     <Slide id="home">
-      <div className="fl-px-2/40 md:fl-px-[-2rem/10rem] flex flex-col max-md:justify-center md:max-lg:flex-row lg:flex-row-reverse items-center min-h-full fl-gap-4/6">
+      <div className="fl-px-4/40 md:fl-px-[-2rem/10rem] flex flex-col max-md:justify-center md:max-lg:flex-row lg:flex-row-reverse items-center min-h-full fl-gap-4/6">
         <section className="w-full md:flex-3 flex justify-center md:max-lg:justify-start lg:justify-end">
           <HeroPicture mobile={Daffa2} desktop={Daffa1} />
         </section>

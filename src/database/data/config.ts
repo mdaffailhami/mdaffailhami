@@ -11,7 +11,7 @@ My journey is driven by **self-learning**, **curiosity**, and a **commitment to 
 
 Here are some of the **technologies** that I use:
 
-📝 **Note:** *These are the technologies **I'm currently actively using**, not a full representation of my skills.*`;
+📝 **Note:** *These are the technologies **I'm currently actively playing with**, not a full representation of my whole skills.*`;
 
 export const config = {
   metadata: {

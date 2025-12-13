@@ -64,7 +64,7 @@ export default function ContactSlide() {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="group relative overflow-hidden rounded-lg border border-border bg-card p-6 lg:p-8 shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+          <div className="group relative overflow-hidden rounded-lg border border-border bg-card p-6 shadow-md shadow-foreground/5 transition-all duration-300 hover:shadow-lg hover:border-primary/50">
             <GradientOverlay />
             <div className="relative">
               <h3 className="text-2xl font-semibold mb-6 max-lg:hidden group-hover:text-primary transition-colors">

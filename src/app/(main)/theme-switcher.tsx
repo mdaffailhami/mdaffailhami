@@ -10,7 +10,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { useIsHydrated, useStreamBreakpoint } from "@/hooks";
+import { useIsHydrated, useBreakpoint } from "@/hooks";
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
@@ -76,31 +76,37 @@ function ThemeButton({
   onClick(): void;
   icon: LucideIcon;
 }) {
-  const breakpoint = useStreamBreakpoint();
+  const breakpoint = useBreakpoint();
 
-  return (
-    <Tooltip
-      // If not hydrated yet or on mobile, do not show tooltip
-      open={!breakpoint || breakpoint < 4 ? false : undefined}
-      delayDuration={500}
+  // Don't create the button as function to solve the tooltip not showing bug
+  const theButton = (
+    <Button
+      variant="ghost"
+      size="icon"
+      data-theme={theme}
+      onClick={onClick}
+      className={cn(
+        "rounded-full size-10 hover:text-primary",
+        isActive && "text-primary"
+      )}
     >
-      <TooltipTrigger asChild>
-        <Button
-          variant="ghost"
-          size="icon"
-          data-theme={theme}
-          onClick={onClick}
-          className={cn(
-            "rounded-full size-10 hover:text-primary",
-            isActive && "text-primary"
-          )}
-        >
-          <Icon className="size-5" />
-        </Button>
-      </TooltipTrigger>
+      <Icon className="size-5" />
+    </Button>
+  );
+
+  const ButtonWithTooltip = () => (
+    <Tooltip delayDuration={500}>
+      <TooltipTrigger asChild>{theButton}</TooltipTrigger>
       <TooltipContent>
         <span>{theme.charAt(0).toUpperCase() + theme.slice(1)}</span>
       </TooltipContent>
     </Tooltip>
   );
+
+  // If not hydrated yet or breakpoint is less than 4 (< "lg")
+  if (!breakpoint || breakpoint < 4) {
+    return theButton;
+  } else {
+    return <ButtonWithTooltip />;
+  }
 }
