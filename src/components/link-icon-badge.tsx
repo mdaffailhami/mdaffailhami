@@ -76,7 +76,7 @@ export function LinkIconBadge({
         className="group relative inline-flex rounded-full overflow-hidden transition-transform duration-200 hover:scale-105"
       >
         {badge}
-        <GradientOverlay className="from-primary/15!" />
+        <GradientOverlay />
       </Link>
     );
   }
