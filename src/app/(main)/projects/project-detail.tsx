@@ -27,6 +27,7 @@ import { FiGithub } from "react-icons/fi";
 import { cn } from "@/lib/utils";
 import { Carousel } from "@/components/carousel";
 import Link from "next/link";
+import { GradientOverlay } from "@/components/gradient-overlay";
 
 type ProjectDetailProps = {
   project: Project;
@@ -46,6 +47,7 @@ export function ProjectDetail({
     return (
       <Drawer open={open} onOpenChange={onOpenChange}>
         <DrawerContent>
+          <GradientOverlay className="opacity-100!" />
           <DrawerHeader className="text-left">
             <DrawerTitle>{project.title}</DrawerTitle>
             {/* Visually hidden, but screen readers can still read it */}
@@ -69,6 +71,7 @@ export function ProjectDetail({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-4xl overflow-y-auto">
+        <GradientOverlay className="opacity-100!" />
         <DialogHeader>
           <DialogTitle className="text-2xl">{project.title}</DialogTitle>
           <DialogDescription className="sr-only">
@@ -143,7 +146,12 @@ function ProjectContent({ project }: { project: Project }) {
             {project.links.map((link) => {
               const Icon = link.icon || getButtonIcon(link.type);
               return (
-                <Link href={link.url} target="_blank" rel="noopener noreferrer">
+                <Link
+                  key={link.url}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button
                     key={link.url}
                     variant={"default"}

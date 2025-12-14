@@ -18,7 +18,7 @@ export default function MainLayout({
       </header>
       {children}
       <ParticlesBackground id="particles" />
-      <GradientOverlay className="opacity-100!" />
+      <GradientOverlay className="opacity-100! z-50" />
     </>
   );
 }

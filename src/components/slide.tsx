@@ -30,7 +30,7 @@ export function Slide({
             // Clear any existing timer just in case
             if (timerRef.current) clearTimeout(timerRef.current);
 
-            // Debounce the update: Wait 200ms to ensure user "settles" on this slide
+            // Debounce the update: Wait 250ms to ensure user "settles" on this slide
             timerRef.current = setTimeout(() => {
               setActiveSlide(id); // Update context
 
@@ -55,7 +55,7 @@ export function Slide({
               }
 
               window.history.replaceState(null, "", urlHash);
-            }, 200);
+            }, 250);
           }
 
           // When slide is no longer visible, reset its scroll position

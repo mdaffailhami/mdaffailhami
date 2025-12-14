@@ -23,6 +23,7 @@ import type { Experience } from "@/database/schema";
 import { ExternalLink } from "lucide-react";
 import { Carousel } from "@/components/carousel";
 import Link from "next/link";
+import { GradientOverlay } from "@/components/gradient-overlay";
 
 interface ExperienceDetailProps {
   experience: Experience;
@@ -42,6 +43,7 @@ export function ExperienceDetail({
     return (
       <Drawer open={open} onOpenChange={onOpenChange}>
         <DrawerContent>
+          <GradientOverlay className="opacity-100!" />
           <DrawerHeader className="text-left">
             <DrawerTitle>{experience.role}</DrawerTitle>
             {/* Visually hidden, but screen readers can still read it */}
@@ -65,6 +67,7 @@ export function ExperienceDetail({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-2xl overflow-y-auto" autoFocus={true}>
+        <GradientOverlay className="opacity-100!" />
         <DialogHeader>
           <DialogTitle className="text-2xl">{experience.role}</DialogTitle>
           <DialogDescription className="sr-only">
