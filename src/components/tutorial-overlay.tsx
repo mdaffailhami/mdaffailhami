@@ -54,11 +54,11 @@ export function TutorialOverlay() {
           <p className="text-lg text-muted-foreground lg:hidden">
             Swipe{" "}
             <span className="text-primary font-medium">left or right</span> to
-            easily navigate between section
+            navigate
           </p>
           <p className="text-lg text-muted-foreground hidden lg:block">
             Scroll <span className="text-primary font-medium">down or up</span>{" "}
-            to easily navigate between section
+            to navigate
           </p>
         </div>
       </div>

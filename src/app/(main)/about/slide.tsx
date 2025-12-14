@@ -9,7 +9,7 @@ import Daffa2 from "@/assets/mdaffailhami-2.png";
 export default function AboutSlide() {
   return (
     <Slide id="about">
-      <div className="fl-px-4/40 md:fl-px-[-2rem/10rem] flex flex-col lg:flex-row items-center min-h-full fl-gap-4/6">
+      <div className="fl-px-4/40 md:fl-px-[-2rem/10rem] flex flex-col lg:flex-row items-center justify-center min-h-full fl-gap-4/6">
         <section className="w-full lg:flex-3 flex justify-center lg:justify-start">
           <HeroPicture mobile={Daffa1} desktop={Daffa2} />
         </section>
