@@ -3,6 +3,7 @@ import { ThemeSwitcher } from "./theme-switcher";
 import { DesktopNavbar } from "./desktop-navbar";
 import { MobileNavbar } from "./mobile-navbar";
 import { GradientOverlay } from "@/components/gradient-overlay";
+import { TutorialOverlay } from "@/components/tutorial-overlay";
 
 export default function MainLayout({
   children,
@@ -19,6 +20,7 @@ export default function MainLayout({
       {children}
       <ParticlesBackground id="particles" />
       <GradientOverlay className="opacity-100! z-50" />
+      <TutorialOverlay />
     </>
   );
 }
