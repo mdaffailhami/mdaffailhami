@@ -47,8 +47,8 @@ export function ProjectListSection() {
 
   return (
     <>
-      {/* If the breakpoint is md or below, show the projects vertically scrollable */}
-      <div className="md:hidden grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-5 sm:gap-3 w-full">
+      {/* If the breakpoint is lg or below, show the projects vertically scrollable */}
+      <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-5 sm:gap-3 w-full">
         {displayedProjects.map((project) => (
           <ProjectCard
             key={project.title}
@@ -60,7 +60,7 @@ export function ProjectListSection() {
       {/* If not, show the projects horizontally snap scrollable */}
       <Carousel
         items={slides}
-        className="hidden md:block max-w-216 lg:max-w-4xl xl:max-w-7xl"
+        className="max-lg:hidden max-w-216 lg:max-w-4xl xl:max-w-7xl"
         // If not hydrated yet, hide the indicators
         indicatorClassName={`-mt-4 mb-5 ${!breakpoint && "hidden"}`}
       />
