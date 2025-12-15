@@ -35,7 +35,7 @@ export function Slide({
               setActiveSlide(id); // Update context
 
               // Update page title
-              const baseTitle = config.metadata.title;
+              const baseTitle = config.metadata.title as string;
 
               let pageTitle = baseTitle;
 
