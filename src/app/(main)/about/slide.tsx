@@ -3,15 +3,15 @@ import { TechListSection } from "./tech-list-section";
 import Markdown from "react-markdown";
 import { config } from "@/database/data/config";
 import { HeroPicture } from "./../hero-picture";
-import Daffa1 from "@/assets/mdaffailhami-1.png";
-import Daffa2 from "@/assets/mdaffailhami-2.png";
+import daffa1 from "@/assets/mdaffailhami-1.png";
+import daffa2 from "@/assets/mdaffailhami-2.png";
 
 export default function AboutSlide() {
   return (
     <Slide id="about">
       <div className="fl-px-4/40 md:fl-px-[-2rem/10rem] flex flex-col lg:flex-row items-center justify-center min-h-full fl-gap-4/6">
         <section className="w-full max-md:max-w-2xs lg:flex-3 flex justify-center lg:justify-start">
-          <HeroPicture mobile={Daffa1} desktop={Daffa2} />
+          <HeroPicture mobile={daffa1} desktop={daffa2} />
         </section>
         <section className="flex flex-col w-full lg:flex-5 fl-gap-y-1.5/6">
           <h1 className="font-serif fl-text-[2.75rem/3.5rem] md:fl-text-[2.25rem/3.5rem] font-medium leading-12 lg:leading-10">

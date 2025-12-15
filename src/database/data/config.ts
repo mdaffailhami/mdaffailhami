@@ -1,3 +1,6 @@
+import { Metadata } from "next";
+import daffa1 from "@/assets/mdaffailhami-1.png";
+
 const about = `\
 I’m **Daffa**, a *self-taught programmer* from **Indonesia** 🇮🇩 with over **5 years** of experience in the field.
 
@@ -13,10 +16,16 @@ Here are some of the **technologies** that I use:
 
 📝 **Note:** *These are the technologies **I'm currently actively playing with**, not a full representation of my whole skills.*`;
 
+const APP_TITLE = "Daffa Ilhami";
+const APP_DESCRIPTION = "Muhammad Daffa Ilhami's Portfolio";
+
 export const config = {
+  name: "Daffa Ilhami",
+  bio: "Tech Enthusiast | Self-Taught Programmer | Lifelong Learner",
+  about: about,
   metadata: {
-    title: "Daffa Ilhami",
-    description: "Muhammad Daffa Ilhami's Personal Web",
+    title: APP_TITLE,
+    description: APP_DESCRIPTION,
     icons: {
       icon: [
         { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -25,8 +34,28 @@ export const config = {
       apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
     },
     manifest: "/site.webmanifest",
-  },
-  name: "Daffa Ilhami",
-  bio: "Tech Enthusiast | Self-Taught Programmer | Lifelong Learner",
-  about: about,
+    openGraph: {
+      type: "website",
+      locale: "en_US",
+      siteName: APP_TITLE,
+      title: APP_TITLE,
+      description: APP_DESCRIPTION,
+      countryName: "Indonesia",
+      emails: "mdaffailhami@gmail.com",
+      images: [
+        {
+          url: daffa1.src,
+          width: daffa1.width,
+          height: daffa1.height,
+          alt: APP_TITLE,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary",
+      title: APP_TITLE,
+      description: APP_DESCRIPTION,
+      images: [daffa1.src],
+    },
+  } as Metadata,
 };
