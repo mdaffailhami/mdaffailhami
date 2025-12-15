@@ -48,3 +48,24 @@ export const useBreakpoint = () => {
 
   return breakpoint;
 };
+
+export const useInView = (options?: IntersectionObserverInit) => {
+  const [isInView, setIsInView] = useState(false);
+  const [ref, setRef] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (!ref) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsInView(entry.isIntersecting);
+    }, options);
+
+    observer.observe(ref);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [ref, options]);
+
+  return { ref: setRef, isInView };
+};
