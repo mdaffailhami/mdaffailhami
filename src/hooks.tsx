@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getCurrentBreakpoint } from "@/lib/utils";
 
 export const useIsHydrated = () => {
@@ -47,4 +47,50 @@ export const useBreakpoint = () => {
   }, []);
 
   return breakpoint;
+};
+
+const defaultOptions: IntersectionObserverInit = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.1,
+};
+
+export const useAnimateOnViewportIntersect = <T extends HTMLElement>({
+  classNameTrigger,
+  options,
+}: {
+  classNameTrigger: string;
+  options?: IntersectionObserverInit;
+}) => {
+  const ref = useRef<T>(null);
+  const observerOptions = { ...defaultOptions, ...options };
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const parsedClassNameTrigger = classNameTrigger.split(" ");
+        if (entry.isIntersecting) {
+          // Play the animation
+          element.classList.add(...parsedClassNameTrigger);
+          // Add Tailwind utility classes for the transition here if you prefer this over the CSS file approach
+        } else {
+          // Reset the animation by removing the class when it leaves the view
+          element.classList.remove(...parsedClassNameTrigger);
+        }
+      });
+    }, observerOptions);
+
+    observer.observe(element);
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, [observerOptions]);
+
+  return ref;
 };
