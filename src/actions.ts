@@ -1,18 +1,18 @@
 "use server"; // 1. Server Directive: Marks this file as Server Actions.
 // Functions exported here can be called directly from Client Components.
 
-import { contactFormSchema, ContactFormType } from "@/lib/schemas";
+import { ContactForm } from "@/lib/schemas";
 
 type Response = { success: boolean; message: string; data: any };
 
 const defaultErrorMessage = "Something went wrong. Please try again.";
 
 // 2. Server Action Definition
-export async function sendMessage(data: ContactFormType): Promise<Response> {
+export async function sendMessage(data: ContactForm): Promise<Response> {
   // 3. Server-Side Validation
   // Even though the client validated it, never trust client data.
   // We re-validate using the same shared Zod schema for security.
-  const result = contactFormSchema.safeParse(data);
+  const result = ContactForm.safeParse(data);
 
   if (!result.success) {
     return { success: false, message: result.error.message, data: null };

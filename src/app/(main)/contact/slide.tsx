@@ -1,5 +1,5 @@
 import { Slide } from "@/components/slide";
-import { ContactForm } from "./contact-form";
+import { ContactFormSection } from "./contact-form-section";
 import { cn } from "@/lib/utils";
 import { GradientOverlay } from "@/components/gradient-overlay";
 import { SocialListSection } from "./social-list-section";
@@ -70,7 +70,7 @@ export default function ContactSlide() {
               <h3 className="text-2xl font-semibold mb-6 max-lg:hidden group-hover:text-primary transition-colors">
                 Send Me a Message
               </h3>
-              <ContactForm />
+              <ContactFormSection />
             </div>
           </div>
           {/* Mobile copyright */}
