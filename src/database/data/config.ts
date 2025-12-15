@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import daffa1 from "@/assets/mdaffailhami-1.png";
+import daffa1Square from "@/assets/mdaffailhami-1-square.png";
 
 const ABOUT = `\
 I’m **Daffa**, a *self-taught programmer* from **Indonesia** 🇮🇩 with over **5 years** of experience in the field.
@@ -45,9 +45,9 @@ export const config = {
       emails: "mdaffailhami@gmail.com",
       images: [
         {
-          url: daffa1.src,
-          width: daffa1.width,
-          height: daffa1.height,
+          url: daffa1Square.src,
+          width: daffa1Square.width,
+          height: daffa1Square.height,
           alt: APP_TITLE,
         },
       ],
@@ -56,7 +56,7 @@ export const config = {
       card: "summary",
       title: APP_TITLE,
       description: APP_DESCRIPTION,
-      images: [daffa1.src],
+      images: [daffa1Square.src],
     },
   } as Metadata,
 };
