@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import daffa1 from "@/assets/mdaffailhami-1.png";
 
-const about = `\
+const ABOUT = `\
 I’m **Daffa**, a *self-taught programmer* from **Indonesia** 🇮🇩 with over **5 years** of experience in the field.
 
 I started **programming** while I was still in **madrasah aliyah** 🏫 — so the trigger was actually **my own interest**, not college.
@@ -22,8 +22,9 @@ const APP_DESCRIPTION = "Muhammad Daffa Ilhami's Portfolio";
 export const config = {
   name: "Daffa Ilhami",
   bio: "Tech Enthusiast | Self-Taught Programmer | Lifelong Learner",
-  about: about,
+  about: ABOUT,
   metadata: {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
     title: APP_TITLE,
     description: APP_DESCRIPTION,
     icons: {
