@@ -1,5 +1,5 @@
+import { MailIcon } from "lucide-react";
 import { SiGithub, SiInstagram, SiLinkedin } from "react-icons/si";
-import { MdOutlineEmail } from "react-icons/md";
 
 export const socials = [
   {
@@ -31,7 +31,7 @@ export const socials = [
   },
   {
     label: "Email",
-    Icon: MdOutlineEmail,
+    Icon: MailIcon,
     url: "mailto:mdaffailhami@gmail.com",
     color: {
       light: "#EA4335",
@@ -41,7 +41,7 @@ export const socials = [
   // {
   //   label: "Telegram",
   //   Icon: SiTelegram,
-  //   url: "https://t.me/mdaffailhami",
+  //   url: "https://t.me/<username>",
   //   color: {
   //     light: "#0088cc",
   //     dark: "#0088cc",
