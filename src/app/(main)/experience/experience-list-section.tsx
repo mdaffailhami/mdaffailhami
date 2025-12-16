@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowDownIcon, ArrowUpIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useBreakpoint } from "@/hooks";
+import { AnimateIn } from "@/components/animate-in";
 
 export function ExperienceListSection() {
   const breakpoint = useBreakpoint();
@@ -24,29 +25,33 @@ export function ExperienceListSection() {
 
   return (
     <>
-      <div className="relative max-w-4xl flex flex-row w-full justify-center">
-        {/* Line */}
-        <div className="w-0.5 bg-primary/50 shrink-0 absolute left-3 top-0 bottom-0"></div>
-        <div
-          className={cn(
-            "flex flex-col gap-y-6 transition-all duration-300 pl-8",
-            isExpanded && !isMobile ? "max-h-136 overflow-y-auto pr-4" : ""
-          )}
-          style={{ scrollbarWidth: "thin" }}
-        >
-          {displayedExperiences.map((experience) => (
-            <div
-              key={`${experience.company}-${experience.period}`}
-              className="relative"
-            >
-              {/* Dot */}
-              <div className="absolute -left-6.75 top-1/2 size-4 rounded-full bg-primary/75 border-4 border-primary -translate-y-1/2"></div>
+      <AnimateIn>
+        <div className="relative max-w-4xl flex flex-row w-full justify-center">
+          {/* Line */}
+          <div className="w-0.5 bg-primary/50 shrink-0 absolute left-3 top-0 bottom-0"></div>
+          <div
+            className={cn(
+              "flex flex-col fl-gap-y-3/4 transition-all duration-300 pl-8",
+              isExpanded && !isMobile ? "max-h-136 overflow-y-auto pr-4" : ""
+            )}
+            style={{ scrollbarWidth: "thin" }}
+          >
+            {displayedExperiences.map((experience) => (
+              <div
+                key={`${experience.company}-${experience.period}`}
+                className="relative"
+              >
+                {/* Dot */}
+                <div className="absolute -left-6.75 top-1/2 size-4 rounded-full bg-primary/75 border-4 border-primary -translate-y-1/2"></div>
 
-              <ExperienceCard experience={experience} />
-            </div>
-          ))}
+                <AnimateIn animation="slide-in-from-bottom-8">
+                  <ExperienceCard experience={experience} />
+                </AnimateIn>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </AnimateIn>
       {!isMobile && experiences.length > maxUnexpandedExperiences && (
         <Button
           variant={"link"}

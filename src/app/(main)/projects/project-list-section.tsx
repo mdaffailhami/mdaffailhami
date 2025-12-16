@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
 import { Carousel } from "@/components/carousel";
 import { useBreakpoint } from "@/hooks";
+import { AnimateIn } from "@/components/animate-in";
 
 export function ProjectListSection() {
   // Limit to 9 projects and group them into slides of 3
@@ -50,20 +51,20 @@ export function ProjectListSection() {
       {/* If the breakpoint is lg or below, show the projects vertically scrollable */}
       <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-5 sm:gap-3 w-full">
         {displayedProjects.map((project) => (
-          <ProjectCard
-            key={project.title}
-            project={project}
-            className="w-full"
-          />
+          <AnimateIn key={project.title} animation="slide-in-from-bottom-8">
+            <ProjectCard project={project} className="w-full" />
+          </AnimateIn>
         ))}
       </div>
       {/* If not, show the projects horizontally snap scrollable */}
-      <Carousel
-        items={slides}
-        className="max-lg:hidden max-w-216 lg:max-w-4xl xl:max-w-7xl"
-        // If not hydrated yet, hide the indicators
-        indicatorClassName={`-mt-4 mb-5 ${!breakpoint && "hidden"}`}
-      />
+      <AnimateIn animation="slide-in-from-bottom-8">
+        <Carousel
+          items={slides}
+          className="max-lg:hidden max-w-216 lg:max-w-4xl xl:max-w-7xl"
+          // If not hydrated yet, hide the indicators
+          indicatorClassName={`-mt-4 mb-5 ${!breakpoint && "hidden"}`}
+        />
+      </AnimateIn>
 
       {/* Reserved for future use */}
       {/* {projects.length > maxProjects && (

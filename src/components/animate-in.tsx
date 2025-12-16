@@ -1,63 +1,60 @@
 "use client";
 
-import { useInView } from "@/hooks";
+import { mergeProps } from "@base-ui/react/merge-props";
+import { useRender } from "@base-ui/react/use-render";
 import { cn } from "@/lib/utils";
-import React from "react";
+import { useIsInView } from "@/hooks";
 
-interface AnimateInProps {
-  children: React.ReactNode;
+type AnimateInProps = React.ComponentPropsWithoutRef<"div"> & {
   /**
-   * The animation class to apply from tw-animate-css or custom.
-   * Default: "animate-fade-in-up"
+   * The "tw-animate-css" animation class to apply when the component is in view.
+   * Default = "fade-in"
    */
   animation?: string;
   /**
-   * Delay in milliseconds.
+   * A number between 0 and 1 indicating the percentage of the target element
+   * which must be visible in the viewport to trigger the animation.
+   * Default = 0
    */
-  delay?: number;
+  threshold?: number;
   /**
-   * Duration in milliseconds.
+   * The duration of the animation in seconds.
+   * Default = 1.5
    */
   duration?: number;
   /**
-   * Threshold for IntersectionObserver (0-1).
-   * Default: 0
+   * Change the default rendered element for the one passed as a child, merging their props and behavior.
    */
-  threshold?: number;
-  className?: string;
-  /**
-   * Style object to merge with animation styles.
-   */
-  style?: React.CSSProperties;
-}
+  render?: React.ReactElement;
+};
 
 export const AnimateIn = ({
-  children,
-  animation = "animate-in fade-in slide-in-from-bottom-8 duration-500",
-  delay,
-  duration,
+  animation,
   threshold = 0,
-  className,
-  style,
+  duration = 1.2,
+  render,
+  ...props
 }: AnimateInProps) => {
-  const { ref, isInView } = useInView({ threshold });
+  const { componentRef, isInView } = useIsInView<HTMLDivElement>({ threshold });
 
-  const combinedStyle: React.CSSProperties = {
-    ...style,
-    animationDelay: delay ? `${delay}ms` : undefined,
-    animationDuration: duration ? `${duration}ms` : undefined,
-    // Only apply opacity 0 if not in view to hide it before animation starts
-    // Once in view, the animation class handles the opacity
-    opacity: isInView ? undefined : 0,
-  };
-
-  return (
-    <div
-      ref={ref}
-      className={cn(isInView ? animation : null, className)}
-      style={combinedStyle}
-    >
-      {children}
-    </div>
+  const mergedProps = mergeProps(
+    {
+      ref: componentRef,
+      style: {
+        "--duration": `${duration}s`,
+      } as React.CSSProperties,
+      className: cn(
+        isInView && "animate-in duration-(--duration)",
+        isInView ? animation : "invisible", // Use invisible to solve the flashing bug
+        isInView && "fade-in" // Always combine with fade-in animation so it won't look weird yk
+      ),
+    },
+    props
   );
+
+  return useRender({
+    defaultTagName: "div",
+    render,
+    props: mergedProps,
+  });
 };
