@@ -1,6 +1,5 @@
 "use client";
 
-import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
 import { cn } from "@/lib/utils";
 import { useIsInView } from "@/hooks";
@@ -37,24 +36,22 @@ export const AnimateIn = ({
 }: AnimateInProps) => {
   const { componentRef, isInView } = useIsInView<HTMLDivElement>({ threshold });
 
-  const mergedProps = mergeProps(
-    {
+  return useRender({
+    defaultTagName: "div",
+    render,
+    props: {
+      ...props,
       ref: componentRef,
       style: {
+        ...props.style,
         "--duration": `${duration}s`,
       } as React.CSSProperties,
       className: cn(
         isInView && "animate-in duration-(--duration)",
         isInView ? animation : "invisible", // Use invisible to solve the flashing bug
-        isInView && "fade-in" // Always combine with fade-in animation so it won't look weird yk
+        isInView && "fade-in", // Always combine with fade-in animation so it won't look weird yk
+        props.className
       ),
     },
-    props
-  );
-
-  return useRender({
-    defaultTagName: "div",
-    render,
-    props: mergedProps,
   });
 };
