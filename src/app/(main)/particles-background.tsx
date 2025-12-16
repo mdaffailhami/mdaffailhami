@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 // import type { Container } from "@tsparticles/engine";
 import { useTheme } from "next-themes";
 
-const LIGHT_COLOR = "#abcdef";
+const LIGHT_COLOR = "#94a3b8";
 const DARK_COLOR = "#456789";
 
 export function ParticlesBackground({ id }: { id: string }) {
