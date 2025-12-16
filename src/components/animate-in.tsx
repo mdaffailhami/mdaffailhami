@@ -2,7 +2,7 @@
 
 import { useRender } from "@base-ui/react/use-render";
 import { cn } from "@/lib/utils";
-import { useIsInView } from "@/hooks";
+import { useIsInView, useBreakpoint } from "@/hooks";
 
 type AnimateInProps = React.ComponentPropsWithoutRef<"div"> & {
   /**
@@ -22,6 +22,11 @@ type AnimateInProps = React.ComponentPropsWithoutRef<"div"> & {
    */
   duration?: number;
   /**
+   * Disable the animation on mobile devices.
+   * Default = true
+   */
+  disabledOnMobile?: boolean;
+  /**
    * Change the default rendered element for the one passed as a child, merging their props and behavior.
    */
   render?: React.ReactElement;
@@ -30,28 +35,40 @@ type AnimateInProps = React.ComponentPropsWithoutRef<"div"> & {
 export const AnimateIn = ({
   animation,
   threshold = 0,
-  duration = 1.2,
+  duration = 1,
+  disabledOnMobile = true,
   render,
   ...props
 }: AnimateInProps) => {
   const { componentRef, isInView } = useIsInView<HTMLDivElement>({ threshold });
+  const breakpoint = useBreakpoint();
+  const isMobile = !breakpoint ? false : breakpoint < 4;
+  const shouldAnimate = !disabledOnMobile || !isMobile;
 
-  return useRender({
+  const animatedProps = {
+    ...props,
+    ref: componentRef,
+    style: {
+      ...props.style,
+      "--duration": `${duration}s`,
+    } as React.CSSProperties,
+    className: cn(
+      isInView && "animate-in duration-(--duration)",
+      isInView ? animation : "invisible", // Use invisible to solve the flashing bug
+      isInView && "fade-in", // Always combine with fade-in animation so it won't look weird yk
+      props.className
+    ),
+  };
+
+  const renderResult = useRender({
     defaultTagName: "div",
     render,
-    props: {
-      ...props,
-      ref: componentRef,
-      style: {
-        ...props.style,
-        "--duration": `${duration}s`,
-      } as React.CSSProperties,
-      className: cn(
-        isInView && "animate-in duration-(--duration)",
-        isInView ? animation : "invisible", // Use invisible to solve the flashing bug
-        isInView && "fade-in", // Always combine with fade-in animation so it won't look weird yk
-        props.className
-      ),
-    },
+    props: shouldAnimate ? animatedProps : props,
   });
+
+  if (!shouldAnimate && !render) {
+    return <>{props.children}</>;
+  }
+
+  return renderResult;
 };
