@@ -42,7 +42,7 @@ export const AnimateIn = ({
 }: AnimateInProps) => {
   const { componentRef, isInView } = useIsInView<HTMLDivElement>({ threshold });
   const breakpoint = useBreakpoint();
-  const isMobile = !breakpoint ? false : breakpoint < 4;
+  const isMobile = !breakpoint ? false : breakpoint < 3;
   const shouldAnimate = !disabledOnMobile || !isMobile;
 
   const animatedProps = {

@@ -39,7 +39,7 @@ export default function ContactSlide() {
         {/* Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-6 xl:gap-12">
           {/* Left Column - Social Media & Info */}
-          <div className="flex flex-col gap-y-8">
+          <div className="flex flex-col lg:gap-y-8">
             <AnimateIn animation="slide-in-from-top-10">
               {/* Social Media Links */}
               <div className="space-y-4">
