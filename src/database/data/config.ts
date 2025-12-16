@@ -2,11 +2,11 @@ import { Metadata } from "next";
 import daffa1Square from "@/assets/mdaffailhami-1-square.png";
 
 const ABOUT = `\
-I’m **Daffa**, a *self-taught programmer* from **Indonesia** 🇮🇩 with over **5 years** of experience in the field.
+I’m **Daffa**, a *passionate programmer* from **Indonesia** 🇮🇩 with over **5 years** of experience in the field.
 
 I started **programming** while I was still in **madrasah aliyah** 🏫 — so the trigger was actually **my own interest**, not college.
 
-I’ve experimented with a **wide range of technologies** ⚙️ — including *React*, *Flutter*, *React Native*, *Svelte*, *Express*, *Python*, *FastAPI*, *Firebase*, *MongoDB*, *PostgreSQL*, **and more**.
+I’ve experimented with a **wide range of technologies** ⚙️ — including *React*, *Flutter*, *React Native*, *Svelte*, *Java*, *Python*, *FastAPI*, *Express*, *Firebase*, *MongoDB*, **and more**.
 
 My journey is driven by **self-learning**, **curiosity**, and a **commitment to continuous growth** 🚀
 

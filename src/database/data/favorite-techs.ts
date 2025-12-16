@@ -4,6 +4,7 @@ import { techs } from "./techs";
 export const favoriteTechs: Tech[] = [
   techs.nextjs,
   techs.react,
+  techs.svelte,
   // techs.typescript,
   techs.tailwindcss,
   techs.shadcnui,
@@ -12,8 +13,9 @@ export const favoriteTechs: Tech[] = [
   techs.supabase,
   techs.vercel,
   // techs.figma,
-  techs.github,
+  // techs.github,
   techs.docker,
-  techs.gemini,
+  // techs.gemini,
+  techs.antigravity,
   techs.ubuntu,
 ];

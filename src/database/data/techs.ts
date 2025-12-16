@@ -1,5 +1,6 @@
 import { Tech } from "@/database/schema";
 
+import GoogleAntigravityIcon from "@/assets/icons/antigravity";
 import {
   SiDocker,
   SiFigma,
@@ -10,13 +11,13 @@ import {
   SiReact,
   SiShadcnui,
   SiSupabase,
+  SiSvelte,
   SiTailwindcss,
   SiTypescript,
   SiUbuntu,
   SiVercel,
 } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
-import { TbApi } from "react-icons/tb";
 
 export const techs: Record<string, Tech> = {
   react: {
@@ -37,6 +38,15 @@ export const techs: Record<string, Tech> = {
       dark: "#FFFFFF",
     },
   },
+  svelte: {
+    label: "Svelte",
+    icon: SiSvelte,
+    url: "https://svelte.dev/",
+    color: {
+      light: "#FF3E00",
+      dark: "#FF3E00",
+    },
+  },
   typescript: {
     label: "TypeScript",
     icon: SiTypescript,
@@ -47,7 +57,7 @@ export const techs: Record<string, Tech> = {
     },
   },
   tailwindcss: {
-    label: "Tailwind CSS",
+    label: "Tailwind",
     icon: SiTailwindcss,
     url: "https://tailwindcss.com/",
     color: {
@@ -56,7 +66,7 @@ export const techs: Record<string, Tech> = {
     },
   },
   shadcnui: {
-    label: "Shadcn UI",
+    label: "Shadcn",
     icon: SiShadcnui,
     url: "https://ui.shadcn.com/",
     color: {
@@ -74,7 +84,7 @@ export const techs: Record<string, Tech> = {
     },
   },
   postgresql: {
-    label: "PostgreSQL",
+    label: "Postgres",
     icon: BiLogoPostgresql,
     url: "https://www.postgresql.org/",
     color: {
@@ -145,10 +155,10 @@ export const techs: Record<string, Tech> = {
       dark: "#4285F4",
     },
   },
-  restapi: {
-    label: "Rest API",
-    icon: TbApi,
-    url: "https://restapi.com/",
+  antigravity: {
+    label: "Antigravity",
+    icon: GoogleAntigravityIcon,
+    url: "https://antigravity.google/",
     color: {
       light: "#4285F4",
       dark: "#4285F4",
