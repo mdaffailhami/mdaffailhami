@@ -77,7 +77,7 @@ export const techs: Record<string, Tech> = {
   prisma: {
     label: "Prisma",
     icon: SiPrisma,
-    url: "https://www.prisma.io/",
+    url: "https://prisma.io/",
     color: {
       light: "#2D3748",
       dark: "#5A67D8",
@@ -86,7 +86,7 @@ export const techs: Record<string, Tech> = {
   postgresql: {
     label: "Postgres",
     icon: BiLogoPostgresql,
-    url: "https://www.postgresql.org/",
+    url: "https://postgresql.org/",
     color: {
       light: "#0064a5",
       dark: "#008bb9",
@@ -95,7 +95,7 @@ export const techs: Record<string, Tech> = {
   figma: {
     label: "Figma",
     icon: SiFigma,
-    url: "https://www.figma.com/",
+    url: "https://figma.com/",
     color: {
       light: "#ff3737",
       dark: "#ff3737",
@@ -113,7 +113,7 @@ export const techs: Record<string, Tech> = {
   docker: {
     label: "Docker",
     icon: SiDocker,
-    url: "https://www.docker.com/",
+    url: "https://docker.com/",
     color: {
       light: "#2496ED",
       dark: "#2496ED",
