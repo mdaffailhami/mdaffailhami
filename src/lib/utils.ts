@@ -27,5 +27,7 @@ export const scrollTo = (hash: string) => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-  } catch (error) {}
+  } catch {
+    // Silently fail if element not found
+  }
 };

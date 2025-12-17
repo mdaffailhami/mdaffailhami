@@ -1,9 +1,9 @@
-import AboutSlide from "./about/slide";
-import ContactSlide from "./contact/slide";
-import ExperienceSlide from "./experience/slide";
-import HomeSlide from "./home/slide";
-import ProjectsSlide from "./projects/slide";
-import { InitialScrollHandler } from "./initial-scroll-handler";
+import HomeSlide from "./(home)/slide";
+import AboutSlide from "./(about)/slide";
+import ProjectsSlide from "./(projects)/slide";
+import ExperienceSlide from "./(experience)/slide";
+import ContactSlide from "./(contact)/slide";
+import { InitialScrollHandler } from "@/components/common/initial-scroll-handler";
 
 export default function HomePage() {
   return (

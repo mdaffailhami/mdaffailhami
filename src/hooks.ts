@@ -1,14 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { getCurrentBreakpoint } from "@/lib/utils";
 
+/**
+ * Hook to detect if component is hydrated on the client.
+ * @returns {boolean} True if component is hydrated on client
+ */
 export const useIsHydrated = () => {
-  const [isHydrated, setIsHydrated] = useState(false);
-
-  useEffect(() => {
-    setIsHydrated(true);
-  }, []);
-
-  return isHydrated;
+  return useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 };
 
 /**

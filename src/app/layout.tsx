@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Arvo, JetBrains_Mono } from "next/font/google";
+import { Inter, Arvo } from "next/font/google";
 import "./globals.css";
 import RootProviders from "./providers";
-import { config } from "@/database/data/config";
+import { config } from "@/lib/constants";
 
 const inter = Inter({
   variable: "--font-inter",
