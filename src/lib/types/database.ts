@@ -1,4 +1,5 @@
 import React from "react";
+import { StaticImageData } from "next/image";
 
 export type Tech = {
   label: string;
@@ -13,7 +14,7 @@ export type Tech = {
 export type Project = {
   title: string;
   description: string;
-  images: string[];
+  images: (string | StaticImageData)[];
   techs: Tech[];
   links: {
     type: "github" | "project" | "custom";

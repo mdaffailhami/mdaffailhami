@@ -16,7 +16,6 @@ import {
   SiTypescript,
   SiUbuntu,
   SiVercel,
-  SiSvelte,
   SiFlutter,
   SiDart,
   SiPython,
@@ -172,15 +171,6 @@ export const techs: Record<string, Tech> = {
     color: {
       light: "#4285F4",
       dark: "#4285F4",
-    },
-  },
-  svelte: {
-    label: "Svelte",
-    icon: SiSvelte,
-    url: "https://svelte.dev/",
-    color: {
-      light: "#FF3E00",
-      dark: "#FF3E00",
     },
   },
   flutter: {

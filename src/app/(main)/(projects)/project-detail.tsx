@@ -101,13 +101,13 @@ function ProjectContent({ project }: { project: Project }) {
   };
 
   // Create image slides
-  const imageSlides = project.images.map((image) => (
-    <div key={image} className="relative aspect-video">
+  const imageSlides = project.images.map((image, i) => (
+    <div key={i} className="relative aspect-video">
       <Image
         src={image}
-        alt={`${project.title} - ${image}`}
+        alt={`${project.title} - ${i + 1}`}
         fill
-        className="object-cover rounded-md"
+        className="object-contain rounded-md"
       />
     </div>
   ));
