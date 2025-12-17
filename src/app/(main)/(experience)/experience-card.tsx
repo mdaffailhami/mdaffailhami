@@ -24,12 +24,12 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
 
         <div className="relative flex gap-6 w-full h-full">
           {/* Company Image */}
-          <div className="max-md:hidden relative h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-border bg-muted">
+          <div className="max-md:hidden relative h-16 w-16 shrink-0 overflow-hidden rounded-full outline-2 outline-card bg-foreground">
             <Image
               src={experience.images[0]}
               alt={experience.company}
               fill
-              className="object-cover"
+              className="object-contain"
             />
           </div>
 

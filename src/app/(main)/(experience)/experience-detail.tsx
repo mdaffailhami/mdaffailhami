@@ -82,13 +82,13 @@ export function ExperienceDetail({
 
 function ExperienceContent({ experience }: { experience: Experience }) {
   // Create image slides
-  const imageSlides = experience.images.map((image) => (
-    <div key={image} className="relative aspect-video">
+  const imageSlides = experience.images.map((image, i) => (
+    <div key={i} className="relative aspect-video">
       <Image
         src={image}
-        alt={`${experience.company} - ${image}`}
+        alt={`${experience.company} - ${i + 1}`}
         fill
-        className="object-cover rounded-md"
+        className="object-contain rounded-md"
       />
     </div>
   ));
@@ -126,7 +126,7 @@ function ExperienceContent({ experience }: { experience: Experience }) {
             className="w-full gap-2 mt-1 bg-primary hover:bg-primary/80"
           >
             <ExternalLink className="size-4" />
-            Visit Company Website
+            Visit Company
           </Button>
         </Link>
       </div>

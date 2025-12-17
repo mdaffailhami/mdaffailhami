@@ -25,6 +25,9 @@ import {
   SiMongodb,
   SiFirebase,
   SiFastapi,
+  SiBootstrap,
+  SiMysql,
+  SiLaravel,
 } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
 
@@ -33,6 +36,15 @@ export const techs: Record<string, Tech> = {
     label: "React",
     icon: SiReact,
     url: "https://react.dev/",
+    color: {
+      light: "#61DAFB",
+      dark: "#61DAFB",
+    },
+  },
+  reactNative: {
+    label: "React Native",
+    icon: SiReact,
+    url: "https://reactnative.dev/",
     color: {
       light: "#61DAFB",
       dark: "#61DAFB",
@@ -252,6 +264,33 @@ export const techs: Record<string, Tech> = {
     color: {
       light: "#009688",
       dark: "#009688",
+    },
+  },
+  bootstrap: {
+    label: "Bootstrap",
+    icon: SiBootstrap,
+    url: "https://getbootstrap.com/",
+    color: {
+      light: "#8312FA",
+      dark: "#8312FA",
+    },
+  },
+  mysql: {
+    label: "MySQL",
+    icon: SiMysql,
+    url: "https://mysql.com/",
+    color: {
+      light: "#0075BF",
+      dark: "#0075BF",
+    },
+  },
+  laravel: {
+    label: "Laravel",
+    icon: SiLaravel,
+    url: "https://laravel.com/",
+    color: {
+      light: "#F05340",
+      dark: "#F05340",
     },
   },
 };

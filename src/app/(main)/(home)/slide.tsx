@@ -15,7 +15,7 @@ export default function HomeSlide() {
           </AnimateIn>
         </section>
         <AnimateIn
-          animation="zoom-in-[0.9]"
+          animation="zoom-in-[1.1]"
           render={
             <section className="flex flex-col w-full md:flex-4 items-start md:max-lg:items-end text-left md:max-lg:text-right" />
           }
