@@ -19,13 +19,11 @@ export const projects: Project[] = [
     techs: [techs.react, techs.nextjs, techs.tailwindcss, techs.shadcnui],
     links: [
       {
-        type: "project",
-        label: "Website",
+        type: "website",
         url: "https://dev.mdaffailhami.my.id/",
       },
       {
         type: "github",
-        label: "GitHub",
         url: "https://github.com/mdaffailhami/mdaffailhami/",
       },
     ],
@@ -38,13 +36,11 @@ export const projects: Project[] = [
     techs: [techs.svelte, techs.supabase, techs.tailwindcss],
     links: [
       {
-        type: "project",
-        label: "Website",
+        type: "website",
         url: "https://www.cryptosharia.id/",
       },
       {
         type: "github",
-        label: "GitHub",
         url: "https://github.com/cryptosharia/cryptosharia/",
       },
     ],
@@ -57,13 +53,11 @@ export const projects: Project[] = [
     techs: [techs.react, techs.bootstrap, techs.laravel, techs.mysql],
     links: [
       {
-        type: "project",
-        label: "Website",
+        type: "website",
         url: "https://cimsa.ulm.ac.id/",
       },
       {
         type: "github",
-        label: "GitHub",
         url: "https://github.com/mdaffailhami/cimsa-ulm",
       },
     ],
@@ -76,13 +70,11 @@ export const projects: Project[] = [
     techs: [techs.flutter, techs.dart],
     links: [
       {
-        type: "project",
-        label: "Website",
+        type: "website",
         url: "https://mdaffailhami.my.id",
       },
       {
         type: "github",
-        label: "GitHub",
         url: "https://github.com/mdaffailhami/mdaffailhami/tree/main/v2",
       },
     ],
@@ -95,13 +87,11 @@ export const projects: Project[] = [
     techs: [techs.flutter, techs.dart],
     links: [
       {
-        type: "project",
-        label: "Download",
+        type: "download",
         url: "https://github.com/mdaffailhami/mdi-todo/releases",
       },
       {
         type: "github",
-        label: "GitHub",
         url: "https://github.com/mdaffailhami/mdi-todo",
       },
     ],
@@ -115,7 +105,6 @@ export const projects: Project[] = [
     links: [
       {
         type: "github",
-        label: "GitHub",
         url: "https://github.com/mdaffailhami/balabuh",
       },
     ],
@@ -135,12 +124,12 @@ export const projects: Project[] = [
     links: [
       {
         type: "github",
-        label: "Frontend",
+        label: "GitHub (Frontend)",
         url: "https://github.com/mdaffailhami/gasku",
       },
       {
         type: "github",
-        label: "Backend",
+        label: "GitHub (Backend)",
         url: "https://github.com/mdaffailhami/gasku_server",
       },
     ],
@@ -160,12 +149,12 @@ export const projects: Project[] = [
     links: [
       {
         type: "github",
-        label: "Frontend",
+        label: "GitHub (Frontend)",
         url: "https://github.com/mdaffailhami/nasi_igut_han",
       },
       {
         type: "github",
-        label: "Backend",
+        label: "GitHub (Backend)",
         url: "https://github.com/mdaffailhami/nasi_igut_han_server",
       },
     ],
@@ -179,7 +168,6 @@ export const projects: Project[] = [
     links: [
       {
         type: "github",
-        label: "GitHub",
         url: "https://github.com/mdaffailhami/marketku",
       },
     ],

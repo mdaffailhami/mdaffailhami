@@ -17,8 +17,8 @@ export type Project = {
   images: (string | StaticImageData)[];
   techs: Tech[];
   links: {
-    type: "github" | "project" | "custom";
-    label: string;
+    type: "github" | "website" | "download" | "other";
+    label?: string;
     url: string;
     icon?: React.ComponentType<{ className?: string }>;
   }[];

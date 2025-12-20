@@ -28,6 +28,7 @@ import {
   SiBootstrap,
   SiMysql,
   SiLaravel,
+  SiDrizzle,
 } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
 
@@ -102,6 +103,15 @@ export const techs: Record<string, Tech> = {
     color: {
       light: "#2D3748",
       dark: "#5A67D8",
+    },
+  },
+  drizzle: {
+    label: "Drizzle",
+    icon: SiDrizzle,
+    url: "https://orm.drizzle.team/",
+    color: {
+      light: "#EA4C46",
+      dark: "#C5F74F",
     },
   },
   postgresql: {

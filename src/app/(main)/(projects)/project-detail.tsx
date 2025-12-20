@@ -22,7 +22,13 @@ import { useBreakpoint } from "@/hooks";
 import { Button } from "@/components/ui/button";
 import { LinkIconBadge } from "@/components/common/link-icon-badge";
 import type { Project } from "@/lib/types/database";
-import { ExternalLink, Download } from "lucide-react";
+import {
+  ExternalLink,
+  Download,
+  GlobeIcon,
+  DownloadIcon,
+  ExternalLinkIcon,
+} from "lucide-react";
 import { FiGithub } from "react-icons/fi";
 import { cn } from "@/lib/utils";
 import { Carousel } from "@/components/common/carousel";
@@ -87,16 +93,29 @@ export function ProjectDetail({
 function ProjectContent({ project }: { project: Project }) {
   const { resolvedTheme } = useTheme();
 
-  const getButtonIcon = (type: string) => {
+  const getButtonLabel = (type: Project["links"][number]["type"]) => {
+    switch (type) {
+      case "github":
+        return "GitHub";
+      case "website":
+        return "Website";
+      case "download":
+        return "Download";
+      default:
+        return "Link";
+    }
+  };
+
+  const getButtonIcon = (type: Project["links"][number]["type"]) => {
     switch (type) {
       case "github":
         return FiGithub;
-      case "demo":
-        return ExternalLink;
+      case "website":
+        return GlobeIcon;
       case "download":
-        return Download;
+        return DownloadIcon;
       default:
-        return ExternalLink;
+        return ExternalLinkIcon;
     }
   };
 
@@ -159,11 +178,13 @@ function ProjectContent({ project }: { project: Project }) {
                       "dark:bg-white bg-[#181717] text-background hover:bg-[#181717]/80 hover:dark:bg-white/80":
                         link.type === "github",
                       "bg-primary hover:bg-primary/80 ":
-                        link.type === "project",
+                        link.type === "website" || link.type === "download",
+                      "bg-secondary hover:bg-secondary/80":
+                        link.type === "other",
                     })}
                   >
                     <Icon className="size-4" />
-                    {link.label}
+                    {link.label || getButtonLabel(link.type)}
                   </Button>
                 </Link>
               );
