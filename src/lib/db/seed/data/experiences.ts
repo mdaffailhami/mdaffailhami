@@ -1,8 +1,8 @@
 import { experiencesTable } from "../../schema";
 
-export type ExperienceData = typeof experiencesTable.$inferInsert;
+export type ExperienceInsert = typeof experiencesTable.$inferInsert;
 
-export const experiences: ExperienceData[] = [
+export const experiences: ExperienceInsert[] = [
   {
     company: "TechNova Solutions",
     role: "Senior Full Stack Architect",

@@ -1,4 +1,8 @@
-export const settings = [
+import { settingsTable } from "../../schema";
+
+export type SettingInsert = typeof settingsTable.$inferInsert;
+
+export const settings: SettingInsert[] = [
   {
     key: "app_title",
     value: "Daffa Ilhami",

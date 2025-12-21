@@ -1,8 +1,8 @@
 import { socialsTable } from "../../schema";
 
-export type SocialData = typeof socialsTable.$inferInsert;
+export type SocialInsert = typeof socialsTable.$inferInsert;
 
-export const socials: SocialData[] = [
+export const socials: SocialInsert[] = [
   {
     label: "GitHub",
     url: "https://github.com/example",

@@ -1,6 +1,6 @@
-import { techs, TechData } from "./techs";
+import { techs, TechInsert } from "./techs";
 
-export const favoriteTechs: TechData[] = [
+export const favoriteTechs: TechInsert[] = [
   techs.svelte,
   techs.react,
   techs.nextjs,

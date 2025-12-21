@@ -1,8 +1,8 @@
 import { techsTable } from "../../schema";
 
-export type TechData = typeof techsTable.$inferInsert;
+export type TechInsert = typeof techsTable.$inferInsert;
 
-export const techs: Record<string, TechData> = {
+export const techs: Record<string, TechInsert> = {
   svelte: {
     label: "Svelte",
     url: "https://svelte.dev/",

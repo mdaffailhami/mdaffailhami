@@ -1,6 +1,6 @@
 "use server";
 
-import { Message } from "@/lib/db/types";
+import { MessageInsert } from "@/lib/db/types";
 import { db } from "@/lib/db";
 import { messagesTable } from "@/lib/db/schema";
 import { ServerResponse } from "@/lib/types";
@@ -13,9 +13,9 @@ const defaultErrorMessage = "Something went wrong. Please try again.";
  * from components or wrapped in a REST API route.
  */
 export async function sendMessage(
-  data: Message
+  data: MessageInsert
 ): Promise<ServerResponse<null>> {
-  const result = Message.safeParse(data);
+  const result = MessageInsert.safeParse(data);
 
   if (!result.success) {
     return { success: false, message: result.error.message, data: null };

@@ -1,11 +1,11 @@
-import { techs, TechData } from "./techs";
+import { techs, TechInsert } from "./techs";
 import { projectsTable } from "../../schema";
 
-export type ProjectData = typeof projectsTable.$inferInsert & {
-  techs: TechData[];
+export type ProjectInsert = typeof projectsTable.$inferInsert & {
+  techs: TechInsert[];
 };
 
-export const projects: ProjectData[] = [
+export const projects: ProjectInsert[] = [
   {
     title: "EcoManager Pro",
     description:

@@ -1,7 +1,9 @@
 import { z } from "zod";
+import { createSelectSchema } from "drizzle-zod";
 import { InferSelectModel } from "drizzle-orm";
 import {
   experiencesTable,
+  messagesTable,
   projectsTable,
   settingsTable,
   socialsTable,
@@ -20,18 +22,26 @@ export type Project = InferSelectModel<typeof projectsTable> & {
 
 export type Setting = InferSelectModel<typeof settingsTable>;
 
-export const Message = z.object({
-  name: z
-    .string()
-    .min(2, { message: "Name must be at least 2 characters." })
-    .max(100, { message: "Name must be less than 100 characters." }),
+export const Message = createSelectSchema(messagesTable, {
+  name: (s) =>
+    s
+      .trim()
+      .min(1, { message: "Name cannot be empty" })
+      .max(100, { message: "Name must be at most 100 characters long" }),
+  message: (s) =>
+    s
+      .min(10, { message: "Message must be at least 10 characters long" })
+      .max(5000, { message: "Message must be at most 5000 characters long" }),
+}).extend({
+  // Use extend for "email" to solve "string().email()" deprecation
   email: z
-    .email({ message: "Please enter a valid email address." })
-    .max(255, { message: "Email must be less than 255 characters." }),
-  message: z
-    .string()
-    .min(10, { message: "Message must be at least 10 characters." })
-    .max(5000, { message: "Message must be less than 5000 characters." }),
+    .email()
+    .max(255, { message: "Email must be at most 255 characters long" }),
 });
 
+export const MessageInsert = Message.omit({ id: true, createdAt: true });
+export const MessageUpdate = MessageInsert.partial(); // For future example on creating an Update Type
+
 export type Message = z.infer<typeof Message>;
+export type MessageInsert = z.infer<typeof MessageInsert>;
+export type MessageUpdate = z.infer<typeof MessageUpdate>;
