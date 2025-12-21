@@ -8,6 +8,13 @@
       "when": 1766282231931,
       "tag": "0000_reflective_mandrill",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1766287642373,
+      "tag": "0001_wise_mercury",
+      "breakpoints": true
     }
   ]
 }

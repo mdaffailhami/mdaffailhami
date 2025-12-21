@@ -6,19 +6,17 @@ import {
   uuid,
   timestamp,
   unique,
+  integer,
 } from "drizzle-orm/pg-core";
 
-export const techs = pgTable("techs", {
+export const techsTable = pgTable("techs", {
   id: uuid("id").defaultRandom().primaryKey(),
-  slug: text("slug").unique().notNull(), // Using slug like 'react', 'nextjs'
   label: text("label").notNull(),
   url: text("url").notNull(),
-  icon: jsonb("icon")
-    .$type<{ lightTheme: string; darkTheme: string }>()
-    .notNull(),
+  icon: jsonb("icon").$type<{ light: string; dark: string }>().notNull(),
 });
 
-export const projects = pgTable("projects", {
+export const projectsTable = pgTable("projects", {
   id: uuid("id").defaultRandom().primaryKey(),
   title: text("title").notNull(),
   description: text("description").notNull(),
@@ -35,21 +33,21 @@ export const projects = pgTable("projects", {
     .notNull(),
 });
 
-export const projectsTechs = pgTable(
+export const projectsTechsTable = pgTable(
   "projects_techs",
   {
     id: uuid("id").defaultRandom().primaryKey(),
     projectId: uuid("project_id")
       .notNull()
-      .references(() => projects.id, { onDelete: "cascade" }),
+      .references(() => projectsTable.id, { onDelete: "cascade" }),
     techId: uuid("tech_id")
       .notNull()
-      .references(() => techs.id, { onDelete: "cascade" }),
+      .references(() => techsTable.id, { onDelete: "cascade" }),
   },
   (t) => [unique().on(t.projectId, t.techId)]
 );
 
-export const experiences = pgTable("experiences", {
+export const experiencesTable = pgTable("experiences", {
   id: uuid("id").defaultRandom().primaryKey(),
   company: text("company").notNull(),
   role: text("role").notNull(),
@@ -69,22 +67,52 @@ export const experiences = pgTable("experiences", {
     .notNull(),
 });
 
+export const favoriteTechsTable = pgTable("favorite_techs", {
+  id: uuid("id").defaultRandom().primaryKey(),
+  techId: uuid("tech_id")
+    .notNull()
+    .references(() => techsTable.id, { onDelete: "cascade" }),
+  order: integer("order").notNull(),
+});
+
+export const socialsTable = pgTable("socials", {
+  id: uuid("id").defaultRandom().primaryKey(),
+  label: text("label").notNull(),
+  url: text("url").notNull(),
+  icon: jsonb("icon").$type<{ light: string; dark: string }>().notNull(),
+  order: integer("order").notNull(),
+});
+
 // Relational Definitions
-export const projectsRelations = relations(projects, ({ many }) => ({
-  projectsTechs: many(projectsTechs),
+export const projectsRelations = relations(projectsTable, ({ many }) => ({
+  projectsTechs: many(projectsTechsTable),
 }));
 
-export const techsRelations = relations(techs, ({ many }) => ({
-  projectsTechs: many(projectsTechs),
+export const techsRelations = relations(techsTable, ({ many }) => ({
+  projectsTechs: many(projectsTechsTable),
+  favoriteTechs: many(favoriteTechsTable),
 }));
 
-export const projectsTechsRelations = relations(projectsTechs, ({ one }) => ({
-  project: one(projects, {
-    fields: [projectsTechs.projectId],
-    references: [projects.id],
-  }),
-  tech: one(techs, {
-    fields: [projectsTechs.techId],
-    references: [techs.id],
-  }),
-}));
+export const favoriteTechsRelations = relations(
+  favoriteTechsTable,
+  ({ one }) => ({
+    tech: one(techsTable, {
+      fields: [favoriteTechsTable.techId],
+      references: [techsTable.id],
+    }),
+  })
+);
+
+export const projectsTechsRelations = relations(
+  projectsTechsTable,
+  ({ one }) => ({
+    project: one(projectsTable, {
+      fields: [projectsTechsTable.projectId],
+      references: [projectsTable.id],
+    }),
+    tech: one(techsTable, {
+      fields: [projectsTechsTable.techId],
+      references: [techsTable.id],
+    }),
+  })
+);
