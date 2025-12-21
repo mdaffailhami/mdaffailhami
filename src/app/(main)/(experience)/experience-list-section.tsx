@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ExperienceCard from "./experience-card";
-import { experiences } from "@/lib/database/experiences";
+import { experiences } from "@/lib/db/dummy-data/experiences";
 import { Button } from "@/components/ui/button";
 import { ArrowDownIcon, ArrowUpIcon } from "lucide-react";
 import { cn } from "@/lib/utils";

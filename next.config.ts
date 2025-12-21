@@ -7,6 +7,18 @@ const nextConfig: NextConfig = {
   devIndicators: {
     position: "top-right",
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.simpleicons.org",
+      },
+    ],
+  },
   async headers() {
     // Disable indexing for any non production environment
     if (process.env.VERCEL_ENV !== "production") {

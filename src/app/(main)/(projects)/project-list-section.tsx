@@ -1,7 +1,7 @@
 "use client";
 
 import { ProjectCard } from "./project-card";
-import { projects } from "@/lib/database/projects";
+import { projects } from "@/lib/db/dummy-data/projects";
 import { Carousel } from "@/components/common/carousel";
 import { useBreakpoint } from "@/hooks";
 import { AnimateIn } from "@/components/animation/animate-in";

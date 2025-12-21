@@ -1,6 +1,6 @@
 "use client";
 
-import { socials } from "@/lib/database/socials";
+import { socials } from "@/lib/db/dummy-data/socials";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { GradientOverlay } from "@/components/common/gradient-overlay";

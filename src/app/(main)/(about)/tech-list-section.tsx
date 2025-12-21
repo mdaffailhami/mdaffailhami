@@ -1,7 +1,7 @@
 "use client";
 
 import { LinkIconBadge } from "@/components/common/link-icon-badge";
-import { favoriteTechs } from "@/lib/database/favorite-techs";
+import { favoriteTechs } from "@/lib/db/dummy-data/favorite-techs";
 import { useTheme } from "next-themes";
 import { useBreakpoint } from "@/hooks";
 
