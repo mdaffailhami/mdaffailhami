@@ -1,31 +1,21 @@
 "use client";
 
 import { LinkIconBadge } from "@/components/common/link-icon-badge";
-import { favoriteTechs } from "@/lib/db/dummy-data/favorite-techs";
-import { useTheme } from "next-themes";
 import { useBreakpoint } from "@/hooks";
+import { PublicTech } from "@/lib/types/database";
 
-export function TechListSection() {
-  const { resolvedTheme } = useTheme();
+export function TechListSection({ techs }: { techs: PublicTech[] }) {
   const breakpoint = useBreakpoint();
-  const isHydrated = breakpoint !== undefined;
 
   return (
     <ul className="flex flex-row fl-gap-2/4 flex-wrap">
-      {favoriteTechs.map((tech) => (
+      {techs.map((tech) => (
         <li key={tech.label}>
           <LinkIconBadge
             icon={tech.icon}
             label={tech.label}
             href={tech.url}
             size={!breakpoint ? "sm" : breakpoint <= 5 ? "sm" : "md"}
-            iconColor={
-              !isHydrated
-                ? "var(--color-foreground)"
-                : resolvedTheme === "dark"
-                ? tech.color.dark
-                : tech.color.light
-            }
           />
         </li>
       ))}

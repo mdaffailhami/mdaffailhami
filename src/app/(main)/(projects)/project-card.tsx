@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import { LinkIconBadge } from "@/components/common/link-icon-badge";
-import type { Project } from "@/lib/types/database";
-import { useTheme } from "next-themes";
+import type { PublicProject, PublicTech } from "@/lib/types/database";
 import { ProjectDetail } from "./project-detail";
 import { cn } from "@/lib/utils";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
@@ -12,12 +11,11 @@ import { useIsHydrated } from "@/hooks";
 import { Skeleton } from "@/components/ui/skeleton";
 
 type ProjectCardProps = {
-  project: Project;
+  project: PublicProject;
   className?: string;
 };
 
 export function ProjectCard({ project, className }: ProjectCardProps) {
-  const { resolvedTheme } = useTheme();
   const isHydrated = useIsHydrated();
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -62,20 +60,13 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           {/* Technologies */}
           <div className="max-h-7.5 overflow-y-hidden">
             <div className="flex flex-row flex-wrap gap-x-1 gap-y-5">
-              {project.techs.slice(0, 4).map((tech) => (
+              {project.techs.slice(0, 4).map((tech: PublicTech) => (
                 <LinkIconBadge
                   key={tech.label}
                   icon={tech.icon}
                   label={tech.label}
                   // href={tech.url} // Make it unclickable
                   size="sm"
-                  iconColor={
-                    !isHydrated
-                      ? "var(--color-foreground)"
-                      : resolvedTheme === "dark"
-                      ? tech.color.dark
-                      : tech.color.light
-                  }
                 />
               ))}
             </div>

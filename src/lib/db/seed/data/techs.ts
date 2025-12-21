@@ -1,4 +1,4 @@
-import { techsTable } from "../schema";
+import { techsTable } from "../../schema";
 
 export type TechData = typeof techsTable.$inferInsert;
 
@@ -23,12 +23,12 @@ export const techs: Record<string, TechData> = {
     label: "Next.js",
     url: "https://nextjs.org/",
     icon: {
-      light: "https://cdn.simpleicons.org/nextjs/000000",
-      dark: "https://cdn.simpleicons.org/nextjs/FFFFFF",
+      light: "https://cdn.simpleicons.org/nextdotjs/000000",
+      dark: "https://cdn.simpleicons.org/nextdotjs/FFFFFF",
     },
   },
   tailwindcss: {
-    label: "Tailwind CSS",
+    label: "Tailwind",
     url: "https://tailwindcss.com/",
     icon: {
       light: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
@@ -52,7 +52,7 @@ export const techs: Record<string, TechData> = {
     },
   },
   drizzle: {
-    label: "Drizzle ORM",
+    label: "Drizzle",
     url: "https://orm.drizzle.team/",
     icon: {
       light: "https://cdn.simpleicons.org/drizzle/C5F74F",

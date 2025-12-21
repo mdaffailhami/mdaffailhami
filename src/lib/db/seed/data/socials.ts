@@ -1,4 +1,4 @@
-import { socialsTable } from "../schema";
+import { socialsTable } from "../../schema";
 
 export type SocialData = typeof socialsTable.$inferInsert;
 
@@ -16,8 +16,10 @@ export const socials: SocialData[] = [
     label: "LinkedIn",
     url: "https://linkedin.com/company/example",
     icon: {
-      light: "https://cdn.simpleicons.org/linkedin/0A66C2",
-      dark: "https://cdn.simpleicons.org/linkedin/0A66C2",
+      light: "https://cdn.simpleicons.org/linkerd/0A66C2",
+      dark: "https://cdn.simpleicons.org/linkerd/0A66C2",
+      // light: "https://cdn.simpleicons.org/linkedin/0A66C2",
+      // dark: "https://cdn.simpleicons.org/linkedin/0A66C2",
     },
     order: 2,
   },

@@ -2,14 +2,18 @@
 
 import { useEffect, useState } from "react";
 import ExperienceCard from "./experience-card";
-import { experiences } from "@/lib/db/dummy-data/experiences";
 import { Button } from "@/components/ui/button";
 import { ArrowDownIcon, ArrowUpIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useBreakpoint } from "@/hooks";
 import { AnimateIn } from "@/components/animation/animate-in";
+import type { PublicExperience } from "@/lib/types/database";
 
-export function ExperienceListSection() {
+export function ExperienceListSection({
+  experiences,
+}: {
+  experiences: PublicExperience[];
+}) {
   const breakpoint = useBreakpoint();
   // If not hydrated yet, assume it's not mobile
   const isMobile = !breakpoint ? false : breakpoint < 4;
@@ -36,11 +40,8 @@ export function ExperienceListSection() {
             )}
             style={{ scrollbarWidth: "thin" }}
           >
-            {displayedExperiences.map((experience) => (
-              <div
-                key={`${experience.company}-${experience.period}`}
-                className="relative"
-              >
+            {displayedExperiences.map((experience, i) => (
+              <div key={i} className="relative">
                 {/* Dot */}
                 <div className="absolute -left-6.75 top-1/2 size-4 rounded-full bg-primary/75 border-4 border-primary -translate-y-1/2"></div>
 

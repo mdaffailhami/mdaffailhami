@@ -5,8 +5,21 @@ import Markdown from "react-markdown";
 import { config } from "@/lib/constants";
 import { HeroPicture } from "@/components/common/hero-picture";
 import { daffa1, daffa2 } from "@/assets/images";
+import { db } from "@/lib/db";
+import { favoriteTechsTable, techsTable } from "@/lib/db/schema";
+import { asc, eq } from "drizzle-orm";
 
-export default function AboutSlide() {
+export default async function AboutSlide() {
+  const techs = await db
+    .select({
+      label: techsTable.label,
+      url: techsTable.url,
+      icon: techsTable.icon,
+    })
+    .from(favoriteTechsTable)
+    .innerJoin(techsTable, eq(favoriteTechsTable.techId, techsTable.id))
+    .orderBy(asc(favoriteTechsTable.order));
+
   return (
     <Slide id="about">
       <div className="fl-px-4/40 md:fl-px-[-2rem/10rem] flex flex-col lg:flex-row items-center justify-center min-h-full fl-gap-4/6">
@@ -33,7 +46,7 @@ export default function AboutSlide() {
               >
                 {config.about}
               </Markdown>
-              <TechListSection />
+              <TechListSection techs={techs} />
             </div>
           </AnimateIn>
         </section>

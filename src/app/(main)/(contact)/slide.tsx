@@ -4,6 +4,8 @@ import { GradientOverlay } from "@/components/common/gradient-overlay";
 import { AnimateIn } from "@/components/animation/animate-in";
 import { ContactFormSection } from "./contact-form-section";
 import { SocialListSection } from "./social-list-section";
+import { db } from "@/lib/db";
+import { socialsTable } from "@/lib/db/schema";
 
 function CopyrightSection({ className }: { className?: string }) {
   return (
@@ -18,7 +20,9 @@ function CopyrightSection({ className }: { className?: string }) {
   );
 }
 
-export default function ContactSlide() {
+export default async function ContactSlide() {
+  const socials = await db.select().from(socialsTable);
+
   return (
     <Slide id="contact">
       <div className="w-full px-3 lg:px-5 max-w-lg lg:max-w-6xl mx-auto flex flex-col justify-center min-h-full">
@@ -46,7 +50,7 @@ export default function ContactSlide() {
                 <h3 className="max-lg:hidden text-2xl font-semibold text-center lg:text-left">
                   Connect With Me
                 </h3>
-                <SocialListSection />
+                <SocialListSection socials={socials} />
               </div>
             </AnimateIn>
 

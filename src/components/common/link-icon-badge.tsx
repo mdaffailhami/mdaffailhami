@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import Link from "next/link";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
+import Image from "next/image";
 
 const linkIconBadgeVariants = cva(
   "bg-card gap-x-2 font-normal border-2 border-border transition-all duration-200 ease-in-out",
@@ -32,20 +33,15 @@ const iconSizeVariants = {
 };
 
 type LinkIconBadgeProps = VariantProps<typeof linkIconBadgeVariants> & {
-  icon: React.ComponentType<{
-    className?: string;
-    style?: React.CSSProperties;
-  }>;
+  icon: { light: string; dark: string };
   label: string;
-  iconColor: string;
   href?: string;
   className?: string;
 };
 
 export function LinkIconBadge({
-  icon: Icon,
+  icon,
   label,
-  iconColor,
   size,
   href,
   className,
@@ -60,8 +56,25 @@ export function LinkIconBadge({
       )}
       {...props}
     >
-      <div className="shrink-0" style={{ color: iconColor }}>
-        <Icon className={iconSizeVariants[size || "md"]} />
+      <div className="shrink-0 flex items-center justify-center">
+        <div className={cn("relative", iconSizeVariants[size || "md"])}>
+          {/* Light Mode Icon */}
+          <Image
+            src={icon.light}
+            alt={label}
+            fill
+            unoptimized
+            className="object-contain dark:hidden"
+          />
+          {/* Dark Mode Icon */}
+          <Image
+            src={icon.dark}
+            alt={label}
+            fill
+            unoptimized
+            className="object-contain hidden dark:block"
+          />
+        </div>
       </div>
       <span>{label}</span>
     </Badge>

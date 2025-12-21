@@ -21,7 +21,7 @@ import {
 import { useBreakpoint } from "@/hooks";
 import { Button } from "@/components/ui/button";
 import { LinkIconBadge } from "@/components/common/link-icon-badge";
-import type { Project } from "@/lib/types/database";
+import type { PublicProject, PublicTech } from "@/lib/types/database";
 import {
   ExternalLink,
   Download,
@@ -36,7 +36,7 @@ import Link from "next/link";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
 
 type ProjectDetailProps = {
-  project: Project;
+  project: PublicProject;
   open: boolean;
   onOpenChange: (open: boolean) => void;
 };
@@ -90,23 +90,8 @@ export function ProjectDetail({
   );
 }
 
-function ProjectContent({ project }: { project: Project }) {
-  const { resolvedTheme } = useTheme();
-
-  const getButtonLabel = (type: Project["links"][number]["type"]) => {
-    switch (type) {
-      case "github":
-        return "GitHub";
-      case "website":
-        return "Website";
-      case "download":
-        return "Download";
-      default:
-        return "Link";
-    }
-  };
-
-  const getButtonIcon = (type: Project["links"][number]["type"]) => {
+function ProjectContent({ project }: { project: PublicProject }) {
+  const getButtonIcon = (type: PublicProject["links"][number]["type"]) => {
     switch (type) {
       case "github":
         return FiGithub;
@@ -120,16 +105,18 @@ function ProjectContent({ project }: { project: Project }) {
   };
 
   // Create image slides
-  const imageSlides = project.images.map((image, i) => (
-    <div key={i} className="relative aspect-video">
-      <Image
-        src={image}
-        alt={`${project.title} - ${i + 1}`}
-        fill
-        className="object-contain rounded-md"
-      />
-    </div>
-  ));
+  const imageSlides = (project.images as string[]).map(
+    (image: string, i: number) => (
+      <div key={i} className="relative aspect-video">
+        <Image
+          src={image}
+          alt={`${project.title} - ${i + 1}`}
+          fill
+          className="object-contain rounded-md"
+        />
+      </div>
+    )
+  );
 
   return (
     <>
@@ -144,15 +131,12 @@ function ProjectContent({ project }: { project: Project }) {
         <div>
           <h3 className="text-sm font-semibold mb-2">Technologies Used</h3>
           <div className="flex flex-wrap gap-2">
-            {project.techs.map((tech) => (
+            {project.techs.map((tech: PublicTech) => (
               <LinkIconBadge
                 key={tech.label}
                 icon={tech.icon}
                 label={tech.label}
                 href={tech.url}
-                iconColor={
-                  resolvedTheme === "dark" ? tech.color.dark : tech.color.light
-                }
                 size="sm"
               />
             ))}
@@ -162,7 +146,7 @@ function ProjectContent({ project }: { project: Project }) {
         {/* Action Buttons */}
         {project.links.length > 0 && (
           <div className="flex flex-wrap gap-3 pt-2">
-            {project.links.map((link) => {
+            {project.links.map((link: PublicProject["links"][number]) => {
               const Icon = link.icon || getButtonIcon(link.type);
               return (
                 <Link
@@ -184,7 +168,7 @@ function ProjectContent({ project }: { project: Project }) {
                     })}
                   >
                     <Icon className="size-4" />
-                    {link.label || getButtonLabel(link.type)}
+                    {link.label}
                   </Button>
                 </Link>
               );

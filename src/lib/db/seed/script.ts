@@ -8,13 +8,13 @@ import {
   projectsTechsTable,
   socialsTable,
   techsTable,
-} from "./schema";
+} from "../schema";
 
-import { techs } from "./dummy-data/techs";
-import { projects } from "./dummy-data/projects";
-import { experiences } from "./dummy-data/experiences";
-import { favoriteTechs } from "./dummy-data/favorite-techs";
-import { socials } from "./dummy-data/socials";
+import { techs } from "./data/techs";
+import { projects } from "./data/projects";
+import { experiences } from "./data/experiences";
+import { favoriteTechs } from "./data/favorite-techs";
+import { socials } from "./data/socials";
 import postgres from "postgres";
 import { drizzle } from "drizzle-orm/postgres-js";
 

@@ -1,4 +1,4 @@
-import { experiencesTable } from "../schema";
+import { experiencesTable } from "../../schema";
 
 export type ExperienceData = typeof experiencesTable.$inferInsert;
 
@@ -10,9 +10,7 @@ export const experiences: ExperienceData[] = [
     end: null,
     description:
       "Leading the digital transformation of cloud-native applications for Fortune 500 clients. Specialized in scaling microservices architecture.",
-    images: [
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2301",
-    ],
+    images: ["https://picsum.photos/seed/tech1/800/450"],
     links: [
       { type: "website", label: "Company Portal", url: "https://technova.net" },
       {
@@ -29,9 +27,7 @@ export const experiences: ExperienceData[] = [
     end: new Date("2022-12-31"),
     description:
       "Delivering pixel-perfect, high-performance web experiences with a focus on animation and accessible design.",
-    images: [
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2340",
-    ],
+    images: ["https://picsum.photos/seed/pixel1/800/450"],
     links: [
       {
         type: "website",
@@ -47,9 +43,7 @@ export const experiences: ExperienceData[] = [
     end: new Date("2021-05-31"),
     description:
       "Fast-paced agile environment developing MVP features and maintaining core internal tooling.",
-    images: [
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=2340",
-    ],
+    images: ["https://picsum.photos/seed/swift1/800/450"],
     links: [
       {
         type: "linkedin",
