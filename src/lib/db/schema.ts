@@ -83,6 +83,14 @@ export const socialsTable = pgTable("socials", {
   order: integer("order").notNull(),
 });
 
+export const messagesTable = pgTable("messages", {
+  id: uuid("id").defaultRandom().primaryKey(),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  message: text("message").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
 // Relational Definitions
 export const projectsRelations = relations(projectsTable, ({ many }) => ({
   projectsTechs: many(projectsTechsTable),
@@ -116,11 +124,3 @@ export const projectsTechsRelations = relations(
     }),
   })
 );
-
-export const messagesTable = pgTable("messages", {
-  id: uuid("id").defaultRandom().primaryKey(),
-  name: text("name").notNull(),
-  email: text("email").notNull(),
-  message: text("message").notNull(),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
-});

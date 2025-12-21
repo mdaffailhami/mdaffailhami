@@ -1,15 +1,10 @@
 import { AnimateIn } from "@/components/animation/animate-in";
 import { Slide } from "@/components/common/slide";
 import { ExperienceListSection } from "./experience-list-section";
-import { db } from "@/lib/db";
-import { experiencesTable } from "@/lib/db/schema";
-import { desc } from "drizzle-orm";
+import { getExperiences } from "@/lib/api/experiences";
 
 export default async function ExperienceSlide() {
-  const experiences = await db
-    .select()
-    .from(experiencesTable)
-    .orderBy(desc(experiencesTable.start));
+  const experiences = (await getExperiences()).data ?? [];
 
   return (
     <Slide id="experience">

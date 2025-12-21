@@ -4,8 +4,7 @@ import { GradientOverlay } from "@/components/common/gradient-overlay";
 import { AnimateIn } from "@/components/animation/animate-in";
 import { ContactForm } from "./contact-form";
 import { SocialListSection } from "./social-list-section";
-import { db } from "@/lib/db";
-import { socialsTable } from "@/lib/db/schema";
+import { getSocials } from "@/lib/api/socials";
 
 function CopyrightSection({ className }: { className?: string }) {
   return (
@@ -21,7 +20,7 @@ function CopyrightSection({ className }: { className?: string }) {
 }
 
 export default async function ContactSlide() {
-  const socials = await db.select().from(socialsTable);
+  const socials = (await getSocials()).data ?? [];
 
   return (
     <Slide id="contact">

@@ -5,21 +5,10 @@ import Markdown from "react-markdown";
 import { config } from "@/lib/constants";
 import { HeroPicture } from "@/components/common/hero-picture";
 import { daffa1, daffa2 } from "@/assets/images";
-import { db } from "@/lib/db";
-import { favoriteTechsTable, techsTable } from "@/lib/db/schema";
-import { asc, eq } from "drizzle-orm";
+import { getFavoriteTechs } from "@/lib/api/techs";
 
 export default async function AboutSlide() {
-  const techs = await db
-    .select({
-      id: techsTable.id,
-      label: techsTable.label,
-      url: techsTable.url,
-      icon: techsTable.icon,
-    })
-    .from(favoriteTechsTable)
-    .innerJoin(techsTable, eq(favoriteTechsTable.techId, techsTable.id))
-    .orderBy(asc(favoriteTechsTable.order));
+  const techs = (await getFavoriteTechs()).data ?? [];
 
   return (
     <Slide id="about">
