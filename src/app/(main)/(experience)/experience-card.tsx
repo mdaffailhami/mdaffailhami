@@ -4,11 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 import { ExperienceDetail } from "./experience-detail";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
-import type { PublicExperience } from "@/lib/types/database";
+import type { Experience } from "@/lib/db/types";
 import { formatPeriod } from "@/lib/utils/date";
 
 type ExperienceCardProps = {
-  experience: PublicExperience;
+  experience: Experience;
 };
 
 export default function ExperienceCard({ experience }: ExperienceCardProps) {

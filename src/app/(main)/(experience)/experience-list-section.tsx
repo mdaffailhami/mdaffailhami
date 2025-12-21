@@ -7,12 +7,12 @@ import { ArrowDownIcon, ArrowUpIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useBreakpoint } from "@/hooks";
 import { AnimateIn } from "@/components/animation/animate-in";
-import type { PublicExperience } from "@/lib/types/database";
+import type { Experience } from "@/lib/db/types";
 
 export function ExperienceListSection({
   experiences,
 }: {
-  experiences: PublicExperience[];
+  experiences: Experience[];
 }) {
   const breakpoint = useBreakpoint();
   // If not hydrated yet, assume it's not mobile

@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/drawer";
 import { useBreakpoint } from "@/hooks";
 import { Button } from "@/components/ui/button";
-import type { PublicExperience } from "@/lib/types/database";
+import type { Experience } from "@/lib/db/types";
 import {
   ExternalLink,
   LinkedinIcon,
@@ -32,7 +32,7 @@ import { GradientOverlay } from "@/components/common/gradient-overlay";
 import { formatPeriod } from "@/lib/utils/date";
 
 interface ExperienceDetailProps {
-  experience: PublicExperience;
+  experience: Experience;
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
@@ -86,7 +86,7 @@ export function ExperienceDetail({
   );
 }
 
-function ExperienceContent({ experience }: { experience: PublicExperience }) {
+function ExperienceContent({ experience }: { experience: Experience }) {
   // Create image slides
   const imageSlides = experience.images.map((image, i: number) => (
     <div key={i} className="relative aspect-video">
@@ -133,7 +133,7 @@ function ExperienceContent({ experience }: { experience: PublicExperience }) {
         {/* Links */}
         {experience.links.length > 0 && (
           <div className="flex flex-col gap-2 pt-2">
-            {experience.links.map((link: PublicExperience["links"][number]) => {
+            {experience.links.map((link: Experience["links"][number]) => {
               const Icon = getLinkIcon(link.type);
               return (
                 <Link

@@ -2,9 +2,9 @@
 
 import { LinkIconBadge } from "@/components/common/link-icon-badge";
 import { useBreakpoint } from "@/hooks";
-import { PublicTech } from "@/lib/types/database";
+import { Tech } from "@/lib/db/types";
 
-export function TechListSection({ techs }: { techs: PublicTech[] }) {
+export function TechListSection({ techs }: { techs: Tech[] }) {
   const breakpoint = useBreakpoint();
 
   return (

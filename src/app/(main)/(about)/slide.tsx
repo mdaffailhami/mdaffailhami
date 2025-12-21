@@ -12,6 +12,7 @@ import { asc, eq } from "drizzle-orm";
 export default async function AboutSlide() {
   const techs = await db
     .select({
+      id: techsTable.id,
       label: techsTable.label,
       url: techsTable.url,
       icon: techsTable.icon,

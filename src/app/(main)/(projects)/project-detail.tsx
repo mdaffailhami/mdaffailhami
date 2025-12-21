@@ -21,7 +21,7 @@ import {
 import { useBreakpoint } from "@/hooks";
 import { Button } from "@/components/ui/button";
 import { LinkIconBadge } from "@/components/common/link-icon-badge";
-import type { PublicProject, PublicTech } from "@/lib/types/database";
+import type { Project, Tech } from "@/lib/db/types";
 import {
   ExternalLink,
   Download,
@@ -36,7 +36,7 @@ import Link from "next/link";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
 
 type ProjectDetailProps = {
-  project: PublicProject;
+  project: Project;
   open: boolean;
   onOpenChange: (open: boolean) => void;
 };
@@ -90,8 +90,8 @@ export function ProjectDetail({
   );
 }
 
-function ProjectContent({ project }: { project: PublicProject }) {
-  const getButtonIcon = (type: PublicProject["links"][number]["type"]) => {
+function ProjectContent({ project }: { project: Project }) {
+  const getButtonIcon = (type: Project["links"][number]["type"]) => {
     switch (type) {
       case "github":
         return FiGithub;
@@ -131,7 +131,7 @@ function ProjectContent({ project }: { project: PublicProject }) {
         <div>
           <h3 className="text-sm font-semibold mb-2">Technologies Used</h3>
           <div className="flex flex-wrap gap-2">
-            {project.techs.map((tech: PublicTech) => (
+            {project.techs.map((tech: Tech) => (
               <LinkIconBadge
                 key={tech.label}
                 icon={tech.icon}
@@ -146,7 +146,7 @@ function ProjectContent({ project }: { project: PublicProject }) {
         {/* Action Buttons */}
         {project.links.length > 0 && (
           <div className="flex flex-wrap gap-3 pt-2">
-            {project.links.map((link: PublicProject["links"][number]) => {
+            {project.links.map((link: Project["links"][number]) => {
               const Icon = link.icon || getButtonIcon(link.type);
               return (
                 <Link

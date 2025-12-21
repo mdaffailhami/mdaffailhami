@@ -17,6 +17,7 @@ export default async function ProjectsSlide() {
     .select({
       projectId: projectsTechsTable.projectId,
       tech: {
+        id: techsTable.id,
         label: techsTable.label,
         url: techsTable.url,
         icon: techsTable.icon,
@@ -31,10 +32,7 @@ export default async function ProjectsSlide() {
       .filter((pt) => pt.projectId === project.id)
       .map((pt) => pt.tech);
 
-    // Remove ID to match PublicProject type if strictly enforced,
-    // though passing ID inside Server Component is fine, separating logic is good.
-    const { id, ...rest } = project;
-    return { ...rest, techs };
+    return { ...project, techs };
   });
 
   return (
