@@ -5,7 +5,7 @@ import { useState } from "react";
 import { ExperienceDetail } from "./experience-detail";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
 import type { Experience } from "@/lib/db/types";
-import { formatPeriod } from "@/lib/utils/date";
+import { formatPeriod } from "@/lib/utils";
 
 type ExperienceCardProps = {
   experience: Experience;

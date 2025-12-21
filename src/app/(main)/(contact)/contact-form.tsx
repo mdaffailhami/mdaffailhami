@@ -3,7 +3,7 @@
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SendIcon, LoaderCircleIcon } from "lucide-react";
-import { sendMessage } from "@/actions";
+import { sendMessage } from "@/lib/api/messages";
 import { Message } from "@/lib/db/types";
 import {
   Field,

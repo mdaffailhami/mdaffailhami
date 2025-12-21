@@ -29,7 +29,7 @@ import {
 import { Carousel } from "@/components/common/carousel";
 import Link from "next/link";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
-import { formatPeriod } from "@/lib/utils/date";
+import { formatPeriod } from "@/lib/utils";
 
 interface ExperienceDetailProps {
   experience: Experience;
