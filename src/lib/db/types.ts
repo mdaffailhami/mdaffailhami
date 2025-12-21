@@ -3,6 +3,7 @@ import { InferSelectModel } from "drizzle-orm";
 import {
   experiencesTable,
   projectsTable,
+  settingsTable,
   socialsTable,
   techsTable,
 } from "@/lib/db/schema";
@@ -16,6 +17,8 @@ export type Experience = InferSelectModel<typeof experiencesTable>;
 export type Project = InferSelectModel<typeof projectsTable> & {
   techs: Tech[];
 };
+
+export type Setting = InferSelectModel<typeof settingsTable>;
 
 export const Message = z.object({
   name: z

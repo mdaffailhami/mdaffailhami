@@ -91,6 +91,12 @@ export const messagesTable = pgTable("messages", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
+export const settingsTable = pgTable("settings", {
+  key: text("key").primaryKey(),
+  value: jsonb("value").notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
 // Relational Definitions
 export const projectsRelations = relations(projectsTable, ({ many }) => ({
   projectsTechs: many(projectsTechsTable),

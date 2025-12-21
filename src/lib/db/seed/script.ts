@@ -8,6 +8,7 @@ import {
   projectsTechsTable,
   socialsTable,
   techsTable,
+  settingsTable,
 } from "../schema";
 
 import { techs } from "./data/techs";
@@ -15,6 +16,7 @@ import { projects } from "./data/projects";
 import { experiences } from "./data/experiences";
 import { favoriteTechs } from "./data/favorite-techs";
 import { socials } from "./data/socials";
+import { settings } from "./data/settings";
 import postgres from "postgres";
 import { drizzle } from "drizzle-orm/postgres-js";
 
@@ -28,6 +30,7 @@ async function main() {
       projectsTechsTable,
       socialsTable,
       techsTable,
+      settingsTable,
     },
   });
 
@@ -42,6 +45,7 @@ async function main() {
     await db.delete(experiencesTable);
     await db.delete(projectsTable);
     await db.delete(techsTable);
+    await db.delete(settingsTable);
 
     // 2. Insert Techs
     console.log("🚀 Inserting dummy technologies...");
@@ -102,6 +106,12 @@ async function main() {
     console.log("💼 Inserting dummy experiences...");
     for (const experience of experiences) {
       await db.insert(experiencesTable).values(experience);
+    }
+
+    // 7. Insert Settings
+    console.log("⚙️ Inserting dummy settings...");
+    for (const setting of settings) {
+      await db.insert(settingsTable).values(setting);
     }
 
     console.log("✅ Seeding completed successfully!");
