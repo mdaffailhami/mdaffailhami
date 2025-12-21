@@ -116,3 +116,11 @@ export const projectsTechsRelations = relations(
     }),
   })
 );
+
+export const messagesTable = pgTable("messages", {
+  id: uuid("id").defaultRandom().primaryKey(),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  message: text("message").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});

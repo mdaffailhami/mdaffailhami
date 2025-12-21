@@ -1,16 +1,34 @@
+import { z } from "zod";
+import { InferSelectModel } from "drizzle-orm";
 import {
   experiencesTable,
   projectsTable,
   socialsTable,
   techsTable,
 } from "@/lib/db/schema";
-import { InferSelectModel } from "drizzle-orm";
 
 export type Tech = InferSelectModel<typeof techsTable>;
+
 export type Social = InferSelectModel<typeof socialsTable>;
+
 export type Experience = InferSelectModel<typeof experiencesTable>;
 
-// For projects, we often want the techs relation included
 export type Project = InferSelectModel<typeof projectsTable> & {
   techs: Tech[];
 };
+
+export const Message = z.object({
+  name: z
+    .string()
+    .min(2, { message: "Name must be at least 2 characters." })
+    .max(100, { message: "Name must be less than 100 characters." }),
+  email: z
+    .email({ message: "Please enter a valid email address." })
+    .max(255, { message: "Email must be less than 255 characters." }),
+  message: z
+    .string()
+    .min(10, { message: "Message must be at least 10 characters." })
+    .max(5000, { message: "Message must be less than 5000 characters." }),
+});
+
+export type Message = z.infer<typeof Message>;

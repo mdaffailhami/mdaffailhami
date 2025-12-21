@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { Slide } from "@/components/common/slide";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
 import { AnimateIn } from "@/components/animation/animate-in";
-import { ContactFormSection } from "./contact-form-section";
+import { ContactForm } from "./contact-form";
 import { SocialListSection } from "./social-list-section";
 import { db } from "@/lib/db";
 import { socialsTable } from "@/lib/db/schema";
@@ -83,7 +83,7 @@ export default async function ContactSlide() {
                 <h3 className="text-2xl font-semibold mb-6 max-lg:hidden group-hover:text-primary transition-colors">
                   Send Me a Message
                 </h3>
-                <ContactFormSection />
+                <ContactForm />
               </div>
             </div>
           </AnimateIn>
