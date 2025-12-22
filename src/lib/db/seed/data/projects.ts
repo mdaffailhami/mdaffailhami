@@ -7,27 +7,6 @@ export type ProjectInsert = typeof projectsTable.$inferInsert & {
 
 export const projects: ProjectInsert[] = [
   {
-    title: "Daffa's Portfolio (v3)",
-    description:
-      "My personal web developed using React was designed to showcase my professional profile, skills, projects, and contact information. This web app serves as a comprehensive portfolio.",
-    start: new Date("2024-12-01"),
-    end: null,
-    images: ["https://picsum.photos/seed/portfoliov3/800/450"],
-    techs: [techs.react, techs.nextjs, techs.tailwindcss, techs.shadcnui],
-    links: [
-      {
-        type: "website",
-        label: "Live Demo",
-        url: "https://dev.mdaffailhami.my.id/",
-      },
-      {
-        type: "github",
-        label: "Source Code",
-        url: "https://github.com/mdaffailhami/mdaffailhami/",
-      },
-    ],
-  },
-  {
     title: "CryptoSharia",
     description:
       "CryptoSharia is an Islamic-based crypto education platform that bridges Web3 innovation with Sharia principles. It was created to help the Muslim community understand, analyze, and invest in crypto assets ethically and responsibly.",
@@ -47,6 +26,29 @@ export const projects: ProjectInsert[] = [
         url: "https://github.com/cryptosharia/cryptosharia/",
       },
     ],
+    order: 2,
+  },
+  {
+    title: "Daffa's Portfolio (v3)",
+    description:
+      "My personal web developed using React was designed to showcase my professional profile, skills, projects, and contact information. This web app serves as a comprehensive portfolio.",
+    start: new Date("2024-12-01"),
+    end: null,
+    images: ["https://picsum.photos/seed/portfoliov3/800/450"],
+    techs: [techs.react, techs.nextjs, techs.tailwindcss, techs.shadcnui],
+    links: [
+      {
+        type: "website",
+        label: "Live Demo",
+        url: "https://dev.mdaffailhami.my.id/",
+      },
+      {
+        type: "github",
+        label: "Source Code",
+        url: "https://github.com/mdaffailhami/mdaffailhami/",
+      },
+    ],
+    order: 1,
   },
   {
     title: "CIMSA ULM",
@@ -126,6 +128,7 @@ export const projects: ProjectInsert[] = [
         url: "https://github.com/mdaffailhami/balabuh",
       },
     ],
+    order: 3,
   },
   {
     title: "GasKu",

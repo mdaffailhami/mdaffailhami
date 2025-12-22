@@ -20,12 +20,8 @@ import {
 import { useBreakpoint } from "@/hooks";
 import { Button } from "@/components/ui/button";
 import type { Experience } from "@/lib/db/types";
-import {
-  ExternalLink,
-  LinkedinIcon,
-  GlobeIcon,
-  ExternalLinkIcon,
-} from "lucide-react";
+import { GlobeIcon, ExternalLinkIcon } from "lucide-react";
+import { SiLinkedin } from "react-icons/si";
 import { Carousel } from "@/components/common/carousel";
 import Link from "next/link";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
@@ -102,7 +98,7 @@ function ExperienceContent({ experience }: { experience: Experience }) {
   const getLinkIcon = (type: string) => {
     switch (type) {
       case "linkedin":
-        return LinkedinIcon;
+        return SiLinkedin;
       case "website":
         return GlobeIcon;
       default:

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
 import type { Social } from "@/lib/db/types";

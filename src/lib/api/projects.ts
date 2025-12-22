@@ -18,7 +18,7 @@ export async function getProjects(): Promise<ServerResponse<Project[]>> {
           },
         },
       },
-      orderBy: (t, { desc }) => [desc(t.end)],
+      orderBy: (t, { asc, desc }) => [asc(t.order), desc(t.end)],
     });
 
     // Map to the expected flat Project type structure

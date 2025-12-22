@@ -8,6 +8,13 @@
       "when": 1766374111271,
       "tag": "0000_new_luminals",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1766388405868,
+      "tag": "0001_slimy_paladin",
+      "breakpoints": true
     }
   ]
 }

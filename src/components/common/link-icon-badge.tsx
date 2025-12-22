@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import Link from "next/link";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
-import Image from "next/image";
 import { SvgRenderer } from "./svg-renderer";
 import { CSSProperties } from "react";
 

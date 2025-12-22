@@ -40,6 +40,7 @@ export const projectsTable = pgTable("projects", {
       }[]
     >()
     .notNull(),
+  order: integer("order"),
   ...mandatoryFields,
 });
 
