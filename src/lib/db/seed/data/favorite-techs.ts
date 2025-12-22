@@ -2,10 +2,15 @@ import { techs, TechInsert } from "./techs";
 
 export const favoriteTechs: TechInsert[] = [
   techs.svelte,
-  techs.react,
   techs.nextjs,
+  techs.react,
   techs.tailwindcss,
-  techs.typescript,
-  techs.postgresql,
+  techs.shadcnui,
   techs.drizzle,
+  techs.postgresql,
+  techs.supabase,
+  techs.vercel,
+  techs.docker,
+  techs.antigravity,
+  techs.ubuntu,
 ];
