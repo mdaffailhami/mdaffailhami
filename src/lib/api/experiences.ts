@@ -5,12 +5,12 @@ import { Experience } from "@/lib/db/types";
 import { ServerResponse } from "@/lib/types";
 
 /**
- * Fetches all work experiences ordered by start date (descending).
+ * Fetches all work experiences ordered by end date (descending).
  */
 export async function getExperiences(): Promise<ServerResponse<Experience[]>> {
   try {
     const experiences = await db.query.experiencesTable.findMany({
-      orderBy: (t, { desc }) => [desc(t.start)],
+      orderBy: (t, { desc }) => [desc(t.end)],
     });
 
     return {

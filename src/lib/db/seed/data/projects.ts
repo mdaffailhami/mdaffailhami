@@ -10,6 +10,8 @@ export const projects: ProjectInsert[] = [
     title: "EcoManager Pro",
     description:
       "A comprehensive sustainability tracking platform for modern enterprises, built to monitor carbon footprints in real-time.",
+    start: new Date("2023-01-01"),
+    end: new Date("2023-06-30"),
     images: [
       "https://picsum.photos/seed/eco1/800/450",
       "https://picsum.photos/seed/eco2/800/450",
@@ -28,6 +30,8 @@ export const projects: ProjectInsert[] = [
     title: "Nova Stream",
     description:
       "A decentralized video streaming service leveraging Web3 technologies for peer-to-peer content delivery.",
+    start: new Date("2023-07-01"),
+    end: null, // Ongoing
     images: ["https://picsum.photos/seed/nova1/800/450"],
     techs: [techs.nextjs, techs.typescript, techs.drizzle],
     links: [
@@ -43,6 +47,8 @@ export const projects: ProjectInsert[] = [
     title: "Zenith UI Kit",
     description:
       "A high-performance design system and component library built for speed and accessibility.",
+    start: new Date("2022-01-01"),
+    end: new Date("2022-12-31"),
     images: ["https://picsum.photos/seed/zenith1/800/450"],
     techs: [techs.react, techs.tailwindcss, techs.typescript],
     links: [

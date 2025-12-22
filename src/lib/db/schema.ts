@@ -20,6 +20,8 @@ export const projectsTable = pgTable("projects", {
   id: uuid("id").defaultRandom().primaryKey(),
   title: text("title").notNull(),
   description: text("description").notNull(),
+  start: timestamp("start").notNull(),
+  end: timestamp("end"), // Nullable for "Ongoing"
   images: jsonb("images").$type<string[]>().notNull(),
   links: jsonb("links")
     .$type<

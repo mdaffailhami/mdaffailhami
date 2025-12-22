@@ -22,18 +22,13 @@ import { useBreakpoint } from "@/hooks";
 import { Button } from "@/components/ui/button";
 import { LinkIconBadge } from "@/components/common/link-icon-badge";
 import type { Project, Tech } from "@/lib/db/types";
-import {
-  ExternalLink,
-  Download,
-  GlobeIcon,
-  DownloadIcon,
-  ExternalLinkIcon,
-} from "lucide-react";
+import { GlobeIcon, DownloadIcon, ExternalLinkIcon } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
 import { cn } from "@/lib/utils";
 import { Carousel } from "@/components/common/carousel";
 import Link from "next/link";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
+import { formatPeriod } from "@/lib/utils";
 
 type ProjectDetailProps = {
   project: Project;
@@ -125,11 +120,18 @@ function ProjectContent({ project }: { project: Project }) {
 
       {/* Project Description */}
       <div className="space-y-4 mt-4">
-        <p className="text-muted-foreground">{project.description}</p>
+        <p className="text-muted-foreground leading-relaxed">
+          {project.description}
+        </p>
 
         {/* Technologies Section */}
         <div>
-          <h3 className="text-sm font-semibold mb-2">Technologies Used</h3>
+          <div className="flex justify-between">
+            <h3 className="text-sm font-semibold mb-2">Technologies Used</h3>
+            <span className="text-sm text-muted-foreground">
+              {formatPeriod(project.start, project.end)}
+            </span>
+          </div>
           <div className="flex flex-wrap gap-2">
             {project.techs.map((tech: Tech) => (
               <LinkIconBadge
