@@ -21,7 +21,7 @@ import postgres from "postgres";
 import { drizzle } from "drizzle-orm/postgres-js";
 
 async function main() {
-  const conn = postgres(process.env.DATABASE_URL!);
+  const conn = postgres(process.env.POSTGRES_URL!);
   const db = drizzle(conn, {
     schema: {
       experiencesTable,
