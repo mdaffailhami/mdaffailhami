@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
 import type { Social } from "@/lib/db/types";
+import { SvgRenderer } from "@/components/common/svg-renderer";
+import { CSSProperties } from "react";
 
 export function SocialListSection({ socials }: { socials: Social[] }) {
   return (
@@ -19,21 +21,15 @@ export function SocialListSection({ socials }: { socials: Social[] }) {
           <GradientOverlay />
           <div className="relative flex items-center justify-center lg:justify-start gap-3">
             <div className="shrink-0 relative size-6">
-              {/* Light Mode Icon */}
-              <Image
-                src={social.icon.light}
-                alt={social.label}
-                fill
-                unoptimized
-                className="object-contain dark:hidden transition-transform duration-300 group-hover:scale-110"
-              />
-              {/* Dark Mode Icon */}
-              <Image
-                src={social.icon.dark}
-                alt={social.label}
-                fill
-                unoptimized
-                className="object-contain hidden dark:block transition-transform duration-300 group-hover:scale-110"
+              <SvgRenderer
+                svg={social.icon.svg}
+                style={
+                  {
+                    "--light": social.icon.light,
+                    "--dark": social.icon.dark,
+                  } as CSSProperties
+                }
+                className="text-(--light) dark:text-(--dark)"
               />
             </div>
             <span className="hidden lg:block font-medium text-foreground group-hover:text-primary transition-colors">

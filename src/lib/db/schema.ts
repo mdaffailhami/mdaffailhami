@@ -18,7 +18,9 @@ const mandatoryFields = {
 export const techsTable = pgTable("techs", {
   label: text("label").notNull(),
   url: text("url").notNull(),
-  icon: jsonb("icon").$type<{ light: string; dark: string }>().notNull(),
+  icon: jsonb("icon")
+    .$type<{ svg: string; light: string; dark: string }>()
+    .notNull(),
   ...mandatoryFields,
 });
 
@@ -86,7 +88,9 @@ export const favoriteTechsTable = pgTable("favorite_techs", {
 export const socialsTable = pgTable("socials", {
   label: text("label").notNull(),
   url: text("url").notNull(),
-  icon: jsonb("icon").$type<{ light: string; dark: string }>().notNull(),
+  icon: jsonb("icon")
+    .$type<{ svg: string; light: string; dark: string }>()
+    .notNull(),
   order: integer("order").notNull(),
   ...mandatoryFields,
 });
