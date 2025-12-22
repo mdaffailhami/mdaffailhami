@@ -9,15 +9,20 @@ import {
   integer,
 } from "drizzle-orm/pg-core";
 
-export const techsTable = pgTable("techs", {
+const mandatoryFields = {
   id: uuid("id").defaultRandom().primaryKey(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+};
+
+export const techsTable = pgTable("techs", {
   label: text("label").notNull(),
   url: text("url").notNull(),
   icon: jsonb("icon").$type<{ light: string; dark: string }>().notNull(),
+  ...mandatoryFields,
 });
 
 export const projectsTable = pgTable("projects", {
-  id: uuid("id").defaultRandom().primaryKey(),
   title: text("title").notNull(),
   description: text("description").notNull(),
   start: timestamp("start").notNull(),
@@ -33,24 +38,24 @@ export const projectsTable = pgTable("projects", {
       }[]
     >()
     .notNull(),
+  ...mandatoryFields,
 });
 
 export const projectsTechsTable = pgTable(
   "projects_techs",
   {
-    id: uuid("id").defaultRandom().primaryKey(),
     projectId: uuid("project_id")
       .notNull()
       .references(() => projectsTable.id, { onDelete: "cascade" }),
     techId: uuid("tech_id")
       .notNull()
       .references(() => techsTable.id, { onDelete: "cascade" }),
+    ...mandatoryFields,
   },
   (t) => [unique().on(t.projectId, t.techId)]
 );
 
 export const experiencesTable = pgTable("experiences", {
-  id: uuid("id").defaultRandom().primaryKey(),
   company: text("company").notNull(),
   role: text("role").notNull(),
   start: timestamp("start").notNull(),
@@ -67,36 +72,36 @@ export const experiencesTable = pgTable("experiences", {
       }[]
     >()
     .notNull(),
+  ...mandatoryFields,
 });
 
 export const favoriteTechsTable = pgTable("favorite_techs", {
-  id: uuid("id").defaultRandom().primaryKey(),
   techId: uuid("tech_id")
     .notNull()
     .references(() => techsTable.id, { onDelete: "cascade" }),
   order: integer("order").notNull(),
+  ...mandatoryFields,
 });
 
 export const socialsTable = pgTable("socials", {
-  id: uuid("id").defaultRandom().primaryKey(),
   label: text("label").notNull(),
   url: text("url").notNull(),
   icon: jsonb("icon").$type<{ light: string; dark: string }>().notNull(),
   order: integer("order").notNull(),
+  ...mandatoryFields,
 });
 
 export const messagesTable = pgTable("messages", {
-  id: uuid("id").defaultRandom().primaryKey(),
   name: text("name").notNull(),
   email: text("email").notNull(),
   message: text("message").notNull(),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
+  ...mandatoryFields,
 });
 
 export const settingsTable = pgTable("settings", {
-  key: text("key").primaryKey(),
+  key: text("key").notNull().unique(),
   value: jsonb("value").notNull(),
-  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+  ...mandatoryFields,
 });
 
 // Relational Definitions

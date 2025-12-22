@@ -5,29 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1766282231931,
-      "tag": "0000_reflective_mandrill",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1766287642373,
-      "tag": "0001_wise_mercury",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1766334026815,
-      "tag": "0002_nosy_serpent_society",
-      "breakpoints": true
-    },
-    {
-      "idx": 3,
-      "version": "7",
-      "when": 1766369947233,
-      "tag": "0003_silly_bulldozer",
+      "when": 1766374111271,
+      "tag": "0000_new_luminals",
       "breakpoints": true
     }
   ]
