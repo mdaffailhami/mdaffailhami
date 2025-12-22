@@ -4,25 +4,17 @@ export type SettingInsert = typeof settingsTable.$inferInsert;
 
 export const settings: SettingInsert[] = [
   {
-    key: "app_title",
-    value: "Daffa Ilhami",
-  },
-  {
-    key: "app_description",
-    value: "Muhammad Daffa Ilhami's Portfolio",
-  },
-  {
     key: "name",
-    value: "Daffa Ilhami",
+    value: "Lorem Ipsum",
   },
   {
     key: "bio",
-    value: "Tech Enthusiast | Self-Taught Programmer | Lifelong Learner",
+    value: "Lorem Ipsum | Dolor Sit Amet | UWU Wadidaw",
   },
   {
     key: "about",
     value: `\
-I’m **Daffa**, a *passionate programmer* from **Indonesia** 🇮🇩 with over **5 years** of experience in the field.
+I’m **Lorem Ipsum**, a *passionate programmer* from **Indonesia** 🇮🇩 with over **5 years** of experience in the field.
 
 I started **programming** while I was still in **madrasah aliyah** 🏫 — so the trigger was actually **my own interest**, not college.
 

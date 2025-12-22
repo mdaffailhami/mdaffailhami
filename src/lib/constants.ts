@@ -6,7 +6,10 @@ import {
   MailIcon,
 } from "lucide-react";
 
-export const navs: {
+export const APP_TITLE = "Daffa Ilhami";
+export const APP_DESCRIPTION = "Muhammad Daffa Ilhami's Portfolio";
+
+export const NAVS: {
   label: string;
   Icon: React.ComponentType<{ className?: string }>;
   hash: string;

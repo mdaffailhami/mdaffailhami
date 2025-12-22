@@ -21,6 +21,7 @@ export type Project = InferSelectModel<typeof projectsTable> & {
 };
 
 export type Setting = InferSelectModel<typeof settingsTable>;
+export type Settings = Record<Setting["key"], Setting["value"]>;
 
 export const Message = createSelectSchema(messagesTable, {
   name: (s) =>
