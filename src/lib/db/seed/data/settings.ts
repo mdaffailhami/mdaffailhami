@@ -9,7 +9,7 @@ export const settings: SettingInsert[] = [
   },
   {
     key: "bio",
-    value: "Tech Enthusiast | Self-Taught Programmer | Full-Stack Developer",
+    value: "Tech Enthusiast | Self-taught Programmer | Fullstack Developer",
   },
   {
     key: "about",
