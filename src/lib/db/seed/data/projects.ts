@@ -52,8 +52,8 @@ export const projects: ProjectInsert[] = [
       techs.postgresql,
       techs.drizzle,
       techs.shadcnui,
-      techs.supabase,
       techs.nextjs,
+      techs.supabase,
     ],
     links: [
       {

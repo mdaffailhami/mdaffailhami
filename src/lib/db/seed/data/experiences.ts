@@ -67,6 +67,7 @@ export const experiences: ExperienceInsert[] = [
       "As a Mobile Developer intern at PT Aksamedia Mulia Digital, I focus on developing and maintaining cross-platform mobile applications. My role involves collaborating with a team to create innovative solutions, following best practices in the mobile development lifecycle, and continuously improving my skills in Flutter.",
     images: [
       "https://wrkmncssawszpcdmgbra.supabase.co/storage/v1/object/public/main/experiences/aksamedia/image-1.png",
+      "https://wrkmncssawszpcdmgbra.supabase.co/storage/v1/object/public/main/experiences/aksamedia/image-2.jpg",
     ],
     links: [
       {
