@@ -15,6 +15,13 @@
       "when": 1766388405868,
       "tag": "0001_slimy_paladin",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1766894158605,
+      "tag": "0002_sour_scourge",
+      "breakpoints": true
     }
   ]
 }

@@ -9,12 +9,12 @@ export const settings: SettingInsert[] = [
   },
   {
     key: "bio",
-    value: "Tech Enthusiast | Self-Taught Programmer | Lifelong Learner",
+    value: "Tech Enthusiast | Self-Taught Programmer | Full-Stack Developer",
   },
   {
     key: "about",
     value: `\
-I’m **Daffa Ilhami**, a *passionate programmer* from **Indonesia** 🇮🇩 with over **5 years** of experience in the field.
+I’m **Daffa**, a *passionate programmer* from **Indonesia** 🇮🇩 with over **5 years** of experience in the field.
 
 I started **programming** while I was still in **madrasah aliyah** 🏫 — so the trigger was actually **my own interest**, not college.
 

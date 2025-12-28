@@ -53,6 +53,7 @@ export const projectsTechsTable = pgTable(
     techId: uuid("tech_id")
       .notNull()
       .references(() => techsTable.id, { onDelete: "cascade" }),
+    order: integer("order").notNull(),
     ...mandatoryFields,
   },
   (t) => [unique().on(t.projectId, t.techId)]

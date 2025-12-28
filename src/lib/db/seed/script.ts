@@ -90,13 +90,15 @@ async function main() {
         .returning({ id: projectsTable.id });
 
       // Link Techs to Projects
-      for (const tech of projectTechsList) {
+      for (let i = 0; i < projectTechsList.length; i++) {
+        const tech = projectTechsList[i];
         const key = Object.keys(techs).find((k) => techs[k] === tech);
 
         if (key && techIdByKey[key]) {
           await db.insert(projectsTechsTable).values({
             projectId,
             techId: techIdByKey[key],
+            order: i + 1,
           });
         }
       }

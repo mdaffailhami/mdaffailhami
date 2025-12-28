@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cdn.simpleicons.org",
+        hostname: "wrkmncssawszpcdmgbra.supabase.co",
       },
       {
         protocol: "https",
