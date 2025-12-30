@@ -40,7 +40,7 @@ export function CallToActionButton() {
       }
     >
       <iframe
-        src="https://www.youtube.com/embed/2-plG_Rz2ls?si=fZcwQTqhidLh_n9-"
+        src="https://www.youtube.com/embed/fPZX8ts5igQ?si=gBU4kVPx3r8UQODw"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
