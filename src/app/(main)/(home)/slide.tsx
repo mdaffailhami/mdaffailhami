@@ -1,5 +1,5 @@
 import { Slide } from "@/components/common/slide";
-import { GetToKnowButton } from "./get-to-know-button";
+import { CallToActionButton } from "./call-to-action-button";
 import { HeroPicture } from "@/components/common/hero-picture";
 import { daffa1, daffa2 } from "@/assets/images";
 import { AnimateIn } from "@/components/animation/animate-in";
@@ -36,7 +36,7 @@ export default async function HomeSlide() {
           <p className="fl-text-base/lg md:fl-text-xs/lg text-muted-foreground mb-5">
             {bio}
           </p>
-          <GetToKnowButton />
+          <CallToActionButton />
         </AnimateIn>
       </div>
     </Slide>

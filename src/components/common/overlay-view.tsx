@@ -1,66 +1,45 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogTitle,
+  DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 import { XIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type OverlayViewProps = {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-  children: React.ReactNode;
-  title: string;
-  description: string;
-  showCloseButton?: boolean;
-  className?: string;
-  contentClassName?: string;
-};
-
 export function OverlayView({
-  open,
-  onOpenChange,
+  trigger,
   children,
-  title,
-  description,
-  showCloseButton = true,
   className,
-  contentClassName,
-}: OverlayViewProps) {
-  // Desktop view using Dialog
+  ...props
+}: {
+  trigger: React.ReactElement;
+} & React.ComponentProps<typeof DialogContent>) {
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog>
+      <DialogTrigger render={trigger} />
       <DialogContent
         className={cn(
-          "max-w-[95vw] max-h-[95vh] p-0 overflow-hidden",
+          "size-fit max-w-7xl! max-h-[90dvh]! p-0 rounded-none ring-0",
           className
         )}
+        showCloseButton={false}
+        {...props}
       >
-        {/* Title and Description */}
-        <DialogTitle className="sr-only">{title}</DialogTitle>
-        <DialogDescription className="sr-only">{description}</DialogDescription>
-
-        {/* Close Button */}
-        {showCloseButton && (
-          <button
-            onClick={() => onOpenChange(false)}
-            className="absolute right-4 top-4 z-50 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground"
-          >
-            <XIcon className="h-4 w-4" />
-            <span className="sr-only">Close</span>
-          </button>
-        )}
-
-        {/* Content */}
-        <div
-          className={cn(
-            "relative w-full h-full overflow-y-auto p-6",
-            contentClassName
-          )}
+        {children}
+        <DialogClose
+          render={
+            <Button
+              variant="outline"
+              size="default"
+              className="absolute -bottom-12 right-1/2 translate-x-1/2 text-white hover:text-white/80"
+            />
+          }
         >
-          {children}
-        </div>
+          <XIcon />
+          Close
+        </DialogClose>
       </DialogContent>
     </Dialog>
   );

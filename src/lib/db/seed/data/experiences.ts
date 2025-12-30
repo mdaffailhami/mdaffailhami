@@ -18,7 +18,7 @@ export const experiences: ExperienceInsert[] = [
       {
         type: "website",
         label: "Official Website",
-        url: "https://www.cryptosharia.id/",
+        url: "https://cryptosharia.id/",
       },
     ],
   },
@@ -36,7 +36,7 @@ export const experiences: ExperienceInsert[] = [
       {
         type: "website",
         label: "My Superprof Ad",
-        url: "https://www.superprof.co.id/programming-coding-passionate-self-taught-pemrograman-dengan-pengalaman-lebih-dari-tahun.html",
+        url: "https://superprof.co.id/programming-coding-passionate-self-taught-pemrograman-dengan-pengalaman-lebih-dari-tahun.html",
       },
     ],
   },
@@ -54,7 +54,7 @@ export const experiences: ExperienceInsert[] = [
       {
         type: "website",
         label: "Official Website",
-        url: "https://ulm.ac.id/",
+        url: "https://cimsa.ulm.ac.id/",
       },
     ],
   },
