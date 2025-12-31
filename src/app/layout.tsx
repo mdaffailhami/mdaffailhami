@@ -1,5 +1,6 @@
-import { Inter, Arvo } from "next/font/google";
 import "./globals.css";
+import { Inter, Arvo } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { daffa1Square } from "@/assets/images";
 import { APP_DESCRIPTION, APP_TITLE } from "@/lib/constants";
 import { Metadata } from "next";
@@ -80,6 +81,9 @@ export default async function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${arvo.variable}`}
     >
+      {/* Google Tag Manager */}
+      <GoogleTagManager gtmId="GTM-PW7JWRRS" />
+
       <body className={`antialiased font-sans transition duration-300`}>
         <RootProviders>{children}</RootProviders>
       </body>
