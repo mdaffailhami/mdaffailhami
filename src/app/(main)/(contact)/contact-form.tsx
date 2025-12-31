@@ -41,7 +41,6 @@ export function ContactForm() {
   // 2. Define Submission Handler
   // This function ONLY runs if Zod validation passes successfully.
   const onSubmit = async (data: MessageInsert) => {
-    console.log(data);
     const defaultErrorMessage = "Failed to send message";
     try {
       // 3. Server Action Call

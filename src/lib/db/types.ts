@@ -40,9 +40,14 @@ export const Message = createSelectSchema(messagesTable, {
     .max(255, { message: "Email must be at most 255 characters long" }),
 });
 
-export const MessageInsert = Message.omit({ id: true, createdAt: true });
-export const MessageUpdate = MessageInsert.partial(); // For future example on creating an Update Type
+export const MessageInsert = Message.pick({
+  name: true,
+  email: true,
+  message: true,
+});
+
+// export const MessageUpdate = MessageInsert.partial(); // For future example on creating an Update Type
 
 export type Message = z.infer<typeof Message>;
 export type MessageInsert = z.infer<typeof MessageInsert>;
-export type MessageUpdate = z.infer<typeof MessageUpdate>;
+// export type MessageUpdate = z.infer<typeof MessageUpdate>;
