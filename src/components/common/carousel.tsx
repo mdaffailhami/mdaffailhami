@@ -74,7 +74,7 @@ export function Carousel({
           {items.map((item, index) => (
             <div
               key={`slide-${index + 1}`}
-              className={"min-w-full snap-center"}
+              className={"min-w-full snap-center snap-always"}
             >
               {item}
             </div>
