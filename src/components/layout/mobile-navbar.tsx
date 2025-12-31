@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { cn, scrollTo } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
-import { navs } from "@/lib/constants";
+import { NAVS } from "@/lib/constants";
 import { useActiveSlide } from "@/contexts/active-slide";
 
 export function MobileNavbar() {
@@ -57,7 +57,7 @@ export function MobileNavbar() {
           style={indicatorStyle}
         />
 
-        {navs.map((nav) => {
+        {NAVS.map((nav) => {
           const isActive = `#${activeSlide}` === nav.hash;
 
           return (

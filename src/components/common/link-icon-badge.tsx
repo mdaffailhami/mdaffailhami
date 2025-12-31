@@ -3,6 +3,8 @@ import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import Link from "next/link";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
+import { SvgRenderer } from "./svg-renderer";
+import { CSSProperties } from "react";
 
 const linkIconBadgeVariants = cva(
   "bg-card gap-x-2 font-normal border-2 border-border transition-all duration-200 ease-in-out",
@@ -32,20 +34,15 @@ const iconSizeVariants = {
 };
 
 type LinkIconBadgeProps = VariantProps<typeof linkIconBadgeVariants> & {
-  icon: React.ComponentType<{
-    className?: string;
-    style?: React.CSSProperties;
-  }>;
+  icon: { svg: string; light: string; dark: string };
   label: string;
-  iconColor: string;
   href?: string;
   className?: string;
 };
 
 export function LinkIconBadge({
-  icon: Icon,
+  icon,
   label,
-  iconColor,
   size,
   href,
   className,
@@ -60,8 +57,16 @@ export function LinkIconBadge({
       )}
       {...props}
     >
-      <div className="shrink-0" style={{ color: iconColor }}>
-        <Icon className={iconSizeVariants[size || "md"]} />
+      <div className="shrink-0 flex items-center justify-center">
+        <div className={cn("relative", iconSizeVariants[size || "md"])}>
+          <SvgRenderer
+            svg={icon.svg}
+            style={
+              { "--light": icon.light, "--dark": icon.dark } as CSSProperties
+            }
+            className="text-(--light) dark:text-(--dark) w-full h-full"
+          />
+        </div>
       </div>
       <span>{label}</span>
     </Badge>

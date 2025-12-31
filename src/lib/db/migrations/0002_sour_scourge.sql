@@ -1,0 +1,1 @@
+ALTER TABLE "projects_techs" ADD COLUMN "order" integer NOT NULL;

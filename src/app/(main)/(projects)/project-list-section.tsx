@@ -1,12 +1,12 @@
 "use client";
 
 import { ProjectCard } from "./project-card";
-import { projects } from "@/lib/database/projects";
 import { Carousel } from "@/components/common/carousel";
 import { useBreakpoint } from "@/hooks";
 import { AnimateIn } from "@/components/animation/animate-in";
+import type { Project } from "@/lib/db/types";
 
-export function ProjectListSection() {
+export function ProjectListSection({ projects }: { projects: Project[] }) {
   // Limit to 9 projects and group them into slides of 3
   const breakpoint = useBreakpoint();
 

@@ -1,8 +1,11 @@
 import { Slide } from "@/components/common/slide";
 import { AnimateIn } from "@/components/animation/animate-in";
 import { ProjectListSection } from "./project-list-section";
+import { getProjects } from "@/lib/api/projects";
 
-export default function ProjectsSlide() {
+export default async function ProjectsSlide() {
+  const projects = (await getProjects()).data ?? [];
+
   return (
     <Slide id="projects">
       <div className="container min-h-full mx-auto flex flex-col justify-center items-center px-3 lg:px-5">
@@ -11,7 +14,7 @@ export default function ProjectsSlide() {
             My Projects
           </h1>
         </AnimateIn>
-        <ProjectListSection />
+        <ProjectListSection projects={projects} />
       </div>
     </Slide>
   );

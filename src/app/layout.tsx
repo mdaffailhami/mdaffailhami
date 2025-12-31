@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
 import { Inter, Arvo } from "next/font/google";
 import "./globals.css";
+import { daffa1Square } from "@/assets/images";
+import { APP_DESCRIPTION, APP_TITLE } from "@/lib/constants";
+import { Metadata } from "next";
 import RootProviders from "./providers";
-import { config } from "@/lib/constants";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,13 +21,55 @@ const arvo = Arvo({
 //   subsets: ["latin"],
 // });
 
-export const metadata: Metadata = config.metadata;
-
 // export const viewport: Viewport = {
 //   viewportFit: "cover",
 // };
 
-export default function RootLayout({
+export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
+  title: APP_TITLE,
+  description: APP_DESCRIPTION,
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/site.webmanifest",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: APP_TITLE,
+    title: APP_TITLE,
+    description: APP_DESCRIPTION,
+    countryName: "Indonesia",
+    emails: "mdaffailhami@gmail.com",
+    images: [
+      {
+        url: daffa1Square.src,
+        width: daffa1Square.width,
+        height: daffa1Square.height,
+        alt: APP_TITLE,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: APP_TITLE,
+    description: APP_DESCRIPTION,
+    images: [
+      {
+        url: daffa1Square.src,
+        width: daffa1Square.width,
+        height: daffa1Square.height,
+        alt: APP_TITLE,
+      },
+    ],
+  },
+};
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

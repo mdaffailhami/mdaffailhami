@@ -2,7 +2,7 @@ import { ThemeProvider } from "next-themes";
 
 import { ActiveSlideProvider } from "@/contexts/active-slide";
 
-export default function RootProviders({
+export default async function RootProviders({
   children,
 }: {
   children: React.ReactNode;

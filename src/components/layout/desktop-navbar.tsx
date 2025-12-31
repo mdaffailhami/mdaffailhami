@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { navs } from "@/lib/constants";
+import { NAVS } from "@/lib/constants";
 import { scrollTo } from "@/lib/utils";
 import { useActiveSlide } from "@/contexts/active-slide";
 
@@ -54,7 +54,7 @@ export function DesktopNavbar() {
           className="absolute inset-0 bg-primary/20 outline-2 outline-primary rounded-full transition-all duration-300 ease-in-out"
           style={indicatorStyle}
         />
-        {navs.map((nav) => (
+        {NAVS.map((nav) => (
           <Button
             key={nav.label}
             variant={"ghost"}

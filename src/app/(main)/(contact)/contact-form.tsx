@@ -3,8 +3,8 @@
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SendIcon, LoaderCircleIcon } from "lucide-react";
-import { sendMessage } from "@/actions";
-import { ContactForm } from "@/lib/types/contact";
+import { sendMessage } from "@/lib/api/messages";
+import { MessageInsert } from "@/lib/db/types";
 import {
   Field,
   FieldLabel,
@@ -15,14 +15,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
-export function ContactFormSection() {
+export function ContactForm() {
   // 1. Setup React Hook Form
   // useForm: The core hook that manages form state, validation, and submission.
   // We pass the generic type <ContactForm> so TS knows the shape of our data.
-  const form = useForm<ContactForm>({
+  const form = useForm<MessageInsert>({
     // zodResolver: Connects the Zod schema to React Hook Form validation.
     // It runs the Zod validation logic whenever the form changes or submits.
-    resolver: zodResolver(ContactForm),
+    resolver: zodResolver(MessageInsert),
     defaultValues: {
       name: "",
       email: "",
@@ -40,7 +40,7 @@ export function ContactFormSection() {
 
   // 2. Define Submission Handler
   // This function ONLY runs if Zod validation passes successfully.
-  const onSubmit = async (data: ContactForm) => {
+  const onSubmit = async (data: MessageInsert) => {
     const defaultErrorMessage = "Failed to send message";
     try {
       // 3. Server Action Call

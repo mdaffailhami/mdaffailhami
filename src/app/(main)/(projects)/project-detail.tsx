@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useTheme } from "next-themes";
 import {
   Dialog,
   DialogContent,
@@ -21,13 +20,14 @@ import {
 import { useBreakpoint } from "@/hooks";
 import { Button } from "@/components/ui/button";
 import { LinkIconBadge } from "@/components/common/link-icon-badge";
-import type { Project } from "@/lib/types/database";
-import { ExternalLink, Download } from "lucide-react";
+import type { Project, Tech } from "@/lib/db/types";
+import { GlobeIcon, DownloadIcon, ExternalLinkIcon } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
 import { cn } from "@/lib/utils";
 import { Carousel } from "@/components/common/carousel";
 import Link from "next/link";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
+import { formatPeriod } from "@/lib/utils";
 
 type ProjectDetailProps = {
   project: Project;
@@ -85,32 +85,32 @@ export function ProjectDetail({
 }
 
 function ProjectContent({ project }: { project: Project }) {
-  const { resolvedTheme } = useTheme();
-
-  const getButtonIcon = (type: string) => {
+  const getButtonIcon = (type: Project["links"][number]["type"]) => {
     switch (type) {
       case "github":
         return FiGithub;
-      case "demo":
-        return ExternalLink;
+      case "website":
+        return GlobeIcon;
       case "download":
-        return Download;
+        return DownloadIcon;
       default:
-        return ExternalLink;
+        return ExternalLinkIcon;
     }
   };
 
   // Create image slides
-  const imageSlides = project.images.map((image, i) => (
-    <div key={i} className="relative aspect-video">
-      <Image
-        src={image}
-        alt={`${project.title} - ${i + 1}`}
-        fill
-        className="object-contain rounded-md"
-      />
-    </div>
-  ));
+  const imageSlides = (project.images as string[]).map(
+    (image: string, i: number) => (
+      <div key={i} className="relative aspect-video">
+        <Image
+          src={image}
+          alt={`${project.title} - ${i + 1}`}
+          fill
+          className="object-contain rounded-md"
+        />
+      </div>
+    )
+  );
 
   return (
     <>
@@ -119,21 +119,25 @@ function ProjectContent({ project }: { project: Project }) {
 
       {/* Project Description */}
       <div className="space-y-4 mt-4">
-        <p className="text-muted-foreground">{project.description}</p>
+        <p className="text-muted-foreground leading-relaxed">
+          {project.description}
+        </p>
 
         {/* Technologies Section */}
         <div>
-          <h3 className="text-sm font-semibold mb-2">Technologies Used</h3>
+          <div className="flex justify-between">
+            <h3 className="text-sm font-semibold mb-2">Technologies Used</h3>
+            <span className="text-sm text-muted-foreground">
+              {formatPeriod(project.start, project.end)}
+            </span>
+          </div>
           <div className="flex flex-wrap gap-2">
-            {project.techs.map((tech) => (
+            {project.techs.map((tech: Tech) => (
               <LinkIconBadge
                 key={tech.label}
                 icon={tech.icon}
                 label={tech.label}
                 href={tech.url}
-                iconColor={
-                  resolvedTheme === "dark" ? tech.color.dark : tech.color.light
-                }
                 size="sm"
               />
             ))}
@@ -143,7 +147,7 @@ function ProjectContent({ project }: { project: Project }) {
         {/* Action Buttons */}
         {project.links.length > 0 && (
           <div className="flex flex-wrap gap-3 pt-2">
-            {project.links.map((link) => {
+            {project.links.map((link: Project["links"][number]) => {
               const Icon = link.icon || getButtonIcon(link.type);
               return (
                 <Link
@@ -159,7 +163,9 @@ function ProjectContent({ project }: { project: Project }) {
                       "dark:bg-white bg-[#181717] text-background hover:bg-[#181717]/80 hover:dark:bg-white/80":
                         link.type === "github",
                       "bg-primary hover:bg-primary/80 ":
-                        link.type === "project",
+                        link.type === "website" || link.type === "download",
+                      "bg-secondary hover:bg-secondary/80":
+                        link.type === "other",
                     })}
                   >
                     <Icon className="size-4" />

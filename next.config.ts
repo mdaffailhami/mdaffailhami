@@ -7,6 +7,18 @@ const nextConfig: NextConfig = {
   devIndicators: {
     position: "top-right",
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "wrkmncssawszpcdmgbra.supabase.co",
+      },
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+      },
+    ],
+  },
   async headers() {
     // Disable indexing for any non production environment
     if (process.env.VERCEL_ENV !== "production") {

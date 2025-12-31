@@ -2,11 +2,23 @@ import { Slide } from "@/components/common/slide";
 import { AnimateIn } from "@/components/animation/animate-in";
 import { TechListSection } from "./tech-list-section";
 import Markdown from "react-markdown";
-import { config } from "@/lib/constants";
 import { HeroPicture } from "@/components/common/hero-picture";
 import { daffa1, daffa2 } from "@/assets/images";
+import { getFavoriteTechs } from "@/lib/api/techs";
+import { getSettings } from "@/lib/api/settings";
 
-export default function AboutSlide() {
+export default async function AboutSlide() {
+  const [settings, techs] = await Promise.all([
+    (await getSettings()).data,
+    (await getFavoriteTechs()).data ?? [],
+  ]);
+
+  let about = "...";
+
+  if (settings) {
+    about = settings.about as string;
+  }
+
   return (
     <Slide id="about">
       <div className="fl-px-4/40 md:fl-px-[-2rem/10rem] flex flex-col lg:flex-row items-center justify-center min-h-full fl-gap-4/6">
@@ -31,9 +43,9 @@ export default function AboutSlide() {
               //   ),
               // }}
               >
-                {config.about}
+                {about}
               </Markdown>
-              <TechListSection />
+              <TechListSection techs={techs} />
             </div>
           </AnimateIn>
         </section>

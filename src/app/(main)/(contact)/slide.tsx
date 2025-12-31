@@ -2,8 +2,9 @@ import { cn } from "@/lib/utils";
 import { Slide } from "@/components/common/slide";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
 import { AnimateIn } from "@/components/animation/animate-in";
-import { ContactFormSection } from "./contact-form-section";
+import { ContactForm } from "./contact-form";
 import { SocialListSection } from "./social-list-section";
+import { getSocials } from "@/lib/api/socials";
 
 function CopyrightSection({ className }: { className?: string }) {
   return (
@@ -18,7 +19,9 @@ function CopyrightSection({ className }: { className?: string }) {
   );
 }
 
-export default function ContactSlide() {
+export default async function ContactSlide() {
+  const socials = (await getSocials()).data ?? [];
+
   return (
     <Slide id="contact">
       <div className="w-full px-3 lg:px-5 max-w-lg lg:max-w-6xl mx-auto flex flex-col justify-center min-h-full">
@@ -46,7 +49,7 @@ export default function ContactSlide() {
                 <h3 className="max-lg:hidden text-2xl font-semibold text-center lg:text-left">
                   Connect With Me
                 </h3>
-                <SocialListSection />
+                <SocialListSection socials={socials} />
               </div>
             </AnimateIn>
 
@@ -79,7 +82,7 @@ export default function ContactSlide() {
                 <h3 className="text-2xl font-semibold mb-6 max-lg:hidden group-hover:text-primary transition-colors">
                   Send Me a Message
                 </h3>
-                <ContactFormSection />
+                <ContactForm />
               </div>
             </div>
           </AnimateIn>

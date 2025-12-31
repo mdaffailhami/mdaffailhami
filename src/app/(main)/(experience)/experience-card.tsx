@@ -1,14 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import type { Experience } from "@/lib/types/database";
 import { useState } from "react";
 import { ExperienceDetail } from "./experience-detail";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
+import type { Experience } from "@/lib/db/types";
+import { formatPeriod } from "@/lib/utils";
 
-interface ExperienceCardProps {
+type ExperienceCardProps = {
   experience: Experience;
-}
+};
 
 export default function ExperienceCard({ experience }: ExperienceCardProps) {
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -24,13 +25,15 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
 
         <div className="relative flex gap-6 w-full h-full">
           {/* Company Image */}
-          <div className="max-md:hidden relative h-16 w-16 shrink-0 overflow-hidden rounded-full outline-2 outline-card bg-foreground">
-            <Image
-              src={experience.images[0]}
-              alt={experience.company}
-              fill
-              className="object-contain"
-            />
+          <div className="max-md:hidden relative h-16 w-16 shrink-0 overflow-hidden">
+            {experience.images[0] && (
+              <Image
+                src={experience.images[0]}
+                alt={experience.company}
+                fill
+                className="object-contain"
+              />
+            )}
           </div>
 
           {/* Content */}
@@ -45,8 +48,8 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
                   {experience.company}
                 </span>
               </div>
-              <span className="whitespace-nowrap text-[0.825rem] md:text-sm text-muted-foreground">
-                {experience.period}
+              <span className="whitespace-nowrap text-[0.825rem] md:text-sm text-muted-foreground transition-opacity">
+                {formatPeriod(experience.start, experience.end)}
               </span>
             </div>
 

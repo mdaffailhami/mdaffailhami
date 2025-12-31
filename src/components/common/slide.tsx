@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { useActiveSlide } from "@/contexts/active-slide";
-import { config } from "@/lib/constants";
+import { APP_TITLE } from "@/lib/constants";
 
 export function Slide({
   id,
@@ -35,12 +35,11 @@ export function Slide({
               setActiveSlide(id); // Update context
 
               // Update page title
-              const baseTitle = config.metadata.title as string;
 
-              let pageTitle = baseTitle;
+              let pageTitle = APP_TITLE;
 
               if (id !== "home") {
-                pageTitle = `${baseTitle} | ${
+                pageTitle = `${APP_TITLE} | ${
                   id.charAt(0).toUpperCase() + id.slice(1)
                 }`;
               }

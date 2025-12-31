@@ -19,11 +19,13 @@ import {
 } from "@/components/ui/drawer";
 import { useBreakpoint } from "@/hooks";
 import { Button } from "@/components/ui/button";
-import type { Experience } from "@/lib/types/database";
-import { ExternalLink } from "lucide-react";
+import type { Experience } from "@/lib/db/types";
+import { GlobeIcon, ExternalLinkIcon } from "lucide-react";
+import { SiLinkedin } from "react-icons/si";
 import { Carousel } from "@/components/common/carousel";
 import Link from "next/link";
 import { GradientOverlay } from "@/components/common/gradient-overlay";
+import { formatPeriod } from "@/lib/utils";
 
 interface ExperienceDetailProps {
   experience: Experience;
@@ -82,7 +84,7 @@ export function ExperienceDetail({
 
 function ExperienceContent({ experience }: { experience: Experience }) {
   // Create image slides
-  const imageSlides = experience.images.map((image, i) => (
+  const imageSlides = experience.images.map((image, i: number) => (
     <div key={i} className="relative aspect-video">
       <Image
         src={image}
@@ -93,6 +95,17 @@ function ExperienceContent({ experience }: { experience: Experience }) {
     </div>
   ));
 
+  const getLinkIcon = (type: string) => {
+    switch (type) {
+      case "linkedin":
+        return SiLinkedin;
+      case "website":
+        return GlobeIcon;
+      default:
+        return ExternalLinkIcon;
+    }
+  };
+
   return (
     <>
       {/* Image Carousel */}
@@ -100,35 +113,43 @@ function ExperienceContent({ experience }: { experience: Experience }) {
 
       {/* Experience Details */}
       <div className="space-y-4 mt-4">
-        {/* Company and Period */}
-        <div className="flex items-center justify-between">
+        <div className="flex justify-between items-start border-b pb-2 border-border/50">
           <h3 className="text-xl font-semibold text-primary">
             {experience.company}
           </h3>
           <span className="text-sm text-muted-foreground">
-            {experience.period}
+            {formatPeriod(experience.start, experience.end)}
           </span>
         </div>
 
-        {/* Description */}
         <p className="text-muted-foreground leading-relaxed">
           {experience.description}
         </p>
 
-        {/* Company Link */}
-        <Link
-          href={experience.companyUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button
-            variant="default"
-            className="w-full gap-2 mt-1 bg-primary hover:bg-primary/80"
-          >
-            <ExternalLink className="size-4" />
-            Visit Company
-          </Button>
-        </Link>
+        {/* Links */}
+        {experience.links.length > 0 && (
+          <div className="flex flex-col gap-2 pt-2">
+            {experience.links.map((link: Experience["links"][number]) => {
+              const Icon = getLinkIcon(link.type);
+              return (
+                <Link
+                  key={link.url}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    variant="default"
+                    className="w-full gap-2 bg-primary hover:bg-primary/80"
+                  >
+                    <Icon className="size-4" />
+                    {link.label}
+                  </Button>
+                </Link>
+              );
+            })}
+          </div>
+        )}
       </div>
     </>
   );
