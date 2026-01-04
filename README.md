@@ -16,7 +16,7 @@ Here are some of the **technologies** that I use:
 
 📝 **Note:** *These are the technologies **I'm currently actively playing with**, not a full representation of my whole skills.*
 
-<img width="810" height="102" alt="image" src="https://github.com/user-attachments/assets/3e48a2ab-1cfd-461f-82a9-6e49fd180e65" />
+<img width="807" height="101" alt="Tech Stack" src="https://github.com/user-attachments/assets/422f0702-af8c-4cd0-9e38-4c17c75d10e3" />
 
 
 ![](https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif)
