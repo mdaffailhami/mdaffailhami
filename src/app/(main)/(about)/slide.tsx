@@ -3,7 +3,7 @@ import { AnimateIn } from "@/components/animation/animate-in";
 import { TechListSection } from "./tech-list-section";
 import Markdown from "react-markdown";
 import { HeroPicture } from "@/components/common/hero-picture";
-import { daffa1, daffa2 } from "@/assets/images";
+import { daffa1, daffa2 } from "@/lib/assets/images";
 import { getFavoriteTechs } from "@/lib/api/techs";
 import { getSettings } from "@/lib/api/settings";
 

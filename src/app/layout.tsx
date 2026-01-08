@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Inter, Arvo } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
-import { daffa1Square } from "@/assets/images";
+import { daffa1Square } from "@/lib/assets/images";
 import { APP_DESCRIPTION, APP_TITLE } from "@/lib/constants";
 import { Metadata } from "next";
 import RootProviders from "./providers";

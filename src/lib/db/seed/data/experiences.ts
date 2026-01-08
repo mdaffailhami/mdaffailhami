@@ -5,7 +5,7 @@ export type ExperienceInsert = typeof experiencesTable.$inferInsert;
 export const experiences: ExperienceInsert[] = [
   {
     company: "CryptoSharia",
-    role: "Fullstack Developer",
+    role: "Fullstack Developer & Education Division",
     start: new Date("2025-06-01"),
     end: null,
     description:
@@ -43,7 +43,7 @@ export const experiences: ExperienceInsert[] = [
   {
     company: "CIMSA - Lambung Mangkurat University",
     role: "Frontend Developer",
-    start: new Date("2025-01-01"),
+    start: new Date("2024-12-01"),
     end: new Date("2025-02-28"),
     description:
       "During this period, I worked as a freelance web developer, primarily focusing on frontend development. The project that I worked on was the CIMSA ULM Organizational Profile Website. In this project, I was responsible for developing the frontend using React, ensuring a responsive and user-friendly experience. I also worked on integrating the REST API for seamless data communication and contributed to the backend by assisting in debugging and enhancing functionality.",

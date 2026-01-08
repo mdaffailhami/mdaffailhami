@@ -1,7 +1,7 @@
 import { Slide } from "@/components/common/slide";
 import { CallToActionButton } from "./call-to-action-button";
 import { HeroPicture } from "@/components/common/hero-picture";
-import { daffa1, daffa2 } from "@/assets/images";
+import { daffa1, daffa2 } from "@/lib/assets/images";
 import { AnimateIn } from "@/components/animation/animate-in";
 import { getSettings } from "@/lib/api/settings";
 

@@ -12,5 +12,6 @@ export const favoriteTechs: TechInsert[] = [
   techs.vercel,
   techs.docker,
   techs.antigravity,
+  // techs.geminiCli,
   techs.ubuntu,
 ];
