@@ -18,7 +18,7 @@ I’m **Daffa**, a **Fullstack Programmer (frontend & backend generalist)** from
 
 I started programming back in *madrasah aliyah* 🏫, driven purely by **curiosity** and **self-learning**, long before college became part of the story.
 
-Over the years, I’ve worked with a wide range of technologies ⚙️, and today I focus mainly on fullstack frameworks like **SvelteKit** and **Next.js** to ship web apps *end-to-end*.
+Over the years, I’ve worked with a wide range of technologies ⚙️, and today I focus mainly on fullstack frameworks, especially **SvelteKit**, to ship web apps _end-to-end_.
 
 I’m used to building **clean, responsive UI** across different screen sizes, integrating **databases and APIs**, deploying to production, and collaborating with solid **Git workflows** 🚀
 

@@ -19,20 +19,27 @@ export const projects: ProjectInsert[] = [
       "https://wrkmncssawszpcdmgbra.supabase.co/storage/v1/object/public/main/projects/cryptosharia/image-4.jpeg",
       "https://wrkmncssawszpcdmgbra.supabase.co/storage/v1/object/public/main/projects/cryptosharia/image-5.jpeg",
     ],
-    techs: [techs.svelte, techs.tailwindcss, techs.postgresql, techs.supabase],
+    techs: [
+      techs.svelte,
+      techs.tailwindcss,
+      techs.postgresql,
+      techs.shadcnui,
+      techs.drizzle,
+      techs.supabase,
+    ],
     links: [
       {
         type: "website",
         label: "Website",
-        url: "https://www.cryptosharia.id/",
+        url: "https://cryptosharia.id/",
       },
       {
         type: "github",
-        label: "Source Code",
-        url: "https://github.com/cryptosharia/cryptosharia/",
+        label: "GitHub",
+        url: "https://github.com/cryptosharia/",
       },
     ],
-    order: 2,
+    order: 1,
   },
   {
     title: "Daffa's Portfolio",
@@ -67,7 +74,7 @@ export const projects: ProjectInsert[] = [
         url: "https://github.com/mdaffailhami/mdaffailhami/",
       },
     ],
-    order: 1,
+    order: 2,
   },
   {
     title: "CIMSA ULM",
