@@ -16,6 +16,6 @@ Here are some of the **technologies** I use:
 
 📝 **Note:** _These are the technologies **I'm currently actively playing with**, not a full representation of my whole skills._
 
-**`Svelte+Kit, Next.js, React, Tailwind CSS, Shadcn UI, Drizzle, PostgreSQL, Supabase, Vercel, Docker, Google Antigravity, Linux Ubuntu`**
+**`Svelte+Kit, Next.js, Tailwind, Zod, Drizzle, Postgres, Vitest, Vercel, Docker, AI Ops, OpenCode, Ubuntu`**
 
 ![](https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif)

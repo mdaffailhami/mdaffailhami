@@ -9,7 +9,7 @@ export const projects: ProjectInsert[] = [
   {
     title: "CryptoSharia",
     description:
-      "CryptoSharia is an Islamic-based crypto education platform that bridges Web3 innovation with Sharia principles. It was created to help the Muslim community understand, analyze, and invest in crypto assets ethically and responsibly.",
+      "CryptoSharia is an Islamic-based crypto ecosystem that bridges Web3 innovation with Sharia principles. It was created to help the Muslim community understand, analyze, and invest in crypto assets ethically and responsibly.",
     start: new Date("2025-09-01"),
     end: null,
     images: [
@@ -23,9 +23,10 @@ export const projects: ProjectInsert[] = [
       techs.svelte,
       techs.tailwindcss,
       techs.postgresql,
-      techs.shadcnui,
+      techs.zod,
       techs.drizzle,
-      techs.supabase,
+      techs.openapi,
+      // techs.supabase,
     ],
     links: [
       {

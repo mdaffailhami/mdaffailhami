@@ -5,11 +5,11 @@ export type ExperienceInsert = typeof experiencesTable.$inferInsert;
 export const experiences: ExperienceInsert[] = [
   {
     company: "CryptoSharia",
-    role: "Fullstack Developer & Education Division",
+    role: "Fullstack Lead Developer",
     start: new Date("2025-06-01"),
     end: null,
     description:
-      "CryptoSharia is a community-driven Islamic crypto movement that bridges Web3 innovation with Sharia principles — helping Muslims understand, analyze, and invest in digital assets ethically and responsibly. As one of the core team members, I contribute to the overall development of CryptoSharia, especially in the technology division. I also designed and developed the official website, cryptosharia.id, using SvelteKit and Supabase, built with a clean and scalable architecture optimized for content management and performance.",
+      "CryptoSharia is a community-driven Islamic crypto movement that bridges Web3 innovation with Sharia principles; helping Muslims understand, analyze, and invest in digital assets ethically and responsibly. As one of the core team members, I contribute to the overall development of CryptoSharia, especially in the technology division. I also designed and developed the official website, cryptosharia.id, using SvelteKit, built with a clean and scalable architecture optimized for content management and performance.",
     images: [
       "https://wrkmncssawszpcdmgbra.supabase.co/storage/v1/object/public/main/experiences/cryptosharia/image-1.png",
       "https://wrkmncssawszpcdmgbra.supabase.co/storage/v1/object/public/main/experiences/cryptosharia/image-2.jpeg",

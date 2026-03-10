@@ -60,6 +60,33 @@ export const techs: Record<string, TechInsert> = {
       svg: '<svg stroke="currentColor" fill="currentColor" stroke-width="0" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.219 11.784 11.784 22.219c-.407.407-.407 1.068 0 1.476.407.407 1.068.407 1.476 0L23.695 13.26c.407-.408.407-1.069 0-1.476-.408-.407-1.069-.407-1.476 0ZM20.132.305.305 20.132c-.407.407-.407 1.068 0 1.476.408.407 1.069.407 1.476 0L21.608 1.781c.407-.407.407-1.068 0-1.476-.408-.407-1.069-.407-1.476 0Z"></path></svg>',
     },
   },
+  zod: {
+    label: "Zod",
+    url: "https://zod.dev/",
+    icon: {
+      light: "#3B82F6",
+      dark: "#3B82F6",
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M12 2.2 20 6.3v11.4l-8 4.1-8-4.1V6.3L12 2.2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.2 8.2h7.6l-7.6 7.6h7.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    },
+  },
+  openapi: {
+    label: "OpenAPI",
+    url: "https://www.openapis.org/",
+    icon: {
+      light: "#6BA539",
+      dark: "#6BA539",
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><circle cx="9.5" cy="14" r="7.5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="6.4 2.2"/><path d="M11.6 12.1 18.4 5.3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="9.5" cy="14" r="2.6" fill="currentColor"/><circle cx="19.2" cy="4.5" r="2" fill="currentColor"/></svg>',
+    },
+  },
+  vitest: {
+    label: "Vitest",
+    url: "https://vitest.dev/",
+    icon: {
+      light: "#22FF84",
+      dark: "#22FF84",
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 43" fill="none"><path fill="currentColor" d="M21.2659 42.2067c-.3317.5903-1.1029.7583-1.6522.3598L.465308 28.6398C.172341 28.4265 0 28.0862 0 27.7243V10.939c0-.9242 1.04907-1.45839 1.79657-.9155L13.5088 18.541c1.0943.7971 2.6388.4589 3.3023-.7195L26.5113.577439C26.7117.222001 27.0887.00012207 27.498.00012207H43.0726c.8659 0 1.411.932754.9866 1.686708L21.2659 42.2046v.0021Z"/></svg>',
+    },
+  },
   drizzle: {
     label: "Drizzle",
     url: "https://orm.drizzle.team/",
@@ -112,6 +139,33 @@ export const techs: Record<string, TechInsert> = {
       light: "#34B27B",
       dark: "#34B27B",
       svg: '<svg stroke="currentColor" fill="currentColor" stroke-width="0" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"></path></svg>',
+    },
+  },
+  // neon: {
+  //   label: "Neon",
+  //   url: "https://neon.com/",
+  //   icon: {
+  //     light: "#1A1A1A",
+  //     dark: "#FFFFFF",
+  //     svg: '<svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M63 0.0177909V63.5526L38.4178 42.2501V63.5526H0V0L63 0.0177909ZM7.72251 55.8389H30.6953V25.3238L55.2779 47.0476V7.72922L7.72251 7.71559V55.8389Z" /></svg>',
+  //   },
+  // },
+  opencode: {
+    label: "OpenCode",
+    url: "https://opencode.com/",
+    icon: {
+      light: "#0B0B0B",
+      dark: "#FFFFFF",
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M4 4h16v16H4V4Zm5 3h6v10H9V7Z" clip-rule="evenodd"/><rect x="9" y="11" width="6" height="6" fill="#9CA3AF"/></svg>',
+    },
+  },
+  aiOps: {
+    label: "AI Ops",
+    url: "https://agents.md/",
+    icon: {
+      light: "#111111",
+      dark: "#FFFFFF",
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M7.5 7.2 12 12.2m4.5-5-4.5 5m-6 7.1h12" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/></svg>',
     },
   },
   antigravity: {
