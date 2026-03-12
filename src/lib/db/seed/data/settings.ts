@@ -14,13 +14,13 @@ export const settings: SettingInsert[] = [
   {
     key: "about",
     value: `\
-I’m **Daffa**, a **Fullstack Programmer (frontend & backend generalist)** from Indonesia 🇮🇩 with **5+ years of hands-on coding experience**, building projects across *personal, community, and freelance* work.
+I'm **Daffa**, a **Fullstack Developer** from Indonesia 🇮🇩 with **5+ years of programming experience**, focused on **end-to-end web development**.
 
-I started programming back in *madrasah aliyah* 🏫, driven purely by **curiosity** and **self-learning**, long before college became part of the story.
+My primary focus is frontend, clean, responsive UI and solid user experiences across devices, while also being comfortable making independent backend decisions: API architecture, database design, and choosing the right rendering strategy (SSR, CSR, SSG) for the right context.
 
-Over the years, I’ve worked with a wide range of technologies ⚙️, and today I focus mainly on fullstack frameworks, especially **SvelteKit**, to ship web apps _end-to-end_.
+I started programming in *madrasah aliyah* 🏫, driven purely by curiosity and self-learning, long before college became part of the story.
 
-I’m used to building **clean, responsive UI** across different screen sizes, integrating **databases and APIs**, deploying to production, and collaborating with solid **Git workflows** 🚀
+Over the years, I've worked with a wide range of technologies ⚙️, and today I focus mainly on fullstack frameworks, especially **SvelteKit** as my primary stack, with **Next.js** for projects that call for it, to ship web apps *end-to-end* 🚀
 
 ---
 

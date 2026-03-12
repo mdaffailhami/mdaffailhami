@@ -9,7 +9,7 @@ export const experiences: ExperienceInsert[] = [
     start: new Date("2025-06-01"),
     end: null,
     description:
-      "CryptoSharia is a community-driven Islamic crypto movement that bridges Web3 innovation with Sharia principles; helping Muslims understand, analyze, and invest in digital assets ethically and responsibly. As one of the core team members, I contribute to the overall development of CryptoSharia, especially in the technology division. I also designed and developed the official website, cryptosharia.id, using SvelteKit, built with a clean and scalable architecture optimized for content management and performance.",
+      "CryptoSharia is a multi-web platform ecosystem for an Islamic crypto community, consisting of a company profile, media platform (news, education, research), admin dashboard, and a centralized API. As Fullstack Lead Developer, I designed and built the centralized REST API using SvelteKit with pure TypeScript, framework-agnostic, heavily focused on backend engineering and type safety. I designed the PostgreSQL schema, implemented custom database-based authentication without third-party libraries, and applied SSR for content-heavy pages to optimize SEO and performance. I also led technical direction for the team including Git workflow standards and code review.",
     images: [
       "https://wrkmncssawszpcdmgbra.supabase.co/storage/v1/object/public/main/experiences/cryptosharia/image-1.png",
       "https://wrkmncssawszpcdmgbra.supabase.co/storage/v1/object/public/main/experiences/cryptosharia/image-2.jpeg",
@@ -28,7 +28,7 @@ export const experiences: ExperienceInsert[] = [
     start: new Date("2025-02-01"),
     end: new Date("2025-06-30"),
     description:
-      "During this period, I was working as a Programming Course Tutor. My primary focus was to help students intuitively grasp programming concepts while guiding them through hands-on coding exercises and real-world applications. I taught Programming in general & broad, covering both fundamental principles and advanced topics.",
+      "During this period, I worked as a Programming Course Tutor, teaching privately from fundamentals (variables, data types, control flow) through OOP (classes, inheritance, encapsulation, polymorphism). Primary focus on Python, with emphasis on conceptual understanding over syntax memorization. I adapted my teaching approach based on each student's background and learning needs.",
     images: [
       "https://wrkmncssawszpcdmgbra.supabase.co/storage/v1/object/public/main/experiences/superprof/image-1.png",
     ],
@@ -46,7 +46,7 @@ export const experiences: ExperienceInsert[] = [
     start: new Date("2024-12-01"),
     end: new Date("2025-02-28"),
     description:
-      "During this period, I worked as a freelance web developer, primarily focusing on frontend development. The project that I worked on was the CIMSA ULM Organizational Profile Website. In this project, I was responsible for developing the frontend using React, ensuring a responsive and user-friendly experience. I also worked on integrating the REST API for seamless data communication and contributed to the backend by assisting in debugging and enhancing functionality.",
+      "During this period, I worked as a freelance Frontend Developer, building the CIMSA ULM Organizational Profile Website using React + Vite. I was responsible for implementing a responsive UI across devices, integrating the frontend with a REST API developed by my partner using Laravel, and fixing bugs based on direct client feedback.",
     images: [
       "https://wrkmncssawszpcdmgbra.supabase.co/storage/v1/object/public/main/experiences/cimsa-ulm/image-1.webp",
     ],

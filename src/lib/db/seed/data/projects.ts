@@ -9,7 +9,7 @@ export const projects: ProjectInsert[] = [
   {
     title: "CryptoSharia",
     description:
-      "CryptoSharia is an Islamic-based crypto ecosystem that bridges Web3 innovation with Sharia principles. It was created to help the Muslim community understand, analyze, and invest in crypto assets ethically and responsibly.",
+      "CryptoSharia is a multi-web platform ecosystem for an Islamic crypto community, consisting of a company profile, media platform (news, education, research), admin dashboard, and a centralized API serving as the backbone of the entire ecosystem. Designed with a centralized architecture so every web can access data consistently through a single source of truth. I built the centralized API and company profile website, designing the PostgreSQL schema from scratch and implementing custom authentication.",
     start: new Date("2025-09-01"),
     end: null,
     images: [
@@ -45,7 +45,7 @@ export const projects: ProjectInsert[] = [
   {
     title: "Daffa's Portfolio",
     description:
-      "My personal web developed using React was designed to showcase my professional profile, skills, projects, and contact information. This web app serves as a comprehensive portfolio.",
+      "My personal portfolio website built with Next.js App Router, using SSG for optimal performance and a PostgreSQL database for dynamic content management. Designed to showcase my professional profile, projects, and experience.",
     start: new Date("2021-02-01"),
     end: null,
     images: [
@@ -80,7 +80,7 @@ export const projects: ProjectInsert[] = [
   {
     title: "CIMSA ULM",
     description:
-      "The CIMSA ULM Profile Website is a digital platform designed to introduce the CIMSA organization of Lambung Mangkurat University to the public and facilitate internal information management. This was a collaborative project with my friend Dzakiy Dzakwan; he handled the backend using Laravel & MySQL, while I developed the frontend with React.js & Bootstrap and integrated the REST API.",
+      "The CIMSA ULM Profile Website is a digital platform introducing the CIMSA organization to the public. I built the frontend using React + Vite with a fully responsive UI across devices, and integrated it with a REST API developed in Laravel by my partner.",
     start: new Date("2024-12-01"),
     end: new Date("2025-02-01"),
     images: [
