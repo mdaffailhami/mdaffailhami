@@ -304,4 +304,13 @@ export const techs: Record<string, TechInsert> = {
       dark: "#9664fe",
     },
   },
+  capacitor: {
+    label: "Capacitor",
+    url: "https://capacitorjs.com/",
+    icon: {
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M0 2l10 10-10 10V2zm24 0l-10 10 10 10V2z"></path></svg>',
+      light: "#119eff",
+      dark: "#53b9ff",
+    },
+  },
 };

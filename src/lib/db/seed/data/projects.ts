@@ -7,6 +7,40 @@ export type ProjectInsert = typeof projectsTable.$inferInsert & {
 
 export const projects: ProjectInsert[] = [
   {
+    title: "SecretMaker",
+    description:
+      "Client-side encryption utility with a PIN-locked key. The app encrypts and decrypts text directly in the browser or on Android using AES-GCM + PBKDF2; no server, no data leaves the device. The encryption key is wrapped with a PIN and stored in localStorage, unlocked only when the correct PIN is entered. Available on Web, PWA, and Android.",
+    start: new Date("2026-01-01"),
+    end: null,
+    images: [
+      "https://wrkmncssawszpcdmgbra.supabase.co/storage/v1/object/public/main/projects/secretmaker/image-1.png",
+    ],
+    techs: [
+      techs.svelte,
+      techs.tailwindcss,
+      techs.capacitor,
+      techs.vite,
+    ],
+    links: [
+      {
+        type: "website",
+        label: "Website",
+        url: "https://secretmaker.vercel.app",
+      },
+      {
+        type: "download",
+        label: "APK",
+        url: "https://github.com/mdaffailhami/secretmaker/releases",
+      },
+      {
+        type: "github",
+        label: "Source Code",
+        url: "https://github.com/mdaffailhami/secretmaker",
+      },
+    ],
+    order: 3,
+  },
+  {
     title: "CryptoSharia",
     description:
       "CryptoSharia is a multi-web platform ecosystem for an Islamic crypto community, consisting of a company profile, media platform (news, education, research), admin dashboard, and a centralized API serving as the backbone of the entire ecosystem. Designed with a centralized architecture so every web can access data consistently through a single source of truth. I built the centralized API and company profile website, designing the PostgreSQL schema from scratch and implementing custom authentication.",
@@ -109,7 +143,7 @@ export const projects: ProjectInsert[] = [
         url: "https://github.com/mdaffailhami/cimsa-ulm",
       },
     ],
-    order: 3,
+    order: 4,
   },
   {
     title: "MDI Todo",
@@ -174,7 +208,7 @@ export const projects: ProjectInsert[] = [
         url: "https://github.com/mdaffailhami/balabuh",
       },
     ],
-    order: 4,
+    order: 5,
   },
   {
     title: "GasKu",
