@@ -177,13 +177,33 @@ export const techs: Record<string, TechInsert> = {
       svg: '<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><!-- Boxicons v3.0.6 https://boxicons.com | License  https://docs.boxicons.com/free --><path d="m19.94,20.59c1.09.82,2.73.27,1.23-1.23-4.5-4.36-3.55-16.36-9.14-16.36S7.39,15,2.89,19.36c-1.64,1.64.14,2.05,1.23,1.23,4.23-2.86,3.95-7.91,7.91-7.91s3.68,5.05,7.91,7.91Z"></path></svg>',
     },
   },
-  geminiCli: {
-    label: "Gemini CLI",
-    url: "https://geminicli.com/",
+  geminiApi: {
+    label: "Gemini API",
+    url: "https://ai.google.dev/gemini-api",
     icon: {
       light: "#088cfb",
       dark: "#088cfb",
       svg: '<svg stroke="currentColor" fill="currentColor" stroke-width="0" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.1 0H19.9A4.1 4.1 0 0 1 24 4.1V19.9A4.1 4.1 0 0 1 19.9 24H4.1A4.1 4.1 0 0 1 0 19.9V4.1A4.1 4.1 0 0 1 4.1 0ZM4.107 1.415H19.893A2.692 2.692 0 0 1 22.585 4.107V19.893A2.692 2.692 0 0 1 19.893 22.585H4.107A2.692 2.692 0 0 1 1.415 19.893V4.107A2.692 2.692 0 0 1 4.107 1.415Z"/><path d="M7.222 18.755L7.222 15.983L14.918 12.284L7.222 8.586L7.193 5.814L16.815 10.432L16.793 14.159Z"/></svg>',
+    },
+  },
+
+  betterAuth: {
+    label: "Better Auth",
+    url: "https://better-auth.com/",
+    icon: {
+      light: "#111111",
+      dark: "#FFFFFF",
+      svg: '<svg stroke="currentColor" fill="currentColor" stroke-width="0" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.1 10.36H15.15V13.68H12.1z"/><path d="M3 3v18h18V3H3zm15.48 10.68v3H12.1v-3H8.62v3H5.49V7.36h3.13v3h3.48v-3h6.38v6.32Z"/></svg>',
+    },
+  },
+
+  xendit: {
+    label: "Xendit",
+    url: "https://xendit.co/",
+    icon: {
+      light: "#446CB3",
+      dark: "#446CB3",
+      svg: '<svg stroke="currentColor" fill="currentColor" stroke-width="0" role="img" viewBox="0 0 260.9 286.7" xmlns="http://www.w3.org/2000/svg"><polygon points="138.8 56.3 90.1 56.3 39.9 143.4 90.1 230.4 100 213.3 59.7 143.4 100 73.5 128.8 73.5 138.8 56.3"/><polygon points="104.5 115.4 114.4 98.3 100 73.5 90.1 90.7 104.5 115.4"/><polygon points="160.9 73.5 170.8 90.7 100 213.3 90.1 196.1 160.9 73.5"/><polygon points="122.2 230.4 132 213.2 160.9 213.2 201.2 143.4 160.9 73.5 170.8 56.3 221 143.4 170.8 230.4 122.2 230.4"/><polygon points="156.2 171 146.3 188.1 160.9 213.2 170.8 196.3 156.2 171"/></svg>',
     },
   },
 

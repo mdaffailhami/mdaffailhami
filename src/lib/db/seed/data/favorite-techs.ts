@@ -13,9 +13,9 @@ export const favoriteTechs: TechInsert[] = [
   // techs.supabase,
   techs.vercel,
   techs.docker,
-  // techs.antigravity,
+  techs.antigravity,
   techs.opencode,
-  techs.aiOps,
-  // techs.geminiCli,
+  // techs.aiOps,
+  // techs.geminiApi,
   techs.ubuntu,
 ];

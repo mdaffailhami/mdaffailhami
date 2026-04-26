@@ -7,6 +7,34 @@ export type ProjectInsert = typeof projectsTable.$inferInsert & {
 
 export const projects: ProjectInsert[] = [
   {
+    title: "Glosia",
+    description:
+      "Glosia is an AI chatbot SaaS platform for customer service that can be embedded into any website with a single line of code. It uses a Retrieval-Augmented Generation (RAG) architecture so responses are grounded strictly in the business owner's uploaded knowledge base, with full citations to minimize hallucinations. The knowledge base supports PDF, URL, and plain text inputs.",
+    start: new Date("2026-04-25"),
+    end: null,
+    images: [
+      "https://wrkmncssawszpcdmgbra.supabase.co/storage/v1/object/public/main/projects/glosia/image-1.png",
+    ],
+    techs: [
+      techs.svelte,
+      techs.geminiApi,
+      techs.xendit,
+      techs.tailwindcss,
+      techs.betterAuth,
+      techs.postgresql,
+      techs.drizzle,
+      techs.zod
+    ],
+    links: [
+      {
+        type: "website",
+        label: "Website",
+        url: "https://glosia.biz.id",
+      },
+    ],
+    order: 1,
+  },
+  {
     title: "SecretMaker",
     description:
       "Client-side encryption utility with a PIN-locked key. The app encrypts and decrypts text directly in the browser or on Android using AES-GCM + PBKDF2; no server, no data leaves the device. The encryption key is wrapped with a PIN and stored in localStorage, unlocked only when the correct PIN is entered. Available on Web, PWA, and Android.",
@@ -74,7 +102,7 @@ export const projects: ProjectInsert[] = [
         url: "https://github.com/cryptosharia/",
       },
     ],
-    order: 1,
+    order: 2,
   },
   {
     title: "Daffa's Portfolio",
@@ -109,7 +137,7 @@ export const projects: ProjectInsert[] = [
         url: "https://github.com/mdaffailhami/mdaffailhami/",
       },
     ],
-    order: 2,
+    order: 4,
   },
   {
     title: "CIMSA ULM",
@@ -143,7 +171,7 @@ export const projects: ProjectInsert[] = [
         url: "https://github.com/mdaffailhami/cimsa-ulm",
       },
     ],
-    order: 4,
+    order: 5,
   },
   {
     title: "MDI Todo",
@@ -208,7 +236,7 @@ export const projects: ProjectInsert[] = [
         url: "https://github.com/mdaffailhami/balabuh",
       },
     ],
-    order: 5,
+    order: 6,
   },
   {
     title: "GasKu",
