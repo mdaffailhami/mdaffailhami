@@ -152,7 +152,7 @@ export const techs: Record<string, TechInsert> = {
   // },
   opencode: {
     label: "OpenCode",
-    url: "https://opencode.com/",
+    url: "https://opencode.ai/",
     icon: {
       light: "#0B0B0B",
       dark: "#FFFFFF",
