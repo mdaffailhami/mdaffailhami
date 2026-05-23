@@ -38,7 +38,7 @@ export const projects: ProjectInsert[] = [
     title: "SecretMaker",
     description:
       "Client-side encryption utility with a PIN-locked key. The app encrypts and decrypts text directly in the browser or on Android using AES-GCM + PBKDF2; no server, no data leaves the device. The encryption key is wrapped with a PIN and stored in localStorage, unlocked only when the correct PIN is entered. Available on Web, PWA, and Android.",
-    start: new Date("2026-01-01"),
+    start: new Date("2026-02-01"),
     end: null,
     images: [
       "https://wrkmncssawszpcdmgbra.supabase.co/storage/v1/object/public/main/projects/secretmaker/image-1.png",

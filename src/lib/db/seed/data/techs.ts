@@ -198,8 +198,9 @@ export const techs: Record<string, TechInsert> = {
   },
 
   xendit: {
-    label: "Xendit",
-    url: "https://xendit.co/",
+    label: "Midtrans",
+    // url: "https://xendit.co/",
+    url: "https://midtrans.com/",
     icon: {
       light: "#446CB3",
       dark: "#446CB3",

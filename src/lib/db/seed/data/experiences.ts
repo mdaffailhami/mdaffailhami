@@ -4,6 +4,24 @@ export type ExperienceInsert = typeof experiencesTable.$inferInsert;
 
 export const experiences: ExperienceInsert[] = [
   {
+    company: "Glosia",
+    role: "Founder & Software Architect",
+    start: new Date("2026-04-01"),
+    end: null,
+    description:
+      "Glosia is a SaaS platform that enables businesses to embed an AI-powered customer service chatbot into their website by uploading a custom knowledge base. Engineered a RAG (Retrieval-Augmented Generation) pipeline using Gemini Embeddings and Vector Database for semantic search, enabling context-aware responses grounded in business-specific documents. Built with SvelteKit, PostgreSQL, Better Auth, Midtrans, Upstash Redis, Vercel Blob, Resend, Google Gemini API. Implemented multi-tenancy, embeddable widget via script injection, subscription-based billing with Midtrans, and an analytics dashboard for bot performance monitoring.",
+    images: [
+      "https://wrkmncssawszpcdmgbra.supabase.co/storage/v1/object/public/main/experiences/glosia/glosia-logo.png",
+    ],
+    links: [
+      {
+        type: "website",
+        label: "Official Website",
+        url: "https://glosia.biz.id/",
+      },
+    ],
+  },
+  {
     company: "CryptoSharia",
     role: "Fullstack Lead Developer",
     start: new Date("2025-06-01"),
