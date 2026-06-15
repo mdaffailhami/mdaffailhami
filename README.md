@@ -2,7 +2,7 @@
 
 ### Hi, I’m Daffa Ilhami 👋
 
-I’m a **Fullstack Developer** from Indonesia 🇮🇩 with **5+ years of programming experience**, focused on **end-to-end web development**.
+I’m a **Software Engineer** from Indonesia 🇮🇩, focused on **end-to-end web app development**.
 
 My primary focus is **frontend**: building **clean, responsive UI** and **solid user experiences** across devices. I’m also comfortable making independent backend decisions, including **API architecture**, **database design**, and choosing the right rendering strategy (**SSR, CSR, SSG**) for the right context.
 

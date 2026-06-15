@@ -3,7 +3,7 @@ import AboutSlide from "./(about)/slide";
 import ProjectsSlide from "./(projects)/slide";
 import ExperienceSlide from "./(experience)/slide";
 import ContactSlide from "./(contact)/slide";
-import { InitialScrollHandler } from "@/components/common/initial-scroll-handler";
+import { InitialScrollHandler } from "@/lib/components/common/initial-scroll-handler";
 
 export default function HomePage() {
   return (

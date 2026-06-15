@@ -1,14 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { LinkIconBadge } from "@/components/common/link-icon-badge";
-import type { Project, Tech } from "@/lib/db/types";
+import { LinkIconBadge } from "@/lib/components/common/link-icon-badge";
+import type { Project } from "@/lib/data/projects";
+import type { Tech } from "@/lib/data/techs";
 import { ProjectDetail } from "./project-detail";
 import { cn } from "@/lib/utils";
-import { GradientOverlay } from "@/components/common/gradient-overlay";
+import { GradientOverlay } from "@/lib/components/common/gradient-overlay";
 import { useState } from "react";
-import { useIsHydrated } from "@/hooks";
-import { Skeleton } from "@/components/ui/skeleton";
+import { useIsHydrated } from "@/lib/hooks";
+import { Skeleton } from "@/lib/components/ui/skeleton";
 
 type ProjectCardProps = {
   project: Project;

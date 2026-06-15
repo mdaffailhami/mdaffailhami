@@ -1,9 +1,9 @@
-import { ParticlesBackground } from "@/components/animation/particles-background";
-import { ThemeSwitcher } from "@/components/layout/theme-switcher";
-import { DesktopNavbar } from "@/components/layout/desktop-navbar";
-import { MobileNavbar } from "@/components/layout/mobile-navbar";
-import { GradientOverlay } from "@/components/common/gradient-overlay";
-import { TutorialOverlay } from "@/components/common/tutorial-overlay";
+import { ParticlesBackground } from "@/lib/components/animation/particles-background";
+import { ThemeSwitcher } from "@/lib/components/layout/theme-switcher";
+import { DesktopNavbar } from "@/lib/components/layout/desktop-navbar";
+import { MobileNavbar } from "@/lib/components/layout/mobile-navbar";
+import { GradientOverlay } from "@/lib/components/common/gradient-overlay";
+import { TutorialOverlay } from "@/lib/components/common/tutorial-overlay";
 
 export default function MainLayout({
   children,

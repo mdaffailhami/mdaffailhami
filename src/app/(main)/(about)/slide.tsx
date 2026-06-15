@@ -1,24 +1,12 @@
-import { Slide } from "@/components/common/slide";
-import { AnimateIn } from "@/components/animation/animate-in";
+import { Slide } from "@/lib/components/common/slide";
+import { AnimateIn } from "@/lib/components/animation/animate-in";
 import { TechListSection } from "./tech-list-section";
 import Markdown from "react-markdown";
-import { HeroPicture } from "@/components/common/hero-picture";
-import { daffa1, daffa2 } from "@/lib/assets/images";
-import { getFavoriteTechs } from "@/lib/api/techs";
-import { getSettings } from "@/lib/api/settings";
+import { HeroPicture } from "@/lib/components/common/hero-picture";
+import { daffa1, daffa2 } from "@/lib/assets";
+import { PROFILE } from "@/lib/constants";
 
-export default async function AboutSlide() {
-  const [settings, techs] = await Promise.all([
-    (await getSettings()).data,
-    (await getFavoriteTechs()).data ?? [],
-  ]);
-
-  let about = "...";
-
-  if (settings) {
-    about = settings.about as string;
-  }
-
+export default function AboutSlide() {
   return (
     <Slide id="about">
       <div className="fl-px-4/40 md:fl-px-[-2rem/10rem] flex flex-col lg:flex-row items-center justify-center min-h-full fl-gap-4/6">
@@ -43,9 +31,9 @@ export default async function AboutSlide() {
               //   ),
               // }}
               >
-                {about}
+                {PROFILE.about}
               </Markdown>
-              <TechListSection techs={techs} />
+              <TechListSection />
             </div>
           </AnimateIn>
         </section>

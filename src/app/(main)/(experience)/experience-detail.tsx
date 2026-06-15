@@ -7,7 +7,7 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from "@/lib/components/ui/dialog";
 import {
   Drawer,
   DrawerClose,
@@ -16,15 +16,15 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
-} from "@/components/ui/drawer";
-import { useBreakpoint } from "@/hooks";
-import { Button } from "@/components/ui/button";
-import type { Experience } from "@/lib/db/types";
+} from "@/lib/components/ui/drawer";
+import { useBreakpoint } from "@/lib/hooks";
+import { Button } from "@/lib/components/ui/button";
+import type { Experience } from "@/lib/data/experiences";
 import { GlobeIcon, ExternalLinkIcon } from "lucide-react";
 import { SiLinkedin } from "react-icons/si";
-import { Carousel } from "@/components/common/carousel";
+import { Carousel } from "@/lib/components/common/carousel";
 import Link from "next/link";
-import { GradientOverlay } from "@/components/common/gradient-overlay";
+import { GradientOverlay } from "@/lib/components/common/gradient-overlay";
 import { formatPeriod } from "@/lib/utils";
 
 interface ExperienceDetailProps {

@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import { ExperienceDetail } from "./experience-detail";
-import { GradientOverlay } from "@/components/common/gradient-overlay";
-import type { Experience } from "@/lib/db/types";
+import { GradientOverlay } from "@/lib/components/common/gradient-overlay";
+import type { Experience } from "@/lib/data/experiences";
 import { formatPeriod } from "@/lib/utils";
 
 type ExperienceCardProps = {

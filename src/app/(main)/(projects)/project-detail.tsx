@@ -7,7 +7,7 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from "@/lib/components/ui/dialog";
 import {
   Drawer,
   DrawerClose,
@@ -16,17 +16,18 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
-} from "@/components/ui/drawer";
-import { useBreakpoint } from "@/hooks";
-import { Button } from "@/components/ui/button";
-import { LinkIconBadge } from "@/components/common/link-icon-badge";
-import type { Project, Tech } from "@/lib/db/types";
+} from "@/lib/components/ui/drawer";
+import { useBreakpoint } from "@/lib/hooks";
+import { Button } from "@/lib/components/ui/button";
+import { LinkIconBadge } from "@/lib/components/common/link-icon-badge";
+import type { Project } from "@/lib/data/projects";
+import type { Tech } from "@/lib/data/techs";
 import { GlobeIcon, DownloadIcon, ExternalLinkIcon } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
 import { cn } from "@/lib/utils";
-import { Carousel } from "@/components/common/carousel";
+import { Carousel } from "@/lib/components/common/carousel";
 import Link from "next/link";
-import { GradientOverlay } from "@/components/common/gradient-overlay";
+import { GradientOverlay } from "@/lib/components/common/gradient-overlay";
 import { formatPeriod } from "@/lib/utils";
 
 type ProjectDetailProps = {
@@ -99,8 +100,8 @@ function ProjectContent({ project }: { project: Project }) {
   };
 
   // Create image slides
-  const imageSlides = (project.images as string[]).map(
-    (image: string, i: number) => (
+  const imageSlides = project.images.map(
+    (image, i: number) => (
       <div key={i} className="relative aspect-video">
         <Image
           src={image}

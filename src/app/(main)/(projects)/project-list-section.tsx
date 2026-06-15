@@ -1,12 +1,12 @@
 "use client";
 
 import { ProjectCard } from "./project-card";
-import { Carousel } from "@/components/common/carousel";
-import { useBreakpoint } from "@/hooks";
-import { AnimateIn } from "@/components/animation/animate-in";
-import type { Project } from "@/lib/db/types";
+import { Carousel } from "@/lib/components/common/carousel";
+import { useBreakpoint } from "@/lib/hooks";
+import { AnimateIn } from "@/lib/components/animation/animate-in";
+import { orderedProjects } from "@/lib/data/projects";
 
-export function ProjectListSection({ projects }: { projects: Project[] }) {
+export function ProjectListSection() {
   // Limit to 9 projects and group them into slides of 3
   const breakpoint = useBreakpoint();
 
@@ -15,7 +15,7 @@ export function ProjectListSection({ projects }: { projects: Project[] }) {
   // const displayedProjects = projects.slice(0, maxProjects);
 
   // We'll simply just show all projects for now
-  const displayedProjects = projects;
+  const displayedProjects = orderedProjects;
 
   const itemsPerSlide = (() => {
     if (!breakpoint) return 2; // If not hydrated yet
@@ -65,7 +65,7 @@ export function ProjectListSection({ projects }: { projects: Project[] }) {
       </AnimateIn>
 
       {/* Reserved for future use */}
-      {/* {projects.length > maxProjects && (
+      {/* {orderedProjects.length > maxProjects && (
         <Button
           variant={"link"}
           className="text-center text-lg hover:opacity-80"

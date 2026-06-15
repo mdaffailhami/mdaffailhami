@@ -1,8 +1,8 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/lib/components/ui/button";
 import { CodeIcon } from "lucide-react";
-import { OverlayView } from "@/components/common/overlay-view";
+import { OverlayView } from "@/lib/components/common/overlay-view";
 import { useEffect, useRef } from "react";
 
 export function CallToActionButton() {

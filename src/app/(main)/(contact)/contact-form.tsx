@@ -3,17 +3,17 @@
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SendIcon, LoaderCircleIcon } from "lucide-react";
-import { sendMessage } from "@/lib/api/messages";
-import { MessageInsert } from "@/lib/db/types";
+import { sendMessage } from "./actions";
+import { MessageInsert } from "./schema";
 import {
   Field,
   FieldLabel,
   FieldError,
   FieldGroup,
-} from "@/components/ui/field";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
+} from "@/lib/components/ui/field";
+import { Input } from "@/lib/components/ui/input";
+import { Textarea } from "@/lib/components/ui/textarea";
+import { Button } from "@/lib/components/ui/button";
 
 export function ContactForm() {
   // 1. Setup React Hook Form

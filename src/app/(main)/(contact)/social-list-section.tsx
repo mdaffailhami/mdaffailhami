@@ -1,15 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { GradientOverlay } from "@/components/common/gradient-overlay";
-import type { Social } from "@/lib/db/types";
-import { SvgRenderer } from "@/components/common/svg-renderer";
+import { GradientOverlay } from "@/lib/components/common/gradient-overlay";
+import { orderedSocials } from "@/lib/data/socials";
+import { IconRenderer } from "@/lib/components/common/icon-renderer";
 import { CSSProperties } from "react";
 
-export function SocialListSection({ socials }: { socials: Social[] }) {
+export function SocialListSection() {
   return (
     <div className="flex flex-row flex-wrap justify-evenly lg:gap-4 lg:grid lg:grid-cols-2">
-      {socials.map((social) => (
+      {orderedSocials.map((social) => (
         <Link
           key={social.label}
           href={social.url}
@@ -20,8 +20,8 @@ export function SocialListSection({ socials }: { socials: Social[] }) {
           <GradientOverlay />
           <div className="relative flex items-center justify-center lg:justify-start gap-3">
             <div className="shrink-0 relative size-6">
-              <SvgRenderer
-                svg={social.icon.svg}
+              <IconRenderer
+                icon={social.icon}
                 style={
                   {
                     "--light": social.icon.light,

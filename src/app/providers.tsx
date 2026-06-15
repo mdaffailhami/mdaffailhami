@@ -1,6 +1,6 @@
 import { ThemeProvider } from "next-themes";
 
-import { ActiveSlideProvider } from "@/contexts/active-slide";
+import { ActiveSlideProvider } from "@/lib/states/active-slide";
 
 export default async function RootProviders({
   children,

@@ -2,26 +2,22 @@
 
 import { useEffect, useState } from "react";
 import ExperienceCard from "./experience-card";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/lib/components/ui/button";
 import { ArrowDownIcon, ArrowUpIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useBreakpoint } from "@/hooks";
-import { AnimateIn } from "@/components/animation/animate-in";
-import type { Experience } from "@/lib/db/types";
+import { useBreakpoint } from "@/lib/hooks";
+import { AnimateIn } from "@/lib/components/animation/animate-in";
+import { orderedExperiences } from "@/lib/data/experiences";
 
-export function ExperienceListSection({
-  experiences,
-}: {
-  experiences: Experience[];
-}) {
+export function ExperienceListSection() {
   const breakpoint = useBreakpoint();
   // If not hydrated yet, assume it's not mobile
   const isMobile = !breakpoint ? false : breakpoint < 4;
   const [isExpanded, setIsExpanded] = useState(false);
   const maxUnexpandedExperiences = 3;
   const displayedExperiences = isExpanded
-    ? experiences
-    : experiences.slice(0, maxUnexpandedExperiences);
+    ? orderedExperiences
+    : orderedExperiences.slice(0, maxUnexpandedExperiences);
 
   useEffect(() => {
     setIsExpanded(isMobile);
@@ -53,7 +49,7 @@ export function ExperienceListSection({
           </div>
         </div>
       </AnimateIn>
-      {!isMobile && experiences.length > maxUnexpandedExperiences && (
+      {!isMobile && orderedExperiences.length > maxUnexpandedExperiences && (
         <Button
           variant={"link"}
           className="text-center text-lg group hover:opacity-80"

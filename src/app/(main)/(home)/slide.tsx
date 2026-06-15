@@ -1,21 +1,11 @@
-import { Slide } from "@/components/common/slide";
+import { Slide } from "@/lib/components/common/slide";
 import { CallToActionButton } from "./call-to-action-button";
-import { HeroPicture } from "@/components/common/hero-picture";
-import { daffa1, daffa2 } from "@/lib/assets/images";
-import { AnimateIn } from "@/components/animation/animate-in";
-import { getSettings } from "@/lib/api/settings";
+import { HeroPicture } from "@/lib/components/common/hero-picture";
+import { daffa1, daffa2 } from "@/lib/assets";
+import { AnimateIn } from "@/lib/components/animation/animate-in";
+import { PROFILE } from "@/lib/constants";
 
-export default async function HomeSlide() {
-  const settings = (await getSettings()).data;
-
-  let name = "Daffa Ilhami";
-  let bio = "Tech Enthusiast | Self-Taught Programmer | Lifelong Learner";
-
-  if (settings) {
-    name = settings.name as string;
-    bio = settings.bio as string;
-  }
-
+export default function HomeSlide() {
   return (
     <Slide id="home">
       <div className="fl-px-4/40 md:fl-px-[-2rem/10rem] flex flex-col justify-center md:max-lg:flex-row lg:flex-row-reverse items-center min-h-full fl-gap-4/6">
@@ -31,10 +21,10 @@ export default async function HomeSlide() {
           }
         >
           <h1 className="font-serif fl-text-[3.2rem/4.5rem] md:fl-text-[2.2rem/4.5rem] font-medium leading-14 lg:leading-18">
-            {name}
+            {PROFILE.name}
           </h1>
           <p className="fl-text-base/lg md:fl-text-xs/lg text-muted-foreground mb-5">
-            {bio}
+            {PROFILE.bio}
           </p>
           <CallToActionButton />
         </AnimateIn>
