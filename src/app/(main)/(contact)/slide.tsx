@@ -10,10 +10,10 @@ function CopyrightSection({ className }: { className?: string }) {
     <span
       className={cn(
         "text-base text-primary/75 dark:text-primary text-center font-serif",
-        className
+        className,
       )}
     >
-      &copy; 2021 - 2026 | Muhammad Daffa Ilhami
+      &copy; 2021 - 2026 | Daffa Ilhami
     </span>
   );
 }

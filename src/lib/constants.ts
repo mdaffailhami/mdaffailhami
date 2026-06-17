@@ -7,19 +7,19 @@ import {
 } from "lucide-react";
 
 export const APP_TITLE = "Daffa Ilhami";
-export const APP_DESCRIPTION = "Muhammad Daffa Ilhami's Portfolio";
+export const APP_DESCRIPTION = "Daffa Ilhami's Portfolio";
 
 export const PROFILE = {
   name: "Daffa Ilhami",
   bio: "Tech Enthusiast | Self-taught Programmer | Software Engineer",
   about: `\
-I’m **Daffa**, a **Software Engineer** from Indonesia 🇮🇩, focused on **end-to-end web app development**.
+I’m **Daffa**, a **Software Engineer** from Indonesia 🇮🇩, focused on building **end-to-end web applications** ✨
 
-My primary focus is frontend, clean, responsive UI and solid user experiences across devices, while also being comfortable making independent backend decisions: API architecture, database design, and choosing the right rendering strategy (SSR, CSR, SSG) for the right context.
+I work across the stack: turning product ideas into usable interfaces 🎨, designing APIs 🔌, modeling databases 🗄️, choosing the right rendering strategy 📡, and deploying systems that are maintainable in production 🚀
 
-I started programming in *madrasah aliyah* 🏫, driven purely by curiosity and self-learning, long before college became part of the story.
+I started programming in *high school* 🏫, driven by curiosity and self-learning. That background shaped how I approach engineering today: understand the problem first, choose the simplest reliable solution, then keep improving it ⚡
 
-Over the years, I've worked with a wide range of technologies ⚙️, and today I focus mainly on fullstack frameworks, especially **SvelteKit** as my primary stack, with **Next.js** for projects that call for it, to ship web apps *end-to-end* 🚀
+These days, I mainly build with modern full-stack TypeScript tools, especially **SvelteKit** (*preferred*) and **Next.js**, while also working comfortably with databases, authentication, server-side architecture, and deployment workflows 🛠️
 
 ---
 

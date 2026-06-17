@@ -2,18 +2,18 @@
 
 ### Hi, I’m Daffa Ilhami 👋
 
-I’m a **Software Engineer** from Indonesia 🇮🇩, focused on **end-to-end web app development**.
+I’m a **Software Engineer** from Indonesia 🇮🇩, focused on building **end-to-end web applications** ✨
 
-My primary focus is **frontend**: building **clean, responsive UI** and **solid user experiences** across devices. I’m also comfortable making independent backend decisions, including **API architecture**, **database design**, and choosing the right rendering strategy (**SSR, CSR, SSG**) for the right context.
+I work across the stack: turning product ideas into usable interfaces 🎨, designing APIs 🔌, modeling databases 🗄️, choosing the right rendering strategy 📡, and deploying systems that are maintainable in production 🚀
 
-I started programming back in _madrasah aliyah_ 🏫, driven purely by **curiosity** and **self-learning**, long before college became part of the story.
+I started programming back in *high school* 🏫, driven by **curiosity** and **self-learning**. That background shaped how I approach engineering today: understand the problem first, choose the simplest reliable solution, then keep improving it ⚡
 
-Over the years, I’ve worked with a wide range of technologies ⚙️, and today I focus mainly on fullstack frameworks, especially **SvelteKit** as my primary stack, with **Next.js** for projects that call for it, to ship web apps _end-to-end_ 🚀
+These days, I mainly build with modern full-stack TypeScript tools, especially **SvelteKit** (*preferred*) and **Next.js**, while also working comfortably with databases, authentication, server-side architecture, and deployment workflows 🛠️
 
 ---
 
 Here are some of the **technologies** I use:  
 📝 **Note:** _These are the technologies **I’m currently actively playing with**, not a full representation of my whole skills._  
-**`Svelte+Kit, Next.js, Tailwind, Zod, Drizzle, Postgres, Vitest, Vercel, Docker, OpenCode, Agentic Engineering, Linux, Ubuntu`**
+**`Svelte+Kit, Next.js, Tailwind, Zod, Drizzle, Postgres, Redis, Vitest, Vercel, Docker, OpenCode, Ubuntu`**
 
 ![](https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif)
