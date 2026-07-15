@@ -1,6 +1,7 @@
 import type { StaticImageData } from "next/image";
 import { techs, type Tech } from "./techs";
 import { images as glosiaImages } from "@/lib/assets/projects/glosia";
+import { images as maiaImages } from "@/lib/assets/projects/maia";
 import { images as secretmakerImages } from "@/lib/assets/projects/secretmaker";
 import { images as cryptoshariaImages } from "@/lib/assets/projects/cryptosharia";
 import { images as mdaffailhamiImages } from "@/lib/assets/projects/mdaffailhami";
@@ -39,6 +40,7 @@ export const projects: Project[] = [
       techs.svelte,
       techs.geminiApi,
       techs.midtrans,
+      techs.typescript,
       techs.tailwindcss,
       techs.postgresql,
       techs.drizzle,
@@ -54,13 +56,37 @@ export const projects: Project[] = [
     order: 1,
   },
   {
+    title: "Maia",
+    description:
+      "Maia is a desktop AI companion prototype built as a Tauri overlay with a Svelte interface and a local FastAPI backend. The app coordinates AI chat through a Hermes gateway, hold-to-talk speech-to-text, text-to-speech playback, keyboard shortcuts, and Live2D character feedback while keeping credentials in the local backend instead of the WebView.",
+    start: new Date("2026-07-07"),
+    end: null,
+    images: maiaImages,
+    techs: [
+      techs.svelte,
+      techs.tauri,
+      techs.python,
+      techs.fastapi,
+      techs.typescript,
+      techs.tailwindcss,
+    ],
+    links: [
+      {
+        type: "github",
+        label: "Source Code",
+        url: "https://github.com/mdaffailhami/maia",
+      },
+    ],
+    order: 3,
+  },
+  {
     title: "SecretMaker",
     description:
       "Client-side encryption utility with a PIN-locked key. The app encrypts and decrypts text directly in the browser or on Android using AES-GCM + PBKDF2; no server, no data leaves the device. The encryption key is wrapped with a PIN and stored in localStorage, unlocked only when the correct PIN is entered. Available on Web, PWA, and Android.",
     start: new Date("2026-02-01"),
     end: null,
     images: secretmakerImages,
-    techs: [techs.svelte, techs.tailwindcss, techs.capacitor, techs.vite],
+    techs: [techs.svelte, techs.tailwindcss, techs.capacitor, techs.typescript, techs.vite],
     links: [
       {
         type: "website",
@@ -78,7 +104,7 @@ export const projects: Project[] = [
         url: "https://github.com/mdaffailhami/secretmaker",
       },
     ],
-    order: 3,
+    order: 4,
   },
   {
     title: "CryptoSharia",
@@ -91,6 +117,7 @@ export const projects: Project[] = [
       techs.svelte,
       techs.tailwindcss,
       techs.postgresql,
+      techs.typescript,
       techs.zod,
       techs.drizzle,
       techs.openapi,
@@ -116,7 +143,7 @@ export const projects: Project[] = [
     start: new Date("2021-02-01"),
     end: null,
     images: mdaffailhamiImages,
-    techs: [techs.react, techs.tailwindcss, techs.shadcnui, techs.nextjs],
+    techs: [techs.react, techs.nextjs, techs.tailwindcss, techs.typescript, techs.shadcnui],
     links: [
       {
         type: "website",
@@ -129,7 +156,7 @@ export const projects: Project[] = [
         url: "https://github.com/mdaffailhami/mdaffailhami/",
       },
     ],
-    order: 4,
+    order: 5,
   },
   {
     title: "CIMSA ULM",
@@ -157,7 +184,7 @@ export const projects: Project[] = [
         url: "https://github.com/mdaffailhami/cimsa-ulm",
       },
     ],
-    order: 5,
+    order: 6,
   },
   {
     title: "MDI Todo",
@@ -195,7 +222,7 @@ export const projects: Project[] = [
         url: "https://github.com/mdaffailhami/balabuh",
       },
     ],
-    order: 6,
+    order: 7,
   },
   {
     title: "GasKu",

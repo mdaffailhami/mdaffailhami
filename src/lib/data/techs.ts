@@ -48,6 +48,10 @@ import {
   SiSvelteHex,
   SiTailwindcss,
   SiTailwindcssHex,
+  SiTypescript,
+  SiTypescriptHex,
+  SiTauri,
+  SiTauriHex,
   SiUbuntu,
   SiUbuntuHex,
   SiVercel,
@@ -126,6 +130,11 @@ export const techs = {
     label: "Svelte+Kit",
     url: "https://svelte.dev/",
     icon: componentIcon(SiSvelte, SiSvelteHex),
+  },
+  tauri: {
+    label: "Tauri",
+    url: "https://tauri.app/",
+    icon: componentIcon(SiTauri, SiTauriHex),
   },
   tailwindcss: {
     label: "Tailwind",
@@ -209,8 +218,13 @@ export const techs = {
   },
   python: {
     label: "Python",
-    url: "https://www.python.org/",
+    url: "https://python.org/",
     icon: componentIcon(SiPython, SiPythonHex),
+  },
+  typescript: {
+    label: "TypeScript",
+    url: "https://typescriptlang.org/",
+    icon: componentIcon(SiTypescript, SiTypescriptHex),
   },
   expo: {
     label: "Expo",
@@ -229,7 +243,7 @@ export const techs = {
   },
   mongodb: {
     label: "MongoDB",
-    url: "https://www.mongodb.com/",
+    url: "https://mongodb.com/",
     icon: componentIcon(SiMongodb, SiMongodbHex),
   },
   firebase: {
