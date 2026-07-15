@@ -3,12 +3,17 @@
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/lib/components/ui/button";
-import { NAVS } from "@/lib/constants";
+import { getNavs } from "@/lib/constants";
 import { scrollTo } from "@/lib/utils";
 import { useActiveSlide } from "@/lib/states/active-slide";
 
-export function DesktopNavbar() {
+type DesktopNavbarProps = {
+  hasVideos: boolean;
+};
+
+export function DesktopNavbar({ hasVideos }: DesktopNavbarProps) {
   const { activeSlide, setActiveSlide } = useActiveSlide();
+  const navs = getNavs(hasVideos);
   const [indicatorStyle, setIndicatorStyle] = useState({
     left: 0,
     width: 0,
@@ -54,7 +59,7 @@ export function DesktopNavbar() {
           className="absolute inset-0 bg-primary/20 outline-2 outline-primary rounded-full transition-all duration-300 ease-in-out"
           style={indicatorStyle}
         />
-        {NAVS.map((nav) => (
+        {navs.map((nav) => (
           <Button
             key={nav.label}
             variant={"ghost"}

@@ -28,7 +28,7 @@ export const experiences: Experience[] = [
     start: new Date("2026-06-30"),
     end: null,
     description:
-      "Banua Tech is an IT enthusiast community and technology organization focused on free technology education, digital innovation, and collaborative IT ecosystem development. As Co-Founder & Software Engineer, I help shape the technical direction, build and maintain digital products, support learning initiatives, and contribute to community programs across areas such as web development, AI, cloud, cybersecurity, and software engineering.",
+      "Banua Tech is an IT enthusiast community and technology organization focused on technology education, digital innovation, and collaborative IT ecosystem development. As Co-Founder & Software Engineer, I help shape the technical direction, build and maintain digital products, support learning initiatives, and contribute to community programs across areas such as web development, AI, cloud, cybersecurity, and software engineering.",
     images: banuaTechImages,
     links: [
       {

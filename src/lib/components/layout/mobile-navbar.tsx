@@ -3,11 +3,16 @@
 import { Button } from "@/lib/components/ui/button";
 import { cn, scrollTo } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
-import { NAVS } from "@/lib/constants";
+import { getNavs } from "@/lib/constants";
 import { useActiveSlide } from "@/lib/states/active-slide";
 
-export function MobileNavbar() {
+type MobileNavbarProps = {
+  hasVideos: boolean;
+};
+
+export function MobileNavbar({ hasVideos }: MobileNavbarProps) {
   const { activeSlide, setActiveSlide } = useActiveSlide();
+  const navs = getNavs(hasVideos);
   const navRef = useRef<HTMLDivElement>(null);
   const [indicatorStyle, setIndicatorStyle] = useState({
     left: 0,
@@ -57,7 +62,7 @@ export function MobileNavbar() {
           style={indicatorStyle}
         />
 
-        {NAVS.map((nav) => {
+        {navs.map((nav) => {
           const isActive = `#${activeSlide}` === nav.hash;
 
           return (

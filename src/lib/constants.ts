@@ -4,6 +4,7 @@ import {
   BriefcaseIcon,
   AwardIcon,
   MailIcon,
+  VideoIcon,
 } from "lucide-react";
 
 export const APP_TITLE = "Daffa Ilhami";
@@ -28,14 +29,20 @@ Here are some of the **technologies** I use:
 📝 **Note:** *These are the technologies **I'm currently actively playing with**, not a full representation of my whole skills.*`,
 };
 
-export const NAVS: {
+export type NavItem = {
   label: string;
   Icon: React.ComponentType<{ className?: string }>;
   hash: string;
-}[] = [
+};
+
+export const NAVS: NavItem[] = [
   { label: "Home", Icon: HomeIcon, hash: "#home" }, // Hash will be removed when active
   { label: "About", Icon: UserIcon, hash: "#about" },
   { label: "Projects", Icon: BriefcaseIcon, hash: "#projects" },
   { label: "Experience", Icon: AwardIcon, hash: "#experience" },
+  { label: "Videos", Icon: VideoIcon, hash: "#videos" },
   { label: "Contact", Icon: MailIcon, hash: "#contact" },
 ];
+
+export const getNavs = (hasVideos: boolean) =>
+  hasVideos ? NAVS : NAVS.filter((nav) => nav.hash !== "#videos");

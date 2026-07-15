@@ -2,10 +2,14 @@ import HomeSlide from "./(home)/slide";
 import AboutSlide from "./(about)/slide";
 import ProjectsSlide from "./(projects)/slide";
 import ExperienceSlide from "./(experience)/slide";
+import VideosSlide from "./(videos)/slide";
 import ContactSlide from "./(contact)/slide";
 import { InitialScrollHandler } from "@/lib/components/common/initial-scroll-handler";
+import { getBeholdVideos } from "@/lib/server/services/behold-videos";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const videos = await getBeholdVideos();
+
   return (
     <main
       id="main"
@@ -16,6 +20,7 @@ export default function HomePage() {
       <AboutSlide />
       <ProjectsSlide />
       <ExperienceSlide />
+      <VideosSlide videos={videos} />
       <ContactSlide />
     </main>
   );
