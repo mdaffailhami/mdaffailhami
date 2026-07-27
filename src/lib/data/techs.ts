@@ -30,6 +30,8 @@ import {
   SiMongodbHex,
   SiMysql,
   SiMysqlHex,
+  SiNestjs,
+  SiNestjsHex,
   SiNextdotjs,
   SiNextdotjsHex,
   SiOpenapiinitiative,
@@ -125,6 +127,11 @@ export const techs = {
     label: "Next.js",
     url: "https://nextjs.org/",
     icon: componentIcon(SiNextdotjs, SiNextdotjsHex, "#FFFFFF"),
+  },
+  nestjs: {
+    label: "NestJS",
+    url: "https://nestjs.com/",
+    icon: componentIcon(SiNestjs, SiNestjsHex),
   },
   svelte: {
     label: "Svelte+Kit",
