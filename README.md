@@ -10,9 +10,4 @@ I started programming back in _high school_ 🏫, driven by **curiosity** and **
 
 I also work deeply with AI agents in my daily workflow 🤖, I design structured AI instructions, build reusable AI Skills, and orchestrate multiple subagents to parallelize complex tasks while maintaining quality ✨
 
----
-
-Here are some of the **technologies** I'm currently actively playing with:  
-**`Svelte+Kit, Next.js, Tailwind, Zod, Drizzle, Postgres, Redis, Vitest, Vercel, Docker, OpenCode, Ubuntu`**
-
 ![](https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif)
