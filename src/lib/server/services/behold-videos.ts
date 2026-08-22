@@ -8,7 +8,6 @@ type BeholdPost = {
   mediaType?: unknown;
   mediaUrl?: unknown;
   thumbnailUrl?: unknown;
-  isReel?: unknown;
   visibility?: unknown;
   sizes?: {
     medium?: { mediaUrl?: unknown };
@@ -57,7 +56,6 @@ export const getBeholdVideos = cache(async (): Promise<VideoPost[]> => {
 
         const beholdPost = post as BeholdPost;
         return (
-          beholdPost.isReel === true &&
           beholdPost.mediaType === "VIDEO" &&
           beholdPost.visibility !== "hidden"
         );
@@ -70,7 +68,8 @@ export const getBeholdVideos = cache(async (): Promise<VideoPost[]> => {
         thumbnailUrl: getThumbnailUrl(post),
       }))
       .filter((post) => post.id && post.mediaUrl && post.thumbnailUrl);
-  } catch {
+  } catch (error) {
+    console.error("getBeholdVideos failed:", error);
     return [];
   }
 });
