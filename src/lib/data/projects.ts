@@ -45,6 +45,7 @@ export const projects: Project[] = [
       techs.postgresql,
       techs.drizzle,
       techs.zod,
+      techs.resend,
       techs.vitest,
     ],
     links: [
