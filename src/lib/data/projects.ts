@@ -45,12 +45,18 @@ export const projects: Project[] = [
       techs.postgresql,
       techs.drizzle,
       techs.zod,
+      techs.vitest,
     ],
     links: [
       {
         type: "website",
         label: "Website",
         url: "https://glosia.biz.id",
+      },
+      {
+        type: "other",
+        label: "Instagram",
+        url: "https://instagram.com/glosia.ai",
       },
     ],
     order: 1,
@@ -86,7 +92,13 @@ export const projects: Project[] = [
     start: new Date("2026-02-01"),
     end: null,
     images: secretmakerImages,
-    techs: [techs.svelte, techs.tailwindcss, techs.capacitor, techs.typescript, techs.vite],
+    techs: [
+      techs.svelte,
+      techs.tailwindcss,
+      techs.capacitor,
+      techs.typescript,
+      techs.vite,
+    ],
     links: [
       {
         type: "website",
@@ -109,18 +121,25 @@ export const projects: Project[] = [
   {
     title: "CryptoSharia",
     description:
-      "CryptoSharia is a multi-web platform ecosystem for an Islamic crypto community, consisting of a company profile, media platform (news, education, research), admin dashboard, and a centralized API serving as the backbone of the entire ecosystem. Designed with a centralized architecture so every web can access data consistently through a single source of truth. I built the centralized API and company profile website, designing the PostgreSQL schema from scratch and implementing custom authentication.",
+      "CryptoSharia is an ecosystem platform for an Islamic crypto community in Indonesia, consisting of a company profile, media platform (news, education, research), admin-panel, and a separate centralized API. My main focus belongs to the backend, I built a robust & maintainable backend that serves as the backbone of the entire ecosystem.",
     start: new Date("2025-09-01"),
     end: null,
     images: cryptoshariaImages,
     techs: [
+      techs.nestjs,
+      techs.fastify,
+      techs.bun,
+      techs.openapi,
+      techs.postgresql,
+      techs.redis,
+      techs.typescript,
       techs.svelte,
       techs.tailwindcss,
-      techs.postgresql,
-      techs.typescript,
       techs.zod,
       techs.drizzle,
-      techs.openapi,
+      techs.resend,
+      techs.vitest,
+      techs.docker,
     ],
     links: [
       {
@@ -129,10 +148,15 @@ export const projects: Project[] = [
         url: "https://cryptosharia.id/",
       },
       {
-        type: "github",
-        label: "GitHub",
-        url: "https://github.com/cryptosharia/",
+        type: "website",
+        label: "Backend API",
+        url: "https://api.cryptosharia.id/",
       },
+      // {
+      //   type: "github",
+      //   label: "GitHub",
+      //   url: "https://github.com/cryptosharia/",
+      // },
     ],
     order: 2,
   },
@@ -143,7 +167,13 @@ export const projects: Project[] = [
     start: new Date("2021-02-01"),
     end: null,
     images: mdaffailhamiImages,
-    techs: [techs.react, techs.nextjs, techs.tailwindcss, techs.typescript, techs.shadcnui],
+    techs: [
+      techs.react,
+      techs.nextjs,
+      techs.tailwindcss,
+      techs.typescript,
+      techs.shadcnui,
+    ],
     links: [
       {
         type: "website",
@@ -178,11 +208,11 @@ export const projects: Project[] = [
         label: "Website",
         url: "https://cimsa.ulm.ac.id/",
       },
-      {
-        type: "github",
-        label: "Source Code",
-        url: "https://github.com/mdaffailhami/cimsa-ulm",
-      },
+      // {
+      //   type: "github",
+      //   label: "Source Code",
+      //   url: "https://github.com/mdaffailhami/cimsa-ulm",
+      // },
     ],
     order: 6,
   },

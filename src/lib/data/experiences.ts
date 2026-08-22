@@ -40,11 +40,11 @@ export const experiences: Experience[] = [
   },
   {
     company: "Glosia",
-    role: "Founder & AI Engineer",
+    role: "Founder, Software Engineer, & Content Creator",
     start: new Date("2026-04-01"),
     end: null,
     description:
-      "Glosia is a SaaS platform that enables businesses to embed an AI-powered customer service chatbot into their website by uploading a custom knowledge base. Engineered a RAG (Retrieval-Augmented Generation) pipeline using Gemini Embeddings and Vector Database for semantic search, enabling context-aware responses grounded in business-specific documents. Built with SvelteKit, PostgreSQL, Better Auth, Midtrans, Upstash Redis, Vercel Blob, Resend, Google Gemini API. Implemented multi-tenancy, embeddable widget via script injection, subscription-based billing with Midtrans, and an analytics dashboard for bot performance monitoring.",
+      "Glosia is a SaaS platform that enables businesses to embed an AI-powered customer service chatbot into their website by uploading a custom knowledge base. Engineered a RAG (Retrieval-Augmented Generation) pipeline using Gemini Embeddings and Vector Database for semantic search, enabling context-aware responses grounded in business-specific documents, and implementing subscription-based billing with Midtrans.",
     images: glosiaImages,
     links: [
       {
@@ -60,7 +60,7 @@ export const experiences: Experience[] = [
     start: new Date("2025-06-01"),
     end: null,
     description:
-      "CryptoSharia is a multi-web platform ecosystem for an Islamic crypto community, consisting of a company profile, media platform (news, education, research), admin dashboard, and a centralized API. As Fullstack Lead Developer, I designed and built the centralized REST API using SvelteKit with pure TypeScript, framework-agnostic, heavily focused on backend engineering and type safety. I designed the PostgreSQL schema, implemented custom database-based authentication without third-party libraries, and applied SSR for content-heavy pages to optimize SEO and performance. I also led technical direction for the team including Git workflow standards and code review.",
+      "CryptoSharia is an Islamic crypto community and media platform providing sharia-based education, market research, and halal/haram screening of cryptoassets in Indonesia. As part of the tech department, I lead the overall technology-side of the community, especially building the robust & maintainable backend that serves as the backbone of the entire ecosystem.",
     images: cryptoshariaImages,
     links: [
       {

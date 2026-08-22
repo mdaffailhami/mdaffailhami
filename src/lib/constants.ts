@@ -24,9 +24,7 @@ I also work deeply with AI agents in my daily workflow 🤖, I design structured
 
 ---
 
-Here are some of the **technologies** I use:
-
-📝 **Note:** *These are the technologies **I'm currently actively playing with**, not a full representation of my whole skills.*`,
+Here are some of the **technologies** I'm currently actively playing with:`,
 };
 
 export type NavItem = {

@@ -2,6 +2,7 @@ import type { ComponentType, SVGProps } from "react";
 import {
   SiBootstrap,
   SiBootstrapHex,
+  SiBun,
   SiCapacitor,
   SiCapacitorHex,
   SiDart,
@@ -44,6 +45,8 @@ import {
   SiRedisHex,
   SiReact,
   SiReactHex,
+  SiResend,
+  SiResendHex,
   SiShadcnui,
   SiShadcnuiHex,
   SiSvelte,
@@ -213,6 +216,11 @@ export const techs = {
     url: "https://midtrans.com/",
     icon: componentIcon(SiXendit, SiXenditHex),
   },
+  resend: {
+    label: "Resend",
+    url: "https://resend.com/",
+    icon: componentIcon(SiResend, SiResendHex, "#FFFFFF"),
+  },
   flutter: {
     label: "Flutter",
     url: "https://flutter.dev/",
@@ -282,6 +290,11 @@ export const techs = {
     label: "Vite",
     url: "https://vite.dev/",
     icon: componentIcon(SiVite, SiViteHex),
+  },
+  bun: {
+    label: "Bun",
+    url: "https://bun.com/",
+    icon: componentIcon(SiBun, "#FFA500", "#FBF0DF"),
   },
   capacitor: {
     label: "Capacitor",

@@ -1,8 +1,8 @@
 import { techs, type Tech } from "./techs";
 
 export const favoriteTechs: Tech[] = [
-  techs.svelte,
   techs.nestjs,
+  techs.svelte,
   techs.nextjs,
   techs.tailwindcss,
   techs.zod,
