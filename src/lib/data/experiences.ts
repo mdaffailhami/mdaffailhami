@@ -4,7 +4,7 @@ import { images as cryptoshariaImages } from "@/lib/assets/experiences/cryptosha
 import { images as superprofImages } from "@/lib/assets/experiences/superprof";
 import { images as cimsaUlmImages } from "@/lib/assets/experiences/cimsa-ulm";
 import { images as aksamediaImages } from "@/lib/assets/experiences/aksamedia";
-import { images as banuaTechImages } from "@/lib/assets/experiences/banua-tech";
+// import { images as banuaTechImages } from "@/lib/assets/experiences/banua-tech";
 
 export type Experience = {
   company: string;
@@ -22,22 +22,22 @@ export type Experience = {
 };
 
 export const experiences: Experience[] = [
-  {
-    company: "Banua Tech",
-    role: "Co-Founder & Software Engineer",
-    start: new Date("2026-06-30"),
-    end: null,
-    description:
-      "Banua Tech is an IT enthusiast community and technology organization focused on technology education, digital innovation, and collaborative IT ecosystem development. As Co-Founder & Software Engineer, I help shape the technical direction, build and maintain digital products, support learning initiatives, and contribute to community programs across areas such as web development, AI, cloud, cybersecurity, and software engineering.",
-    images: banuaTechImages,
-    links: [
-      {
-        type: "website",
-        label: "Official Website",
-        url: "https://banuatech.vercel.app/",
-      },
-    ],
-  },
+  // {
+  //   company: "Banua Tech",
+  //   role: "Co-Founder & Software Engineer",
+  //   start: new Date("2026-06-30"),
+  //   end: null,
+  //   description:
+  //     "Banua Tech is an IT enthusiast community and technology organization focused on technology education, digital innovation, and collaborative IT ecosystem development. As Co-Founder & Software Engineer, I help shape the technical direction, build and maintain digital products, support learning initiatives, and contribute to community programs across areas such as web development, AI, cloud, cybersecurity, and software engineering.",
+  //   images: banuaTechImages,
+  //   links: [
+  //     {
+  //       type: "website",
+  //       label: "Official Website",
+  //       url: "https://banuatech.vercel.app/",
+  //     },
+  //   ],
+  // },
   {
     company: "Glosia",
     role: "Founder, Software Engineer, & Content Creator",
