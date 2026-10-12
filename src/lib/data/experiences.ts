@@ -38,22 +38,22 @@ export const experiences: Experience[] = [
   //     },
   //   ],
   // },
-  {
-    company: "Glosia",
-    role: "Founder, Software Engineer, & Content Creator",
-    start: new Date("2026-04-01"),
-    end: null,
-    description:
-      "Glosia is a SaaS platform that enables businesses to embed an AI-powered customer service chatbot into their website by uploading a custom knowledge base. Engineered a RAG (Retrieval-Augmented Generation) pipeline using Gemini Embeddings and Vector Database for semantic search, enabling context-aware responses grounded in business-specific documents, and implementing subscription-based billing with Midtrans.",
-    images: glosiaImages,
-    links: [
-      {
-        type: "website",
-        label: "Official Website",
-        url: "https://glosia.biz.id/",
-      },
-    ],
-  },
+  // {
+  //   company: "Glosia",
+  //   role: "Founder, Software Engineer, & Content Creator",
+  //   start: new Date("2026-04-01"),
+  //   end: null,
+  //   description:
+  //     "Glosia is a SaaS platform that enables businesses to embed an AI-powered customer service chatbot into their website by uploading a custom knowledge base. Engineered a RAG (Retrieval-Augmented Generation) pipeline using Gemini Embeddings and Vector Database for semantic search, enabling context-aware responses grounded in business-specific documents, and implementing subscription-based billing with Midtrans.",
+  //   images: glosiaImages,
+  //   links: [
+  //     {
+  //       type: "website",
+  //       label: "Official Website",
+  //       url: "https://glosia.biz.id/",
+  //     },
+  //   ],
+  // },
   {
     company: "CryptoSharia",
     role: "Software Engineer",
